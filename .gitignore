@@ -1,0 +1,13 @@
+.env
+.idea/
+.Build
+.php_cs.cache
+vendor/
+/public/*
+!/public/typo3conf
+/public/typo3conf/*
+!/public/typo3conf/AdditionalConfiguration.php
+!/public/typo3conf/LocalConfiguration.php
+/var/
+!/var/tests/.gitkeep
+/tests/Acceptance/Support/_generated

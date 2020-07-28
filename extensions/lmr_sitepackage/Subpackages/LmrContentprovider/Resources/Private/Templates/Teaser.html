@@ -1,0 +1,38 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:mi="http://typo3.org/ns/Smichaelsen/MelonImages/ViewHelpers">
+
+	<div class="teaser-marginal">
+		<div class="teaser-marginal__inner">
+			<f:if condition="{data.tx_lmrcontentprovider_brow}">
+				<div class="teaser-marginal__brow brow">
+					{data.tx_lmrcontentprovider_brow}
+				</div>
+			</f:if>
+			<f:if condition="{data.subheader}">
+				<f:then>
+					<h2 class="headline teaser-marginal__header">
+						{data.header}
+					</h2>
+					<h3 class="headline teaser-marginal__subheader">
+						{data.subheader}
+					</h3>
+				</f:then>
+				<f:else>
+					<h3 class="headline teaser-marginal__header-single">
+						{data.header}
+					</h3>
+				</f:else>
+			</f:if>
+
+			<div class="teaser-marginal__text">
+				{data.bodytext -> f:format.html()}
+			</div>
+			<f:if condition="{data.header_link}">
+				<f:link.typolink class="btn teaser-marginal__btn" parameter="{data.header_link}">
+					Mehr erfahren
+				</f:link.typolink>
+			</f:if>
+		</div>
+	</div>
+
+

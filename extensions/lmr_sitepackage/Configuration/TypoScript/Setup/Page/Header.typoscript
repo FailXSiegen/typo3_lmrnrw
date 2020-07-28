@@ -1,0 +1,60 @@
+#
+# Css includes
+#
+page.includeCSS {
+	styles = EXT:{$globals.sitepackageKey}/Resources/Public/Stylesheets/Styles.css
+}
+
+#
+# Viewport meta data
+# Set js class to html (before jquery - fastest!)
+#
+page.headerData.22 = TEXT
+page.headerData.22 {
+	value (
+		<script type="text/javascript">
+			var html = document.getElementsByTagName('html')[0];
+			html.setAttribute('class', 'js');
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	)
+}
+
+#
+# Add Favicons
+#
+page.headerData.63 = FILE
+page.headerData.63 {
+	file = EXT:{$globals.sitepackageKey}/Resources/Private/Templates/Generated/Favicons.html
+}
+
+#
+# Add webfonts
+#
+page.headerData.123 = TEXT
+page.headerData.123 {
+	value (
+	)
+}
+
+#
+# Set custom title tag in headerData
+#
+page.headerData.10 = COA
+page.headerData.10 {
+	10 = TEXT
+	10.data = TSFE:page|title
+
+	20 = TEXT
+	20.data = LLL:EXT:{$globals.sitepackageKey}/Resources/Private/Language/locallang.xlf:siteTitle
+	20.noTrimWrap = | - ||
+
+	wrap = <title>|</title>
+}
+
+[globalVar = TSFE:id = {$globals.nav.home}]
+	page.headerData.10.10 >
+	page.headerData.10.20.noTrimWrap >
+[end]

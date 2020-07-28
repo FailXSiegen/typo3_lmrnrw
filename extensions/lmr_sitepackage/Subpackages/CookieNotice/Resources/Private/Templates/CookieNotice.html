@@ -1,0 +1,14 @@
+<div class="cookie-notice">
+	<div class="cookie-notice__headline">
+		<f:format.nl2br>{f:translate(key: '{settings.llFile}CookieNotice.Headline')}</f:format.nl2br>
+	</div>
+	<div class="cookie-notice__text">
+		<button class="cookie-notice__btn btn btn--size-small btn--color-regular" value="cookie_accept">
+			{f:translate(key: '{settings.llFile}CookieNotice.Button')}
+		</button>
+		{f:translate(key: '{settings.llFile}CookieNotice.Text')}
+		<f:link.page pageUid="{settings.dataPrivacyPageUid}">
+			{f:translate(key: '{settings.llFile}CookieNotice.AnchorToDataPrivacyPage')}
+		</f:link.page>
+	</div>
+</div>

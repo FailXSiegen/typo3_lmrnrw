@@ -1,0 +1,98 @@
+#
+# Meta Tags
+#
+page.meta {
+	abstract.stdWrap.cObject = COA
+	abstract.stdWrap.cObject {
+		10 = TEXT
+		10 {
+			insertData = 1
+			if.isTrue.field = abstract
+			value = {field:abstract}
+		}
+
+		# Possibility to set default value
+		20 = TEXT
+		20 {
+			insertData = 1
+			if.isFalse.field = abstract
+			value =
+		}
+	}
+
+	keywords.stdWrap.cObject = COA
+	keywords.stdWrap.cObject {
+		10 = TEXT
+		10 {
+			insertData = 1
+			if.isTrue.field = keywords
+			value = {field:keywords}
+		}
+
+		# Possibility to set default value
+		20 = TEXT
+		20 {
+			insertData = 1
+			if.isFalse.field = keywords
+			value =
+		}
+	}
+
+	description.stdWrap.cObject = COA
+	description.stdWrap.cObject {
+		10 = TEXT
+		10 {
+			insertData = 1
+			if.isTrue.field = description
+			value = {field:description}
+		}
+
+		# Possibility to set default value
+		20 = TEXT
+		20 {
+			insertData = 1
+			if.isFalse.field = description
+			value =
+		}
+	}
+
+	revisit-after = 10 days
+
+	robots.cObject = COA
+	robots.cObject {
+		10 = TEXT
+		10 {
+			if.isFalse.field = no_search
+			value = index,follow
+		}
+
+		20 = TEXT
+		20 {
+			if.isTrue.field = no_search
+			value = noindex,nofollow
+		}
+	}
+
+	author.cObject = TEXT
+	author.cObject.data = LLL:EXT:{$globals.sitepackageKey}/Resources/Private/Language/locallang.xlf:siteTitle
+
+	og:site_name.cObject = TEXT
+	og:site_name.cObject.data = LLL:EXT:{$globals.sitepackageKey}/Resources/Private/Language/locallang.xlf:siteTitle
+	og:site_name.attribute = property
+
+	og:description < .description
+	og:description.attribute = property
+
+	og:locale = de_DE
+	og:locale.attribute = property
+	# og:locale:alternate {
+	#  attribute = property
+	#  value.1 = en_US
+	#  value.2 = en_GB
+	# }
+}
+
+[applicationContext = Production/Staging]
+	page.meta.robots >
+	page.meta.robots = noindex, nofollow
+[end]

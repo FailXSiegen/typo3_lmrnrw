@@ -1,0 +1,63 @@
+.tab-container {
+  margin: $base-line-height 0;
+}
+
+.tab-container--initialized {
+
+}
+
+.tab-container__navigation {
+
+}
+
+.tab-navigation {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.tab-navigation__anchor {
+  display: inline-block;
+  //background: $color_blue;
+  color: $color_white;
+  box-sizing: border-box;
+  padding: $base-line-height/4 12px $base-line-height/5;
+  margin-right: 2px;
+  @include fontBold;
+
+  &:focus,
+  &:hover {
+    color: $color_white;
+    //background: lighten($color_blue, 3);
+  }
+  &:active {
+    color: $color_white;
+    //background: lighten($color_blue, 6);
+  }
+
+  &--active {
+    //background: $color_blue_light !important;
+    pointer-events: none;
+  }
+}
+
+.tab-elements {
+  //background: lighten($color_blue_light, 17.5);
+  box-sizing: border-box;
+  padding: $base-line-height;
+}
+
+.tab-elements {
+
+}
+
+.tab-element {
+  overflow: hidden;
+  .tab-container--initialized & {
+    max-height: 0;
+
+    &--expanded {
+      max-height: 9999px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<f:if condition="{data.tx_lmrcontentprovider_brow}">
+    {data.tx_lmrcontentprovider_brow}<br />
+</f:if>
+
+<f:if condition="{data.header}">
+    {data.header}<br />
+</f:if>
+
+<f:if condition="{data.bodytext}">
+    <f:format.nl2br>{data.bodytext}</f:format.nl2br><br />
+</f:if>
+
+<f:if condition="{data.header_link}">
+    <f:link.page pageUid="{data.header_link}">{data.header_link}</f:link.page><br />
+</f:if>
+
+<f:if condition="{data_image}">
+    <f:for each="{data_image}" as="file">
+        <f:image image="{file}" alt="{file.alternative}" title="{file.title}" width="200" /><br />
+        {file.description} / {file.identifier}<br />
+    </f:for>
+</f:if>
+

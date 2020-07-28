@@ -1,0 +1,21 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+            header_image {
+                iconIdentifier = tx_lmrcontentprovider_header_image
+                title = LLL:EXT:lmr_contentprovider/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.header_image_title
+                description = LLL:EXT:lmr_contentprovider/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.header_image_description
+                tt_content_defValues {
+                    CType = lmrcontentprovider_header_image
+                }
+            }
+            teaser {
+                iconIdentifier = tx_lmrcontentprovider_teaser
+                title = LLL:EXT:lmr_contentprovider/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.teaser_title
+                description = LLL:EXT:lmr_contentprovider/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.teaser_description
+                tt_content_defValues {
+                    CType = lmrcontentprovider_teaser
+                }
+            }
+    }
+    show := addToList(header_image, teaser)
+}

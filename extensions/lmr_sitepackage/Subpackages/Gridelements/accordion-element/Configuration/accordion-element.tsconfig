@@ -1,0 +1,23 @@
+tx_gridelements.setup.accordion-element {
+    icon = EXT:lmr_sitepackage/Subpackages/Gridelements/accordion-element/Resources/Public/accordion-element.png
+    title = Akkordeon
+    topLevelLayout = 0
+    description (
+		Fügt einen Container ein, in welchem Content-Elemente als Akkordeon dargestellt werden.
+    )
+    frame = 1
+    config {
+        colCount = 1
+        rowCount = 1
+        rows {
+            1 {
+                columns {
+                    1 {
+                        name = Akkordeon-Content
+                        colPos = 0
+                    }
+                }
+            }
+        }
+    }
+}

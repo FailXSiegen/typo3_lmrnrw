@@ -1,0 +1,33 @@
+tx_gridelements.setup.grid-3-col-same-width {
+	icon = EXT:lmr_sitepackage/Subpackages/Gridelements/grid-3-col-same-width/Resources/Public/grid-3-col-same-width.png
+	#iconIdentifier = new-content-el-mynewelement
+	horizontal = 0
+	topLevelLayout = 0
+	title = Grid-Container mit 3 Spalten gleicher Breite
+	description (
+		Fügt einen Rastercontainer ein, in welchen Contentelemente eingesetzt werden können.
+	)
+	frame = 2
+	config {
+		colCount = 3
+		rowCount = 1
+		rows {
+			1 {
+				columns {
+					1 {
+						name = Linke Spalte
+						colPos = 1
+					}
+					2 {
+						name = Mittlere Spalte
+						colPos = 2
+					}
+					3 {
+						name = Rechte Spalte
+						colPos = 3
+					}
+				}
+			}
+		}
+	}
+}

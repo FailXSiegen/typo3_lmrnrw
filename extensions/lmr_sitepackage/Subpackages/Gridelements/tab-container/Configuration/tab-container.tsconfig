@@ -1,0 +1,26 @@
+tx_gridelements.setup.tab-container {
+	icon = EXT:lmr_sitepackage/Subpackages/Gridelements/tab-container/Resources/Public/tab-container.png
+	title = Tab-Container
+	horizontal = 0
+	topLevelLayout = 1
+	description (
+		Fügt einen Container ein, in welchen Tab-Elemente platziert werden können.
+	)
+	frame = 3
+	config {
+		colCount = 1
+		rowCount = 1
+		rows {
+			1 {
+				columns {
+					1 {
+						name = Tabs-Container
+						colPos = 0
+						allowed = gridelements_pi1
+						allowedGridTypes = tab-element
+					}
+				}
+			}
+		}
+	}
+}

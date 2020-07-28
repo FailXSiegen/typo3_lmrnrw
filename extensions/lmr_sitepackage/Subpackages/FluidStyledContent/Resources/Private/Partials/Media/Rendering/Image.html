@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:switch expression="{file.properties.image_style}">
+		<f:case value="no-modification">
+			<f:variable name="imageStyle" value="no-modification" />
+		</f:case>
+		<f:case value="grayscale">
+			<f:variable name="imageStyle" value="grayscale" />
+		</f:case>
+        <f:defaultCase>
+            <f:variable name="imageStyle" value="grayscale" />
+        </f:defaultCase>
+	</f:switch>
+	<f:image image="{file}" class="image image--{imageStyle}" width="{dimensions.width}" height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" />
+</html>

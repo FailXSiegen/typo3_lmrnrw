@@ -1,0 +1,4 @@
+page.includeJSFooter {
+	vendor = EXT:{$globals.sitepackageKey}/Resources/Public/Scripts/Vendor.js
+	scripts = EXT:{$globals.sitepackageKey}/Resources/Public/Scripts/Scripts.js
+}

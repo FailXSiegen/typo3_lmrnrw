@@ -1,0 +1,87 @@
+# @see language.ts for language config
+
+#
+# Clear default CE wraps
+#
+tt_content.stdWrap.innerWrap.cObject >
+tt_content.stdWrap.dataWrap >
+
+#
+# CSS class depending on section frame
+#
+temp.tt_content_section_frame = CASE
+temp.tt_content_section_frame {
+	key.field = section_frame
+
+	default = TEXT
+	default.value =
+}
+
+#
+# CSS class depending on layout
+#
+temp.tt_content_layout = CASE
+temp.tt_content_layout {
+	key.field = layout
+
+	default = TEXT
+	default.value =
+}
+
+#
+# CSS class if no gridelement was set
+#
+temp.tt_content_tx_gridelements_container = CASE
+temp.tt_content_tx_gridelements_container {
+	key.field = tx_gridelements_container
+
+	0 = TEXT
+	0.value = box
+	0.noTrimWrap = | ||
+}
+
+#
+# Append classes depending on section_frame and gridelements
+#
+tt_content.stdWrap.outerWrap.cObject >
+tt_content.stdWrap.outerWrap.insertData = 1
+tt_content.stdWrap.outerWrap.cObject = CASE
+tt_content.stdWrap.outerWrap.cObject {
+	key.field = CType
+
+	default = CASE
+	default {
+		key.field = list_type
+	}
+
+	#
+	# no wrap if gridelement
+	#
+	gridelements_pi1 = TEXT
+	gridelements_pi1.value = |
+
+	#
+	# no wrap if gridelement
+	#
+	gridelements_view = TEXT
+	gridelements_view.value = |
+
+	#
+	# no wrap if DCE
+	#
+	shortcut = TEXT
+	shortcut.value = <!-- shortcut -->|
+}
+
+#
+# Change innerwrap by section frames
+#
+tt_content.stdWrap.innerWrap.cObject >
+tt_content.stdWrap.innerWrap.insertData = 1
+tt_content.stdWrap.innerWrap.cObject = CASE
+tt_content.stdWrap.innerWrap.cObject {
+	key.field = section_frame
+
+	default = TEXT
+	default.value = |
+}

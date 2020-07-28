@@ -1,0 +1,30 @@
+tx_gridelements.setup.grid-2-1 {
+	icon = EXT:lmr_sitepackage/Subpackages/Gridelements/grid-2-1/Resources/Public/grid-2-1.png
+	#iconIdentifier = new-content-el-mynewelement
+	horizontal = 0
+	topLevelLayout = 0
+	title = Grid-Container mit Marginalspalte rechts
+	description (
+		Fügt einen Rastercontainer ein, in welchen Contentelemente eingesetzt werden können.
+	)
+	frame = 2
+	config {
+		colCount = 3
+		rowCount = 1
+		rows {
+			1 {
+				columns {
+					1 {
+						name = Linke Spalte
+						colPos = 0
+						colspan = 2
+					}
+					2 {
+						name = Rechte Spalte
+						colPos = 1
+					}
+				}
+			}
+		}
+	}
+}

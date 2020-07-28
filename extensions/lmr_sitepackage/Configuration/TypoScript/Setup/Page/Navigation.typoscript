@@ -1,0 +1,309 @@
+temp.nav.navigationPrototype = COA
+temp.nav.navigationPrototype {
+	wrap = <nav>|</nav>
+
+	10 = HMENU
+	10 {
+		1 = TMENU
+		1 {
+			NO = 1
+			ACT = 1
+			CUR = 1
+			noBlur = 1
+
+			expAll = 1
+
+			wrap = <ul>|</ul>
+
+			NO {
+				wrapItemAndSub = <li data-page-uid="{field:uid}">|</li>
+				wrapItemAndSub.insertData = 1
+
+				doNotLinkIt = 1
+				stdWrap.cObject = CASE
+				stdWrap.cObject {
+					key.field = doktype
+
+					default = TEXT
+					default {
+						typolink {
+							parameter.field = uid
+							title.field = {$globals.menuATagTitleFields}
+						}
+
+						field = nav_title // title
+					}
+
+					# 4 = shortcut
+					4 = COA
+					4 {
+						# if shortcut_mode is "Selected page"
+						10 = TEXT
+						10 {
+							field = nav_title // title
+							typolink.parameter.field = shortcut
+							if.value.field = shortcut_mode
+							if.equals = 0
+							stdWrap.dataWrap = {$globals.stdLinkWrap}
+						}
+
+						# if shortcut_mode is "First subpage of current page"
+						20 = TEXT
+						20 {
+							field = nav_title // title
+							typolink.parameter.field = uid
+							if.value.field = shortcut_mode
+							if.equals = 1
+							stdWrap.dataWrap = {$globals.stdLinkWrap}
+						}
+					}
+
+					# 3 = external url
+					3 < .default
+					3 {
+						typolink {
+							parameter.field = url
+							extTarget = _blank
+							title.wrap = |&nbsp;(Externer Link)
+							ATagParams = class="external-link icon-open"
+						}
+
+						stdWrap.dataWrap = {$globals.stdLinkWrap}<span class="icon" aria-hidden="true"></span>
+					}
+				}
+			}
+
+			ACT < .NO
+			ACT {
+				doNotLinkIt = 0
+				insertData = 1
+				stdWrap.cObject >
+				#stdWrap.dataWrap = {$globals.stdLinkWrap}
+				ATagParams = class="active"
+			}
+
+			CUR < .NO
+			CUR {
+				stdWrap.cObject >
+				stdWrap.dataWrap = <a class="current">|</a>
+				doNotLinkIt = 1
+			}
+		}
+	}
+}
+
+#
+# Main navigation
+#
+temp.nav.main < temp.nav.navigationPrototype
+temp.nav.main {
+	wrap = |
+
+	10 {
+		special = directory
+		special.value = {$globals.nav.main}
+		1 {
+			wrap = <ul class="navigation-main__list navigation-main__list--level-1 level-1">|</ul>
+			NO {
+				wrapItemAndSub = <li class="level-1__list-item" data-page-uid="{field:uid}">|</li>
+				stdWrap.cObject {
+					default {
+						typolink.ATagParams = class="navigation-main__anchor"
+					}
+
+					4 {
+						10 {
+							typolink.ATagParams = class="navigation-main__anchor"
+						}
+
+						20 {
+							typolink.ATagParams = class="navigation-main__anchor"
+						}
+					}
+
+					3 {
+						typolink.ATagParams = class="navigation-main__anchor navigation-main__anchor--external"
+					}
+				}
+			}
+
+			ACT {
+				wrapItemAndSub = <li class="level-1__list-item" data-page-uid="{field:uid}">|</li>
+				ATagParams = class="navigation-main__anchor lnavigation-main__anchor--active"
+
+			}
+
+			CUR {
+				wrapItemAndSub = <li class="level-1__list-item" data-page-uid="{field:uid}">|</li>
+				stdWrap.dataWrap = <a class="navigation-main__anchor navigation-main__anchor--current">|</a>
+			}
+		}
+
+		2 < .1
+		2 {
+			wrap = <ul class="navigation-main__list navigation-main__list--level-2 level-2">|</ul>
+			NO {
+				wrapItemAndSub = <li class="level-2__list-item" data-page-uid="{field:uid}">|</li>
+			}
+
+			ACT {
+				wrapItemAndSub = <li class="level-2__list-item" data-page-uid="{field:uid}">|</li>
+			}
+
+			CUR {
+				wrapItemAndSub = <li class="level-2__list-item" data-page-uid="{field:uid}">|</li>
+			}
+		}
+
+		3 < .1
+		3 {
+			wrap = <ul class="navigation-main__list navigation-main__list--level-3 level-3">|</ul>
+			NO {
+				wrapItemAndSub = <li class="level-3__list-item" data-page-uid="{field:uid}">|</li>
+			}
+
+			ACT {
+				wrapItemAndSub = <li class="level-3__list-item" data-page-uid="{field:uid}">|</li>
+			}
+
+			CUR {
+				wrapItemAndSub = <li class="level-3__list-item" data-page-uid="{field:uid}">|</li>
+			}
+		}
+	}
+}
+
+#
+# Footer navigation
+#
+temp.nav.footer < temp.nav.navigationPrototype
+temp.nav.footer {
+	wrap = |
+
+	10 {
+		special = directory
+		special.value = {$globals.nav.footer}
+
+		1 {
+			wrap = <ul class="navigation-footer__list">|</ul>
+			NO {
+				wrapItemAndSub = <li class="navigation-footer__list-item" data-page-uid="{field:uid}">|</li>
+				stdWrap.cObject {
+					default {
+						typolink.ATagParams = class="navigation-footer__anchor"
+					}
+
+					4 {
+						10 {
+							typolink.ATagParams = class="navigation-footer__anchor"
+						}
+
+						20 {
+							typolink.ATagParams = class="navigation-footer__anchor"
+						}
+					}
+
+					3 {
+						typolink.ATagParams = class="navigation-footer__anchor navigation-footer__anchor--external"
+					}
+				}
+			}
+
+			ACT {
+				wrapItemAndSub = <li class="navigation-footer__list-item" data-page-uid="{field:uid}">|</li>
+				ATagParams = class="navigation-footer__anchor navigation-footer__anchor--active"
+			}
+
+			CUR {
+				wrapItemAndSub = <li class="navigation-footer__list-item" data-page-uid="{field:uid}">|</li>
+				stdWrap.dataWrap = <a class="navigation-footer__anchor navigation-footer__anchor--current">|</a>
+			}
+		}
+
+		2 < .1
+		2 {
+			wrap = <ul class="navigation-footer__list-second">|</ul>
+			NO {
+				wrapItemAndSub = <li class="navigation-footer__list-item-second" data-page-uid="{field:uid}">|</li>
+				stdWrap.cObject {
+					default {
+						typolink.ATagParams = class="navigation-footer__anchor-second"
+					}
+
+					4 {
+						10 {
+							typolink.ATagParams = class="navigation-footer__anchor-second"
+						}
+
+						20 {
+							typolink.ATagParams = class="navigation-footer__anchor-second"
+						}
+					}
+
+					3 {
+						typolink.ATagParams = class="navigation-footer__anchor-second navigation-footer__anchor--external"
+					}
+				}
+			}
+
+			ACT {
+				wrapItemAndSub = <li class="navigation-footer__list-item-second" data-page-uid="{field:uid}">|</li>
+				ATagParams = class="navigation-footer__anchor-second navigation-footer__anchor--active"
+			}
+
+			CUR {
+				wrapItemAndSub = <li class="navigation-footer__list-item-second" data-page-uid="{field:uid}">|</li>
+				stdWrap.dataWrap = <a class="navigation-footer__anchor-second navigation-footer__anchor--current">|</a>
+			}
+		}
+	}
+}
+
+#
+# Meta navigation
+#
+temp.nav.meta < temp.nav.navigationPrototype
+temp.nav.meta {
+	wrap = |
+
+	10 {
+		special = directory
+		special.value = {$globals.nav.meta}
+
+		1 {
+			wrap = <ul class="navigation-meta__list">|</ul>
+			NO {
+				wrapItemAndSub = <li class="navigation-meta__list-item" data-page-uid="{field:uid}">|</li>
+				stdWrap.cObject {
+					default {
+						typolink.ATagParams = class="navigation-meta__anchor"
+					}
+
+					4 {
+						10 {
+							typolink.ATagParams = class="navigation-meta__anchor"
+						}
+
+						20 {
+							typolink.ATagParams = class="navigation-meta__anchor"
+						}
+					}
+
+					3 {
+						typolink.ATagParams = class="navigation-meta__anchor navigation-meta__anchor--external"
+					}
+				}
+			}
+
+			ACT {
+				wrapItemAndSub = <li class="navigation-meta__list-item" data-page-uid="{field:uid}">|</li>
+				ATagParams = class="navigation-meta__anchor navigation-meta__anchor--active"
+			}
+
+			CUR {
+				wrapItemAndSub = <li class="navigation-meta__list-item" data-page-uid="{field:uid}">|</li>
+				stdWrap.dataWrap = <a class="navigation-meta__anchor navigation-meta__anchor--current">|</a>
+			}
+		}
+	}
+}

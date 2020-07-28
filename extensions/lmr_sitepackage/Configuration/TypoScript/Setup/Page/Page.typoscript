@@ -1,0 +1,152 @@
+page = PAGE
+page.10 = FLUIDTEMPLATE
+page.10 {
+	file = EXT:{$globals.sitepackageKey}/Resources/Private/Templates/Main.html
+	partialRootPaths {
+		10 = EXT:{$globals.sitepackageKey}/Resources/Private/Templates/Partials/
+	}
+	layoutRootPaths {
+		10 = EXT:{$globals.sitepackageKey}/Resources/Private/Templates/Layouts/
+	}
+
+	# Set extension name for glueless LL integration in templates
+	extbase.controllerExtensionName = LmrSitepackage
+
+	settings {
+#		navHomePageUid = {$globals.nav.home}
+#		dataPrivacyPageUid = {$globals.nav.dataPrivacy}
+#		llFile = LLL:EXT:{$globals.sitepackageKey}/Resources/Private/Language/locallang.xlf
+#		navContactPageUid = {$globals.nav.contact}
+#		navFaqPageUid = {$globals.nav.faq}
+	}
+
+	dataProcessing {
+		10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+		10 {
+			special = directory
+			special.value = {$globals.nav.main}
+			as = navigationMain
+			levels = 3
+			expandAll = 1
+			titleField = nav_title // title
+		}
+		20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+		20 {
+			special = rootline
+			special.range = 1 | -1
+			includeNotInMenu = 1
+			as = navigationBreadcrumb
+			levels = 7
+			titleField = nav_title // title
+		}
+		30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+		30 {
+			special = directory
+			special.value = {$globals.nav.meta}
+			as = navigationMeta
+			levels = 1
+			titleField = nav_title // title
+		}
+	}
+
+	variables {
+		layout = CASE
+		layout {
+			key.data = pagelayout
+
+			default = TEXT
+			default.value = Content
+
+			pagets__start = TEXT
+			pagets__start.value = Start
+
+			pagets__content = TEXT
+			pagets__content.value = Content
+
+			pagets__contentFullWidthUnwrapped = TEXT
+			pagets__contentFullWidthUnwrapped.value = ContentFullWidthUnwrapped
+
+			pagets__contentFullWidth = TEXT
+			pagets__contentFullWidth.value = ContentFullWidth
+		}
+
+		homePid = TEXT
+		homePid.value = {$globals.nav.home}
+
+		navLogo < temp.nav.logo
+		navMain < temp.nav.main
+		navMeta < temp.nav.meta
+		navFooter < temp.nav.footer
+		navBreadcrumb < temp.nav.breadcrumb
+
+		pageTitle = TEXT
+		pageTitle {
+			field = nav_title // title
+		}
+
+		contentMain = COA
+		contentMain {
+			10 =< styles.content.get
+			10.select.where = colPos = 0
+		}
+		contentAside = COA
+		contentAside {
+			10 =< styles.content.get
+			10.select.where = colPos = 1
+		}
+		contentStage = COA
+		contentStage {
+			10 =< styles.content.get
+			10.select.where = colPos = 20
+		}
+
+	}
+}
+
+#
+# Generates CSS class depending on backend_layout
+#
+temp.layoutClass = CASE
+temp.layoutClass {
+	key.data = pagelayout
+
+	default = TEXT
+	default.value = body--layout-default
+
+	pagets__start = TEXT
+	pagets__start.value = body--layout-start
+
+	pagets__content = TEXT
+	pagets__content.value = body--layout-default
+
+	pagets__contentFullWidth = TEXT
+	pagets__contentFullWidth.value = body--layout-full-width
+}
+
+#
+# Set custom page body tag
+#
+page.bodyTag >
+page.bodyTagCObject = COA
+page.bodyTagCObject {
+	10 = TEXT
+	10.field = uid
+	10.wrap = <body id="uid|"
+
+	20 = TEXT
+	20.noTrimWrap = | class="styles-lmr | |
+
+	25 = TEXT
+	25 {
+		if.equals.field = uid
+		if.value = {$globals.home}
+		value = home
+		noTrimWrap = || |
+	}
+
+	30 < temp.layoutClass
+
+	40 = TEXT
+	40.field = uid
+	40.noTrimWrap = | pid|">|
+}

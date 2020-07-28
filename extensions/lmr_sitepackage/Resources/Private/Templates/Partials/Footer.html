@@ -1,0 +1,39 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:mf="http://typo3.org/ns/HauptwegNebenwege/LmrSitepackage/ViewHelpers">
+
+	<footer class="container container--footer footer">
+		<div class="container__inner footer__inner">
+
+			<div class="footer-col-wrapper">
+
+				<div class="footer-col footer-col--menu">
+					<div class="navigation-meta">
+						<ul class="navigation-meta__list">
+							<f:for each="{navigationMeta}" as="navigationItem">
+								<li class="navigation-meta__list-item">
+									<a href="{navigationItem.link}" class="navigation-meta__anchor {f:if(condition: navigationItem.active, then: 'navigation-meta__anchor--active')} {f:if(condition: navigationItem.current, then: 'navigation-meta__anchor--current')}">
+										{navigationItem.title}
+									</a>
+								</li>
+							</f:for>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-col footer-col--logo-mkw">
+					<div class="footer__logo-mkw logo-mkw">
+						<f:link.external uri="https://www.mkw.nrw/" class="logo-mkw__anchor">
+							<f:image class="logo-mkw__image" src="EXT:lmr_sitepackage/Resources/Public/Images/Logo/AK_Kultur-und-Wissenschaft.png" width="215" alt="" />
+						</f:link.external>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="footer__copyright copyright">
+				© Landesmusikrat NRW {f:format.date(format: 'Y', date: 'now')}
+			</div>
+
+		</div>
+	</footer>
+
+</html>

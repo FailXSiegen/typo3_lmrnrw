@@ -1,0 +1,71 @@
+#
+# Field visibility & options
+#
+
+TCEFORM.tt_content {
+
+	header_layout {
+		altLabels.0 = LLL:EXT:lmr_sitepackage/Resources/Private/Language/locallang_db.xlf:tt_content.header_layout.altLabels.0
+		altLabels.1 = LLL:EXT:lmr_sitepackage/Resources/Private/Language/locallang_db.xlf:tt_content.header_layout.altLabels.1
+		altLabels.2 = LLL:EXT:lmr_sitepackage/Resources/Private/Language/locallang_db.xlf:tt_content.header_layout.altLabels.2
+		altLabels.3 = LLL:EXT:lmr_sitepackage/Resources/Private/Language/locallang_db.xlf:tt_content.header_layout.altLabels.3
+		altLabels.4 = LLL:EXT:lmr_sitepackage/Resources/Private/Language/locallang_db.xlf:tt_content.header_layout.altLabels.4
+
+		removeItems = 5,6,7,8,9,10
+		removeItems = *
+		addItems = 1
+	}
+
+	layout {
+	}
+
+	section_frame {
+		removeItems = 0,1,5,6,10,11,12,20,21
+	}
+
+	imageorient {
+		types {
+			image {
+				# only allow left above
+				removeItems = 0,1,8,9,10,17,18,25,26
+			}
+
+			textpic {
+				# only allow left above, left in text, right in text
+				removeItems = 0,1,8,9,17,18,26
+			}
+		}
+
+		disableNoMatchingValueElement = 1
+	}
+
+	imagecols {
+		removeItems = 2,3,4,5,6,7,8
+	}
+
+	imagewidth.disabled = 1
+	imageheight.disabled = 1
+	layout.disabled = 0
+	spaceBefore.disabled = 1
+	spaceAfter.disabled = 1
+	image_noRows.disabled = 1
+	imagecaption_position.disabled = 1
+	image_compression.disabled = 1
+	image_effects.disabled = 1
+	linkToTop.disabled = 1
+
+	menu_type {
+		removeItems = 0,2,3,4,5,6,7,8,9,10,categorized_pages,categorized_content
+	}
+
+}
+
+TCEFORM.pages {
+	layout.disabled = 1
+	backend_layout {
+		removeItems = -1
+	}
+	backend_layout_next_level {
+		removeItems = -1,pagets__start
+	}
+}

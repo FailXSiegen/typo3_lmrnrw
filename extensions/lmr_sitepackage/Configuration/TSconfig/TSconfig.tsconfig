@@ -1,0 +1,3 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_sitepackage/Configuration/TSconfig/Page" extensions="tsconfig">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_sitepackage/Subpackages/" extensions="tsconfig">
+

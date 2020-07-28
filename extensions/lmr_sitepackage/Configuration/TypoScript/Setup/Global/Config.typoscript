@@ -1,0 +1,61 @@
+config {
+	# Disable Cache -- set this to 0 in production environments
+	no_cache = 0
+
+	# Send TYPO3 cache header
+	sendCacheHeaders = 1
+
+	# Enable Admin-Panel
+	admPanel = {$env.globals.admPanel}
+
+	# Enable Indexsearch
+	index_enable = 0
+	index_externals = 0
+
+	# Add range for L-parameter. Only values of this range are prepended in links
+	# will be orverridden in language.ts
+	# linkVars = L(1)
+	linkVars =
+
+	# Remove TYPO3 comments in HTML
+	disablePrefixComment = 1
+
+	# Move all js to footer
+	moveJsFromHeaderToFooter = 1
+
+	disableImgBorderAttr = 1
+
+	# Doctype
+	doctype = html5
+
+	# XHTML-Parser settings
+	xmlprologue = none
+
+	# Process pagetitle with custom function
+	noPageTitle = 2
+
+	# Enable RealURL-Extension and set baseUrl
+	tx_realurl_enable = 1
+	absRefPrefix = /
+
+	# Settings for output charset
+	metaCharset = utf-8
+	additionalHeaders = Content-Type:text/html;charset=utf-8
+
+	# Enable SPAM-protection
+	spamProtectEmailAddresses = 2
+	spamProtectEmailAddresses_atSubst = <span class="at"><span>-NOSPAM-</span></span>
+
+	# Make temporary filenames readable
+	meaningfulTempFilePrefix = 100
+
+	sys_language_mode = content_fallback
+
+	extTarget = _blank
+	fileTarget = _blank
+
+	compressJs = 1
+	compressCss = 1
+	concatenateJs = 1
+	concatenateCss = 1
+}

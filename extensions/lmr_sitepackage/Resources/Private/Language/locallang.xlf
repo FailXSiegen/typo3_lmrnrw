@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-06-15T09:54:07Z">
+		<header/>
+		<body>
+			<trans-unit id="siteTitle">
+				<source>Landesmusikrat NRW</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

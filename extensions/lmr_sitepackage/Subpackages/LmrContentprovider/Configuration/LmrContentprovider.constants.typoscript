@@ -1,0 +1,10 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lmr_contentprovider/Configuration/TypoScript/constants.typoscript">
+
+# cat=lmr_contentprovider/file; type=string; label=Path to template root (FE)
+plugin.tx_lmrcontentprovider.view.templateRootPath = EXT:lmr_sitepackage/Subpackages/LmrContentprovider/Resources/Private/Templates
+
+# cat=lmr_contentprovider/file; type=string; label=Path to template partials (FE)
+plugin.tx_lmrcontentprovider.view.partialRootPath = EXT:lmr_sitepackage/Subpackages/LmrContentprovider/Resources/Private/Templates/Partials
+
+# cat=lmr_contentprovider/file; type=string; label=Path to template layouts (FE)
+plugin.tx_lmrcontentprovider.view.layoutRootPath = EXT:lmr_sitepackage/Subpackages/LmrContentprovider/Resources/Private/Templates/Layouts

@@ -1,0 +1,25 @@
+	<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+		  xmlns:h="http://typo3.org/ns/HauptwegNebenwege/LmrSitepackage/ViewHelpers"
+		  data-namespace-typo3-fluid="true">
+
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/DateMenu.html
+-->
+
+<f:section name="content">
+	<div class="news-date-menu">
+		<ul class="news-date-menu__list">
+			<f:for each="{data.single}" key="year" as="months">
+				<li class="news-date-menu__list-item">
+					<f:link.action class="news-date-menu__anchor{f:if(condition: '{0:year} == {0:overwriteDemand.year}', then: ' news-date-menu__anchor--current')}" pageUid="{listPid}" arguments="{overwriteDemand: {year: year}}">
+						{year}
+						<span class="news-date-menu__enum">({h:php.arraySum(array: months)} Einträge)</span>
+					</f:link.action>
+				</li>
+			</f:for>
+		</ul>
+	</div>
+</f:section>
+</html>

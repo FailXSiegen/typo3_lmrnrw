@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2017-09-18T09:30:00Z">
+		<header/>
+		<body>
+			<trans-unit id="tt_content.header_layout.altLabels.0">
+				<source>Standard (Überschrift h3)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.altLabels.1">
+				<source>Hauptüberschrift h1</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.altLabels.2">
+				<source>Überschrift h2</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.altLabels.3">
+				<source>Überschrift h3</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.altLabels.4">
+				<source>Überschrift h4</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

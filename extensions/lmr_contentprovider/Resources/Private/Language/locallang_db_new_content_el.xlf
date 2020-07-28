@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2017-12-03T20:48:30+00:00" product-name="lmr_contentprovider">
+    <header/>
+    <body>
+      <trans-unit id="wizards.newContentElement.header_image_title" xml:space="preserve">
+        <source>Header-Bild</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.header_image_description" xml:space="preserve">
+        <source>Headerbild mit optionalem Text und Verlinkung</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.teaser_title" xml:space="preserve">
+        <source>Teaser-Box</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.teaser_description" xml:space="preserve">
+        <source></source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,31 @@
+mod.web_layout.BackendLayouts.start {
+	title = Startseite
+	config.backend_layout {
+		colCount = 3
+		rowCount = 2
+		rows {
+			1 {
+				columns {
+					1 {
+						name = Header
+						colPos = 20
+						colspan = 3
+					}
+				}
+			}
+			2 {
+				columns {
+					1 {
+						name = Content
+						colPos = 0
+						colspan = 2
+					}
+					2 {
+						name = Aside
+						colPos = 1
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,117 @@
+<?php
+return [
+    'BE' => [
+        'debug' => false,
+        'explicitADmode' => 'explicitAllow',
+        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$cERRMUk0TnRZSkFjVDNmUg$ryeKfAP+bV0oyI9n751LPePrGSaBV752XiH8nwd0Q6E',
+        'loginSecurityLevel' => 'normal',
+        'passwordHashing' => [
+            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
+            'options' => [],
+        ],
+    ],
+    'DB' => [
+        'Connections' => [
+            'Default' => [
+                'charset' => 'utf8mb4',
+                'driver' => 'mysqli',
+                'host' => 'db',
+                'password' => '1234',
+                'port' => 3306,
+                'tableoptions' => [
+                    'charset' => 'utf8mb4',
+                    'collate' => 'utf8mb4_unicode_ci',
+                ],
+                'user' => 'user',
+            ],
+        ],
+    ],
+    'EXT' => [],
+    'EXTENSIONS' => [
+        'backend' => [
+            'backendFavicon' => '',
+            'backendLogo' => '',
+            'loginBackgroundImage' => '',
+            'loginFootnote' => 'made with a 😃 and 💖 by PSVneo',
+            'loginHighlightColor' => '',
+            'loginLogo' => '',
+        ],
+        'extensionmanager' => [
+            'automaticInstallation' => '1',
+            'offlineMode' => '0',
+        ],
+        'gridelements' => [
+            'additionalStylesheet' => '',
+            'disableAutomaticUnusedColumnCorrection' => '0',
+            'disableCopyFromPageButton' => '0',
+            'disableDragInWizard' => '0',
+            'fluidBasedPageModule' => '0',
+            'nestingInListModule' => '0',
+            'overlayShortcutTranslation' => '0',
+        ],
+        'news' => [
+            'advancedMediaPreview' => '1',
+            'archiveDate' => 'date',
+            'categoryBeGroupTceFormsRestriction' => '0',
+            'categoryRestriction' => '',
+            'contentElementPreview' => '1',
+            'contentElementRelation' => '1',
+            'dateTimeNotRequired' => '0',
+            'hidePageTreeForAdministrationModule' => '0',
+            'manualSorting' => '0',
+            'mediaPreview' => 'false',
+            'prependAtCopy' => '1',
+            'resourceFolderImporter' => '/news_import',
+            'rteForTeaser' => '0',
+            'showAdministrationModule' => '1',
+            'showImporter' => '0',
+            'slugBehaviour' => 'unique',
+            'storageUidImporter' => '1',
+            'tagPid' => '1',
+        ],
+        't3adminer' => [
+            'IPaccess' => '',
+            'applyDevIpMask' => '0',
+            'exportDirectory' => 'fileadmin',
+        ],
+    ],
+    'FE' => [
+        'debug' => false,
+        'loginSecurityLevel' => 'normal',
+        'passwordHashing' => [
+            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
+            'options' => [],
+        ],
+    ],
+    'GFX' => [
+        'processor' => 'GraphicsMagick',
+        'processor_allowTemporaryMasksAsPng' => false,
+        'processor_colorspace' => 'RGB',
+        'processor_effects' => false,
+        'processor_enabled' => true,
+        'processor_path' => '/usr/bin/',
+        'processor_path_lzw' => '/usr/bin/',
+    ],
+    'MAIL' => [
+        'transport' => 'sendmail',
+        'transport_sendmail_command' => ' -t -i ',
+        'transport_smtp_encrypt' => '',
+        'transport_smtp_password' => '',
+        'transport_smtp_server' => '',
+        'transport_smtp_username' => '',
+    ],
+    'SYS' => [
+        'devIPmask' => '',
+        'displayErrors' => 0,
+        'encryptionKey' => '0TiB05xaguqbFsim2TVkizy939PYEBhU4mOTvQY6yarQSiwXFmVbv9jHjCVQ07revhjPnqq0KEVH7JUxVsAEYTMXl2Hz13U4',
+        'exceptionalErrors' => 4096,
+        'features' => [
+            'unifiedPageTranslationHandling' => true,
+        ],
+        'sitename' => '',
+        'systemMaintainers' => [
+            2,
+            17,
+        ],
+    ],
+];

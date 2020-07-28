@@ -1,0 +1,21 @@
+<div class="breadcrumb">
+	<div class="container__inner container__inner--wide breadcrumb__inner">
+		<ul class="breadcrumb__list">
+			<li class="breadcrumb__list-item">
+				<a class="breadcrumb__anchor" href="/">lmr-nrw.de</a>
+			</li>
+			<f:for each="{navigationBreadcrumb}" as="navigationItem" iteration="iteration">
+				<li class="breadcrumb__list-item">
+					<f:if condition="{iteration.isLast}">
+						<f:then>
+							<strong class="breadcrumb__anchor breadcrumb__anchor--current">{navigationItem.title}</strong>
+						</f:then>
+						<f:else>
+							<a class="breadcrumb__anchor" href="{navigationItem.link}">{navigationItem.title}</a>
+						</f:else>
+					</f:if>
+				</li>
+			</f:for>
+		</ul>
+	</div>
+</div>

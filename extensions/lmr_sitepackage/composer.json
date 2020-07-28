@@ -1,0 +1,13 @@
+{
+	"name": "hauptweg-nebenwege/lmr-sitepackage",
+	"type": "typo3-cms-extension",
+	"autoload": {
+		"psr-4": {
+			"HauptwegNebenwege\\LmrSitepackage\\": "Classes/"
+		}
+	},
+	"replace": {
+		"lmr_sitepackage": "self.version",
+		"hauptweg-nebenwege/lmr-sitepackage": "self.version"
+	}
+}

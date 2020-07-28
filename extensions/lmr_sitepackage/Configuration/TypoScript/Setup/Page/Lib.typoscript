@@ -1,0 +1,72 @@
+#
+# Leere p-tags entfernen
+#
+lib.parseFunc.nonTypoTagStdWrap.encapsLines.wrapNonWrappedLines = |
+lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.wrapNonWrappedLines = |
+
+lib.parseFunc_RTE {
+	nonTypoTagStdWrap.encapsLines {
+		# Umschließende Tags
+		# encapsTagList = div,p,pre,h1,h2,h3,h4,h5,h6,blockquote
+
+		# alle DIV-Tags in <p> umwandeln
+		#remapTag.DIV = p
+
+		# alle noch nicht umschlossenen Zeilen mit <p> wrappen
+		nonWrappedTag = p
+
+		# Leerzeilen mit kodiertem Leerzeichen ersetzen
+		# innerStdWrap_all.ifBlank = <span style="color:red; background: yellow; padding: 10px;">I am an empty paragraph. Please remove me in TYPO3 backend.</span>
+
+		# hier wird die – häufig beklagte – Klasse bodytext entfernt
+		addAttributes.P.class = paragraph
+
+		# addAttributes nur einsetzen, wenn noch kein Attribut vorhanden
+		# addAttributes.P.class.setOnly=blank
+	}
+
+	externalBlocks {
+		blockquote {
+			stripNL = 1
+			stdWrap.wrap = <figure class="blockquote">|</figure>
+			# remove t3-default style attributes from blockquote tag
+		}
+
+		table {
+			stdWrap.HTMLparser.tags.table.fixAttrib.class.list = contenttable, contenttable-decorated
+		}
+
+		ul {
+			stripNL = 1
+			stdWrap {
+				parseFunc = < lib.parseFunc
+				HTMLparser = 1
+				HTMLparser {
+					tags.ul.fixAttrib.class {
+						default = list-unordered
+					}
+					keepNonMatchedTags = 1
+				}
+			}
+		}
+
+		ol {
+			stripNL = 1
+			stdWrap {
+				parseFunc = < lib.parseFunc
+				HTMLparser = 1
+				HTMLparser {
+					tags.ul.fixAttrib.class {
+						default = list-ordered
+					}
+					keepNonMatchedTags = 1
+				}
+			}
+		}
+	}
+}
+
+lib.parseFuncNoPTagWrap < lib.parseFunc
+lib.parseFuncNoPTagWrap {
+	nonTypoTagStdWrap.encapsLines >
+}

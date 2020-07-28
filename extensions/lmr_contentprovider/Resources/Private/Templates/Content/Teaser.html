@@ -1,0 +1,20 @@
+<f:if condition="{data.tx_lmrcontentprovider_brow}">
+    {data.tx_lmrcontentprovider_brow}<br />
+</f:if>
+
+<f:if condition="{data.header}">
+    {data.header}<br />
+</f:if>
+
+<f:if condition="{data.subheader}">
+    {data.subheader}<br />
+</f:if>
+
+<f:if condition="{data.bodytext}">
+    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html><br />
+</f:if>
+
+<f:if condition="{data.header_link}">
+    <f:link.page pageUid="{data.header_link}">{data.header_link}</f:link.page><br />
+</f:if>
+

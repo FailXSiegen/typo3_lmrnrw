@@ -1,0 +1,17 @@
+lib.cookieNotice = FLUIDTEMPLATE
+lib.cookieNotice {
+
+	file = EXT:{$globals.sitepackageKey}/Subpackages/CookieNotice/Resources/Private/Templates/CookieNotice.html
+
+	settings {
+		dataPrivacyPageUid = {$globals.nav.dataPrivacy}
+		llFile = LLL:EXT:{$globals.sitepackageKey}/Subpackages/CookieNotice/Resources/Private/Language/locallang.xlf:
+
+	}
+	variables {
+
+	}
+
+}
+
+page.1502205400 < lib.cookieNotice

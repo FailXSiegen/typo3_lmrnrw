@@ -1,0 +1,92 @@
+// Hinweis: In der Produktionsphase no_cache = 1 - ansonsten: 0
+page.config.no_cache = 0
+
+page = PAGE
+
+config.noPageTitle = 1
+page {
+	headerData {
+		70 = TEXT
+		70.value = <title>
+
+		71 = TEXT
+		71.data = leveltitle: -2
+		71.if.negate = 1
+		71.if.value.data = leveltitle: -2
+		71.if.equals = www.lmr-nrw.de
+		71.wrap = |:&nbsp;
+
+		72 = TEXT
+		72.field = subtitle // title
+		72.wrap = |&nbsp;
+
+		73 = TEXT
+		73.value =  | Landesmusikrat NRW </title>
+
+	}
+}
+
+
+## FÜR RSS
+rss2 = PAGE
+rss2 {
+	typeNum = 100
+	#Leeren von 10
+	10 >
+	#Befüllen mit tt_news
+	10 < plugin.tt_news
+	#Leeren von pid_list
+	10.pid_list >
+	#Wert für pid_list aus den Constanten
+	10.pid_list = {$plugin.tt_news.pid_list}
+	#Wert für singlepid aus den Constanten
+	10.singlePid = {$plugin.tt_news.singlePid}
+	10.defaultCode = XML
+	#Format festlegen - hier rss2
+	10.displayXML.xmlFormat = rss2
+	config {
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:text/xml
+		no_cache = 1
+		xhtml_cleaning = 0
+	}
+}
+
+rss091 = PAGE
+rss091 < rss2
+rss091 {
+	typeNum = 101
+	10.displayXML.xmlFormat = rss091
+}
+
+rdffeed = PAGE
+rdffeed < rss2
+rdffeed {
+	typeNum = 102
+	10.displayXML.xmlFormat = rdf
+	#ggf. noch ein Feedimage vergeben
+	#10.displayXML.xmlIcon = fileadmin/templates/img/rdf.gif
+}
+
+atom1 = PAGE
+atom1 < rss2
+atom1 {
+	typeNum = 103
+	10.displayXML.xmlFormat = atom1
+}
+
+
+## FÜR RSS
+page.headerData.80 = HTML
+page.headerData.80.value = <link rel="alternate" type="application/rss+xml" title="RSS von lmr-nrw.de" href="http://www.lmr-nrw.de/rss.xml">
+config.tx_realurl_enable = 0
+
+
+// MS
+config.tx_realurl_enable = 0
+config.baseUrl = http://v62.lmr-nrw.lokal/
+config.absRefPrefix = /
+
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_sitepackage/Configuration/TypoScript/Setup/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_sitepackage/Subpackages/" extensions="setup.typoscript">

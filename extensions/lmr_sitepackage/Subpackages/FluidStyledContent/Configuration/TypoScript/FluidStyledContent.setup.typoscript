@@ -1,0 +1,5 @@
+lib.contentElement.templateRootPaths.20 = EXT:{$globals.sitepackageKey}/Subpackages/FluidStyledContent/Resources/Private/Templates/
+lib.contentElement.partialRootPaths.20 = EXT:{$globals.sitepackageKey}/Subpackages/FluidStyledContent/Resources/Private/Partials/
+lib.contentElement.layoutRootPaths.20 = EXT:{$globals.sitepackageKey}/Subpackages/FluidStyledContent/Resources/Private/Layouts/
+
+<INCLUDE_TYPOSCRIPT: source="DIR:./Plugins">

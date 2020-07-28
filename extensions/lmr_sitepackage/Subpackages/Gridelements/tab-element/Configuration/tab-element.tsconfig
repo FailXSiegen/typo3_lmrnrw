@@ -1,0 +1,24 @@
+tx_gridelements.setup.tab-element {
+	icon = EXT:lmr_sitepackage/Subpackages/Gridelements/tab-element/Resources/Public/tab-element.png
+	title = Tab-Element
+	horizontal = 0
+	topLevelLayout = 0
+	description (
+		Fügt ein Tab-Element ein, in welchem Contentelemente als Tabs dargestellt werden.
+	)
+	frame = 1
+	config {
+		colCount = 1
+		rowCount = 1
+		rows {
+			1 {
+				columns {
+					1 {
+						name = Tab-Content
+						colPos = 0
+					}
+				}
+			}
+		}
+	}
+}

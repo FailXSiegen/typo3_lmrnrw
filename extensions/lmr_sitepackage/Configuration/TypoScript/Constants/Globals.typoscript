@@ -1,0 +1,55 @@
+#
+# Konfiguration der Website Konstanten
+#
+
+globals {
+	sitepackageKey = lmr_sitepackage
+
+	# Navigation
+	nav.home = 118
+	nav.main = 118
+	nav.meta = 321
+	#nav.footer = 6
+	# nav.contact = 5
+	# nav.faq = 9
+	# nav.dataPrivacy = 12
+	# nav.search = X
+
+	menuATagTitleFields = nav_title // title
+
+	# StdWrap
+	stdLinkWrap = <span>|</span>
+
+	coworker {
+		singlePid = 291
+		storagePid = 49,223
+		contactFormContentElement = 1575
+	}
+
+	publications {
+		listView = 293
+	}
+
+#	events {
+#		moreLabel = weiterlesen
+#		singlePid = 299
+#		storagePid = 298
+#	}
+
+}
+
+# CSC
+styles {
+	content {
+		imgtext.layoutKey = data
+		imgtext.textMargin = 20
+		imgtext.responsive = 1
+		imgtext.maxW = 660
+		imgtext.maxWInText = 660
+		imgtext.linkWrap.width = 660
+		uploads.filesizeBytesLabels = " | KB| MB| GB"
+	}
+}
+
+# Set default headline to h3
+content.defaultHeaderType = 2
