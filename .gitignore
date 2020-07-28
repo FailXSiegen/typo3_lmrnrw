@@ -1,4 +1,5 @@
 .env
+.database
 .idea/
 .Build
 .php_cs.cache
