@@ -74,6 +74,13 @@ return [
             'applyDevIpMask' => '0',
             'exportDirectory' => 'fileadmin',
         ],
+        'webp' => [
+            'convert_all' => '1',
+            'converter' => 'Plan2net\\Webp\\Converter\\MagickConverter',
+            'mime_types' => 'image/jpeg,image/png',
+            'parameters' => 'image/jpeg::-quality 85 -define webp:lossless=false|image/png::-quality 75 -define webp:lossless=true',
+            'silent' => '0',
+        ],
     ],
     'FE' => [
         'debug' => false,
