@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f82b5e052710b328405ac8b1cb15e602",
+    "content-hash": "437fe7b708dd748b9dfbb463fe8b34b3",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -1133,6 +1133,115 @@
             "time": "2019-03-17T10:59:42+00:00"
         },
         {
+            "name": "matthiasmullie/minify",
+            "version": "1.3.63",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/minify.git",
+                "reference": "9ba1b459828adc13430f4dd6c49dae4950dc4117"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/9ba1b459828adc13430f4dd6c49dae4950dc4117",
+                "reference": "9ba1b459828adc13430f4dd6c49dae4950dc4117",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "matthiasmullie/path-converter": "~1.1",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.0",
+                "matthiasmullie/scrapbook": "~1.0",
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "psr/cache-implementation": "Cache implementation to use with Minify::cache"
+            },
+            "bin": [
+                "bin/minifycss",
+                "bin/minifyjs"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\Minify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "minify@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CSS & JavaScript minifier, in PHP. Removes whitespace, strips comments, combines files (incl. @import statements and small assets in CSS files), and optimizes/shortens a few common programming patterns.",
+            "homepage": "http://www.minifier.org",
+            "keywords": [
+                "JS",
+                "css",
+                "javascript",
+                "minifier",
+                "minify"
+            ],
+            "time": "2020-01-21T20:21:08+00:00"
+        },
+        {
+            "name": "matthiasmullie/path-converter",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/path-converter.git",
+                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/path-converter/zipball/e7d13b2c7e2f2268e1424aaed02085518afa02d9",
+                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\PathConverter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "pathconverter@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Relative path converter",
+            "homepage": "http://github.com/matthiasmullie/path-converter",
+            "keywords": [
+                "converter",
+                "path",
+                "paths",
+                "relative"
+            ],
+            "time": "2019-02-05T23:41:09+00:00"
+        },
+        {
             "name": "nikic/php-parser",
             "version": "v4.7.0",
             "source": {
@@ -1375,6 +1484,52 @@
             ],
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "time": "2020-06-27T10:12:23+00:00"
+        },
+        {
+            "name": "plan2net/webp",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/plan2net/webp.git",
+                "reference": "43242219b865d3209f6603d31b79467c67c11844"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/plan2net/webp/zipball/43242219b865d3209f6603d31b79467c67c11844",
+                "reference": "43242219b865d3209f6603d31b79467c67c11844",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "typo3/cms-core": "^10.4"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "Plan2net\\Webp\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Wolfgang Klinger",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Martin Kutschker",
+                    "role": "reStructuredText Documentation"
+                },
+                {
+                    "name": "Team Wonderland",
+                    "role": "Support and review"
+                }
+            ],
+            "description": "Creates WebP copies for images (TYPO3 CMS)",
+            "homepage": "https://www.plan2.net/",
+            "time": "2020-06-22T09:48:49+00:00"
         },
         {
             "name": "psr/cache",
@@ -3896,6 +4051,50 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2020-05-20T08:37:50+00:00"
+        },
+        {
+            "name": "t3/min",
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/t--3/min.git",
+                "reference": "49a29b8db0095162de8e49b96828b3628a8179f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/t--3/min/get/49a29b8db0095162de8e49b96828b3628a8179f9.zip",
+                "reference": "49a29b8db0095162de8e49b96828b3628a8179f9",
+                "shasum": ""
+            },
+            "require": {
+                "matthiasmullie/minify": "^1.3",
+                "php": ">=7.2"
+            },
+            "replace": {
+                "arminvieweg/tinysource": "*",
+                "instituteweb/min": "*"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "T3\\Min\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Armin Vieweg",
+                    "email": "armin@v.ieweg.de",
+                    "homepage": "http://v.ieweg.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Extends TYPO3's compressor for JS and CSS with minifier. This may save you up to 60% of default compressed file size. Also compresses HTML output of TYPO3. Full composer support.",
+            "homepage": "https://extensions.typo3.org/extension/min/",
+            "time": "2020-06-23T16:12:48+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
