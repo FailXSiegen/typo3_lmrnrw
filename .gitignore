@@ -1,5 +1,6 @@
 .env
 .database
+deploy_rsa
 .idea/
 .Build
 .php_cs.cache

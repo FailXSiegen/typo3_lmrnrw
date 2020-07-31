@@ -1,12 +1,11 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:mi="http://typo3.org/ns/Smichaelsen/MelonImages/ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <div class="stage-item">
 	<div class="stage-item__inner">
 		<f:link.typolink class="stage-item__anchor" parameter="{data.header_link}">
 			<f:if condition="{data_image.0}">
 				<div class="stage-item__image-wrap">
-					<mi:responsivePicture fileReference="{data_image.0}" class="stage-item__image" />
+                    <f:render partial="Media/Type/Image" arguments="{file:data_image.0, dimensions: {width: '1024', height:' 480c'}}" />
 				</div>
 			</f:if>
 			<div class="stage-item__circle-1 circle circle--large"></div>

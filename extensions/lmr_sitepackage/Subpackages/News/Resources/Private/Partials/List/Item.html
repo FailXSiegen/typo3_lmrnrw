@@ -69,7 +69,7 @@
 						<div class="teaser-box__text">
 							<n:removeMediaTags>
 								<f:variable name="teaserText" value="{f:if(condition: newsItem.teaser, then: newsItem.teaser, else: newsItem.bodytext)}" />
-								{teaserText -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries: '1', append: ' ...')}
+								{teaserText -> f:format.stripTags() -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries: '1', append: ' ...')}
 							</n:removeMediaTags>
 						</div>
 					</div>

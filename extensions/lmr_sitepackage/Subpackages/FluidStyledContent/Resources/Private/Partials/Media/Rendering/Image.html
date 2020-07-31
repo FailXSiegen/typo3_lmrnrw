@@ -7,8 +7,20 @@
 			<f:variable name="imageStyle" value="grayscale" />
 		</f:case>
         <f:defaultCase>
-            <f:variable name="imageStyle" value="grayscale" />
+            <f:variable name="imageStyle" value="no-modification" />
         </f:defaultCase>
 	</f:switch>
-	<f:image image="{file}" class="image image--{imageStyle}" width="{dimensions.width}" height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" />
+    <source media="(max-width: 480px)"
+            srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition: \'{dimensions.width} > 480\',then:\'480m\',else:\'{dimensions.width}\')}',cropVariant:'phone')}">
+    <source media="(min-width: 481px) and (max-width: 767px)"
+            srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition: \'{dimensions.width} > 767\',then:\'767m\',else:\'{dimensions.width}\')}',cropVariant:'tablet-small')}">
+    <source media="(min-width: 768px) and (max-width: 999px)"
+            srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition: \'{dimensions.width} > 999\',then:\'999m\',else:\'{dimensions.width}\')}',cropVariant:'tablet-large')}">
+    <source media="(min-width: 1000px)"
+            srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition: \'{dimensions.width} > 1920\',then:\'1920m\',else:\'{dimensions.width}\')}',cropVariant:'default')}">
+    <f:image treatIdAsReference="1"
+             class="image image--{imageStyle}"
+             width="{dimensions.width}"
+             height="{dimensions.height}" src="{file.uid}" title="{file.title}" alt="{file.alternative}"
+             crop="{file.crop}" />
 </html>

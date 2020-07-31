@@ -1,1 +1,9 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lmr_contentprovider/Configuration/TypoScript/setup.typoscript">
+tt_content.lmrcontentprovider_header_image {
+  layoutRootPaths.10 = EXT:lmr_sitepackage/Subpackages/FluidStyledContent/Resources/Private/Layouts/
+  partialRootPaths.10 = EXT:lmr_sitepackage/Subpackages/FluidStyledContent/Resources/Private/Partials/
+}
+tt_content.lmrcontentprovider_teaser {
+  layoutRootPaths.10 = EXT:lmr_sitepackage/Subpackages/FluidStyledContent/Resources/Private/Layouts/
+  partialRootPaths.10 = EXT:lmr_sitepackage/Subpackages/FluidStyledContent/Resources/Private/Partials/
+}

@@ -3,6 +3,9 @@ baseVariants:
   -
     base: 'http://local.lmr-nrw.de/'
     condition: 'getenv("TYPO3_CONTEXT") == "Development"'
+  -
+    base: 'https://lmr-nrw.failx.de'
+    condition: 'getenv("TYPO3_CONTEXT") == "Production/Staging"'
 errorHandling: {  }
 languages:
   -
@@ -19,3 +22,4 @@ languages:
     languageId: '0'
 rootPageId: 118
 routes: {  }
+websiteTitle: ''
