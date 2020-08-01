@@ -1,4 +1,5 @@
 page = PAGE
+page.shortcutIcon = fileadmin/favicon.ico
 page.10 = FLUIDTEMPLATE
 page.10 {
 	file = EXT:{$globals.sitepackageKey}/Resources/Private/Templates/Main.html
