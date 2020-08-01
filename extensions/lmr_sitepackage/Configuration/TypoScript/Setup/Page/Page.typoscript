@@ -35,11 +35,14 @@ page.10 {
 		20 {
 			special = rootline
 			special.range = 1 | -1
-			includeNotInMenu = 1
+			includeNotInMenu = 0
 			as = navigationBreadcrumb
 			levels = 7
 			titleField = nav_title // title
 		}
+    21 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+    21.menus = navigationBreadcrumb,specialMenu
+
 		30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 		30 {
 			special = directory
