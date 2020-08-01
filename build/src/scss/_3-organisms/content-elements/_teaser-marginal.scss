@@ -1,0 +1,15 @@
+.teaser-marginal {
+    padding: 10px 10px $base-line-height/1.5;
+    background: $color_gray-light-alternate;
+    margin-bottom: $base-line-height/1.5;
+}
+
+.teaser-marginal__header {
+    font-weight: 300;
+}
+
+.teaser-marginal__header-single,
+.teaser-marginal__header,
+.teaser-marginal__subheader {
+    margin: 0;
+}

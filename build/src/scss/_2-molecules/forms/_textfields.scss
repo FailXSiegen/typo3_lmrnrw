@@ -1,0 +1,47 @@
+// Text fields
+//
+// Style guide: Forms.01-Textfield
+
+// Regular text input
+//
+// Single lined input field.<br />
+// Attribute "for" in label muss match "id" in input.
+//
+// Markup: <div class="field-wrap field-wrap--input">
+//  <label class="form-label form-label--input" for="...">Label</label>
+//  <input class="form-input form-input--text {{modifier_class}}" id="..." type="text" />
+// </div>
+//
+// :hover - Hover state
+// :focus - Focused state
+// :disabled - Disabled state
+//
+// Style guide: Forms.01-Textfield.Input
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    @include form-fields;
+}
+
+// Textarea
+//
+// Multi lined input field.<br />
+// Attribute "for" in label muss match "id" in textarea.
+//
+// Markup: <div class="field-wrap field-wrap-textarea">
+//  <label class="form-label form-label--textarea" for="...">Label</label>
+//  <textarea class="form-textarea form-input--textarea {{modifier_class}}" id="..."></textarea>
+// </div>
+//
+// :hover - Hover state
+// :focus - Focused state
+// :disabled - Disabled state
+//
+// Style guide: Forms.01-Textfield.Textarea
+textarea {
+    @include form-fields;
+    height: 150px;
+    resize: none;
+}

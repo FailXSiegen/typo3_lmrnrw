@@ -1,0 +1,101 @@
+// Anchors
+//
+// Style guide: TextLevel.Anchors
+
+
+// Regular anchor scheme
+//
+// Markup:	<a class="anchor--regular {{modifier_class}}" href="#" title="">
+//   Link
+// </a>
+//
+// :hover - Hovered
+// :focus - Focused
+// :active - Taking input
+//
+// Style guide: TextLevel.Anchors.01-RegularAnchor
+
+@mixin anchorSchemeRegular {
+  color: $color_red;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: darken($color_red, 10);
+  }
+  &.active,
+  &:active {
+    color: darken($color_red, 20);
+  }
+}
+
+@mixin anchorSchemeWhite {
+  color: $color_white;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: darken($color_white, 20);
+  }
+  &.active,
+  &:active {
+    color: darken($color_white, 30);
+  }
+}
+@mixin anchorSchemeBlack {
+  color: $color_gray-dark;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: lighten($color_gray-dark, 10);
+  }
+  &.active,
+  &:active {
+    color: lighten($color_gray-dark, 20);
+  }
+}
+@mixin anchorSchemeGray {
+  color: $color_gray-dark;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: lighten($color_gray-dark, 10);
+  }
+  &.active,
+  &:active {
+    color: lighten($color_gray-dark, 20);
+  }
+}
+
+.styles-lmr li a,
+.styles-lmr p a,
+.anchor--regular {
+  @include anchorSchemeRegular;
+}
+
+.link-back {
+    @include fontItalic;
+    text-decoration: none;
+    color: $color_gray-dark;
+    font-size: 0.9em;
+    &:before {
+        content: '« ';
+    }
+    &:focus,
+    &:hover {
+        color: darken($color_red, 10);
+    }
+    &.active,
+    &:active {
+        color: darken($color_red, 20);
+    }
+}
+
+
+// Anchor in Paragraph
+//
+// Markup:	<p><a class="{{modifier_class}}" href="#" title="">Link</a></p>
+//
+// :hover - Hovered
+// :focus - Focused
+// :active - Taking input
+//
+// Style guide: TextLevel.Anchors.02-AnchorInParagraph

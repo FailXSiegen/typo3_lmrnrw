@@ -1,0 +1,14 @@
+.logo {
+    display: block;
+    @include clearAfter;
+
+    @include breakpoint($breakpoint_handheld-small) {
+        max-width: 215px;
+    }
+}
+.logo__image {
+    width: 100%;
+    height: auto;
+    font-size: 0;
+    float: left;
+}

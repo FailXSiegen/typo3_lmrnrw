@@ -1,0 +1,19 @@
+
+.ce-textpic.ce-right.ce-intext {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .ce-gallery {
+        width: 33.3333%;
+        flex-shrink: 0;
+    }
+    .ce-bodytext {
+        padding-right: 60px;
+    }
+}
+
+.image-caption {
+    font-size: 13px;
+    padding: $base-line-height/3 0;
+    line-height: 1.66em;
+}

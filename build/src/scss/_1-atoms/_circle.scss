@@ -1,0 +1,40 @@
+
+.circle {
+    display: block;
+    background: $color_red;
+    border-radius: 50%;
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    .stage-item__anchor:hover & {
+        opacity: 0.9;
+    }
+}
+
+.circle--large {
+    width: 600px;
+    height: 600px;
+}
+
+.circle--medium {
+    width: 280px;
+    height: 280px;
+}
+
+.circle--small {
+    width: 120px;
+    height: 120px;
+}
+
+.circle--tiny {
+    width: 40%;
+    height: 40%;
+}
+
+.circle--blend {
+    visibility: hidden;
+    .supports-mix-blend-mode & {
+        visibility: visible;
+        mix-blend-mode: darken;
+    }
+}

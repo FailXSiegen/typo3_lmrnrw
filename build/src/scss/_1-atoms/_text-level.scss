@@ -1,0 +1,41 @@
+// Text level
+//
+// Style guide: TextLevel
+
+// Bold text
+//
+// Having legacy support for &lt;b&gt; tags
+//
+// Markup: <strong>Bold text</strong>
+//
+// Style guide: TextLevel.Bold
+b, strong {
+  font-weight: 600;
+}
+
+// Emphasized/italic text
+//
+// Having legacy support for &lt;i&gt; tags
+//
+// Markup: <em>Emphasized text</em>
+//
+// Style guide: TextLevel.Emphasized
+em, i {
+
+}
+
+// Marked text
+//
+// Usually used for marking search results.
+//
+// Markup: <mark>Marked text</mark>
+//
+// Style guide: TextLevel.Marked
+mark {
+
+}
+
+.uppercase {
+    text-transform: uppercase;
+    //letter-spacing: 0.05em;
+}

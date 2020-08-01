@@ -1,0 +1,47 @@
+.footer__inner {
+}
+
+.footer-col-wrapper {
+    border-top: 1px solid $color_gray-light;
+    padding-top: $base-line-height;
+
+    @include breakpoint($breakpoint_tablet-up) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.footer-col--menu {
+    padding: 0 0 $base-line-height;
+    @include breakpoint($breakpoint_tablet-up) {
+        padding: 0;
+    }
+}
+
+.footer-col--logo-mkw {
+    text-align: center;
+    border-top: 1px solid $color_gray-light;
+    padding: $base-line-height*1.5 0 $base-line-height;
+    @include breakpoint($breakpoint_tablet-up) {
+        text-align: right;
+        padding: 0;
+        border: none;
+    }
+}
+
+.footer__copyright {
+    color: $color_gray;
+    padding-top: $base-line-height;
+    border-top: 1px solid $color_gray-light;
+    padding-bottom: $base-line-height/2;
+    @include breakpoint($breakpoint_tablet-up) {
+        border: none;
+    }
+}
+
+.footer__logo-mkw  {
+    margin: 0 auto;
+    @include breakpoint($breakpoint_tablet-up) {
+        margin: 0;
+    }
+}

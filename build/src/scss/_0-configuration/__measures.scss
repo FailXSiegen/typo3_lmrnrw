@@ -1,0 +1,20 @@
+$breakpoint_handheld: 0 480px;
+$breakpoint_handheld-small: 0 359px;
+$breakpoint_handheld-large: 360px 480px;
+
+$breakpoint_tablet: 481px 999px;
+$breakpoint_tablet-up: 481px;
+
+$breakpoint_handheld-tablet-small: 0 767px;
+$breakpoint_tablet-small: 481px 767px;
+$breakpoint_tablet-small-up: 481px;
+$container-width_tablet-small: $breakpoint_tablet-small-up - 20px;
+
+$breakpoint_tablet-large: 768px 999px;
+$breakpoint_tablet-large-up: 768px;
+$container-width_tablet-large: $breakpoint_tablet-large-up - 20px;
+
+$breakpoint_desktop: 1000px 10000px;
+$breakpoint_desktop-small: 1000px 1279px;
+$breakpoint_desktop-up: 1000px;
+$container-width_desktop: $breakpoint_desktop-up - 20px;

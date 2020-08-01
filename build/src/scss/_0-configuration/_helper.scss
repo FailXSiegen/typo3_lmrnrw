@@ -1,0 +1,13 @@
+.hide-on-handheld {
+    @include breakpoint($breakpoint_handheld) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+.hide-on-desktop {
+    @include breakpoint($breakpoint_desktop-up) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}

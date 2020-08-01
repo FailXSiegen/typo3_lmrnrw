@@ -1,0 +1,86 @@
+// Tables
+//
+// Style guide: Tables
+
+// Regular content table
+//
+// No BEM structure here due to RTE issues.
+// Tables are used to display tabular data.<br/>
+// Do not use tables for layout purposes!
+//
+// Markup: <table class="table-content" summary="">
+//  <thead>
+//   <tr>
+//    <th scope="col">Tabellentitel</th>
+//    <th scope="col">Blindtext</th>
+//    <th class="cell {{modifier_class}}" scope="col">Blindtext</th>
+//    <th scope="col">Blindtext</th>
+//    <th scope="col">Blindtext</th>
+//   </tr>
+//  </thead>
+//  <tbody>
+//   <tr>
+//    <th scope="row">Dies ist Blindtext</th>
+//    <td>100%</td>
+//    <td class="cell {{modifier_class}}">Nein</td>
+//    <td>100%</td>
+//    <td>Nein</td>
+//   </tr>
+//   <tr>
+//    <th scope="row">Dies ist Blindtext</th>
+//    <td>100%</td>
+//    <td class="cell {{modifier_class}}">Ja</td>
+//    <td>100%</td>
+//    <td>Nein</td>
+//   </tr>
+//   <tr>
+//    <th scope="row">Dies ist Blindtext</th>
+//    <td>20%</td>
+//    <td class="cell {{modifier_class}}">Nein</td>
+//    <td>20%</td>
+//    <td>Nein</td>
+//   </tr>
+//   <tr>
+//    <th scope="row">Dies ist Blindtext</th>
+//    <td>100%</td>
+//    <td class="cell {{modifier_class}}">Nein</td>
+//    <td>20%</td>
+//    <td>Ja</td>
+//   </tr>
+//  </tbody>
+// </table>
+//
+// .cell--centered - Example for cells w/ centered style
+// .cell--aligned-right - Example for cells w/ right aligned style
+// .cell--highlighted - Example for cells w/ cell cell--highlighted style
+//
+// Style guide: Tables.Regular
+.table-content {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table-content__caption {
+}
+
+th, td {
+	text-align: left;
+	font-weight: 300;
+}
+
+th {
+	font-weight: 400;
+	width: 100px;
+}
+
+.cell--highlighted {
+	font-weight: 500;
+}
+
+.cell--centered {
+	text-align: center;
+}
+
+.cell--aligned-right {
+	text-align: right;
+}

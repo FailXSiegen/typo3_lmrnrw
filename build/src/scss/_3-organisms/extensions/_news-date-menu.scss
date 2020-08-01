@@ -1,0 +1,39 @@
+.news-date-menu {
+
+}
+
+.news-date-menu__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.news-date-menu__list-item {
+    position: relative;
+    border-top: 1px solid $color_gray-light;
+}
+
+.news-date-menu__anchor {
+    display: block;
+    padding: $base-line-height/4 0;
+    @include anchorSchemeBlack;
+    @include fontBold;
+    text-decoration: none;
+    font-size: 13px;
+    &:hover,
+    &:focus {
+        background: $color_gray-light-alternate;
+    }
+    &:active {
+        background: darken($color_gray-light-alternate, 2);
+    }
+}
+.news-date-menu__anchor--current {
+    color: $color_red;
+}
+
+.news-date-menu__enum {
+    @include fontRegular;
+    font-size: 12px;
+    float: right;
+}

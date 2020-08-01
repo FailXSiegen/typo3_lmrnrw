@@ -1,0 +1,177 @@
+// Regular button
+//
+// A button can consist of a &lt;button&gt; or an &lt;a&gt; element.
+//
+// Please note the role proprty when using an anchor element;
+//
+// Markup: <button class="btn btn--size-regular btn--color-regular {{modifier_class}}">Buttontext</button>
+// <a class="btn btn--size-regular btn--color-dark {{modifier_class}}" href="#" role="button" title="">Buttontext</a>
+// <a class="btn btn--size-regular btn--color-light {{modifier_class}}" href="#" role="button" title="">Buttontext</a>
+//
+// :hover - Hovered / focused state
+// :active - Active state
+// :disabled - Disabled state
+//
+// Style guide: Buttons.01-Button
+
+.btn {
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid $color_gray-dark;
+    font-size: 13px;
+    color: $color_gray-dark;
+    background: transparent;
+    //transition: background-color .5s;
+    @include fontSerifItalic;
+    border-radius: 3px;
+
+    min-height: 32px;
+    line-height: 31px;
+    padding: 0 50px;
+
+    &:focus,
+    &:hover {
+        outline: 0;
+        background: rgba($color_gray-dark, 0.025);
+    }
+
+    &.active,
+    &:active {
+        transition: background-color .0s;
+        background: rgba($color_gray-dark, 0.05);
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+}
+
+
+
+//.btn--primary {
+//    border-color: transparent;
+//    background: $color_red;
+//    color: $color_white;
+//    &:focus,
+//    &:hover {
+//        color: $color_white;
+//        background: lighten($color_red, 3);
+//    }
+//    &.active,
+//    &:active {
+//        color: $color_white;
+//        background: lighten($color_red, 6);
+//    }
+//}
+//
+//.btn--secondary {
+//    border-color: $color_gray-dark;
+//    background: transparent;
+//    color: $color_gray-dark;
+//    &:focus,
+//    &:hover {
+//        color: $color_white;
+//        background: $color_gray-dark;
+//    }
+//    &.active,
+//    &:active {
+//        color: $color_white;
+//        background: lighten($color_gray-dark, 6);
+//    }
+//}
+
+//.btn--color-dark {
+//    border-color: $color_gray-dark;
+//    color: $color_gray-dark;
+//    &:focus,
+//    &:hover {
+//        background: rgba($color_gray-dark, 0.1);
+//    }
+//    &.active,
+//    &:active {
+//        background: rgba($color_gray-dark, 0.15);
+//    }
+//}
+//
+.btn--color-light {
+    border-color: $color_white;
+    color: $color_white;
+    &:focus,
+    &:hover {
+        background: rgba($color_gray-dark, 0.1);
+    }
+    &.active,
+    &:active {
+        background: rgba($color_gray-dark, 0.15);
+    }
+}
+
+//.btn--size-regular {
+//}
+
+// Small button
+//
+// A button can consist of a &lt;button&gt; or an &lt;a&gt; element.
+//
+// Please note the role proprty when using an anchor element;
+//
+// Markup: <button class="btn btn--size-small btn--color-regular {{modifier_class}}">Buttontext</button>
+// <a class="btn btn--size-small btn--color-dark {{modifier_class}}" href="#" role="button" title="">Buttontext</a>
+// <a class="btn btn--size-small btn--color-light {{modifier_class}}" href="#" role="button" title="">Buttontext</a>
+//
+// :hover - Hovered / focused state
+// :active - Active state
+// :disabled - Disabled state
+//
+// Style guide: Buttons.02-ButtonSmall
+
+.btn--size-small {
+    padding: 0 20px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
+}
+
+// Image button
+//
+// A button link w/ image inside
+//
+// Markup: <!--<button class="btn btn--image btn--size-regular btn--color-regular {{modifier_class}}">
+//   <img class="btn__image" src="kss-assets/images/ulead-TV-weiss-1500820821357.png" alt="Aternative text" />
+// </button>
+// <a class="btn btn--image btn--size-regular btn--color-dark {{modifier_class}}" href="#" role="button" title="">
+//   <img class="btn__image" src="kss-assets/images/ulead-TV-weiss-1500820821357.png" alt="Aternative text" />
+// </a>-->
+// <a class="btn btn--image btn--size-regular btn--color-light {{modifier_class}}" href="#" role="button" title="">
+//   <img class="btn__image" src="kss-assets/images/ulead-TV-weiss-1500820821357.png" alt="Aternative text" />
+// </a>
+//
+// :hover - Hovered / focused state
+// :active - Active state
+// :disabled - Disabled state
+//
+// Style guide: Buttons.03-ButtonImage
+
+//.btn--image {
+//    padding: 7px 30px;
+//    background: rgba($color_gray-dark, 0.15);
+//    &:focus,
+//    &:hover {
+//        background: rgba($color_gray-dark, 0.25);
+//    }
+//    &.active,
+//    &:active {
+//        background: rgba($color_gray-dark, 0.35);
+//    }
+//}
+//img.btn__image {
+//    width: auto;
+//    height: 29px;
+//    max-height: 29px;
+//    max-width: 200px;
+//}

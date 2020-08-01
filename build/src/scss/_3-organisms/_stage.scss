@@ -1,0 +1,12 @@
+.stage {
+
+}
+.stage__inner {
+    background: lighten($color_gray-light, 4);
+    padding: 0;
+    width: 100%;
+
+    @include breakpoint($breakpoint_desktop-up) {
+        height: 480px;
+    }
+}

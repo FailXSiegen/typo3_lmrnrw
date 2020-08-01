@@ -1,0 +1,39 @@
+.container--header {
+    //position: relative;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .body--navigation-panel-visible & {
+    }
+}
+
+.header__inner {
+    background: $color_white;
+    border-bottom: 1px solid $color_gray-light;
+    @include clearAfter;
+}
+
+.header__logo {
+    padding-top: 12px;
+    padding-bottom: 10px;
+    width: 255px;
+    float: left;
+    @include breakpoint($breakpoint_desktop-up) {
+    }
+    @include breakpoint($breakpoint_handheld-tablet-small) {
+    }
+}
+
+.header__navigation {
+    padding-top: 70px;
+    @include breakpoint($breakpoint_handheld-tablet-small) {
+        display: none;
+    }
+    @include breakpoint($breakpoint_tablet-large) {
+        padding-top: 10px;
+        clear: left;
+    }
+}

@@ -1,0 +1,106 @@
+.article.news-list__article {
+    padding: 0;
+}
+
+.container--news-detail {
+    //overflow-x: hidden;
+    .grid-col-right {
+        position: relative; // needed for cicle positioning
+    }
+}
+
+.news-single {
+    //overflow-x: hidden;
+    max-width: 100vw;
+    .news-article__header {
+        margin-top: $base-line-height;
+    }
+    .grid-2-1 {
+        margin-bottom: $base-line-height*2;
+    }
+}
+.news-article__headline {
+    margin-top: 0;
+}
+.news-article__back {
+    display: inline-block;
+    margin: 0 0 $base-line-height;
+}
+
+.news-article__circle {
+    position: absolute;
+    right: -60px;
+    top: -180px;
+
+    .news__related--files + & {
+        right: -135px;
+        top: -215px;
+    }
+
+    .news-article__image-wrap ~ & {
+        right: -60px;
+        top: -180px;
+    }
+
+    @include breakpoint($breakpoint_handheld) {
+        .news-article__image-wrap + & {
+            display: none;
+        }
+    }
+}
+
+.news-article__image-wrap {
+    .mediaelement {
+        max-width: 375px;
+    }
+    @include breakpoint($breakpoint_tablet-small) {
+        display: flex;
+        flex-wrap: wrap;
+        .mediaelement {
+            max-width: 50%;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+    }
+
+    ~ .news__related {
+        margin-top: 2em;
+    }
+}
+
+.news-article__text-wrap {
+    .paragraph:first-child {
+        margin-top: 0;
+    }
+}
+
+.news-article__teaser {
+    @include fontSerifBold;
+    font-size: 18px;
+}
+
+@include breakpoint($breakpoint_handheld) {
+    .news-article__image-wrap {
+        > :first-child {
+            display: none;
+            visibility: hidden;
+        }
+    }
+}
+.news-article__handheld-top-image {
+    position: relative;
+    .news-article__circle {
+        right: -175px;
+        top: 60px;
+    }
+    @include breakpoint($breakpoint_tablet-up) {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.news-list__archive-btn {
+    margin: 0 auto $base-line-height*2;
+    display: table;
+}

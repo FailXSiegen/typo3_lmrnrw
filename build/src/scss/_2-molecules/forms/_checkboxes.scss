@@ -1,0 +1,97 @@
+// Checkboxes
+//
+// Attribute "for" in label muss match "id" in input.
+//
+// Markup: <div class="field-wrap field-wrap--checkbox">
+//  <input class="form-checkbox form-input--checkbox {{modifier_class}}" id="..." type="checkbox" />
+//  <label class="form-label form-label--checkbox" for="..."><span></span>Label</label>
+// </div>
+//
+// :focus - Focused state
+// :disabled - Disabled state
+//
+// Style guide: Forms.04-Checkbox
+
+input[type=checkbox] {
+    float: left;
+    position: relative;
+    border: none;
+    display: none;
+    &:hover + .form-label {
+    }
+    &:focus + .form-label {
+    }
+    &:checked + .form-label {
+    }
+
+    &:disabled {
+        + .form-label {
+            pointer-events: none;
+            opacity: 0.3;
+        }
+    }
+
+}
+
+.field-wrap--checkbox {
+    position: relative;
+}
+
+.form-label--checkbox {
+    display: block;
+    position: relative;
+}
+
+.form-label--checkbox {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    padding: 2px 0 2px 36px;
+    line-height: 25px;
+    cursor: pointer;
+
+    .form-checkbox__fake-checkbox {
+        cursor: pointer;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 0;
+        left: 0;
+        background-color: $color_gray-light;
+        border: 2px solid $color_gray;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 9px;
+            height: 5px;
+            background: transparent;
+            top: 6px;
+            left: 7px;
+            border: 3px solid $color_gray-light;
+            border-top: none;
+            border-right: none;
+
+            transform: rotate(-45deg);
+        }
+    }
+
+    &:hover .form-checkbox__fake-checkbox {
+        background-color: lighten($color_gray-light, 6);
+        &:after {
+            border-color: $color_gray;
+        }
+    }
+    &:active .form-checkbox__fake-checkbox {
+        background-color: lighten($color_gray-light, 6);
+        &:after {
+            border-color: $color_gray;
+        }
+    }
+
+    .form-input--checkbox:checked + & {
+        .form-checkbox__fake-checkbox {
+            background-color: $color_red;
+        }
+    }
+}

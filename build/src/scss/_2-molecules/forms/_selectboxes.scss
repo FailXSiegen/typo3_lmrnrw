@@ -1,0 +1,49 @@
+// Select boxes
+//
+// Style guide: Forms.08-Selectbox
+
+// Selectbox
+//
+// Compatible in IE8+
+//
+// Markup: <div class="field-wrap field-wrap--select">
+//   <label class="form-label form-label--select" for="...">Label</label>
+//   <select class="form-select {{modifier_class}}" data-placeholder="Select an option" data-selectbox="true">
+//     <option value="0"> </option>
+//     <option value="1">Option 1</option>
+//     <option value="2">Option 2</option>
+//     <option value="3">Option 3</option>
+//     <option value="4">Option 4</option>
+//   </select>
+// </div>
+//
+// :focus - Focused state
+// :hover - Hover state
+// :disabled - Disabled state
+//
+// Style guide: Forms.08-Selectbox.Selectbox
+
+select {
+    @include form-fields;
+}
+
+// Selectbox w/ many options
+//
+// Markup: <div class="field-wrap field-wrap--select">
+//   <label class="form-label form-label--select" for="...">Label</label>
+//   <select class="form-select {{modifier_class}}" data-placeholder="Select an option" data-selectbox="true">
+//     <option value="0"></option>
+//     <option value="1">Option 1</option>
+//     <option value="2">Option 2</option>
+//     <option value="3">Option 3</option>
+//     <option value="4">Option 4</option>
+//     <option value="5">Option 5</option>
+//     <option value="6">Option 6</option>
+//     <option value="7">Option 7</option>
+//     <option value="8">Option 8</option>
+//     <option value="9">Option 9</option>
+//     <option value="10">Option 10</option>
+//   </select>
+// </div>
+//
+// Style guide: Forms.08-Selectbox.SelectboxManyOptions

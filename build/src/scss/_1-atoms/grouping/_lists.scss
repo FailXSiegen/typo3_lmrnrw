@@ -1,0 +1,152 @@
+// Lists
+//
+// Style guide: Grouping.Lists
+
+// Unordered list
+//
+// The unordered list must be used in each case when usage is semantically possible and correct.<br />
+// Improve overall view by combining items of same type or context to lists, e.g. arguments, attributes, tasks, places etc.<br />
+// List items can contain further lists, ordered or unordered.
+//
+// Markup: <ul class="list-unordered">
+//   <li class="list-unordered__list-item">
+//     Software as a Service (SaaS)
+//   </li>
+//   <li class="list-unordered__list-item">
+//     Infrastructure as a Service (IaaS)
+//   </li>
+//   <li class="list-unordered__list-item">
+//     eCommerce / eProcurement
+//   </li>
+// </ul>
+//
+// Style guide: Grouping.Lists.01UnorderedList
+.list-unordered {
+    padding: 0;
+    list-style: none;
+    @include normalize-margin(1 0);
+    li {
+        position: relative;
+        padding: $base-line-height/4 0;
+        border-top: 1px solid $color_gray-light;
+        border-bottom: 1px solid $color_gray-light;
+        padding-left: 30px;
+
+        + li {
+            border-top: none;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: $color_red;
+            border-radius: 50%;
+        }
+    }
+}
+
+// Ordered list
+//
+// The ordered list must be used in each case when usage is semantically possible and correct.<br />
+// Improve overall view by combining items of same type or context to lists, e.g. arguments, attributes, tasks, places etc.<br />
+// List items in ordered lists are provided with ongoing numbering.<br />
+// List items can contain further lists, ordered or unordered.
+//
+// Markup: <ol class="list-ordered">
+//   <li class="list-ordered__list-item">
+//     Software as a Service (SaaS)
+//   </li>
+//   <li class="list-ordered__list-item">
+//     Infrastructure as a Service (IaaS)
+//   </li>
+//   <li class="list-ordered__list-item">
+//     eCommerce / eProcurement
+//   </li>
+// </ol>
+//
+// Style guide: Grouping.Lists.02OrderedList
+.list-ordered {
+    padding: 0;
+    list-style: none;
+    @include normalize-margin(1.5 0);
+    counter-reset: ordered-list-counter;
+}
+.list-ordered__item {
+    position: relative;
+    padding: $base-line-height 0;
+    padding-left: 80px;
+    border-top: 1px solid $color_gray-light-medium;
+    border-bottom: 1px solid $color_gray-light-medium;
+
+    + .list-ordered__item {
+        border-top: none;
+    }
+
+    &:before {
+        position: absolute;
+        left: 0px;
+        top: $base-line-height*1.5 - 6px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        background-image: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Images/_Development/RSS_Color.svg');
+        background-size: cover;
+
+        content: counter(ordered-list-counter);
+        counter-increment: ordered-list-counter;
+        @include fontRegular;
+        line-height: 50px;
+        text-align: center;
+        color: $color_white;
+        font-size: 24px;
+    }
+}
+
+// Anchor List
+//
+// Use this markup for any list of links. See also 11. Contacts.
+//
+// Link lists should not show any bullets, but matching icons an the links itself (e.g. Download, external Link).
+//
+// Markup: <ul class="list-anchors">
+//   <li class="list-anchors__list-item">
+//     <a class="list-anchors__anchor" href="#">
+//       <i aria-hidden="true" class="icon list-anchors__icon"></i>
+//       <span class="list-anchors__anchor-text">Link</span>
+//     </a>
+//   </li>
+// </ul>
+//
+// Style guide: Grouping.Lists.03AnchorList
+
+ul.list-anchors {
+
+}
+
+// Definition List
+//
+// Markup: <dl class="list-definitions">
+//   <dt class="list-definitions__definition-term">
+//     Term
+//   </dt>
+//   <dd class="list-definitions__definition-description">
+//     Description
+//   </dd>
+// </dl>
+//
+// Style guide: Grouping.Lists.04DefinitionList
+
+.list-definitions {
+
+}
+.list-definitions__definition-term {
+
+}
+.list-definitions__definition-description {
+
+}

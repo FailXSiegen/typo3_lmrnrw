@@ -1,0 +1,341 @@
+.navigation-main__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@include breakpoint($breakpoint_tablet-large-up) {
+
+    .navigation-main__list--level-1 {
+        text-align: right;
+    }
+
+    .navigation-main__anchor {
+        @include anchorSchemeBlack;
+        @include fontBold;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        //letter-spacing: 0.075em;
+        display: block;
+
+        font-size: 13px;
+
+        &:hover,
+        &:focus {
+        }
+        &:active {
+        }
+    }
+
+    .navigation-main__anchor--active {
+        color: $color_red;
+    }
+    .navigation-main__anchor--current {
+        pointer-events: none;
+        color: $color_red;
+    }
+
+    .level-1 {
+
+    }
+
+    .level-1__list-item {
+        display: inline-block;
+        position: relative;
+        margin-left: 20px;
+        &:hover {
+        }
+        > .navigation-main__anchor {
+            line-height: 40px;
+
+            @include breakpoint($breakpoint_tablet-large) {
+                padding-top: 0;
+            }
+        }
+    }
+
+    .level-2__list-item {
+        position: relative;
+
+        &:hover {
+            background: darken($color_gray-light-alternate, 3);
+        }
+    }
+
+    .navigation-main__list--level-2 {
+        pointer-events: none;
+        display: none;
+        width: 320px;
+        text-align: left;
+
+        background: $color_gray-light-alternate;
+        padding: $base-line-height/2 0;
+        margin-left: -20px;
+        @include triangleUp($color_gray-light-alternate, 10px) {
+            left: 35px;
+        };
+        position: absolute;
+
+        .level-1__list-item:hover > &,
+        .navigation-main__anchor:hover + &,
+        .navigation-main__anchor:focus + & {
+            pointer-events: all;
+            display: block;
+        }
+
+        .navigation-main__anchor {
+            padding: $base-line-height/3 20px;
+        }
+
+        &.level-2--reversed {
+            left: auto;
+            right: -20px;
+            &:before {
+                left: auto;
+                right: 35px;
+            }
+        }
+    }
+
+    .level-3__list-item {
+        &:hover {
+            background: darken($color_gray-light-alternate, 3);
+        }
+    }
+
+    .navigation-main__list--level-3 {
+        pointer-events: none;
+        display: none;
+        width: 320px;
+        background: $color_gray-light-alternate;
+        padding: $base-line-height/2 0;
+
+        @include triangleRight(darken($color_gray-light-alternate, 3), 10px) {
+            top: 35px;
+            right: auto;
+            left: 0
+        };
+
+        border-left: 3px solid darken($color_gray-light-alternate, 3);
+
+        position: absolute;
+        top: -$base-line-height/2;
+        left: 320px;
+
+        .level-2__list-item:hover > &,
+        .navigation-main__anchor:hover + &,
+        .navigation-main__anchor:focus + & {
+            pointer-events: all;
+            display: block;
+        }
+
+        &.level-3--reversed {
+            left: auto;
+            right: 320px;
+
+            border-left: none;
+            border-right: 3px solid darken($color_gray-light-alternate, 3);
+            @include triangleLeft(darken($color_gray-light-alternate, 3), 10px) {
+                top: 35px;
+                right: 0;
+                left: auto;
+            };
+            position: absolute;
+
+        }
+    }
+
+}
+
+@include breakpoint($breakpoint_handheld-tablet-small) {
+
+    .navigation-main__list--level-1 {
+        border-bottom: 1px solid $color_gray-light;
+
+    }
+
+    .navigation-main__anchor {
+        @include anchorSchemeBlack;
+        @include fontBold;
+        display: block;
+        min-height: 60px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+
+        padding: $base-line-height/1.5 20px;
+
+        .navigation-main__toggle + & {
+            padding-right: 70px;
+        }
+
+        font-size: 16px;
+        border-top: 1px solid $color_gray-light;
+
+        &:hover,
+        &:focus {
+        }
+        &:active {
+        }
+    }
+
+    .navigation-main__toggle {
+        position: absolute;
+        right: 0;
+        top: 1px;
+        display: block;
+        width: 59px;
+        height: 59px;
+
+        border-left: 1px solid $color_gray-light;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin: 15px;
+            background-image: url("/typo3conf/ext/lmr_sitepackage/Resources/Public/Images/ic_expand_more_black_24px.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .navigation-main__list-item--expanded > & {
+            transform: rotateX(-180deg);
+        }
+    }
+
+
+    //.navigation-main__anchor--current {
+    //    pointer-events: none;
+    //    color: $color_red;
+    //}
+    //
+    //.level-1 {
+    //
+    //}
+    //
+    .level-1__list-item {
+        position: relative;
+    }
+    //
+    .level-2__list-item {
+        position: relative;
+    }
+
+    .navigation-main__list--level-2 {
+        pointer-events: none;
+        max-height: 0;
+        overflow: hidden;
+
+
+        background: lighten($color_gray-light, 3);
+        will-change: max-height;
+        transition-property: max-height;
+        transition-timing-function: cubic-bezier(0.77,0.2,0.05,1.0);
+        transition-duration: 667ms;
+
+        .navigation-main__list-item--expanded > & {
+            pointer-events: all;
+            max-height: 9999px;
+        }
+
+    //    width: 320px;
+    //
+    //    background: $color_gray-light;
+    //    padding: $base-line-height/2 0;
+    //    margin-left: -20px;
+    //    @include triangleUp($color_gray-light, 10px) {
+    //        left: 35px;
+    //    };
+    //    position: absolute;
+    //
+    //    .level-1__list-item:hover > &,
+    //    .navigation-main__anchor:hover + &,
+    //    .navigation-main__anchor:focus + & {
+    //        pointer-events: all;
+    //        display: block;
+    //    }
+    //
+    //    .navigation-main__anchor {
+    //        padding: $base-line-height/3 20px;
+    //    }
+    //
+    //    &.level-2--reversed {
+    //        left: auto;
+    //        right: -20px;
+    //        &:before {
+    //            left: auto;
+    //            right: 35px;
+    //        }
+    //    }
+    }
+    //
+    //.level-3__list-item {
+    //    &:hover {
+    //        background: darken($color_gray-light, 6);
+    //    }
+    //}
+    //
+    .navigation-main__list--level-3 {
+
+        pointer-events: none;
+        max-height: 0;
+        overflow: hidden;
+
+        background: $color_gray-light;
+        will-change: max-height;
+        transition-property: max-height;
+        transition-timing-function: cubic-bezier(0.77,0.2,0.05,1.0);
+        transition-duration: 667ms;
+
+        .navigation-main__list-item--expanded > & {
+            pointer-events: all;
+            max-height: 9999px;
+        }
+        .navigation-main__anchor {
+            border-top-color: darken($color_gray-light, 6);
+        }
+        .navigation-main__toggle {
+            border-left-color: 1px solid $color_gray-light;
+        }
+
+    //    pointer-events: none;
+    //    display: none;
+    //    width: 320px;
+    //    background: darken($color_gray-light, 3);
+    //    padding: $base-line-height/2 0;
+    //
+    //    @include triangleLeft($color_gray-dark, 10px) {
+    //        top: 35px;
+    //        left: -12px;
+    //    };
+    //
+    //    border-left: 3px solid $color_gray-dark;
+    //
+    //    position: absolute;
+    //    top: -$base-line-height/2;
+    //    left: 320px;
+    //
+    //    .level-2__list-item:hover > &,
+    //    .navigation-main__anchor:hover + &,
+    //    .navigation-main__anchor:focus + & {
+    //        pointer-events: all;
+    //        display: block;
+    //    }
+    //
+    //    &.level-3--reversed {
+    //        left: auto;
+    //        right: 320px;
+    //
+    //        border-left: none;
+    //        border-right: 3px solid $color_gray-dark;
+    //        @include triangleRight($color_gray-dark, 10px) {
+    //            top: 35px;
+    //            right: -12px;
+    //        };
+    //        position: absolute;
+    //
+    //    }
+    }
+
+}

@@ -1,0 +1,81 @@
+.navigation-panel-toggle {
+    position: fixed;
+    top: 7px;
+    right: 7px;
+    @include breakpoint($breakpoint_handheld-small) {
+        top: 15px;
+        right: 7px;
+    }
+    display: block;
+    width: 48px;
+    height: 48px;
+    padding: 10px ;
+    box-sizing: border-box;
+    border-radius: 2px;
+
+    &:hover,
+    &:focus {
+        background: $color_gray-light;
+    }
+    &:active {
+        background: darken($color_gray-light, 3);
+    }
+
+    @include breakpoint($breakpoint_tablet-large-up) {
+        display: none;
+    }
+}
+
+.navigation-panel-toggle__bar {
+    background: $color_black;
+    position: absolute;
+    &:first-child {
+        margin-top: 0;
+    }
+
+    display: block;
+    width: 24px;
+    right: 12px;
+    height: 3px;
+
+    will-change: transform, opacity, width;
+    //transition-property: transform, opacity;
+    //transition-timing-function: cubic-bezier(0.77,0.2,0.05,1.0);
+    //transition-duration: .5s;
+    transform-origin: center center;
+    border-radius: 1px;
+
+    &:nth-child(1) {
+        top: 14px;
+    }
+    &:nth-child(2) {
+        top: 23px;
+    }
+    &:nth-child(3) {
+        top: 23px;
+    }
+    &:nth-child(4) {
+        top: 32px;
+    }
+
+
+    .body--navigation-panel-visible & {
+        &:nth-child(1) {
+            opacity: 0;
+            transform: scale(2);
+        }
+
+        &:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+
+        &:nth-child(4) {
+            opacity: 0;
+            transform: scale(2);
+        }
+    }
+}

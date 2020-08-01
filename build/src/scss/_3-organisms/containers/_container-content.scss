@@ -1,0 +1,8 @@
+.container--content {
+    margin-top: -2px;
+    padding: 0.01em 0;
+
+    .container--stage + & {
+        padding-top: $base-line-height*3;
+    }
+}

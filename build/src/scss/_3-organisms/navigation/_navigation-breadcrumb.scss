@@ -1,0 +1,32 @@
+.breadcrumb {
+}
+
+.breadcrumb__list {
+    margin: $base-line-height/2 0 0;
+    padding: 0;
+}
+
+.breadcrumb__list-item {
+    display: inline-block;
+}
+
+.breadcrumb__anchor {
+    display: block;
+    line-height: $base-line-height*1.5;
+    font-size: 13px;
+    color: $color_gray-dark;
+    text-decoration: none;
+    &:after {
+        content: '>';
+        color: $color_red;
+        display: inline-block;
+        margin: 0 0 0 5px;
+    }
+}
+
+.breadcrumb__anchor--current {
+    @include fontRegular;
+    &:after {
+        display: none;
+    }
+}

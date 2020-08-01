@@ -1,0 +1,40 @@
+// Global
+//
+// Weight: -20
+//
+// Style guide: Global
+
+// Fonts
+//
+// Style guide: Global.Fonts
+
+@mixin fontRegular {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+@mixin fontItalic {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+}
+
+@mixin fontBold {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+@mixin fontSerifRegular {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+}
+
+@mixin fontSerifBold {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+}
+
+@mixin fontSerifItalic {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 700;
+}

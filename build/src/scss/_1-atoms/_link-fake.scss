@@ -1,0 +1,8 @@
+.link-fake {
+    @include fontItalic;
+    color: $color_gray-dark;
+    font-size: 0.9em;
+    &:after {
+        content: ' »';
+    }
+}

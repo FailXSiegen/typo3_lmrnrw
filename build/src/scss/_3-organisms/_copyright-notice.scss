@@ -1,0 +1,24 @@
+.copyright-notice {
+
+}
+
+.container__inner.copyright-notice__inner {
+    padding-top: $base-line-height*1.5;
+    padding-bottom: $base-line-height*3;
+
+    @include breakpoint($breakpoint_handheld) {
+        padding-left: $base-line-height;
+        padding-right: $base-line-height;
+    }
+}
+
+.copyright-notice__sign {
+    position: absolute;
+    left: 0;
+}
+
+.copyright-notice__text {
+    padding-left: 30px;
+    position: relative;
+    display: block;
+}

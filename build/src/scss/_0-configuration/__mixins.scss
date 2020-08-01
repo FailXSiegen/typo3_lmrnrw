@@ -1,0 +1,99 @@
+
+@mixin visuallyHidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+@mixin clearAfter {
+	box-sizing: border-box;
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin triangle($color, $size, $type: 'before', $margin: 0) {
+    position: relative;
+    &:#{$type} {
+        content: '';
+        position: absolute;
+        bottom: -$size;
+        left: 50%;
+        margin-left: -($size);
+        margin-bottom: -($margin);
+        width: 0;
+        height: 0;
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        @content;
+    }
+}
+
+@mixin triangleUp($color, $size, $position: 'before', $margin: 0) {
+    position: relative;
+    &:#{$position} {
+        content: '';
+        position: absolute;
+        top: -$size;
+        left: 50%;
+        margin-left: -($size);
+        margin-top: -($margin);
+        width: 0;
+        height: 0;
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+
+        @content;
+    }
+}
+
+@mixin triangleLeft($color, $size, $type: 'before', $margin: 0) {
+    position: relative;
+    &:#{$type} {
+        content: '';
+        position: absolute;
+        right: auto;
+        left: -$size;
+        top: 50%;
+        margin-top: -($size);
+        margin-left: -($margin);
+        width: 0;
+        height: 0;
+        border-bottom: $size solid transparent;
+        border-left: none;
+        border-right: $size solid $color;
+        border-top: $size solid transparent;
+
+        @content;
+    }
+}
+
+@mixin triangleRight($color, $size, $type: 'before', $margin: 0) {
+    position: relative;
+    &:#{$type} {
+        content: '';
+        position: absolute;
+        left: auto;
+        right: -$size;
+        top: 50%;
+        margin-top: -($size);
+        margin-right: -($margin);
+        width: 0;
+        height: 0;
+        border-bottom: $size solid transparent;
+        border-right: none;
+        border-left: $size solid $color;
+        border-top: $size solid transparent;
+
+        @content;
+    }
+}

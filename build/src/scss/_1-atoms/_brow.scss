@@ -1,0 +1,6 @@
+.brow {
+    color: $color_red;
+    font-size: 13px;
+    @include fontBold;
+    text-transform: uppercase;
+}

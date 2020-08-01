@@ -1,0 +1,24 @@
+.styles-lmr { // attached to body and kss-elements
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.66em;
+    color: $color_gray-dark;
+    @include fontRegular;
+}
+
+html {
+    background: #222;
+}
+
+.wrapper {
+    max-width: 1024px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: $color_white;
+    @include clearAfter;
+    overflow-x: hidden;
+
+    @include breakpoint($breakpoint_handheld) {
+        min-height: 70vh;
+    }
+}

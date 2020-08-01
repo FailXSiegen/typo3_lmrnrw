@@ -1,0 +1,97 @@
+// Headlines
+//
+// Style guide: Sections.Headline
+
+// Regular headlines
+//
+// Markup:	<h1>h1 Roboto Condensed</h1>
+// <h2>h2 Roboto Condensed</h2>
+// <h3>h3 Roboto Condensed</h3>
+// <h4>h4 Roboto Condensed</h4>
+// <h5>h5 Montserrat Regular</h5>
+// <h6>h6 Roboto Condensed</h6>
+//
+// Style guide: Sections.Headline.01-RegularHeadlines
+
+.headline {
+	color: $color_headline;
+    @include fontSerifBold;
+    @include normalize-margin(1.667 0 .667);
+    line-height: 1.5em;
+
+    .grid-col-left > .frame-default:first-child & {
+        margin-top: 50px;
+    }
+}
+
+
+h1,
+.headline--1 {
+	@extend .headline;
+    @include fontSerifRegular;
+    @include normalize-margin(.333 0);
+    font-size: 24px;
+}
+
+h2,
+.headline--2 {
+    @include fontSerifRegular;
+	@extend .headline;
+    font-size: 24px;
+}
+
+h3,
+.headline--3 {
+	@extend .headline;
+    font-size: 18px;
+}
+
+h4,
+.headline--4 {
+	@extend .headline;
+    font-size: 18px;
+}
+
+h5,
+.headline--5 {
+	@extend .headline;
+    font-size: 15px;
+}
+
+h6,
+.headline--6 {
+	@extend .headline;
+    font-size: 15px;
+}
+
+.headline--centered {
+    text-align: center;
+}
+
+// Fake headlines
+//
+// Looks like matching headline tag. Use only if correct headline markup is not possible.
+//
+// Markup:	<div class="{{modifier_class}}">A DIV element with a Headline Style</div>
+//
+// .headline--1 - h1 fake
+// .headline--2 - h2 fake
+// .headline--3 - h3 fake
+// .headline--4 - h4 fake
+// .headline--5 - h5 fake
+// .headline--6 - h6 fake
+//
+// Style guide: Sections.Headline.02-FakeHeadlines
+
+// Multi-colored headlines
+//
+// Markup: <h1>
+//   A h1 headline with
+//   <span class="color--blue">multiple colors</span>
+// </h1>
+// <h3 class="h2-alike">
+//   A h3 headline with
+//   <span class="color--blue">h2 style</span>
+// </h3>
+//
+// Style guide: Sections.Headline.03-MultiColoredHeadlines

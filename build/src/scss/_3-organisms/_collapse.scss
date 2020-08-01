@@ -1,0 +1,46 @@
+.collapse {
+
+}
+
+.collapse-trigger {
+    display: block;
+    text-decoration: none;
+    * {
+        text-decoration: none;
+    }
+}
+
+.collapse-trigger__icon {
+    will-change: transform;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    transition-duration: .333s;
+    transform: rotateX(-180deg);
+
+    .collapse-item--expanded & {
+        transform: rotateX(0deg);
+    }
+}
+
+.collapse-target {
+    max-height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform, max-height, opacity;
+    transition-property: transform, max-height, opacity;
+    transition-timing-function: ease-out;
+    transition-duration: .333s;
+
+    .collapse-item--expanded & {
+        max-height: 9999px;
+        opacity: 1;
+    }
+}
+
+.collapse-target__inner {
+    margin: 0;
+    float: left;
+    @include clearAfter;
+}

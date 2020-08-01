@@ -1,0 +1,59 @@
+// Quotes/Citations
+//
+// Style guide: Grouping.Quotes
+
+// Citation
+//
+// Markup: <cite class="cite figure-blockquote__cite">
+//   <a class="cite__anchor figure-blockquote__anchor" href="#" title="">
+//     W3C HTML5 specification
+//   </a>
+// </cite>
+//
+// Style guide: Grouping.Quotes.01-Cite
+
+.cite {
+
+}
+.cite__anchor {
+
+}
+
+// Blockquote
+//
+// @see http://dev.w3.org/html5/spec/grouping-content.html#the-blockquote-element
+//
+// Markup: <figure class="figure-blockquote">
+//   <blockquote class="figure-blockquote__blockquote" cite="//dev.w3.org/html5/spec/grouping-content.html#the-blockquote-element">
+//     <p class="figure-blockquote__paragraph">The blockquote element represents a section that is quoted from another source.</p>
+//   </blockquote>
+//   <figcaption class="figure-blockquote__figcaption">
+//     —
+//     <cite class="cite figure-blockquote__cite">
+//       <a class="cite__anchor figure-blockquote__anchor" href="#" title="">
+//         W3C HTML5 specification
+//       </a>
+//     </cite>
+//   </figcaption>
+// </figure>
+//
+// Style guide: Grouping.Quotes.02-Blockquote
+
+.figure-blockquote {
+
+}
+.figure-blockquote__blockquote {
+
+}
+.figure-blockquote__paragraph {
+
+}
+.figure-blockquote__figcaption {
+
+}
+.figure-blockquote__cite {
+
+}
+.figure-blockquote__anchor {
+
+}
