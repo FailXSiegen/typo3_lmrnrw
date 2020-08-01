@@ -6,8 +6,8 @@ module.exports = {
 			report: 'gzip'
 		},
 		files: {
-			'../src/packages/<%= package.typo3ExtName %>/Resources/Public/Scripts/Scripts.js': [
-				'../src/packages/<%= package.typo3ExtName %>/Resources/Public/Scripts/Scripts.js'
+			'../extensions/<%= package.typo3ExtName %>/Resources/Public/Scripts/Scripts.js': [
+				'../extensions/<%= package.typo3ExtName %>/Resources/Public/Scripts/Scripts.js'
 			]
 		}
 	}

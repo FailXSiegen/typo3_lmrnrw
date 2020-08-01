@@ -10,7 +10,7 @@ module.exports = {
             expand: true,
             cwd: 'src/scss',
             src: ['**/*.scss'],
-            dest: '../src/packages/<%= package.typo3ExtName %>/Resources/Public/Stylesheets/',
+            dest: '../extensions/<%= package.typo3ExtName %>/Resources/Public/Stylesheets/',
             ext: '.css'
         }]
     }

@@ -1,7 +1,7 @@
 module.exports = {
     build: {
         options: {
-            fontPath: '../src/packages/<%= package.typo3ExtName %>/Resources/Public/Fonts/',
+            fontPath: '../extensions/<%= package.typo3ExtName %>/Resources/Public/Fonts/',
             httpPath: '/typo3conf/ext/<%= package.typo3ExtName %>/Resources/Public/Fonts/',
             cssFile: 'src/scss/_0-configuration/_fonts-include.scss',
             formats: {

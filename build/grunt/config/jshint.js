@@ -13,7 +13,7 @@ module.exports = {
 	dist: [
 		'src/javascript/*.js',
 		'src/javascript/**/*.js',
-		'../src/packages/lmr*/**/Private/*.js',
-		'../src/packages/lmr*/**/Private/**/*.js'
+		'../extensions/lmr*/**/Private/*.js',
+		'../extensions/lmr*/**/Private/**/*.js'
 	]
 };

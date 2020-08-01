@@ -52,7 +52,7 @@ module.exports = {
     packages: {
         files: {
             'src/scss/_5-subpackages.scss':
-                '../src/packages/<%= package.typo3ExtName %>/Subpackages/**/Private/**/*.scss'
+                '../extensions/<%= package.typo3ExtName %>/Subpackages/**/Private/**/*.scss'
         },
         options: {
             useSingleQuotes: true,

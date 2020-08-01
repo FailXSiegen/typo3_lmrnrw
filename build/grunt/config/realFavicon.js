@@ -1,10 +1,10 @@
 module.exports = {
 	favicons: {
-		src: '../src/packages/<%= package.typo3ExtName %>/Resources/Public/Images/Favicons/favicon-master.svg',
-		dest: '../src/packages/<%= package.typo3ExtName %>/Resources/Public/Images/Favicons/Generated/',
+		src: '../extensions/<%= package.typo3ExtName %>/Resources/Public/Images/Favicons/favicon-master.svg',
+		dest: '../extensions/<%= package.typo3ExtName %>/Resources/Public/Images/Favicons/Generated/',
 		options: {
 			iconsPath: 'typo3conf/ext/lmr_sitepackage/Resources/Public/Images/Favicons/Generated',
-			html: [ '../src/packages/<%= package.typo3ExtName %>/Resources/Private/Templates/Generated/Favicons.html' ],
+			html: [ '../extensions/<%= package.typo3ExtName %>/Resources/Private/Templates/Generated/Favicons.html' ],
 			design: {
 				ios: {
 					pictureAspect: 'backgroundAndMargin',

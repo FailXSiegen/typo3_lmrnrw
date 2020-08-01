@@ -7,13 +7,13 @@ module.exports = {
 		'node_modules/slick-carousel/slick/slick.min.js',
 		'node_modules/svg-injector/dist/svg-injector.min.js'
     ],
-    dest: '../src/packages/<%= package.typo3ExtName %>/Resources/Public/Scripts/Vendor.js'
+    dest: '../extensions/<%= package.typo3ExtName %>/Resources/Public/Scripts/Vendor.js'
   },
   scripts: {
     src: [
       'src/javascript/**/*.js',
-      '../src/packages/<%= package.typo3ExtName %>/Subpackages/**/Private/**/*.js'
+      '../extensions/<%= package.typo3ExtName %>/Subpackages/**/Private/**/*.js'
     ],
-    dest: '../src/packages/<%= package.typo3ExtName %>/Resources/Public/Scripts/Scripts.js'
+    dest: '../extensions/<%= package.typo3ExtName %>/Resources/Public/Scripts/Scripts.js'
   }
 };

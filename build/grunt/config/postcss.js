@@ -6,6 +6,6 @@ module.exports = {
 		]
 	},
 	dist: {
-		src: '../src/packages/<%= package.typo3ExtName %>/Resources/Public/Stylesheets/*.css'
+		src: '../extensions/<%= package.typo3ExtName %>/Resources/Public/Stylesheets/*.css'
 	}
 };

@@ -3,7 +3,7 @@ module.exports = {
 		force: true
 	},
 	favicons: [
-        '../src/packages/<%= package.typo3ExtName %>/Resources/Private/Templates/Generated/Favicons.html',
-        '../src/packages/<%= package.typo3ExtName %>/Resources/Public/Images/Favicons/**/*'
+        '../extensions/<%= package.typo3ExtName %>/Resources/Private/Templates/Generated/Favicons.html',
+        '../extensions/<%= package.typo3ExtName %>/Resources/Public/Images/Favicons/**/*'
 	]
 };
