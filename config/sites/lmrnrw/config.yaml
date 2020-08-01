@@ -64,6 +64,24 @@ routeEnhancers:
         _arguments:
           category-name: overwriteDemand/categories
       -
+        routePath: '/{date-year}'
+        _controller: 'News::list'
+        _arguments:
+          date-month: 'overwriteDemand/month'
+          date-year: 'overwriteDemand/year'
+          page: '@widget_0/currentPage'
+        requirements:
+          date-year: '\d+'
+      -
+        routePath: '/{date-year}/page-{page}'
+        _controller: 'News::list'
+        _arguments:
+          date-year: 'overwriteDemand/year'
+          page: '@widget_0/currentPage'
+        requirements:
+          date-year: '\d+'
+          page: '\d+'
+      -
         routePath: '/{tag-name}'
         _controller: 'News::list'
         _arguments:
@@ -88,5 +106,24 @@ routeEnhancers:
         type: PersistedAliasMapper
         tableName: tx_news_domain_model_tag
         routeFieldName: slug
+      date-month:
+        type: StaticValueMapper
+        map:
+          january: '01'
+          february: '02'
+          march: '03'
+          april: '04'
+          may: '05'
+          june: '06'
+          july: '07'
+          august: '08'
+          september: '09'
+          october: '10'
+          november: '11'
+          december: '12'
+      date-year:
+        type: StaticRangeMapper
+        start: '2000'
+        end: '2099'
 
 

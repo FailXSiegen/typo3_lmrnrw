@@ -6,3 +6,8 @@
 @import "3-organisms";
 @import "4-templates";
 @import "5-subpackages";
+
+
+ul, ol {
+    list-style-position: inside;
+}

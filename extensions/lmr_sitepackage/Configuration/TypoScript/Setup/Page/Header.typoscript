@@ -12,10 +12,6 @@ page.includeCSS {
 page.headerData.22 = TEXT
 page.headerData.22 {
 	value (
-		<script type="text/javascript">
-			var html = document.getElementsByTagName('html')[0];
-			html.setAttribute('class', 'js');
-		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -39,20 +35,6 @@ page.headerData.123 {
 	)
 }
 
-#
-# Set custom title tag in headerData
-#
-page.headerData.10 = COA
-page.headerData.10 {
-	10 = TEXT
-	10.data = TSFE:page|title
-
-	20 = TEXT
-	20.data = LLL:EXT:{$globals.sitepackageKey}/Resources/Private/Language/locallang.xlf:siteTitle
-	20.noTrimWrap = | - ||
-
-	wrap = <title>|</title>
-}
 
 [globalVar = TSFE:id = {$globals.nav.home}]
 	page.headerData.10.10 >

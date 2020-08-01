@@ -1,32 +1,6 @@
 // Hinweis: In der Produktionsphase no_cache = 1 - ansonsten: 0
 page.config.no_cache = 0
 
-page = PAGE
-
-config.noPageTitle = 1
-page {
-	headerData {
-		70 = TEXT
-		70.value = <title>
-
-		71 = TEXT
-		71.data = leveltitle: -2
-		71.if.negate = 1
-		71.if.value.data = leveltitle: -2
-		71.if.equals = www.lmr-nrw.de
-		71.wrap = |:&nbsp;
-
-		72 = TEXT
-		72.field = subtitle // title
-		72.wrap = |&nbsp;
-
-		73 = TEXT
-		73.value =  | Landesmusikrat NRW </title>
-
-	}
-}
-
-
 ## FÜR RSS
 rss2 = PAGE
 rss2 {
@@ -79,14 +53,6 @@ atom1 {
 ## FÜR RSS
 page.headerData.80 = HTML
 page.headerData.80.value = <link rel="alternate" type="application/rss+xml" title="RSS von lmr-nrw.de" href="http://www.lmr-nrw.de/rss.xml">
-config.tx_realurl_enable = 0
-
-
-// MS
-config.tx_realurl_enable = 0
-config.baseUrl = http://v62.lmr-nrw.lokal/
-config.absRefPrefix = /
-
 
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_sitepackage/Configuration/TypoScript/Setup/" extensions="typoscript">
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_sitepackage/Subpackages/" extensions="setup.typoscript">
