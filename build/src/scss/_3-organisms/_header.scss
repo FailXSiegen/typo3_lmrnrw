@@ -28,7 +28,7 @@
 }
 
 .header__navigation {
-    padding-top: 70px;
+    padding-top: 10px;
     @include breakpoint($breakpoint_handheld-tablet-small) {
         display: none;
     }
