@@ -35,7 +35,8 @@ page.10 {
 		20 {
 			special = rootline
 			special.range = 1 | -1
-			includeNotInMenu = 0
+			includeNotInMenu = 1
+      excludeUidList = 229
 			as = navigationBreadcrumb
 			levels = 7
 			titleField = nav_title // title
