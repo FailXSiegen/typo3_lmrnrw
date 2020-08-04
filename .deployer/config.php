@@ -5,10 +5,15 @@ require 'recipe/typo3.php';
 require 'recipe/rsync.php';
 
 // Hosts
-host('prod')
+host('staging')
     ->hostname('oc-vm87.riconnect.de')
     ->user('c1_ssh_lmr')
     ->set('deploy_path', '/var/www/clients/client1/web1025/web');
+
+host('prod')
+    ->hostname('oc-vm87.riconnect.de')
+    ->user('c116_ssh')
+    ->set('deploy_path', '/var/www/clients/client116/web1001/web');
 
 // Config
 set('bin_folder', './vendor/bin/');
