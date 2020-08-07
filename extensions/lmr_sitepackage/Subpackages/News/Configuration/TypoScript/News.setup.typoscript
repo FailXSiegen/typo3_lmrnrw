@@ -69,3 +69,6 @@ config.recordLinks.tx_news {
     useCacheHash = 1
   }
 }
+
+plugin.tx_news.settings.enablePreviewOfHiddenRecords = 1
+plugin.tx_news.features.requireCHashArgumentForActionArguments = 0

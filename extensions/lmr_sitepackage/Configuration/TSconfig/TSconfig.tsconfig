@@ -1,6 +1,20 @@
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_sitepackage/Configuration/TSconfig/Page" extensions="tsconfig">
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_sitepackage/Subpackages/" extensions="tsconfig">
 
+TCEMAIN.preview {
+  tx_news_domain_model_news {
+    useCacheHash = 1
+    previewPageId = 229
+    useDefaultLanguageRecord = 0
+    fieldToParameterMap {
+      uid = tx_news_pi1[news_preview]
+    }
+    additionalGetParameters {
+      tx_news_pi1.controller = News
+      tx_news_pi1.action = detail
+    }
+  }
+}
 
 TCEFORM.sys_file_reference.crop.config.cropVariants {
   default {
