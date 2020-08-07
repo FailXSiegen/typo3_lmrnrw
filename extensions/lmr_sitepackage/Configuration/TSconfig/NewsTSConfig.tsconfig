@@ -1,0 +1,16 @@
+
+TCEFORM.sys_file_reference.crop.config.cropVariants {
+  default {
+    title = Desktop
+    selectedRatio = NaN
+    allowedAspectRatios {
+      NaN {
+        title = free
+        value = 0.0
+      }
+    }
+  }
+  tablet-large >
+  tablet-small  >
+  phone >
+}
