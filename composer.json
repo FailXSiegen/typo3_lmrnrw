@@ -54,6 +54,7 @@
 		"jigal/t3adminer": "9.3.0",
 		"plan2net/webp": "^3.1",
 		"t3/min": "^1.9",
+		"teaminmedias-pluswerk/ke_search": "^3.1",
 		"hauptweg-nebenwege/lmr-sitepackage": "@dev",
 		"hauptweg-nebenwege/lmr-contentprovider": "@dev"
 	},

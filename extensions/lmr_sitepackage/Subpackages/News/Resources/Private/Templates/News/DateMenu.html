@@ -17,6 +17,18 @@
 						{year}
 						<span class="news-date-menu__enum">({h:php.arraySum(array: months)} Einträge)</span>
 					</f:link.action>
+                    <f:if condition="{0:year} == {0:overwriteDemand.year}">
+                        <div class="news-submenu">
+                            <f:for each="{months}" key="month" as="monthcount">
+                                <f:link.action class="news-date-menu__anchor news-date-menu__submenu {f:if(condition: '{0:year} == {0:overwriteDemand.year} && {1:month} == {1:overwriteDemand.month}', then: ' news-date-menu__anchor--current')}"
+                                               pageUid="{listPid}"
+                                               arguments="{overwriteDemand: {year: year, month: month}}">
+                                    <f:translate extensionName="LmrSitepackage" key="month.{month}" />
+                                    <span class="news-date-menu__enum">({monthcount} Einträge)</span>
+                                </f:link.action>
+                            </f:for>
+                        </div>
+                    </f:if>
 				</li>
 			</f:for>
 		</ul>
