@@ -85,3 +85,48 @@ tt_content.stdWrap.innerWrap.cObject {
 	default = TEXT
 	default.value = |
 }
+
+
+lib.dynamicContent = COA
+lib.dynamicContent {
+  10 = LOAD_REGISTER
+  10 {
+    colPos.cObject = TEXT
+    colPos.cObject {
+      field = colPos
+      ifEmpty.cObject = TEXT
+      ifEmpty.cObject {
+        value = 0
+      }
+    }
+    slide.cObject = TEXT
+    slide.cObject.field = slide
+
+    pageUid.cObject = TEXT
+    pageUid.cObject {
+      field = pageUid
+      ifEmpty.data = TSFE:id
+    }
+    contentUids.cObject = TEXT
+    contentUids.cObject {
+      field = contentUids
+    }
+  }
+  20 = CONTENT
+  20 {
+    table = tt_content
+    select {
+      includeRecordsWithoutDefaultTranslation = 1
+      orderBy = sorting
+      where = {#colPos}={register:colPos}
+      where.insertData = 1
+      pidInList =
+      pidInList.override.data = register:pageUid
+      uidInList =
+      uidInList.override.data = register:contentUids
+    }
+    slide =
+    slide.override.data = register:slide
+  }
+  30 = RESTORE_REGISTER
+}

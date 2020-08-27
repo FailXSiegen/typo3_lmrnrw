@@ -3,7 +3,7 @@
 	document.addEventListener("touchstart", function(){}, true);
 
 	var $body = $('body');
-	var $navigationPanel = $('<div class="navigation-panel">' +
+	var $navigationPanel = $('<div class="navigation-panel collapse-item">' +
 		'<div class="navigation-panel__inner"></div></div>').appendTo($body);
 	var $navigation = $('.navigation-main__list--level-1').clone().appendTo($('.navigation-panel__inner'));
 	var $collapseItems = $('.navigation-main__anchor');

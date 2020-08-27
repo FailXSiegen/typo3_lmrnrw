@@ -53,3 +53,4 @@ styles {
 
 # Set default headline to h3
 content.defaultHeaderType = 2
+plugin.tx_kesearch.templateRootPath = EXT:lmr_sitepackage/Subpackages/KeSearch/Resources/Private/Templates/

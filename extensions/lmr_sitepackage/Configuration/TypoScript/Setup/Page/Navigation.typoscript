@@ -103,7 +103,7 @@ temp.nav.main {
 		special = directory
 		special.value = {$globals.nav.main}
 		1 {
-			wrap = <ul class="navigation-main__list navigation-main__list--level-1 level-1">|</ul>
+			wrap = <ul class="navigation-main__list navigation-main__list--level-1 level-1">|<li class="level-1__list-item search-toggle" data-collapse-trigger="1" role="button" aria-expanded="false" aria-controls="searchbar"></li></ul>
 			NO {
 				wrapItemAndSub = <li class="level-1__list-item" data-page-uid="{field:uid}">|</li>
 				stdWrap.cObject {

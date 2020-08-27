@@ -11,3 +11,76 @@
 ul, ol {
     list-style-position: inside;
 }
+.search-toggle {
+    width: 20px;
+    height: 20px;
+    background-image:url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Images/search.svg');
+    cursor: pointer;
+}
+.searchbox.container__inner {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease-in-out;
+    padding: 0;
+    z-index: 999;
+    position: relative;
+}
+.navigation-panel {
+    .search-toggle {
+        position: fixed;
+        top: 70px;
+        z-index: 999;
+        right: 20px;
+    }
+    .searchbox.container__inner {
+        position: fixed;
+        top: 110px;
+        right: 0;
+        z-index: 999;
+        width: 100%;
+        .kesearch_searchbox {
+            width: 100%;
+            background-color: red;
+            padding: 5px;
+            text-align: right;
+            span.submitbutt input {
+                display: inline-block;
+                background-color: black;
+                color: white;
+                min-width: 1px;
+                max-width: 999px;
+            }
+            #ke_search_sword {
+                float: none;
+                position: relative;
+                top: auto;
+                width: auto;
+            }
+        }
+    }
+}
+
+.header {
+    .kesearch_searchbox {
+        width: 100%;
+        background-color: red;
+        padding: 5px;
+        text-align: right;
+        span.submitbutt input {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            min-width: 1px;
+            max-width: 999px;
+        }
+        #ke_search_sword {
+            float: none;
+            position: relative;
+            top: auto;
+            width: auto;
+        }
+    }
+}
+.tx-kesearch-pi1 #kesearch_results .teaser_icon img {
+    width: auto;
+}
