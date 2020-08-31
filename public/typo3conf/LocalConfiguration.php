@@ -83,6 +83,10 @@ return [
             'storageUidImporter' => '1',
             'tagPid' => '1',
         ],
+        'scheduler' => [
+            'maxLifetime' => '1440',
+            'showSampleTasks' => '1',
+        ],
         't3adminer' => [
             'IPaccess' => '',
             'applyDevIpMask' => '0',
