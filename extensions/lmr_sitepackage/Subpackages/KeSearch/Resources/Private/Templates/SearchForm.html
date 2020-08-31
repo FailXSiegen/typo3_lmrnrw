@@ -27,4 +27,7 @@ Templates/SearchForm.html
         <input id="sortByField" type="hidden" name="tx_kesearch_pi1[sortByField]" value="{sortByField}" />
         <input id="sortByDir" type="hidden" name="tx_kesearch_pi1[sortByDir]" value="{sortByDir}" />
 	</form>
+    <f:if condition="{filters}">
+        <div id="kesearch_filters"><f:render partial="Filters" arguments="{conf: conf, numberofresults: numberofresults, resultrows: resultrows, filters: filters}" /></div>
+    </f:if>
 </f:section>
