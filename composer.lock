@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b79b1ebde383faf3f753506773533fb",
+    "content-hash": "0ec37befbb595823a2b494fc449751a0",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -1178,6 +1178,35 @@
                 "typo3"
             ],
             "time": "2020-04-08T11:03:20+00:00"
+        },
+        {
+            "name": "kitzberger/rte-ckeditor-automails",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kitzberger/rte_ckeditor_automails.git",
+                "reference": "ce045ca4c34f2a47a20594a1cc0794794150e4da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kitzberger/rte_ckeditor_automails/zipball/ce045ca4c34f2a47a20594a1cc0794794150e4da",
+                "reference": "ce045ca4c34f2a47a20594a1cc0794794150e4da",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": ">=8.7.0"
+            },
+            "type": "typo3-cms-extension",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "TYPO3 CKEditor Rich Text Editor: Auto-link mail addresses",
+            "homepage": "https://github.com/kitzberger/rte_ckeditor_automails",
+            "keywords": [
+                "TYPO3 CMS"
+            ],
+            "time": "2020-05-25T14:00:39+00:00"
         },
         {
             "name": "matthiasmullie/minify",

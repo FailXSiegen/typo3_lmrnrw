@@ -58,7 +58,8 @@
 		"teaminmedias-pluswerk/ke_search": "^3.1",
 		"hauptweg-nebenwege/lmr-sitepackage": "@dev",
 		"hauptweg-nebenwege/lmr-contentprovider": "@dev",
-		"josefglatz/toolbar-clear-processedfiles": "^1.0"
+		"josefglatz/toolbar-clear-processedfiles": "^1.0",
+		"kitzberger/rte-ckeditor-automails": "^1.0"
 	},
     "require-dev": {
     },
