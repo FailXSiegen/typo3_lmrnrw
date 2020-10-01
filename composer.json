@@ -1,5 +1,5 @@
 {
-    "name": "riconet/t3-project-customer",
+    "name": "riconet/t3-project-lmrnrw",
     "description": "",
     "license": "GPL-3.0-or-later",
     "repositories": [
@@ -13,12 +13,12 @@
     ],
     "config": {
         "platform": {
-            "php": "7.3"
+            "php": "7.2"
         }
     },
     "require": {
-		"php": "^7.3",
-		"phpdocumentor/reflection-docblock": "5.1.0",
+		"php": "^7.2",
+		"phpdocumentor/reflection-docblock": "^5.1",
 		"typo3/cms-backend": "^10.4",
 		"typo3/cms-core": "^10.4",
 		"typo3/cms-extbase": "^10.4",
