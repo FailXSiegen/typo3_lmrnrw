@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01b813863cb4908c562f8c13fb44d1ad",
+    "content-hash": "7b79b1ebde383faf3f753506773533fb",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -1133,6 +1133,51 @@
                 "typo3"
             ],
             "time": "2020-04-22T15:19:48+00:00"
+        },
+        {
+            "name": "josefglatz/toolbar-clear-processedfiles",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/josefglatz/toolbar_clear_processedfiles.git",
+                "reference": "da67f1f876e8a7d2d298abe80acd2329f0e180e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/josefglatz/toolbar_clear_processedfiles/zipball/da67f1f876e8a7d2d298abe80acd2329f0e180e7",
+                "reference": "da67f1f876e8a7d2d298abe80acd2329f0e180e7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "typo3/cms-core": "^9.5 || ^10"
+            },
+            "replace": {
+                "typo3-ter/toolbar-clear-processedfiles": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "toolbar_clear_processedfiles"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JosefGlatz\\ToolbarClearProcessedfiles\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "description": "TYPO3 backend toolbar button to clear processed files on local storages",
+            "keywords": [
+                "developmentenvironment",
+                "extension",
+                "productivity",
+                "typo3"
+            ],
+            "time": "2020-04-08T11:03:20+00:00"
         },
         {
             "name": "matthiasmullie/minify",
