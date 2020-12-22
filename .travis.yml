@@ -18,7 +18,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv
   -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 install:
-- composer require -q --dev deployer/deployer:~6.4 deployphp/recipes:~6.2
+- composer require -q deployer/deployer:~6.4 deployphp/recipes:~6.2
 addons:
   ssh_known_hosts: oc-vm87.riconnect.de
 before_script:
