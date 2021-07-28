@@ -3,7 +3,7 @@ return [
     'BE' => [
         'debug' => false,
         'explicitADmode' => 'explicitAllow',
-        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$SnNaWVNuTGIyLkVKM0RkYg$08CDS0RiJ7UiAkOSY6dClN9Q/Fnb/G+6zBEOx4yl88I',
+        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$akNES0QwUUtZamIzVGNSVQ$puHTYunR1481a4fDNcM6P+RdzoHMnQbPC3Op73+rW0w',
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -32,7 +32,7 @@ return [
             'backendFavicon' => '',
             'backendLogo' => '',
             'loginBackgroundImage' => '',
-            'loginFootnote' => 'made with a 😃 and 💖 by PSVneo',
+            'loginFootnote' => '',
             'loginHighlightColor' => '',
             'loginLogo' => '',
         ],
@@ -50,6 +50,7 @@ return [
             'overlayShortcutTranslation' => '0',
         ],
         'ke_search' => [
+            'allowEmptySearch' => '1',
             'enableExplicitAnd' => '0',
             'enablePartSearch' => '1',
             'finishNotification' => '0',

@@ -5,7 +5,7 @@ services:
   #======================================================
   typo3:
     container_name: typo3
-    image: riconet/typo3:9.5
+    image: riconet/typo3:10.4
     ports:
       - 80:80
     volumes:

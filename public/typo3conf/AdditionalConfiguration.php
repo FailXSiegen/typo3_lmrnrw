@@ -3,7 +3,6 @@
 if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
-
 $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
     $GLOBALS['TYPO3_CONF_VARS'],
     [
@@ -60,7 +59,7 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
                 'backendFavicon' => '',
                 'backendLogo' => '',
                 //'loginBackgroundImage' => 'EXT:rico_templates/Resources/Public/Images/backend/image.png',
-                'loginFootnote' => 'made with a 😃 and 💖 by PSVneo',
+                'loginFootnote' => '',
                 //'loginHighlightColor' => '#EA6C06',
                 //'loginLogo' => 'EXT:rico_templates/Resources/Public/Images/backend/logo.png',
             ],
