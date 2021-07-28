@@ -2,6 +2,7 @@
 # Css includes
 #
 page.includeCSS {
+	fonts = EXT:{$globals.sitepackageKey}/Resources/Public/Stylesheets/Fonts.css
 	styles = EXT:{$globals.sitepackageKey}/Resources/Public/Stylesheets/Styles.css
 }
 
