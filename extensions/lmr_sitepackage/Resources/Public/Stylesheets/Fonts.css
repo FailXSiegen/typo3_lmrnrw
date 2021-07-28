@@ -3,22 +3,22 @@
     font-style: italic;
     font-weight: 700;
     font-display: swap;
-    src: url('../Fonts/lora-700-italic.eot'); 
-    src: url('../Fonts/lora-700-italic.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/lora-700-italic.woff') format('woff'), 
-        url('../Fonts/Lora-BoldItalic.ttf')  format('truetype'), 
-        url('../Fonts/lora-700-italic.svg#svgFontName') format('svg');
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-700-italic.eot'); 
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-700-italic.eot?#iefix') format('embedded-opentype'),
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-700-italic.woff') format('woff'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/Lora-BoldItalic.ttf')  format('truetype'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-700-italic.svg#svgFontName') format('svg');
   }
   @font-face {
     font-family: 'Lora';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../Fonts/lora-400-normal.eot'); 
-    src: url('../Fonts/lora-400-normal.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/lora-400-normal.woff') format('woff'), 
-        url('../Fonts/Lora-Regular.ttf')  format('truetype'), 
-        url('../Fonts/lora-400-normal.svg#svgFontName') format('svg');
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-400-normal.eot'); 
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-400-normal.eot?#iefix') format('embedded-opentype'),
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-400-normal.woff') format('woff'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/Lora-Regular.ttf')  format('truetype'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-400-normal.svg#svgFontName') format('svg');
   }
  
   @font-face {
@@ -26,11 +26,11 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('../Fonts/lora-700-normal.eot'); 
-    src: url('../Fonts/lora-700-normal.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/lora-700-normal.woff') format('woff'), 
-        url('../Fonts/Lora-Bold.ttf') format('truetype'), 
-        url('../Fonts/lora-700-normal.svg#svgFontName') format('svg');
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-700-normal.eot'); 
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-700-normal.eot?#iefix') format('embedded-opentype'),
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-700-normal.woff') format('woff'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/Lora-Bold.ttf') format('truetype'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/lora-700-normal.svg#svgFontName') format('svg');
   }
  
   @font-face {
@@ -38,11 +38,11 @@
     font-style: italic;
     font-weight: 500;
     font-display: swap;
-    src: url('../Fonts/roboto-500-italic.eot'); 
-    src: url('../Fonts/roboto-500-italic.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/roboto-500-italic.woff') format('woff'), 
-        url('../Fonts/Roboto-MediumItalic.ttf')  format('truetype'), 
-        url('../Fonts/roboto-500-italic.svg#svgFontName') format('svg');
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-500-italic.eot'); 
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-500-italic.eot?#iefix') format('embedded-opentype'),
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-500-italic.woff') format('woff'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/Roboto-MediumItalic.ttf')  format('truetype'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-500-italic.svg#svgFontName') format('svg');
   }
  
   @font-face {
@@ -50,11 +50,11 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../Fonts/roboto-400-normal.eot'); 
-    src: url('../Fonts/roboto-400-normal.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/roboto-400-normal.woff') format('woff'), 
-        url('../Fonts/Roboto-Regular.ttf')  format('truetype'), 
-        url('../Fonts/roboto-400-normal.svg#svgFontName') format('svg');
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-400-normal.eot'); 
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-400-normal.eot?#iefix') format('embedded-opentype'),
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-400-normal.woff') format('woff'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/Roboto-Regular.ttf')  format('truetype'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-400-normal.svg#svgFontName') format('svg');
   }
 
 
@@ -63,9 +63,9 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('../Fonts/roboto-700-normal.eot'); 
-    src: url('../Fonts/roboto-700-normal.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/roboto-700-normal.woff') format('woff'), 
-        url('../Fonts/Roboto-Bold.ttf')  format('truetype'), 
-        url('../Fonts/roboto-700-normal.svg#svgFontName') format('svg');
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-700-normal.eot'); 
+    src: url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-700-normal.eot?#iefix') format('embedded-opentype'),
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-700-normal.woff') format('woff'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/Roboto-Bold.ttf')  format('truetype'), 
+        url('/typo3conf/ext/lmr_sitepackage/Resources/Public/Fonts/roboto-700-normal.svg#svgFontName') format('svg');
   }
