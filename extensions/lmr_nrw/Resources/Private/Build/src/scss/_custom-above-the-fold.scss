@@ -1,0 +1,35 @@
+@import 'variables';
+@import '../../../../Public/Vendor/bootstrap/scss/functions';
+@import '../../../../Public/Vendor/bootstrap/scss/variables';
+@import '../../../../Public/Vendor/bootstrap/scss/mixins';
+
+@each $themeColour, $i in $themeColours {
+    .bg- {
+        @each $opacity, $x in $opacities {
+            &#{$themeColour}-#{$opacity} {
+                background-color: rgba($i, $x);
+            }	
+        }
+    }
+}
+@each $opacity, $x in $opacities {
+    .opacity-#{$opacity} {
+        opacity: $x;
+    }	
+}
+@include media-breakpoint-up(md) {
+    body.default {
+        padding: 0;
+        > header {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+        > main {
+            overflow: hidden;
+            > div {
+                padding-left: 45px;
+                padding-right: 45px;
+            }
+        }
+    }
+}

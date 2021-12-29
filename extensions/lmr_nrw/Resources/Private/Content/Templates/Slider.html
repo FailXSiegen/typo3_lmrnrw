@@ -1,0 +1,57 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <f:asset.css 
+        identifier="slider"
+        href="EXT:lmr_nrw/Resources/Public/StyleSheet/slider.css" />
+    <div 
+        id="c{data.uid}" 
+        class="carousel slide {f:if(condition: data.carousel_crossfade, then:'carousel-fade')}" 
+        data-bs-ride="carousel"
+        data-bs-interval="{f:if(condition:data.carousel_intervall, then:'{data.carousel_intervall}', else:'false')}"
+        >
+        <f:if condition="{data.particle_active}">
+            <f:render partial="Particle" arguments="{_all}" />
+        </f:if>
+        <f:if condition="{data.grid_active}">
+            <f:render partial="Grid" arguments="{_all}" />
+        </f:if>
+        <f:if condition="{data.carousel_indicators}">
+            <div class="carousel-indicators">
+                <f:for each="{content}" as="child" iteration="it">
+                    <button type="button"
+                         data-bs-target="#c{data.uid}" 
+                         data-bs-slide-to="{it.index}" 
+                         class="{f:if(condition: it.isFirst, then:'active')}"
+                          aria-current="{f:if(condition: it.isFirst, then:'true', else:'false')}" 
+                          aria-label="Slide {it.cycle}">
+                        </button>
+                </f:for>
+            </div>
+        </f:if>
+        <div class="carousel-inner">
+            <f:for each="{content}" as="child" iteration="it">
+                <div class="carousel-item {f:if(condition: it.isFirst, then:'active')}">
+                    <f:format.raw>{child.renderedContent}</f:format.raw>
+                    <f:if condition="{data.carousel_captions}">
+                        <div class="carousel-caption d-none d-md-block">
+                            <span class="h3">{child.header -> f:format.nl2br()}</span>
+                            <f:if condition="{child.subheader}">
+                                <p>{child.subheader}</p>
+                            </f:if>
+                        </div>
+                    </f:if>
+                </div>
+            </f:for>
+        </div>
+        <f:if condition="{data.carousel_controls}">
+            <button class="carousel-control-prev" type="button" data-bs-target="#c{data.uid}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#c{data.uid}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+        </f:if>
+    </div>
+</html>

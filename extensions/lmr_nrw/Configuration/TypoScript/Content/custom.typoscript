@@ -1,0 +1,6 @@
+tt_content {
+    counter =< lib.contentElement
+    counter {
+        templateName = Counter
+    }
+}

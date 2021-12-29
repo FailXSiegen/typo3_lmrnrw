@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <f:if condition="{files}">
+        <div id="c{data.uid}" class="{f:render(partial:'Divclasses', arguments:{data:data, classname:'bgimage-container overflow-hidden '})} d-inline-block position-relative">
+            <f:if condition="{data.particle_active}">
+                <f:render partial="Particle" arguments="{_all}" />
+            </f:if>
+            <f:if condition="{data.grid_active}">
+                <f:render partial="Grid" arguments="{_all}" />
+            </f:if>
+            <f:render partial="Media/Rendering/Image" arguments="{file:files.0}" />
+            <div class="{data.bgimage_class} {data.bgimage_position}">
+                <f:for each="{content}" as="child">
+                    <f:format.raw>{child.renderedContent}</f:format.raw>
+                </f:for>
+            </div>
+        </div>
+    </f:if>
+</html>

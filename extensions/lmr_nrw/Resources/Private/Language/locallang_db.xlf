@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-02-07T00:02:05Z" product-name="neurologiq">
+        <header/>
+        <body>
+			<trans-unit id="color.white" xml:space="preserve">
+				<source>White</source>
+			</trans-unit>
+			<trans-unit id="color.grey" xml:space="preserve">
+				<source>Grey</source>
+			</trans-unit>
+			<trans-unit id="color.darkgrey" xml:space="preserve">
+				<source>Darkgrey</source>
+			</trans-unit>
+			<trans-unit id="color.lightgrey" xml:space="preserve">
+				<source>Lightgrey</source>
+			</trans-unit>
+			<trans-unit id="color.red" xml:space="preserve">
+				<source>Red</source>
+			</trans-unit>
+			<trans-unit id="color.darkred" xml:space="preserve">
+				<source>Darkred</source>
+			</trans-unit>
+			<trans-unit id="opacity" xml:space="preserve">
+				<source>Opacity</source>
+			</trans-unit>
+			<trans-unit id="opacity.description" xml:space="preserve">
+				<source>Defines the transparency of the background color or image</source>
+			</trans-unit>
+			<trans-unit id="accordion" xml:space="preserve">
+				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="accordion.title" xml:space="preserve">
+				<source>Accordion from CE</source>
+			</trans-unit>
+			<trans-unit id="accordion.description" xml:space="preserve">
+				<source>Generates an accordion element for each content element and uses headline as accordion title.</source>
+			</trans-unit>
+			<trans-unit id="slider" xml:space="preserve">
+				<source>Slider/Carousel</source>
+			</trans-unit>
+			<trans-unit id="slider.title" xml:space="preserve">
+				<source>Slider from CE</source>
+			</trans-unit>
+			<trans-unit id="slider.description" xml:space="preserve">
+				<source>Generates a slide element for each content element and uses headline and subheadline as slider caption if is active.</source>
+			</trans-unit>
+			<trans-unit id="counter" xml:space="preserve">
+				<source>Counter</source>
+			</trans-unit>
+			<trans-unit id="counter.description" xml:space="preserve">
+				<source>Counts from defined number to defined number if elements gets in to view</source>
+			</trans-unit>
+			<trans-unit id="space.start" xml:space="preserve">
+				<source>Space Left</source>
+			</trans-unit>
+			<trans-unit id="space.end" xml:space="preserve">
+				<source>Space Right</source>
+			</trans-unit>
+			<trans-unit id="bgimage" xml:space="preserve">
+				<source>Container with background-image</source>
+			</trans-unit>
+			<trans-unit id="bgimage.description" xml:space="preserve">
+				<source>Defines a background-image. Does use the height of the image as the min-heigt. Various options for positioning and stretching.</source>
+			</trans-unit>
+			<trans-unit id="bgimage.class" xml:space="preserve">
+				<source>Defines Backgound image behaviour</source>
+			</trans-unit>
+			<trans-unit id="bgimage.class.description" xml:space="preserve">
+				<source>stretch, background positioning, repeat</source>
+			</trans-unit>
+			<trans-unit id="bgimage.position" xml:space="preserve">
+				<source>Defines where the content elements are positioned</source>
+			</trans-unit>
+			<trans-unit id="bgimage.position.description" xml:space="preserve">
+				<source>Top to bottom, left to right</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

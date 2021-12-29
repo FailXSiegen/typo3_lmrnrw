@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5bc2c75d2aba30399a4c3a016158232c",
+    "content-hash": "74968d17f76f06b1e9046cd3f1046b80",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -687,6 +687,32 @@
             "time": "2021-08-09T23:46:54+00:00"
         },
         {
+            "name": "failx/lmr_nrw",
+            "version": "dev-feature/new-template",
+            "dist": {
+                "type": "path",
+                "url": "extensions/lmr_nrw",
+                "reference": "35c6dd9281802ff214516e1c5fafe44b8e71886d"
+            },
+            "require": {
+                "typo3/cms-core": "^10.4"
+            },
+            "replace": {
+                "lmr_nrw": "*"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "Failx\\LMRNRW\\": "Classes/"
+                }
+            },
+            "description": "basic template extension and configs for lmr nrw.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "georgringer/news",
             "version": "8.6.0",
             "source": {
@@ -1080,7 +1106,7 @@
         },
         {
             "name": "hauptweg-nebenwege/lmr-contentprovider",
-            "version": "dev-master",
+            "version": "dev-feature/new-template",
             "dist": {
                 "type": "path",
                 "url": "extensions/lmr_contentprovider",
@@ -1103,7 +1129,7 @@
         },
         {
             "name": "hauptweg-nebenwege/lmr-sitepackage",
-            "version": "dev-master",
+            "version": "dev-feature/new-template",
             "dist": {
                 "type": "path",
                 "url": "extensions/lmr_sitepackage",
@@ -7564,7 +7590,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "hauptweg-nebenwege/lmr-sitepackage": 20,
-        "hauptweg-nebenwege/lmr-contentprovider": 20
+        "hauptweg-nebenwege/lmr-contentprovider": 20,
+        "failx/lmr_nrw": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

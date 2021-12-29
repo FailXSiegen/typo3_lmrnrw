@@ -1,0 +1,13 @@
+styles.content.textmedia.maxW = 1920
+styles.content.textmedia.maxWInText = 1920
+styles.content.textmedia.linkWrap.width = 1920
+styles.content.textmedia.linkWrap.height = 1920
+failx.rootPid = 118
+failx.mainNavigationPid = 118
+failx.socialNavigationPid = 7
+failx.contactMail = info@lmr-nrw.de 
+failx.resourcePath = EXT:lmr_nrw/Resources/
+failx.logoPath = EXT:lmr_nrw/Resources/Public/Images/Logo/Landesmusikrat-NRW-Logo.svg
+failx.logoMobilePath = EXT:lmr_nrw/Resources/Public/Images/Logo/Landesmusikrat-NRW-Logo.svg
+failx.buttonPath = EXT:lmr_nrw/Resources/Public/Icons/menu.svg
+failx.buttonClosePath = EXT:lmr_nrw/Resources/Public/Icons/close.svg

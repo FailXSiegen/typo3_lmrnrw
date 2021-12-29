@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <header id="head" data-rootpid="{rootPageUid}">
+        <div class="container-fluid pt-3 pb-3">
+            <div class="navbar-header navbar-expand-xl row align-items-center">
+                <f:if condition="{logoPath}">
+                    <div class="col-6 col-md-4" itemscope itemtype="http://schema.org/Organization">
+                        <f:link.typolink parameter="{rootPageUid}" class="logo d-none d-xl-block " additionalAttributes="{'itemprop':'url'}">
+                            <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: logoPath}" />
+                        </f:link.typolink>
+                    </div>
+                </f:if>
+                <div class="col-6 col-md-8 d-flex justify-content-end">
+                    <nav id="nav" class="navbar navbar-expand-xl pt-0 me-3" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        <button class="navbar-toggler py-0" 
+                                type="button" 
+                                data-bs-toggle="offcanvas" 
+                                data-bs-target="#offcanvasNavbar" 
+                                aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                    <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: buttonPath}" /> 
+                        </button>
+                        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header d-flex d-xl-none align-items-center">
+                                <f:link.typolink parameter="{rootPageUid}" class="logo logo-mobile d-block d-xxl-none" additionalAttributes="{'itemprop':'url'}">
+                                    <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: logoMobilePath}" />
+                                </f:link.typolink>
+                                <button type="button" class="btn-close text-reset py-0" data-bs-dismiss="offcanvas" aria-label="Close">
+                                    <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: buttonClosePath}" /> 
+                                </button>
+                            </div>
+                            <div class="offcanvas-body px-sm-3 mx-sm-3 mb-sm-3 px-md-4 mx-md-4 px-xl-0 mx-xl-0 mb-xl-0">
+                                <div class="bg-image particle-cloud particle-cloud-navigation d-block d-xl-none position-absolute h-100 w-100 top-100 translate-middle-y">
+                                    <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Icons/particle_cloud.svg'}" /> 
+                                </div>
+                                <div class="nav-wrapper position-relative d-flex flex-column">
+                                    <ul class="navbar-nav pe-3 order-1 flex-fill justify-content-center">
+                                        <f:for each="{mainNavigation}" as="menu">
+                                            <li class="nav-item me-md-5 mb-3 {f:if(condition: menu.current,then:'current')}" itemprop="name">
+                                                <a href="{menu.link}"
+                                                    class="nav-link {f:if(condition: menu.active,then:'active')}"
+                                                    {f:if(condition:menu.target,then: 'target="{menu.target}"')}
+                                                    itemprop="url"
+                                                    title="{menu.title}">
+                                                    {menu.title}
+                                                </a>
+                                            </li>
+                                        </f:for>
+                                    </ul>
+                                    <ul class="d-xl-none navbar-nav social-nav position-relative position-md-absolute bottom-0 end-0 order-3 mt-3">
+                                        <f:for each="{socialNavigation}" as="menu">
+                                            <li class="nav-item {f:if(condition: menu.current,then:'current')}" itemprop="name">
+                                                <a href="{menu.link}"
+                                                    class="nav-link {f:if(condition: menu.active,then:'active')}"
+                                                    {f:if(condition:menu.target,then: 'target="{menu.target}"')}
+                                                    itemprop="url"
+                                                    title="{menu.title}">
+                                                        {menu.title}
+                                                </a>
+                                            </li>
+                                        </f:for>
+                                    </ul>
+                                    <f:link.typolink 
+                                        class="position-relative position-md-absolute bottom-0 start-0 contact-mail f-size-30 f-size-md-40 semibold d-block d-xl-none order-2 mt-auto"
+                                        parameter="{contactMail}">
+                                        {contactMail}
+                                    </f:link.typolink>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                
+            </div>
+
+            
+        </div>
+     
+
+        <f:cObject typoscriptObjectPath="lib.dynamicContent"
+                   data="{
+                    colPos:'1'
+                    }" />
+    </header>
+</html>

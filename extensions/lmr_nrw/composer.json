@@ -1,0 +1,16 @@
+{
+    "name": "failx/lmr_nrw",
+    "type": "typo3-cms-extension",
+    "description": "basic template extension and configs for lmr nrw.",
+    "autoload": {
+      "psr-4": {
+        "Failx\\LMRNRW\\": "Classes/"
+      }
+    },
+    "require": {
+      "typo3/cms-core": "^10.4"
+    },
+    "replace": {
+      "lmr_nrw": "*"
+    }
+  }
