@@ -27,9 +27,29 @@
             </h5>
         </f:case>
         <f:case value="6">
-            <h6 class="text-{positionClass}">
+            <span class="h1 text-{positionClass}">
                 <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
-            </h6>
+            </span>
+        </f:case>
+        <f:case value="7">
+            <span class="h2 text-{positionClass}">
+                <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
+            </span>
+        </f:case>
+        <f:case value="8">
+            <span class="h3 text-{positionClass}">
+                <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
+            </span>
+        </f:case>
+        <f:case value="9">
+            <span class="h4 text-{positionClass}">
+                <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
+            </span>
+        </f:case>
+        <f:case value="10">
+            <span class="h5 text-{positionClass}">
+                <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
+            </span>
         </f:case>
         <f:case value="100">
             <f:comment> -- do not show header -- </f:comment>

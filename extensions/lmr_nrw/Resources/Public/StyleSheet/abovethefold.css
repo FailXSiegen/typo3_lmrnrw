@@ -10556,18 +10556,14 @@ progress {
 }
 
 @media (min-width: 768px) {
-  body.default {
-    padding: 0;
+  body {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
-  body.default > header {
-    padding-left: 45px;
-    padding-right: 45px;
-  }
-  body.default > main {
-    overflow: hidden;
-  }
-  body.default > main > div {
-    padding-left: 45px;
-    padding-right: 45px;
+  body > header {
+    margin-left: -15px;
+    max-width: 320px;
   }
 }

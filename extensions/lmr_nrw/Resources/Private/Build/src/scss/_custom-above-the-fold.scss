@@ -17,19 +17,15 @@
         opacity: $x;
     }	
 }
-@include media-breakpoint-up(md) {
-    body.default {
-        padding: 0;
+body {    
+    @include media-breakpoint-up(md) {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        overflow-x: hidden;
         > header {
-            padding-left: 45px;
-            padding-right: 45px;
-        }
-        > main {
-            overflow: hidden;
-            > div {
-                padding-left: 45px;
-                padding-right: 45px;
-            }
+            margin-left: -15px;
+            max-width: 320px;
         }
     }
 }

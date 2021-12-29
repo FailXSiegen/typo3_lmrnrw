@@ -80,20 +80,19 @@ TCEFORM {
             }
 			
             addItems {
+				bg-red = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.red
+				bg-red.icon = EXT:lmr_nrw/Resources/Public/Icons/color-red.png
+                bg-darkred = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkred
+				bg-darkred.icon = EXT:lmr_nrw/Resources/Public/Icons/color-darkred.png
                 bg-white = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.white
 				bg-white.icon = EXT:lmr_nrw/Resources/Public/Icons/color-white.png
                 bg-grey = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.grey
 				bg-grey.icon = EXT:lmr_nrw/Resources/Public/Icons/color-grey.png
-                bg-aubergine = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.aubergine
-				bg-aubergine.icon = EXT:lmr_nrw/Resources/Public/Icons/color-aubergine.png
-                bg-violett = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.violett
-				bg-violett.icon = EXT:lmr_nrw/Resources/Public/Icons/color-violett.png
-                bg-darkgreen = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkgreen
-				bg-darkgreen.icon = EXT:lmr_nrw/Resources/Public/Icons/color-darkgreen.png
-                bg-green = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.green
-				bg-green.icon = EXT:lmr_nrw/Resources/Public/Icons/color-green.png
-                bg-lightgreen = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.lightgreen
-				bg-lightgreen.icon = EXT:lmr_nrw/Resources/Public/Icons/color-lightgreen.png
+                bg-darkgrey = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkgrey
+				bg-darkgrey.icon = EXT:lmr_nrw/Resources/Public/Icons/color-darkgrey.png
+                bg-lightgrey = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.lightgrey
+				bg-lightgrey.icon = EXT:lmr_nrw/Resources/Public/Icons/color-lightgrey.png
+               
             }
 			types {
 				counter {
@@ -108,8 +107,6 @@ TCEFORM {
 						h3 = Mittel
 						h4 = Kleiner
 						h5 = Klein
-						bigtext = Riesig
-						bigbigtext = Wahnsinnig Groß
 					}
 				}
 			}
@@ -177,7 +174,6 @@ TCEFORM {
 				8 = H3 class
 				9 = H4 class
 				10 = H5 class
-                15 = Special Rotate 90deg
 			}			
 		}
 	}
