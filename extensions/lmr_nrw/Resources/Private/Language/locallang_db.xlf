@@ -75,6 +75,9 @@
 			<trans-unit id="bgimage.position.description" xml:space="preserve">
 				<source>Top to bottom, left to right</source>
 			</trans-unit>
+			<trans-unit id="menu.highlight" xml:space="preserve">
+				<source>Highlight in menu</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

@@ -7,6 +7,10 @@ const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 // This is the main configuration object.
 // Here, you write different options and tell Webpack what to do
 module.exports = {
+    watchOptions: {
+        aggregateTimeout: 200,
+        poll: 1000,
+    },
     module: {
         rules: [
             {

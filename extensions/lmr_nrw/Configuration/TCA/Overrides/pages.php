@@ -47,6 +47,33 @@ call_user_func(
                 $fileValue
             );
         }
+
+        $columns = [
+            'menu_highlight' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:menu.highlight',
+                'config' => [
+                    'type' => 'check',
+                    'renderType' => 'checkboxToggle',
+                    'items' => [
+                       [
+                          0 => '',
+                          1 => '',
+                       ]
+                    ],
+                ],
+            ]
+        ];
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+            'pages',
+            $columns
+        );
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            'pages',
+            'visibility',
+            'menu_highlight',
+            'after:nav_hide'
+        );
     },
     'lmr_nrw'
 );

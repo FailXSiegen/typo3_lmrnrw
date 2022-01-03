@@ -1,58 +1,95 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
-    <header id="head" class="sidebar-navigation d-flex flex-column flex-shrink-0 me-5 px-2 bg-lightgrey-100 vh-100 position-sticky top-0" data-rootpid="{rootPageUid}">
+    <header 
+      id="mobile-head"
+      class="position-sticky top-0 d-flex d-md-none bg-white py-3"
+      aria-expanded="false"
+      >
+      <f:if condition="{logoPath}">
+          <div itemscope itemtype="http://schema.org/Organization">
+              <f:link.typolink 
+                  parameter="{rootPageUid}" 
+                  class="logo my-md-5 my-2 d-block" 
+                  additionalAttributes="{'itemprop':'url'}">
+                  <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: logoPath}" />
+              </f:link.typolink>
+          </div>
+      </f:if>
+        <button 
+            class="toggle-mobile-nav position-fixed top-0 end-0 bg-darkred me-3 mt-3 p-3" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#head" 
+            aria-controls="head" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon bg-darkred ">T</span>
+        </button>
+    </header>
+    <header 
+        id="head" 
+        class="sidebar-navigation flex-column flex-shrink-0 me-5 px-3 bg-lightgrey-100 vh-100 position-sticky top-0" 
+        data-rootpid="{rootPageUid}">
         <f:if condition="{logoPath}">
-            <div class="col-6 col-md-4" itemscope itemtype="http://schema.org/Organization">
-                <f:link.typolink parameter="{rootPageUid}" class="logo d-none d-xl-block " additionalAttributes="{'itemprop':'url'}">
+            <div itemscope itemtype="http://schema.org/Organization" class="d-none d-lg-block">
+                <f:link.typolink 
+                    parameter="{rootPageUid}" 
+                    class="logo my-md-5 my-2 d-block" 
+                    additionalAttributes="{'itemprop':'url'}">
                     <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: logoPath}" />
                 </f:link.typolink>
             </div>
         </f:if>
-        
-        <nav id="nav" class="nav nav-pills flex-column mb-auto" itemscope itemtype="http://schema.org/SiteNavigationElement">
-            <ul class="navbar-nav pe-3 order-1 flex-fill justify-content-center">
-                <f:for each="{mainNavigation}" as="menu">
-                    <li class="nav-item me-md-5 mb-3 {f:if(condition: menu.current,then:'current')}" itemprop="name">
-                        <a href="{menu.link}"
-                            class="nav-link {f:if(condition: menu.active,then:'active')}"
-                            {f:if(condition:menu.target,then: 'target="{menu.target}"')}
-                            itemprop="url"
-                            title="{menu.title}">
-                            {menu.title}
-                        </a>
-                    </li>
-                </f:for>
-            </ul>
-            <ul class="d-xl-none navbar-nav social-nav position-relative position-md-absolute bottom-0 end-0 order-3 mt-3">
-                <f:for each="{socialNavigation}" as="menu">
-                    <li class="nav-item {f:if(condition: menu.current,then:'current')}" itemprop="name">
-                        <a href="{menu.link}"
-                            class="nav-link {f:if(condition: menu.active,then:'active')}"
-                            {f:if(condition:menu.target,then: 'target="{menu.target}"')}
-                            itemprop="url"
-                            title="{menu.title}">
-                                {menu.title}
-                        </a>
-                    </li>
-                </f:for>
-            </ul>
-          
+        <nav id="nav" class="navbar flex-column mt-md-5 mb-auto" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <f:render partial="Navigation/Main" arguments="{
+                menu: mainNavigation, 
+                class:'navbar-nav order-1 flex-column flex-fill justify-content-center',
+                id:'mainmenu'
+            }" />
         </nav>
-        <f:link.typolink 
-            class="position-relative position-md-absolute bottom-0 start-0 contact-mail f-size-30 f-size-md-40 semibold d-block d-xl-none order-2 mt-auto"
-            parameter="{contactMail}">
-            {contactMail}
-        </f:link.typolink>
-        <div class="social-links">
-            <f:link.external uri="https://www.facebook.com/LMRNRW" target="_blank">
-                <f:image src="EXT:lmr_nrw/Resources/Public/Images/iconmonstr-facebook-6.svg" width="75" alt="Externe Link zur Facebook-Seite des Landesmusikrat NRW" />
-            </f:link.external>
-            <f:link.external uri="https://www.instagram.com/landesmusikrat_nrw/" target="_blank">
-                <f:image src="EXT:lmr_nrw/Resources/Public/Images/iconmonstr-instagram-11.svg" width="75" alt="Externe Link zur Instagram-Seite des Landesmusikrat NRW" />
+        <nav id="subnav" class="d-flex flex-column my-auto pt-5" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <f:render partial="Navigation/Main" arguments="{
+                menu: socialNavigation, 
+                class:'navbar-nav social-nav pe-3 order-1 flex-fill justify-content-center',
+                id:'submenu'
+            }" />
+        </nav>
+        <div class="bottom-nav">
+            <form>
+                <div class="input-group mb-3">
+                    <input 
+                        type="text" 
+                        class="form-control"
+                        placeholder="Suchbegriff eingeben"
+                        aria-label="Recipient's username"
+                        aria-describedby="button-search">
+                    <button 
+                        class="btn btn-outline-primary" 
+                        type="button" 
+                        id="button-search"
+                    >
+                        <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Images/search.svg'}" />
+                    </button>
+                </div>
+            </form>
+            <div class="social-links mb-3">
+                <f:link.external 
+                    class="me-3"
+                    title="Landesmusikrat NRW auf Facebook"
+                    uri="https://www.facebook.com/LMRNRW" 
+                    target="_blank">
+                    <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Images/iconmonstr-facebook-6.svg'}" />
+                </f:link.external>
+                <f:link.external
+                    title="Landesmusikrat NRW auf Instagram"
+                    uri="https://www.instagram.com/landesmusikrat_nrw/" 
+                    target="_blank">
+                    <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Images/iconmonstr-instagram-11.svg'}" />
+                </f:link.external>
+            </div>
+            <f:link.external uri="https://www.mkw.nrw/" class="logo-mkw__anchor">
+                <f:image class="logo-mkw__image img img-fluid" src="EXT:lmr_sitepackage/Resources/Public/Images/Logo/AK_Kultur-und-Wissenschaft.png" width="215" alt="Kultur und Wissenschaft in Nordrhein-Westfalen" />
             </f:link.external>
         </div>
-        <f:link.external uri="https://www.mkw.nrw/" class="logo-mkw__anchor">
-            <f:image class="logo-mkw__image img img-fluid" src="EXT:lmr_sitepackage/Resources/Public/Images/Logo/AK_Kultur-und-Wissenschaft.png" width="215" alt="Kultur und Wissenschaft in Nordrhein-Westfalen" />
-        </f:link.external>
     </header>
 </html>

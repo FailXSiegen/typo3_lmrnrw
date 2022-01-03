@@ -4,70 +4,10 @@
 @import '../../../../Public/Vendor/bootstrap/scss/bootstrap-utilities';
 @import '../../../../Public/Vendor/bootstrap/scss/buttons';
 @import '../../../../Public/Vendor/bootstrap/scss/list-group';
+@import '../../../../Public/Vendor/bootstrap/scss/forms';
 @import '../../../../Public/Vendor/bootstrap/scss/images';
 
 body {
-    padding: 0 15px;
-    font-size: 24px;
-    line-height: 40px;
-    a {
-        text-decoration: none;
-    }
-    .logo svg{
-        max-height: 110px;
-        transition: max-height .5s ease-in-out;
-        @include media-breakpoint-up(md) {
-            path:nth-child(-n + 2) {
-                opacity: 1;
-                transition: opacity .5s ease-in-out;
-            }
-        }
-    }
-    h1, .h1 {
-        font-size: 32px;
-        color: $darkgrey;
-        @include media-breakpoint-up(md) {
-            font-size: 45px;
-            margin-bottom: 25px;
-        }
-    }
-    h2, .h2 {
-        font-size: 25px;
-        color: $red;
-        font-weight: 300;
-        @include media-breakpoint-up(md) {
-            font-size: 35px;
-            margin-bottom: 25px;
-        }
-    }
-    h3, .h3 {
-        font-size: 22px;
-        color: $darkgrey;
-        font-weight: 300;
-        @include media-breakpoint-up(md) {
-            font-size: 25px;
-        }
-    }
-    h4, .h4 {
-        font-size: 18px;
-        color: $darkgrey;
-        @include media-breakpoint-up(md) {
-            font-size: 20px;
-        }
-    }
-    h5, .h5 {
-        font-size: 16px;
-        color: $darkgrey;
-        @include media-breakpoint-up(md) {
-            font-size: 18px;
-        }
-    }    
-    .semibold {
-        font-weight: 600;
-    }
-    .navbar {
-        padding-bottom: 0;
-    }
     .ce-right, .ce-left {
         &.ce-intext {
             .ce-bodytext,
@@ -82,9 +22,6 @@ body {
             }
         }
     } 
-    div[class*="bg-"] {
-        padding: 15px;
-    }
     .align-items-stretch {
         > div > div[class*="bg-"] {
             height: 100%;
@@ -100,79 +37,6 @@ body {
             }
         }
     } 
-    .navbar-toggler {
-        border: 0;
-        background: transparent;
-        &[aria-expanded="false"] {
-            svg:last-child {display: none;}
-        }
-        &[aria-expanded="true"] {
-            svg:first-child {display: none;}
-        }
-        svg {
-            width: 100%;
-            max-width: 72px;
-            max-height: 72px;
-            transition: max-height .5s ease-in-out,  max-width .5s ease-in-out; 
-        }
-    }
-    .nav-link {
-        font-size: 60px;
-        font-weight: bold;
-        line-height: 1;
-        @include media-breakpoint-up(sm) {
-            font-size: 60px;
-        }
-        @include media-breakpoint-up(md) {
-            font-size: 80px;
-        }
-        @include media-breakpoint-up(xl) {
-            font-size: 24px;
-            font-weight: 600;
-        }
-        
-        
-        &.active {
-            position: relative;
-            @include media-breakpoint-up(xl) {
-                &:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    bottom: -15px;
-                    width: 100%;
-                    height: 10px;
-                    background: transparent;
-                }
-            }
-        }
-    }
-    .nav-item {
-        @include media-breakpoint-up(xl) {
-            padding-right: 0.5rem;
-            padding-left: 0.5rem;
-        }
-    }  
-    .social-nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        @include media-breakpoint-up(md) {
-            display: block;
-        }
-        .nav-item {
-            margin-right: 15px;
-        }
-        .nav-link {
-            font-size: 24px;
-            font-weight: bold;
-            @include media-breakpoint-up(md) {
-                font-size: 32px;
-                font-weight: 600;
-            }
-        }
-    }
     .list-group-item {
         background: transparent;
         padding: 0;
@@ -181,20 +45,7 @@ body {
         }
     }
 }
-footer, .footer {
-    .frame-type-2cols {
-        @include media-breakpoint-up(md) {
-            font-size: 60px;
-            font-weight: bold;
-        }
-    }
-    .frame-type-menu_subpages {
-        font-weight: bold;
-        @include media-breakpoint-up(md) {
-            font-size: 32px;
-        }
-    }
-}
+
 .btn-close {
     border: 0;
     background: transparent;

@@ -41,3 +41,10 @@ CREATE TABLE tt_content (
 CREATE TABLE sys_file_reference (
     image_style varchar(20) DEFAULT '' NOT NULL
 );
+
+#
+# Table structure for table 'pages'
+#
+CREATE TABLE pages (
+    menu_highlight tinyint(4) DEFAULT '0' NOT NULL,
+);

@@ -3,6 +3,20 @@
 @import '../../../../Public/Vendor/bootstrap/scss/variables';
 @import '../../../../Public/Vendor/bootstrap/scss/mixins';
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: none;
+}
+
+.fade {
+    @include transition($transition-fade);
+
+    &:not(.show) {
+        opacity: 0;
+    }
+}
+
 @each $themeColour, $i in $themeColours {
     .bg- {
         @each $opacity, $x in $opacities {
@@ -17,15 +31,116 @@
         opacity: $x;
     }	
 }
-body {    
+body {
+    padding: 0 15px;
     @include media-breakpoint-up(md) {
         display: flex;
         flex-wrap: nowrap;
         overflow-y: auto;
         overflow-x: hidden;
-        > header {
-            margin-left: -15px;
-            max-width: 320px;
+    }
+}
+
+.logo {
+    svg {
+        max-width: 269px;
+        width: 100%;
+    }
+}
+.social-links {
+    svg {
+        width: 30px;
+        height: 35px;
+        fill: $red;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+.logo svg{
+    max-height: 110px;
+    transition: max-height .5s ease-in-out;
+    @include media-breakpoint-up(md) {
+        path:nth-child(-n + 2) {
+            opacity: 1;
+            transition: opacity .5s ease-in-out;
+        }
+    }
+}
+h1, .h1 {
+    font-size: 32px;
+    color: $darkgrey;
+    @include media-breakpoint-up(md) {
+        font-size: 45px;
+        margin-bottom: 25px;
+    }
+}
+h2, .h2 {
+    font-size: 25px;
+    color: $red;
+    font-weight: 300;
+    @include media-breakpoint-up(md) {
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+}
+h3, .h3 {
+    font-size: 22px;
+    color: $darkgrey;
+    font-weight: 300;
+    @include media-breakpoint-up(md) {
+        font-size: 25px;
+    }
+}
+h4, .h4 {
+    font-size: 18px;
+    color: $darkgrey;
+    @include media-breakpoint-up(md) {
+        font-size: 20px;
+    }
+}
+h5, .h5 {
+    font-size: 16px;
+    color: $darkgrey;
+    @include media-breakpoint-up(md) {
+        font-size: 18px;
+    }
+}  
+
+div[class*="bg-"] {
+    padding: 15px;
+}
+
+.bottom-nav {
+    input, .btn {
+        border: 0;
+        background-color: $white;
+        border-radius: 6px;
+    }
+    .btn {
+        position: relative;
+        svg {
+            transition: fill .15s ease-in-out;
+        }
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 15%;
+            height: 70%;
+            width: 1px;
+            background-color: $grey;
+            transition: background-color .15s ease-in-out;
+        }
+        &:hover, &:active, &:focus {
+            &:after {
+                background-color: $white;
+            }
+            svg {
+                fill: $white;
+            }
         }
     }
 }

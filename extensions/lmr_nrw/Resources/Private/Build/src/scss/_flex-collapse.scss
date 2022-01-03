@@ -1,0 +1,13 @@
+.flex-collapse {
+    + * {
+        overflow: hidden;
+    }
+    &[aria-expanded="false"] + * {
+        max-height: 0;
+        transition: max-height 0.5s cubic-bezier(.95,.71,.5,.95), padding .5s linear;
+    }
+    &[aria-expanded="true"] + * {
+        max-height: 9999px;
+        transition: max-height 0.5s ease-in, padding 0.2s ease-in;
+    }
+}

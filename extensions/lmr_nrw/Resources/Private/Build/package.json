@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "bootstrap": "^5",
+    "bootstrap-icons": "^1.7.2",
     "locomotive-scroll": "^4.1.2"
   },
   "scripts": {
-    "build": "yarn install --production=true && webpack --config webpack.config.js"
+    "build": "yarn install --production=true && webpack --config webpack.config.js",
+    "watch": "webpack --watch --progress"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
