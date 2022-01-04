@@ -3,7 +3,9 @@
 
     <f:layout name="Default" />
     <f:render partial="Header" arguments="{_all}" />
-    <main>
+    <main class="w-100 me-lg-4">
+        <f:render partial="HeaderContent" arguments="{_all}" />
+        <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
         <f:render section="Main" />
         <f:render partial="Footer" arguments="{_all}" />
     </main>

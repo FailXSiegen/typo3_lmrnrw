@@ -2,15 +2,45 @@
     <f:layout name="Default" />
     <f:section name="Main">
         <f:if condition="{menu}">
-            <ul class="list-group">
-                <f:for each="{menu}" as="page">
-                    <li class="list-group-item border-0 px-0">
-                        <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
-                            {page.title}
-                        </a>
-                    </li>
-                </f:for>
-            </ul>
+            <div class="menu-tile">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="col-12 bg-red-80 text-center">
+                                <div class="tile">
+                                    Box 1
+                                </div>
+                            </div>
+                            <div class="w-100 d-none d-md-block"></div>
+                            <div class="col-6 bg-darkgrey-100 text-center">
+                                <div class="tile">
+                                    Box 2
+                                </div>
+                            </div>
+                            <div class="col-6 bg-lightgrey-100 text-center">
+                                <div class="tile">
+                                    Box 3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <f:comment>
+                <div class="container-fluid">
+                    <div class="row">
+                        <f:for each="{menu}" as="page" iteration="iterator">
+                            <f:if condition="{iterator.cycle} >= 3">
+                                <li class="list-group-item border-0 px-0">
+                                    <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+                                        {page.title}
+                                    </a>
+                                </li>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </div>
+            </f:comment>
         </f:if>
     </f:section>
 </html>

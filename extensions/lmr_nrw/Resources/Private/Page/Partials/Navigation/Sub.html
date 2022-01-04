@@ -2,8 +2,12 @@
     data-namespace-typo3-fluid="true">
 
     <f:variable name="level" value="{f:if(condition: level, then:'{level + 1}', else: '1')}" />
+    <f:variable name="navclasses" value="my-2 py-2" />
+    <f:if condition="{level} == 1">
+        <f:variable name="navclasses" value="my-0 py-0" />
+    </f:if>
     <a  
-        class="nav-link collapse-toggle flex-collapse d-flex align-items-center my-2 py-2"
+        class="nav-link collapse-toggle flex-collapse d-flex align-items-center {navclasses}"
         href="#menu{menu.data.uid}" 
         role="button" 
         data-parent="#mainmenu"

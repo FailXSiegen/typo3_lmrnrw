@@ -8,31 +8,17 @@ if (!defined('TYPO3_MODE')) {
 
 call_user_func(
     function ($_EXTKEY) {
-        // \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->registerContainer(
-//     'slider',
-//     'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:slider.title',
-//     'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:slider.description',
-//     'EXT:lmr_nrw/Resources/Public/Icons/slider.gif',
-//     [
-//         [
-//             ['name' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:slider', 'colPos' => 101]
-//         ]
-//     ]
-        // );
-
-
-        // \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->registerContainer(
-//     'bgcontainer',
-//     'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgimage',
-//     'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgimage.description',
-//     'content-image',
-//     [
-//         [
-//             ['name' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:scrollcontainer', 'colPos' => 103]
-//         ]
-//     ]
-        // );
-
+        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->registerContainer(
+            'bgcontainer',
+            'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgcontainer.title',
+            'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgcontainer.description',
+            'content-image',
+            [
+                [
+                    ['name' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:content', 'colPos' => 103]
+                ]
+            ]
+        );
         $GLOBALS['TCA']['tt_content']['types']['slider']['showitem'] =  '
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
@@ -50,7 +36,7 @@ call_user_func(
         $GLOBALS['TCA']['tt_content']['types']['bgcontainer']['showitem'] =  '
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
-            header; Internal title (not displayed),image,bgimage_class,bgimage_position,
+            header; Internal title (not displayed),image, bgimage_position,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
             --palette--;;frames,
             --palette--;;appearanceLinks,
@@ -120,8 +106,8 @@ call_user_func(
                 ],
             ],
             'opacity' => [
-                'label' => 'LLL:EXT:neurologiq/Resources/Private/Language/locallang_db.xlf:opacity',
-                'description' => 'LLL:EXT:neurologiq/Resources/Private/Language/locallang_db.xlf:opacity.description',
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:opacity',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:opacity.description',
                 'config' => [
                     'type' => 'input',
                     'size' => 10,
@@ -294,8 +280,8 @@ call_user_func(
                 ],
             ],
             'bgimage_position' => [
-                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgimage.position',
-                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgimage.position.description',
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgcontainer.position',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgcontainer.position.description',
                 'config' => [
                     'renderType' => 'selectSingle',
                     'type' => 'select',
@@ -315,6 +301,50 @@ call_user_func(
                         'selectIcons' => [
                             'disabled' => false,
                         ],
+                    ],
+                ],
+            ],
+            'space_start_class' => [
+                'label' => 'LLL:EXT:neurologiq/Resources/Private/Language/locallang_db.xlf:space.start',
+                'config' => [
+                    'renderType' => 'selectSingle',
+                    'type' => 'select',
+                    'items' => [
+                        ['Default',''],
+                        ['0','ps-0'],
+                        ['1','ps-1'],
+                        ['2','ps-2'],
+                        ['3','ps-3'],
+                        ['4','ps-4'],
+                        ['5','ps-5'],
+                        ['6','ps-2 ps-md-4 ps-xl-6'],
+                        ['7','ps-2 ps-md-4 ps-xl-7'],
+                        ['8','ps-2 ps-md-5 ps-xl-8'],
+                        ['9','ps-2 ps-md-5 ps-xl-9'],
+                        ['10','ps-2 ps-md-5 ps-xl-10'],
+                        ['Auto','ms-auto'],
+                    ],
+                ],
+            ],
+            'space_end_class' => [
+                'label' => 'LLL:EXT:neurologiq/Resources/Private/Language/locallang_db.xlf:space.end',
+                'config' => [
+                    'renderType' => 'selectSingle',
+                    'type' => 'select',
+                    'items' => [
+                        ['Default',''],
+                        ['0','pe-0'],
+                        ['1','pe-1'],
+                        ['2','pe-2'],
+                        ['3','pe-3'],
+                        ['4','pe-4'],
+                        ['5','pe-5'],
+                        ['6','pe-2 pe-md-4 pe-xl-6'],
+                        ['7','pe-2 pe-md-4 pe-xl-7'],
+                        ['8','pe-2 pe-md-5 pe-xl-8'],
+                        ['9','pe-2 pe-md-5 pe-xl-9'],
+                        ['10','pe-2 pe-md-5 pe-xl-10'],
+                        ['Auto','me-auto'],
                     ],
                 ],
             ],
@@ -339,8 +369,8 @@ call_user_func(
         );
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             'tt_content',
-            'opacity',
-            '--linebreak--,',
+            'frames',
+            'opacity, --linebreak--,',
             'after:frame_class'
         );
 

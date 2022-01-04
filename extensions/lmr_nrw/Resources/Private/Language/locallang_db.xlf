@@ -57,22 +57,25 @@
 			<trans-unit id="space.end" xml:space="preserve">
 				<source>Space Right</source>
 			</trans-unit>
-			<trans-unit id="bgimage" xml:space="preserve">
+			<trans-unit id="content" xml:space="preserve">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="bgcontainer.title" xml:space="preserve">
 				<source>Container with background-image</source>
 			</trans-unit>
-			<trans-unit id="bgimage.description" xml:space="preserve">
+			<trans-unit id="bgcontainer.description" xml:space="preserve">
 				<source>Defines a background-image. Does use the height of the image as the min-heigt. Various options for positioning and stretching.</source>
 			</trans-unit>
-			<trans-unit id="bgimage.class" xml:space="preserve">
+			<trans-unit id="bgcontainer.class" xml:space="preserve">
 				<source>Defines Backgound image behaviour</source>
 			</trans-unit>
-			<trans-unit id="bgimage.class.description" xml:space="preserve">
+			<trans-unit id="bgcontainer.class.description" xml:space="preserve">
 				<source>stretch, background positioning, repeat</source>
 			</trans-unit>
-			<trans-unit id="bgimage.position" xml:space="preserve">
+			<trans-unit id="bgcontainer.position" xml:space="preserve">
 				<source>Defines where the content elements are positioned</source>
 			</trans-unit>
-			<trans-unit id="bgimage.position.description" xml:space="preserve">
+			<trans-unit id="bgcontainer.position.description" xml:space="preserve">
 				<source>Top to bottom, left to right</source>
 			</trans-unit>
 			<trans-unit id="menu.highlight" xml:space="preserve">

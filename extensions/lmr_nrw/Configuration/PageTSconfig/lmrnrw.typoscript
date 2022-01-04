@@ -12,16 +12,43 @@ mod {
                             1 {
                                 columns {
                                     1 {
+                                        name = Header
+                                        colPos = 2
+                                    }
+                                }
+                            }
+							2 {
+                                columns {
+                                    1 {
                                         name = Content
                                         colPos = 0
                                     }
                                 }
                             }
-                            2 {
+                        }
+                    }
+                }
+			}
+			start {
+                title = Startseite
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+                            1 {
                                 columns {
                                     1 {
-                                        name = Footer
+                                        name = Header
                                         colPos = 2
+                                    }
+                                }
+                            }
+							2 {
+                                columns {
+                                    1 {
+                                        name = Content
+                                        colPos = 0
                                     }
                                 }
                             }
@@ -269,14 +296,6 @@ mod.wizards.newContentElement.wizardItems {
    // add the content element to the tab "common"
    common {
       elements {
-         scroll_background {
-            iconIdentifier = content-image
-            title = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:scroll.background
-            description = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:scroll.background.description
-            tt_content_defValues {
-               CType = scroll_background
-            }
-         }
 		 counter {
             iconIdentifier = mimetypes-x-content-script
             title = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:counter
@@ -294,6 +313,6 @@ mod.wizards.newContentElement.wizardItems {
             }
          }
       }
-      show := addToList(scroll_background,counter,projectslider)
+      show := addToList(counter,projectslider)
    }
 }

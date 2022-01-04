@@ -40,7 +40,7 @@
                 </f:link.typolink>
             </div>
         </f:if>
-        <nav id="nav" class="navbar flex-column mt-md-5 mb-auto" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <nav id="nav" class="navbar flex-column mt-md-10 mb-auto" itemscope itemtype="http://schema.org/SiteNavigationElement">
             <f:render partial="Navigation/Main" arguments="{
                 menu: mainNavigation, 
                 class:'navbar-nav order-1 flex-column flex-fill justify-content-center',
@@ -87,8 +87,10 @@
                     <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Images/iconmonstr-instagram-11.svg'}" />
                 </f:link.external>
             </div>
-            <f:link.external uri="https://www.mkw.nrw/" class="logo-mkw__anchor">
-                <f:image class="logo-mkw__image img img-fluid" src="EXT:lmr_sitepackage/Resources/Public/Images/Logo/AK_Kultur-und-Wissenschaft.png" width="215" alt="Kultur und Wissenschaft in Nordrhein-Westfalen" />
+            <f:link.external uri="https://www.mkw.nrw/" class="logo-mkw__anchor my-5 d-block">
+                <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{
+                    src: 'EXT:lmr_nrw/Resources/Public/Images/Logo/asidelogo_ministerium.svg'
+                }" />
             </f:link.external>
         </div>
     </header>

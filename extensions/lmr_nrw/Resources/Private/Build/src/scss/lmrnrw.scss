@@ -6,6 +6,7 @@
 @import '../../../../Public/Vendor/bootstrap/scss/list-group';
 @import '../../../../Public/Vendor/bootstrap/scss/forms';
 @import '../../../../Public/Vendor/bootstrap/scss/images';
+@import '../../../../Public/Vendor/bootstrap/scss/breadcrumb';
 
 body {
     .ce-right, .ce-left {
@@ -57,12 +58,7 @@ body {
 .bg-image {
     z-index: -10;
 }
-.col-12 + .col-12 {
-    margin-top: calc(var(--bs-gutter-x) * 0.5);
-    @include media-breakpoint-up(md) {
-        margin-top: 0;
-    }
-}
+
 @include media-breakpoint-up(md) {
     .position-md-absolute {
         position: absolute !important;
@@ -77,5 +73,48 @@ body {
 .bgimage-container {
     > picture + div {
         z-index: 10;
+    }
+}
+
+.breadcrumb {
+    .active {
+        font-weight: bold;
+    }
+    a {
+        color: $darkgrey;
+    }
+}
+.tile {
+    min-height: 357px;
+    border-radius: 6px;
+    > * {
+        z-index: 25;
+    }
+}
+.menu-tile {
+    position: relative;
+    @include media-breakpoint-up(md) {
+        &:after {
+            content:'';
+            pointer-events: none;
+            cursor: default;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            transform: translate(-50%, -50%);
+            opacity: .5;
+            display: block;
+            background-image: url('./../../../../Public/Images/big-circle-white.svg?inline');
+            background-size: cover;
+            z-index: 10; 
+        }
+    }
+    @include media-breakpoint-up(md) {
+        &:after {
+            width: 1200px;
+            height: 1200px;
+        }
     }
 }

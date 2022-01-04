@@ -93,6 +93,13 @@ page {
           includeSpacer = 0
           as = socialNavigation
       }
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+          special = rootline
+          as = breadcrumbNavigation
+      }
+      30 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+      30.menus = breadcrumbNavigation
     }
     variables {
       rootPageUid = TEXT

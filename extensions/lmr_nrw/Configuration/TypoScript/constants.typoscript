@@ -1,7 +1,7 @@
-styles.content.textmedia.maxW = 1920
-styles.content.textmedia.maxWInText = 1920
-styles.content.textmedia.linkWrap.width = 1920
-styles.content.textmedia.linkWrap.height = 1920
+styles.content.textmedia.maxW = 2121
+styles.content.textmedia.maxWInText = 2121
+styles.content.textmedia.linkWrap.width = 2121
+styles.content.textmedia.linkWrap.height = 2121
 failx.rootPid = 118
 failx.mainNavigationPid = 118
 failx.socialNavigationPid = 382

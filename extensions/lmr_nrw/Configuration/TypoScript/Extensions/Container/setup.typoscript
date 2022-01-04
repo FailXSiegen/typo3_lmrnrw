@@ -1,0 +1,16 @@
+tt_content.bgcontainer < lib.contentElement
+tt_content.bgcontainer {
+  templateName = bgcontainer
+  templateRootPaths.10 = EXT:lmr_nrw/Resources/Private/Content/Templates
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+        references.fieldName = image
+    }   
+    103 = B13\Container\DataProcessing\ContainerProcessor
+    103 {
+      colPos = 103
+      as = content
+    }
+  }
+}

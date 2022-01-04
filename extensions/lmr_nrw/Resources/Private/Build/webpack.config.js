@@ -61,8 +61,14 @@ module.exports = {
                 ]
             },
             {
+                test: /\.svg$/,
+                type: "asset/inline",
+                // Inline assets with the "inline" query parameter.
+                resourceQuery: /inline/,
+            },
+            {
                 // Now we apply rule for images
-                test: /\.(png|jpe?g|gif|svg)$/,
+                test: /\.(png|jpe?g|gif)$/,
                 use: [
                         {
                             // Using file-loader for these files
