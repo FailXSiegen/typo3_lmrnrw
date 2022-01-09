@@ -81,6 +81,74 @@
 			<trans-unit id="menu.highlight" xml:space="preserve">
 				<source>Highlight in menu</source>
 			</trans-unit>
+			<trans-unit id="circle.active" xml:space="preserve">
+				<source>Toggles circle background item</source>
+			</trans-unit>
+			<trans-unit id="circle.active.description" xml:space="preserve">
+				<source>Shows circle options and activates the output of a circle bg.</source>
+			</trans-unit>
+			<trans-unit id="circle.color" xml:space="preserve">
+				<source>Overwrite default color</source>
+			</trans-unit>
+			<trans-unit id="circle.color.description" xml:space="preserve">
+				<source>You can set a circle color with this option.</source>
+			</trans-unit>
+			<trans-unit id="circle.position" xml:space="preserve">
+				<source>Defines where the circle type is positioned</source>
+			</trans-unit>
+			<trans-unit id="circle.position.description" xml:space="preserve">
+				<source>Top to bottom, left to right</source>
+			</trans-unit>
+			<trans-unit id="circle.width" xml:space="preserve">
+				<source>Defines width of circle</source>
+			</trans-unit>
+			<trans-unit id="circle.width.description" xml:space="preserve">
+				<source>Slides from 0 to 100% width of parent element. Set 0 for full svg scale.</source>
+			</trans-unit>
+			<trans-unit id="circle.height" xml:space="preserve">
+				<source>Defines height of circles</source>
+			</trans-unit>
+			<trans-unit id="circle.height.description" xml:space="preserve">
+				<source>Slides from 0 to 100% height of parent element. Set 0 for full svg scale.</source>
+			</trans-unit>
+			<trans-unit id="circle.offsetx" xml:space="preserve">
+				<source>Horizontal offset</source>
+			</trans-unit>
+			<trans-unit id="circle.offsetx.description" xml:space="preserve">
+				<source>Show a specific area of the circles by set a Horizontal offset in %</source>
+			</trans-unit>
+			<trans-unit id="circle.offsety" xml:space="preserve">
+				<source>Vertical offset</source>
+			</trans-unit>
+			<trans-unit id="circle.offsety.description" xml:space="preserve">
+				<source>Show a specific area of the circles by set a vertical offset in %</source>
+			</trans-unit>
+			<trans-unit id="circle.rotate" xml:space="preserve">
+				<source>Rotates the circle output</source>
+			</trans-unit>
+			<trans-unit id="circle.rotate.description" xml:space="preserve">
+				<source>Set a rotation in a full 360° circle radius</source>
+			</trans-unit>
+			<trans-unit id="overflow.hidden" xml:space="preserve">
+				<source>Overflow hidden</source>
+			</trans-unit>
+			<trans-unit id="overflow.hidden.description" xml:space="preserve">
+				<source>Cuts off the overflow of elements which would be displayed out of the container</source>
+			</trans-unit>
+
+			<trans-unit id="counter" xml:space="preserve">
+				<source>Counter</source>
+			</trans-unit>
+			<trans-unit id="counter.description" xml:space="preserve">
+				<source>Shows a counter element which counts up if comes in to viewport</source>
+			</trans-unit>
+
+			<trans-unit id="tilebox" xml:space="preserve">
+				<source>Tile box</source>
+			</trans-unit>
+			<trans-unit id="tilebox.description" xml:space="preserve">
+				<source>Box of pages displayed as tiles</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

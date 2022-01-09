@@ -1,0 +1,7 @@
+plugin.tx_news {
+	view {
+		partialRootPaths {
+            99 = EXT:lmr_nrw/Resources/Private/Content/Partials/
+		}
+	}
+}

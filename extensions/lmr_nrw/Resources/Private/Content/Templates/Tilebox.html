@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="Main">
+        <f:if condition="{menu}">
+            <div class="menu-tile overflow-hidden">
+                <f:<f:switch expression="{menu -> f:count()}">
+                    <f:case value="4">
+                        <f:render 
+                            partial="Tiles/4Tiles.html" 
+                            arguments="{menu: menu}" />
+                    </f:case>
+                    <f:case value="6">
+                        <f:render 
+                            partial="Tiles/6Tiles.html" 
+                            arguments="{menu: menu}" />
+                    </f:case>
+                    <f:case value="9">
+                        <f:render 
+                            partial="Tiles/9Tiles.html" 
+                            arguments="{menu: menu}" />
+                    </f:case>
+                    <f:defaultCase>
+                        <div class="bg-danger">
+                            Falsche Anzahl an Seiten. Es werden nur 4, 6 oder 9 Seiten ausgegeben.
+                        </div>
+                    </f:defaultCase>
+                </f:switch>
+        </f:if>
+    </f:section>
+</html>

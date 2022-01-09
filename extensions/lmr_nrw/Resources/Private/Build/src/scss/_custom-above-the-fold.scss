@@ -20,6 +20,12 @@
         }
     }
 }
+div[class*="bg-red"],
+div[class*="bg-darkgrey"] {
+    * {
+        color: $white !important;
+    } 
+}
 @each $opacity, $x in $opacities {
     .opacity-#{$opacity} {
         opacity: $x;
@@ -37,10 +43,18 @@ body {
 
 .logo {
     svg {
-        max-width: 269px;
+        max-width: 200px;
         width: 100%;
+        @include media-breakpoint-up(md) {
+            max-width: 269px;
+        }
     }
 }
+#head,
+#mobile-head {
+    z-index: 999;
+}
+
 .social-links {
     svg {
         width: 30px;
@@ -136,5 +150,14 @@ div[class*="bg-"] {
                 fill: $white;
             }
         }
+    }
+}
+.toggle-mobile-nav {
+    background: none;
+    border: none;
+    svg {
+        width: 45px;
+        height: 33px;
+        fill: $red;
     }
 }

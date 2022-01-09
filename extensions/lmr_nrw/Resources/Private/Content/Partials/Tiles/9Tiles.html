@@ -1,0 +1,61 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div class="container-fluid px-0 mt-4">
+        <div class="row gy-4">
+            <div class="col-xxl-6 col-12">
+                <div class="row row-cols-2 gy-4 gx-4">
+                    <div class="col-12">
+                       <f:render 
+                            partial="Tiles/TileContent"
+                            arguments="{menuitem: menu.0, tilebg:'bg-red-80'}" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <f:render 
+                            partial="Tiles/TileContent"
+                            arguments="{menuitem: menu.1, tilebg:'bg-darkgrey-100'}" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <f:render 
+                            partial="Tiles/TileContent"
+                            arguments="{menuitem: menu.2, tilebg:'bg-lightgrey-100'}" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-xl-6 col-12">
+                <f:render 
+                    partial="Tiles/TileContent"
+                    arguments="{menuitem: menu.3, tilebg:'bg-darkgrey-100 h-100'}" />
+            </div>
+            <div class="col-xxl-3 col-xl-6 col-12">
+                <div class="row gy-4 gx-4">
+                    <div class="col-12 col-md-6 col-xl-12">
+                        <f:render 
+                            partial="Tiles/TileContent"
+                            arguments="{menuitem: menu.4, tilebg:'bg-lightgrey-100'}" />
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-12">
+                        <f:render 
+                            partial="Tiles/TileContent"
+                            arguments="{menuitem: menu.5, tilebg:'bg-red-100'}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gy-4 mt-2">
+            <div class="col-xxl-4 col-12">
+                <f:render 
+                    partial="Tiles/TileContent"
+                    arguments="{menuitem: menu.6, tilebg:'bg-red-80'}" />
+            </div>
+            <div class="col-xxl-4 col-12">
+                <f:render 
+                    partial="Tiles/TileContent"
+                    arguments="{menuitem: menu.7, tilebg:'bg-lightgrey-100'}" />
+            </div>
+            <div class="col-xxl-4 col-12">
+                <f:render 
+                    partial="Tiles/TileContent"
+                    arguments="{menuitem: menu.8, tilebg:'bg-darkgrey-100'}" />
+            </div>
+        </div>
+    </div>
+</html>

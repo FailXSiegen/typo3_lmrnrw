@@ -16,14 +16,14 @@
           </div>
       </f:if>
         <button 
-            class="toggle-mobile-nav position-fixed top-0 end-0 bg-darkred me-3 mt-3 p-3" 
+            class="toggle-mobile-nav position-fixed top-0 end-0 bg-darkred me-2 mt-2 p-3" 
             type="button" 
             data-toggle="collapse" 
             data-target="#head" 
             aria-controls="head" 
             aria-expanded="false" 
             aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon bg-darkred ">T</span>
+            <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: buttonPath}" /> 
         </button>
     </header>
     <header 
@@ -47,7 +47,7 @@
                 id:'mainmenu'
             }" />
         </nav>
-        <nav id="subnav" class="d-flex flex-column my-auto pt-5" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <nav id="subnav" class="d-flex flex-column my-auto pt-md-5 pt-3" itemscope itemtype="http://schema.org/SiteNavigationElement">
             <f:render partial="Navigation/Main" arguments="{
                 menu: socialNavigation, 
                 class:'navbar-nav social-nav pe-3 order-1 flex-fill justify-content-center',

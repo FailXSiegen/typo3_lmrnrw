@@ -148,8 +148,8 @@
         + #head {
             display: flex;
             width: 100%;
-            top: 80px !important;
-            max-height: 80vh !important;
+            top: 75px !important;
+            max-height: calc(100vh - 75px) !important;
         }
     }
     &[aria-expanded="false"]  {

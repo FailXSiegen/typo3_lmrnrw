@@ -3,4 +3,21 @@ tt_content {
     counter {
         templateName = Counter
     }
+    tilebox =< lib.contentElement
+    tilebox {
+        templateName = Tilebox
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                special = list
+                special.value.field = pages
+                dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    10 {
+                        references.fieldName = media
+                    }
+                }
+            }
+        }
+    }
 }

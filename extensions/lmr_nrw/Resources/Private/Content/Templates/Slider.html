@@ -9,11 +9,8 @@
         data-bs-ride="carousel"
         data-bs-interval="{f:if(condition:data.carousel_intervall, then:'{data.carousel_intervall}', else:'false')}"
         >
-        <f:if condition="{data.particle_active}">
-            <f:render partial="Particle" arguments="{_all}" />
-        </f:if>
-        <f:if condition="{data.grid_active}">
-            <f:render partial="Grid" arguments="{_all}" />
+        <f:if condition="{data.circle_active}">
+            <f:render partial="Circle" arguments="{_all}" />
         </f:if>
         <f:if condition="{data.carousel_indicators}">
             <div class="carousel-indicators">

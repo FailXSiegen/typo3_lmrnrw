@@ -2,11 +2,8 @@
     <f:if condition="{data.frame_class} != none">
         <f:then>
             <div id="c{data.uid}" class="frame frame-type-{data.CType} {f:render(partial:'Divclasses',arguments:{data:data})}">
-                <f:if condition="{data.grid_active}">
-                    <f:render partial="Grid" arguments="{_all}" />
-                </f:if>
-                <f:if condition="{data.particle_active}">
-                    <f:render partial="Particle" arguments="{_all}" />
+                <f:if condition="{data.circle_active}">
+                    <f:render partial="Circle" arguments="{_all}" />
                 </f:if>
                 <f:if condition="{data._LOCALIZED_UID}">
                     <a id="c{data._LOCALIZED_UID}"></a>
@@ -34,11 +31,8 @@
             <f:if condition="{data.space_before_class}">
                 <div class="{data.space_before_class}"></div>
             </f:if>
-            <f:if condition="{data.particle_active}">
-                <f:render partial="Particle" arguments="{_all}" />
-            </f:if>
-            <f:if condition="{data.grid_active}">
-                <f:render partial="Grid" arguments="{_all}" />
+            <f:if condition="{data.circle_active}">
+                <f:render partial="Circle" arguments="{_all}" />
             </f:if>
             <f:render section="Before" optional="true">
                 <f:render partial="DropIn/Before/All" arguments="{_all}" />

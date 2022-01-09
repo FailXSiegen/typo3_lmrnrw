@@ -33,6 +33,17 @@ CREATE TABLE tt_content (
     carousel_crossfade tinyint(4) DEFAULT '0' NOT NULL,
     carousel_intervall VARCHAR(255) DEFAULT '' NOT NULL,
 
+    circle_active tinyint(4) DEFAULT '0' NOT NULL,
+    circle_position VARCHAR(255) DEFAULT '' NOT NULL,
+    circle_color VARCHAR(255) DEFAULT '' NOT NULL,
+    circle_opacity INT(4) DEFAULT '100' NOT NULL,
+    circle_width int(5) DEFAULT '0' NOT NULL,
+    circle_height int(5) DEFAULT '0' NOT NULL,
+    circle_offset_x int(5) DEFAULT '0' NOT NULL,
+    circle_offset_y int(5) DEFAULT '0' NOT NULL,
+
+    
+    overflow_hidden tinyint(4) DEFAULT '0' NOT NULL,
 );
 
 #

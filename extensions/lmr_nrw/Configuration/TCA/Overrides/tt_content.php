@@ -305,7 +305,7 @@ call_user_func(
                 ],
             ],
             'space_start_class' => [
-                'label' => 'LLL:EXT:neurologiq/Resources/Private/Language/locallang_db.xlf:space.start',
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:space.start',
                 'config' => [
                     'renderType' => 'selectSingle',
                     'type' => 'select',
@@ -327,7 +327,7 @@ call_user_func(
                 ],
             ],
             'space_end_class' => [
-                'label' => 'LLL:EXT:neurologiq/Resources/Private/Language/locallang_db.xlf:space.end',
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:space.end',
                 'config' => [
                     'renderType' => 'selectSingle',
                     'type' => 'select',
@@ -348,6 +348,178 @@ call_user_func(
                     ],
                 ],
             ],
+            'circle_active' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.active',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.active.description',
+                'onChange' => 'reload',
+                'config' => [
+                    'type' => 'check',
+                    'renderType' => 'checkboxToggle',
+                    'items' => [
+                        [
+                           0 => '',
+                           1 => '',
+                        ]
+                     ],
+                ],
+            ],
+            'circle_color' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.color',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.color.description',
+                'displayCond' => 'FIELD:circle_active:REQ:true',
+                'config' => [
+                    'renderType' => 'selectSingle',
+                    'type' => 'select',
+                    'items' => [
+                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.white','white','EXT:lmr_nrw/Resources/Public/Icons/color-white.png'],
+                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.grey','grey','EXT:lmr_nrw/Resources/Public/Icons/color-grey.png'],
+                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkgrey','darkgrey','EXT:lmr_nrw/Resources/Public/Icons/color-darkgrey.png'],
+                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.lightgrey','lightgrey','EXT:lmr_nrw/Resources/Public/Icons/color-lightgrey.png'],
+                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.red','darkred','EXT:lmr_nrw/Resources/Public/Icons/color-red.png'],
+                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkred','red','EXT:lmr_nrw/Resources/Public/Icons/color-darkred.png'],
+                    ],
+                    'fieldWizard' => [
+                        'selectIcons' => [
+                            'disabled' => false,
+                        ],
+                    ],
+                ],
+            ],
+            'circle_opacity' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:opacity',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:opacity.description',
+                'displayCond' => 'FIELD:circle_active:REQ:true',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 10,
+                    'eval' => 'trim,int',
+                    'range' => [
+                        'lower' => 20,
+                        'upper' => 100,
+                    ],
+                    'default' => 100,
+                    'slider' => [
+                        'step' => 20,
+                        'width' => 200,
+                    ],
+                ],
+            ],
+            'circle_position' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.position',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.position.description',
+                'displayCond' => 'FIELD:circle_active:REQ:true',
+                'config' => [
+                    'renderType' => 'selectSingle',
+                    'type' => 'select',
+                    'items' => [
+                        ['---',''],
+                        ['Top Left','position-absolute top-0 start-0','EXT:lmr_nrw/Resources/Public/Icons/top-left.png'],
+                        ['Top Center','position-absolute top-0 start-50 translate-middle-x','EXT:lmr_nrw/Resources/Public/Icons/top-center.png'],
+                        ['Top Right','position-absolute top-0 end-0','EXT:lmr_nrw/Resources/Public/Icons/top-right.png'],
+                        ['Center Left','position-absolute top-50 start-0 translate-middle-y','EXT:lmr_nrw/Resources/Public/Icons/center-left.png'],
+                        ['Center Center','position-absolute top-50 start-50 translate-middle','EXT:lmr_nrw/Resources/Public/Icons/center-center.png'],
+                        ['Center Right','position-absolute top-50 end-0 translate-middle-y','EXT:lmr_nrw/Resources/Public/Icons/center-right.png'],
+                        ['Bottom Left','position-absolute bottom-0 start-0','EXT:lmr_nrw/Resources/Public/Icons/bottom-left.png'],
+                        ['Bottom Center','position-absolute bottom-0 start-50 translate-middle-x','EXT:lmr_nrw/Resources/Public/Icons/bottom-center.png'],
+                        ['Bottom Right','position-absolute bottom-0 end-0','EXT:lmr_nrw/Resources/Public/Icons/bottom-right.png']
+                    ],
+                    'fieldWizard' => [
+                        'selectIcons' => [
+                            'disabled' => false,
+                        ],
+                    ],
+                ],
+            ],
+            'circle_width' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.width',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.width.description',
+                'displayCond' => 'FIELD:circle_active:REQ:true',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 10,
+                    'eval' => 'trim,int',
+                    'range' => [
+                        'lower' => 0,
+                        'upper' => 100,
+                    ],
+                    'default' => 0,
+                    'slider' => [
+                        'step' => 1,
+                        'width' => 200,
+                    ],
+                ],
+            ],
+            'circle_height' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.height',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.height.description',
+                'displayCond' => 'FIELD:circle_active:REQ:true',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 10,
+                    'eval' => 'trim,int',
+                    'range' => [
+                        'lower' => 0,
+                        'upper' => 100,
+                    ],
+                    'default' => 0,
+                    'slider' => [
+                        'step' => 1,
+                        'width' => 200,
+                    ],
+                ],
+            ],
+            'circle_offset_x' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.offsetx',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.offsetx.description',
+                'displayCond' => 'FIELD:circle_active:REQ:true',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 10,
+                    'eval' => 'trim,int',
+                    'range' => [
+                        'lower' => -100,
+                        'upper' => 100,
+                    ],
+                    'default' => 0,
+                    'slider' => [
+                        'step' => 1,
+                        'width' => 200,
+                    ],
+                ],
+            ],
+            'circle_offset_y' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.offsety',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.offsety.description',
+                'displayCond' => 'FIELD:circle_active:REQ:true',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 10,
+                    'eval' => 'trim,int',
+                    'range' => [
+                        'lower' => -100,
+                        'upper' => 100,
+                    ],
+                    'default' => 0,
+                    'slider' => [
+                        'step' => 1,
+                        'width' => 200,
+                    ],
+                ],
+            ],
+            'overflow_hidden' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:overflow.hidden',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:overflow.hidden.description',
+                'config' => [
+                    'type' => 'check',
+                    'renderType' => 'checkboxToggle',
+                    'items' => [
+                        [
+                           0 => '',
+                           1 => '',
+                        ]
+                     ],
+                ],
+            ],
         ];
         // Add TCA columns.
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
@@ -364,7 +536,12 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             'tt_content',
             'frames',
-            'space_start_class, space_end_class',
+            'space_start_class, space_end_class, --linebreak--,
+            overflow_hidden, --linebreak--,
+            circle_active, --linebreak--,
+            circle_position, circle_color, circle_opacity, --linebreak--,
+            circle_width, circle_height, --linebreak--,
+            circle_offset_x, circle_offset_y',
             'after:space_after_class,'
         );
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
@@ -373,6 +550,7 @@ call_user_func(
             'opacity, --linebreak--,',
             'after:frame_class'
         );
+
 
         $GLOBALS['TCA']['tt_content']['palettes']['counter_config'] = [
             'label' => 'Counter config',
@@ -396,6 +574,53 @@ call_user_func(
                 --palette--;;access,
             ',
         ];
+
+        $GLOBALS['TCA']['tt_content']['types']['tilebox'] = [
+            'showitem' => '
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                    --palette--;;general,
+                    --palette--;;headers,
+                    pages;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:pages.ALT.menu_formlabel,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+                    --palette--;;frames,
+                    --palette--;;appearanceLinks,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.accessibility,
+                    --palette--;;menu_accessibility,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;language,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;hidden,
+                    --palette--;;access,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+                    rowDescription,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
+            ',
+        ];
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+            'tt_content',
+            'CType',
+            [
+                 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:counter',
+                 'counter',
+                 'content-script',
+             ],
+            'textmedia',
+            'after'
+        );
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+            'tt_content',
+            'CType',
+            [
+                 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:tilebox',
+                 'tilebox',
+                 'content-menu-pages',
+             ],
+            'textmedia',
+            'after'
+        );
     },
     'lmr_nrw'
 );

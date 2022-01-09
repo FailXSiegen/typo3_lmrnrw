@@ -114,6 +114,7 @@ module.exports = {
         'purecounter_vanilla': './src/javascript/purecounter_vanilla.js',
         'abovethefold': './src/scss/above-the-fold.scss',
         'slider':  './src/scss/slider.scss',
+        'circle': './src/scss/circle.scss',
         'lmrnrw': './src/scss/lmrnrw.scss',
     },
 

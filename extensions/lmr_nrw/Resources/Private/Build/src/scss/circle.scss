@@ -1,0 +1,14 @@
+@import 'variables';
+@import '../../../../Public/Vendor/bootstrap/scss/functions';
+@import '../../../../Public/Vendor/bootstrap/scss/variables';
+@import '../../../../Public/Vendor/bootstrap/scss/mixins';
+
+@each $themeColour, $i in $themeColours {
+    .fill- {
+        @each $opacity, $x in $opacities {
+            &#{$themeColour}-#{$opacity} > svg {
+                fill: rgba($i, $x);
+            }	
+        }
+    }
+}
