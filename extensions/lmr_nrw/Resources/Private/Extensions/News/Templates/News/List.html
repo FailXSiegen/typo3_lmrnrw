@@ -8,22 +8,32 @@
 -->
 
 <f:section name="content">
+	<f:variable name="topnews" value="0" />
+	<f:for each="{news}" as="newsItem" iteration="iterator">
+		<f:if condition="{newsItem.istopnews}">
+			<f:variable name="topnews" value="{topnews + 1}" />
+		</f:if>
+	</f:for>
 	<!--TYPO3SEARCH_end-->
 	<f:if condition="{news}">
 		<f:then>
 			<div class="news-list-view" id="news-container-{contentObjectData.uid}">
 				<f:if condition="{settings.hidePagination}">
 					<f:then>
-						<f:for each="{news}" as="newsItem" iteration="iterator">
-							<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-						</f:for>
+						<div class="row gy-4 gx-4">
+							<f:for each="{news}" as="newsItem" iteration="iterator">
+								<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,topnews:topnews}" />
+							</f:for>
+						</div>
 					</f:then>
 					<f:else>
-						<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
-							<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-								<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-							</f:for>
-						</n:widget.paginate>
+						<div class="row gy-4 gx-4">
+							<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+								<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,topnews:topnews}" />
+								</f:for>
+							</n:widget.paginate>
+						</div>
 					</f:else>
 				</f:if>
 			</div>

@@ -291,28 +291,3 @@ TCEMAIN.table.tt_content {
     disablePrependAtCopy = 1
     disableHideAtCopy = 1
 }
-
-mod.wizards.newContentElement.wizardItems {
-   // add the content element to the tab "common"
-   common {
-      elements {
-		 counter {
-            iconIdentifier = mimetypes-x-content-script
-            title = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:counter
-            description = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:counter.description
-            tt_content_defValues {
-               CType = counter
-            }
-         }
-		 projectslider {
-            iconIdentifier = content-image
-            title = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:projectslider
-            description = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:projectslider.description
-            tt_content_defValues {
-               CType = projectslider
-            }
-         }
-      }
-      show := addToList(counter,projectslider)
-   }
-}
