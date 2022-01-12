@@ -23,5 +23,15 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\Container\Container;
 
-$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['fxnet'] = 'EXT:lmr_nrw/Configuration/RTE/Default.yaml';
+call_user_func(
+    function ($extKey) {
+        $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['fxnet'] = 'EXT:lmr_nrw/Configuration/RTE/Default.yaml';
+
+        GeneralUtility::makeInstance(Container::class)
+                ->registerImplementation(\GeorgRinger\News\Domain\Model\NewsDefault::class, \Failx\LMRNRW\Domain\Model\NewsDefault::class);
+    },
+    'lmr_nrw'
+);

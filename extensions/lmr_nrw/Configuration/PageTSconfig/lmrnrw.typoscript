@@ -203,6 +203,14 @@ TCEFORM {
 				10 = H5 class
 			}			
 		}
+		text_columns {
+			disabled = 1
+			types {
+				text.disabled = 0
+				textpic.disabled = 0
+				textmedia.disabled = 0
+			}
+		}
 	}
 }
 

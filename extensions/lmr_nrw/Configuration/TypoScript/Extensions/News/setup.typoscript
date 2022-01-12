@@ -1,4 +1,5 @@
 plugin.tx_news {
+	settings.cssFile >
 	view {
 		partialRootPaths {
             99 = EXT:lmr_nrw/Resources/Private/Content/Partials/

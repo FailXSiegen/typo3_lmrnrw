@@ -520,6 +520,21 @@ call_user_func(
                      ],
                 ],
             ],
+            'text_columns' => [
+                'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:text_columns',
+                'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:text_columns.description',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 2,
+                    'eval' => 'trim,int',
+                    'range' => array(
+                        'lower' => 0,
+                        'upper' => 4
+                     ),
+                    'max' => 1,
+                    'default' => 1
+                ],
+            ],
         ];
         // Add TCA columns.
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
@@ -527,11 +542,11 @@ call_user_func(
             $container_columns
         );
        
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             'tt_content',
-            'frames',
-            '--linebreak--,',
-            'after:frame_class'
+            'text_columns, --linebreak--',
+            '',
+            'before:bodytext'
         );
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             'tt_content',
@@ -550,7 +565,7 @@ call_user_func(
             'opacity, --linebreak--,',
             'after:frame_class'
         );
-
+        ;
 
         $GLOBALS['TCA']['tt_content']['palettes']['counter_config'] = [
             'label' => 'Counter config',

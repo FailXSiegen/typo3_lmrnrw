@@ -50,6 +50,12 @@ module.exports = {
                             sourceMap: false 
                         }
                     },
+                    { 
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
                     {
                         // First we transform SASS to standard CSS
                         loader: "sass-loader",

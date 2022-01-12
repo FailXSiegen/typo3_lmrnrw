@@ -10,18 +10,9 @@
 	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
 	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
 ]>
-<svg version="1.1" id="Ebene_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+<svg version="1.1" id="white" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 89 57"
 	 style="enable-background:new 0 0 89 57;" xml:space="preserve">
-<style type="text/css">
-	.Schlagschatten{fill:none;}
-	.Schein_x0020_nach_x0020_außen_x0020__x002D__x0020_5_x0020_Pt_x002E_{fill:none;}
-	.Blauer_x0020_Neonrahmen{fill:none;stroke:#8AACDA;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;}
-	.Lichter_x0020_Chrom{fill:url(#SVGID_1_);stroke:#FFFFFF;stroke-width:0.3629;stroke-miterlimit:1;}
-	.Jive_GS{fill:#FFDD00;}
-	.Alyssa_GS{fill:#A6D0E4;}
-	.st0{fill:#FFFFFF;}
-</style>
 <metadata>
 	<sfw  xmlns="&ns_sfw;">
 		<slices></slices>

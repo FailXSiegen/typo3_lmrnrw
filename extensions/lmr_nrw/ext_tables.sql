@@ -44,6 +44,7 @@ CREATE TABLE tt_content (
 
     
     overflow_hidden tinyint(4) DEFAULT '0' NOT NULL,
+    text_columns int(3) DEFAULT '1' NOT NULL,
 );
 
 #
@@ -58,4 +59,11 @@ CREATE TABLE sys_file_reference (
 #
 CREATE TABLE pages (
     menu_highlight tinyint(4) DEFAULT '0' NOT NULL,
+);
+
+#
+# Table structure for table 'tx_news_domain_model_news'
+#
+CREATE TABLE tx_news_domain_model_news (
+    text_columns int(3) DEFAULT '1' NOT NULL
 );

@@ -13,8 +13,8 @@ editor:
       - { name: "Button Primary (Rot)", element: "a", attributes: { class: "btn btn-primary"} }
       - { name: "Button Secondary (Grau)", element: "a", attributes: { class: "btn btn-secondary"} }
 
-    format_tags: "p;h2;h3;h4;h5;div"
-
+    format_tags: "p;h2;h3;h4;h5;div;span"
+    format_span: { name : 'Span', element : 'span'}
     toolbarGroups:
       - { name: basicstyles, groups: [ basicstyles, cleanup ] }
       - { name: clipboard, groups: [ clipboard, undo ] }

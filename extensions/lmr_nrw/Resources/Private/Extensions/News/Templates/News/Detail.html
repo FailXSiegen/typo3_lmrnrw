@@ -102,7 +102,7 @@
 				<f:render partial="Detail/MediaContainer" arguments="{media: newsItem.mediaNonPreviews, settings:settings}" />
 
 				<!-- main text -->
-				<div class="news-text-wrap" itemprop="articleBody">
+				<div class="news-text-wrap columns-{newsItem.textColumns}" itemprop="articleBody">
 					<f:format.html>{newsItem.bodytext}</f:format.html>
 				</div>
 			</n:renderMedia>

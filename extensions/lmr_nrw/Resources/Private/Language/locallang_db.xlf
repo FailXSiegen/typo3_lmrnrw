@@ -149,6 +149,13 @@
 			<trans-unit id="tilebox.description" xml:space="preserve">
 				<source>Box of pages displayed as tiles</source>
 			</trans-unit>
+
+			<trans-unit id="text_columns" xml:space="preserve">
+				<source>Shows text in columns</source>
+			</trans-unit>
+			<trans-unit id="text_columns.description" xml:space="preserve">
+				<source>Splits all the paragraphs in multiple columns automaticly.</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

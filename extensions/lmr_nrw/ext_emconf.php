@@ -11,7 +11,8 @@ $EM_CONF['lmr_nrw'] = [
     'author_company' => 'Landesmusikrat NRW',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-11.5.99',
+            'typo3' => '10.4.0-11.5.99',
+            'news' => '8.3.0-8.9.99'
         ],
         'conflicts' => [],
         'suggests' => [],
