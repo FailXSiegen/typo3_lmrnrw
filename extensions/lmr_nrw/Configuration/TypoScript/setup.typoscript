@@ -5,3 +5,4 @@
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_nrw/Configuration/TypoScript/Content" extensions="typoscript">
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:lmr_nrw/Configuration/TypoScript/Extensions/Container" extensions="typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lmr_nrw/Configuration/TypoScript/Extensions/News/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lmr_nrw/Configuration/TypoScript/Extensions/Address/setup.typoscript">

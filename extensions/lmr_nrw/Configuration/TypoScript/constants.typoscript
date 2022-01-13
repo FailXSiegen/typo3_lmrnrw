@@ -12,3 +12,4 @@ failx.logoMobilePath = EXT:lmr_nrw/Resources/Public/Images/Logo/Landesmusikrat-N
 failx.buttonPath = EXT:lmr_nrw/Resources/Public/Icons/menu.svg
 failx.buttonClosePath = EXT:lmr_nrw/Resources/Public/Icons/close.svg
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lmr_nrw/Configuration/TypoScript/Extensions/News/constants.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lmr_nrw/Configuration/TypoScript/Extensions/Address/constants.typoscript">

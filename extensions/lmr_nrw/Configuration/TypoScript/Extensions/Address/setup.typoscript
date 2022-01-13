@@ -1,0 +1,25 @@
+plugin.tx_ttaddress {
+    settings {
+
+        # comma separated list of page IDs containing address records
+        pages = 
+        recursive = 
+        
+        displayMode = 
+        
+        groupsCombination = 
+        
+        sortBy = 
+        sortOrder = 
+    
+        singlePid = 
+
+        paginate {
+            # can be overridden by plugin
+            itemsPerPage = 10
+            insertAbove = 0
+            insertBelow = 0
+            maximumNumberOfLinks = 10
+        }
+    }
+}

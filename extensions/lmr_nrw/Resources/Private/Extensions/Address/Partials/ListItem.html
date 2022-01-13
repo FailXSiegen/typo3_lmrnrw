@@ -1,0 +1,32 @@
+<div class="col-12 col-lg-3">
+    <div class="vcard bg-lightgrey-100 d-flex flex-column rounded mb-4" itemscope itemtype="http://schema.org/Person">
+        <f:if condition="{address.firstImage}">
+            <div class="addressImage">
+                <f:link.action action="show" arguments="{address : address}"
+                            title="{address.fullName}"
+                            pageUid="{settings.singlePid}">
+                    <f:if condition="{address.image}">
+                        <f:media file="{address.firstImage}" width="400" class="img-fluid img-thumbnail rounded"
+                                alt="{address.firstImage.originalResource.alt}"
+                                title="{address.fullName}"/>
+                    </f:if>
+                </f:link.action>
+            </div>
+        </f:if>
+            <div class="addressInformation d-flex flex-column">
+                <h3>{address.fullName}</h3>
+                <f:if condition="{address.position}">
+                    <p class="position"><em>{address.position}</em></p>
+                </f:if>
+                <span>
+                    <f:link.email email="{address.email}">{address.email}</f:link.email>
+                </span>
+                <span>
+                    <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
+                </span>
+                <f:render section="address" partial="Address" arguments="{_all}"/>
+                <f:render section="social" partial="Address" arguments="{_all}"/>
+            </div>
+        </div>
+    </div>
+</div>
