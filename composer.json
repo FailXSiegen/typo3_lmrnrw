@@ -61,7 +61,8 @@
 		"failx/lmr_nrw": "@dev",
 		"josefglatz/toolbar-clear-processedfiles": "^1.0",
 		"kitzberger/rte-ckeditor-automails": "^1.0",
-		"jigal/t3adminer":"^9.5"
+		"jigal/t3adminer":"^9.5",
+        "friendsoftypo3/tt-address": "^5.3"
 	},
     "require-dev": {
     },

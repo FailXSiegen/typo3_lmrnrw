@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9fd3f85f9da2241d8d12d17183ec76e",
+    "content-hash": "d3ab9213b41eaa0aedeb9a4da621c230",
     "packages": [
         {
             "name": "b13/container",
@@ -555,32 +555,28 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "e864bbf5904cb8f5bb334f99209b48018522f042"
+                "reference": "9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/e864bbf5904cb8f5bb334f99209b48018522f042",
-                "reference": "e864bbf5904cb8f5bb334f99209b48018522f042",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c",
+                "reference": "9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2 || ^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^6.0",
-                "phpstan/phpstan": "^0.11.8",
-                "phpunit/phpunit": "^8.2"
+                "doctrine/coding-standard": "^9.0",
+                "phpstan/phpstan": "1.3",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "vimeo/psalm": "^4.11"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
@@ -615,7 +611,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/lexer/issues",
-                "source": "https://github.com/doctrine/lexer/tree/1.2.1"
+                "source": "https://github.com/doctrine/lexer/tree/1.2.2"
             },
             "funding": [
                 {
@@ -631,7 +627,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-25T17:44:05+00:00"
+            "time": "2022-01-12T08:27:12+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -773,6 +769,66 @@
                 "symlink": true,
                 "relative": true
             }
+        },
+        {
+            "name": "friendsoftypo3/tt-address",
+            "version": "5.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfTYPO3/tt_address.git",
+                "reference": "21b3f6bd7eeb19d5749b10f56d76f26ced74d4ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/tt_address/zipball/21b3f6bd7eeb19d5749b10f56d76f26ced74d4ae",
+                "reference": "21b3f6bd7eeb19d5749b10f56d76f26ced74d4ae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "typo3/cms-core": "^9.5.20 || ^10.4.6 || ^11.3"
+            },
+            "replace": {
+                "typo3-ter/tt-address": "self.version"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "tt_address",
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfTYPO3\\TtAddress\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "tt_address Development Team",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Displays a list of addresses from an address table on the page.",
+            "homepage": "https://github.com/FriendsOfTYPO3/tt_address",
+            "keywords": [
+                "addresses",
+                "extension",
+                "typo3"
+            ],
+            "support": {
+                "issues": "https://github.com/FriendsOfTYPO3/tt_address/issues",
+                "source": "https://github.com/FriendsOfTYPO3/tt_address/tree/5.3.0"
+            },
+            "time": "2021-07-28T15:26:02+00:00"
         },
         {
             "name": "georgringer/news",

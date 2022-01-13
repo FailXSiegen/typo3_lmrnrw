@@ -13,6 +13,11 @@
 	<f:if condition="{topnews} == 2">
 		<f:variable name="topnewsclass" value="col-12 col-xl-6 col-xxl-6" />
 	</f:if>
+	<f:if condition="{isPaginated}">
+		<f:variable name="newsclass" value="col-12 col-xl-6 col-xxl-4" />
+		<f:variable name="topnewsclass" value="col-12 col-xl-6 col-xxl-4" />
+	</f:if>
+
 	<div class="{f:if(condition: newsItem.istopnews, then: '{topnewsclass}', else: '{newsclass}')}">
 		<div class="article h-100 d-flex flex-column articletype-{newsItem.type} rounded{f:if(condition: newsItem.istopnews, then: ' topnews bg-red-100 p-3', else: ' bg-lightgrey-100 p-3')}" itemscope="itemscope" itemtype="http://schema.org/Article">
 			<n:excludeDisplayedNews newsItem="{newsItem}"/>
