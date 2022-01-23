@@ -36,7 +36,12 @@
     }
 }
 .has-bgcolor {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1.5rem;
+}
+.bgimage-container {
+    .has-bgcolor {
+        margin-bottom: 0;
+    }   
 }
 div[class*="bg-red"],
 div[class*="bg-darkred"],
