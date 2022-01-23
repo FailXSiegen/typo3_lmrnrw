@@ -98,8 +98,11 @@
     }
     .level-3 {
         background-color: $darkgrey;
-        margin: 0 0 0 -15px;
-        padding: 0 15px 0 30px;
+        margin: 0 -15px 0 -40px;
+        padding: 0 15px 0 45px;
+        a {
+            color: $white;
+        }
     }
     a[aria-expanded="true"] + .level-1 {
         box-shadow: 0px 3px 6px #00000029;
