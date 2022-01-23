@@ -27,13 +27,18 @@
         </f:defaultCase>
     </f:switch>
 <f:section name="defaultContainer">
+<f:variable name="hasBgColor" value="no-bgcolor" />
+<f:if condition="{data.frame_class} == '' || {data.frame_class} == 'default'">
+    <f:then></f:then>
+    <f:else>
+        <f:variable name="hasBgColor" value="has-bgcolor" />  
+    </f:else>
+    <f:variable name="hasBgColor" value="has-bgcolor" />
+</f:if>
 <f:variable name="spaceAfter" value="{data.space_after_class}" />
 <f:if condition="{spaceAfter} == '' && {data.CType} != 'bgcontainer'">
     <f:variable name="spaceAfter" value="pb-4" />
 </f:if>
-<f:if condition="{data.frame_class} != '' && {data.CType} == 'bgcontainer'">
-    <f:variable name="spaceAfter" value="{spaceAfter} mb-4" />
-</f:if>
-{spaceAfter} {data.space_before_class} {data.frame_class}-{data.opacity} {classname} frame-type-{data.CType}  {f:if(condition:data.overflow_hidden, then: 'overflow-hidden ')} {f:if(condition:data.circle_active, then: 'position-relative ')} {f:if(condition:data.layout, then: '{data.layout} ')}  {data.space_start_class} {data.space_end_class}
+{spaceAfter} {data.space_before_class} {hasBgColor} {data.frame_class}-{data.opacity} {classname} frame-type-{data.CType}  {f:if(condition:data.overflow_hidden, then: 'overflow-hidden ')} {f:if(condition:data.circle_active, then: 'position-relative ')} {f:if(condition:data.layout, then: '{data.layout} ')}  {data.space_start_class} {data.space_end_class}
 </f:section>
 </f:spaceless>
