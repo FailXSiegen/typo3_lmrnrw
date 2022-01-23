@@ -12,6 +12,8 @@ editor:
     stylesSet:
       - { name: "Button Primary (Rot)", element: "a", attributes: { class: "btn btn-primary"} }
       - { name: "Button Secondary (Grau)", element: "a", attributes: { class: "btn btn-secondary"} }
+      - { name: "Liste mit Kreiseln", element: "ul", attributes: { class: "list-circle"} }
+      - { name: "Liste mit Häkchen", element: "ul", attributes: { class: "list-check"} }
 
     format_tags: "p;h2;h3;h4;h5;div;span"
     format_span: { name : 'Span', element : 'span'}

@@ -41,6 +41,9 @@ div[class*="bg-darkgrey"] {
     * {
         color: $white !important;
     } 
+    ul.list-circle li:after {
+        background-image: url('./../../../../Public/Images/bulletpoints-highlight-white.svg?inline');
+    }
 }
 @each $opacity, $x in $opacities {
     .opacity-#{$opacity} {
@@ -250,5 +253,44 @@ picture {
 footer {
     p:last-child {
         margin-bottom: 0;
+    }
+}
+ul {
+    &.list- {
+        &circle,
+        &check {
+            list-style: none;
+            margin: 0 0 1rem 0;
+            padding: 0;
+            li {
+                position: relative;
+                padding-left: 28px;
+                margin-bottom: .7rem;
+                &:after {
+                    content:'';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+        &circle li {
+            line-height: 2.2;
+            &:after {
+                height: 30px;
+                background-image: url('./../../../../Public/Images/bulletpoints-highlight.svg?inline');
+            }
+        }
+        &check li {
+            line-height: 1.5;
+            &:after {
+                background-image: url('./../../../../Public/Images/bulletpoints-standard.svg?inline');
+            }
+        }
     }
 }
