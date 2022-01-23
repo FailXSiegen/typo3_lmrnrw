@@ -1,0 +1,136 @@
+@import 'variables';
+@import '../../../../Public/Vendor/bootstrap/scss/functions';
+@import '../../../../Public/Vendor/bootstrap/scss/variables';
+@import '../../../../Public/Vendor/bootstrap/scss/mixins';
+@import '../../../../Public/Vendor/bootstrap/scss/pagination';
+
+h1, .h1 {
+    font-size: 32px;
+    color: $darkgrey;
+    @include media-breakpoint-up(md) {
+        font-size: 45px;
+        margin-bottom: 25px;
+    }
+    @include media-breakpoint-up(xxl) {
+        font-size: 1.8vw;
+    }
+}
+h2, .h2 {
+    font-size: 25px;
+    color: $red;
+    font-weight: 300;
+    @include media-breakpoint-up(md) {
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+    @include media-breakpoint-up(xxl) {
+        font-size: 1.5vw;
+    }
+}
+h3, .h3 {
+    font-size: 22px;
+    color: $darkgrey;
+    font-weight: 300;
+    @include media-breakpoint-up(md) {
+        font-size: 25px;
+    }
+    @include media-breakpoint-up(xxl) {
+        font-size: 1.2vw;
+    }
+}
+h4, .h4 {
+    font-size: 18px;
+    color: $darkgrey;
+    @include media-breakpoint-up(md) {
+        font-size: 20px;
+    }
+}
+h5, .h5 {
+    font-size: 16px;
+    color: $darkgrey;
+    @include media-breakpoint-up(md) {
+        font-size: 18px;
+    }
+}  
+
+ul {
+    &.list- {
+        &circle,
+        &check {
+            list-style: none;
+            margin: 0 0 1rem 0;
+            padding: 0;
+            li {
+                position: relative;
+                padding-left: 28px;
+                margin-bottom: .7rem;
+                &:after {
+                    content:'';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+        &circle li {
+            line-height: 2.2;
+            &:after {
+                height: 30px;
+                background-image: url('./../../../../Public/Images/bulletpoints-highlight.svg?inline');
+            }
+        }
+        &check li {
+            line-height: 1.5;
+            &:after {
+                background-image: url('./../../../../Public/Images/bulletpoints-standard.svg?inline');
+            }
+        }
+    }
+}
+a {
+    position: relative;
+    &[href*="mailto:"],
+    &[href*="tel:"] {
+        padding-left: 28px;  
+        &:after {
+            content:'';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    &[href*="mailto:"]:after  {
+        background-image: url('./../../../../Public/Images/contact-icon.svg?inline');
+    }
+    &[href*="tel:"]:after {
+        background-image: url('./../../../../Public/Images/phone-icon.svg?inline');
+    }
+}
+.tx-ttaddress {
+    a {
+        position: relative;
+        margin-bottom: 1rem;
+        display: block;
+        &[href*="mailto:"],
+        &[href*="tel:"] {
+            padding-left: 58px;  
+            &:after {
+                width: 42px;
+                height: 42px;
+            }
+        }
+        &[href*="tel:"] {
+            line-height: 42px;
+        }
+    }
+}

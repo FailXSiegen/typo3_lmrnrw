@@ -122,6 +122,7 @@ module.exports = {
         'slider':  './src/scss/slider.scss',
         'circle': './src/scss/circle.scss',
         'lmrnrw': './src/scss/lmrnrw.scss',
+        'rte': './src/scss/rte.scss',
     },
 
     // Path and filename of your result bundle.
