@@ -8,7 +8,7 @@ imports:
 # Minimal configuration for the editor
 editor:
   config:
-    contentsCss: "EXT:lmr_nrw/Resources/Public/StyleSheet/rte.css"
+    contentsCss: "EXT:lmr_nrw/Resources/Public/StyleSheet/rte.css?v=2"
     stylesSet:
       - { name: "Button Primary (Rot)", element: "a", attributes: { class: "btn btn-primary"} }
       - { name: "Button Secondary (Grau)", element: "a", attributes: { class: "btn btn-secondary"} }
