@@ -246,3 +246,9 @@ picture {
         filter: grayscale(100%);
     }
 }
+
+footer {
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
