@@ -1,7 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
     data-namespace-typo3-fluid="true">
-
-    <f:variable name="level" value="{f:if(condition: level, then:'{level + 1}', else: '1')}" />
+    <f:variable name="level" value="1" />
+    <f:if condition="{plevel}">
+        <f:variable name="level" value="{plevel + 1}" />
+    </f:if>
+    
     <f:variable name="navclasses" value="my-2 py-2" />
     <f:if condition="{level} == 1">
         <f:variable name="navclasses" value="my-0 py-0" />
@@ -27,7 +30,7 @@
                             arguments="{
                                 menu: submenu,
                                 class: 'collapse nav',
-                                level: level
+                                plevel: level
                             }" />
                     </f:then>
                     <f:else>
