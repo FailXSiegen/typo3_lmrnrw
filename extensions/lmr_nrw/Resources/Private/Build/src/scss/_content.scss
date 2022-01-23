@@ -78,16 +78,17 @@ ul {
             }
         }
         &circle li {
+            line-height: 1.5;
+            &:after {
+                
+                background-image: url('./../../../../Public/Images/bulletpoints-standard.svg?inline');
+            }
+        }
+        &check li { 
             line-height: 2.2;
             &:after {
                 height: 30px;
                 background-image: url('./../../../../Public/Images/bulletpoints-highlight.svg?inline');
-            }
-        }
-        &check li {
-            line-height: 1.5;
-            &:after {
-                background-image: url('./../../../../Public/Images/bulletpoints-standard.svg?inline');
             }
         }
     }
