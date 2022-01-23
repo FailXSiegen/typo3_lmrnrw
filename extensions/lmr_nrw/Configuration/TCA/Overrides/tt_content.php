@@ -294,7 +294,7 @@ call_user_func(
                         ['Center Center','position-absolute top-50 start-50 translate-middle','EXT:lmr_nrw/Resources/Public/Icons/center-center.png'],
                         ['Center Right','position-absolute top-50 end-0 translate-middle-y','EXT:lmr_nrw/Resources/Public/Icons/center-right.png'],
                         ['Bottom Left','position-absolute bottom-0 start-0','EXT:lmr_nrw/Resources/Public/Icons/bottom-left.png'],
-                        ['Bottom Center','position-absolute bottom-0 start-50 translate-middle-x"','EXT:lmr_nrw/Resources/Public/Icons/bottom-center.png'],
+                        ['Bottom Center','position-absolute bottom-0 start-50 translate-middle-x','EXT:lmr_nrw/Resources/Public/Icons/bottom-center.png'],
                         ['Bottom Right','position-absolute bottom-0 end-0','EXT:lmr_nrw/Resources/Public/Icons/bottom-right.png']
                     ],
                     'fieldWizard' => [
