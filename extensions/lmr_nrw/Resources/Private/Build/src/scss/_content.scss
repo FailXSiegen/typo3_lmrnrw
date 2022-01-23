@@ -2,7 +2,6 @@
 @import '../../../../Public/Vendor/bootstrap/scss/functions';
 @import '../../../../Public/Vendor/bootstrap/scss/variables';
 @import '../../../../Public/Vendor/bootstrap/scss/mixins';
-@import '../../../../Public/Vendor/bootstrap/scss/pagination';
 
 h1, .h1 {
     font-size: 32px;
@@ -33,6 +32,7 @@ h3, .h3 {
     font-weight: 300;
     @include media-breakpoint-up(md) {
         font-size: 25px;
+        margin-bottom: 25px;
     }
     @include media-breakpoint-up(xxl) {
         font-size: 1.2vw;
@@ -43,6 +43,7 @@ h4, .h4 {
     color: $darkgrey;
     @include media-breakpoint-up(md) {
         font-size: 20px;
+        margin-bottom: 25px;
     }
 }
 h5, .h5 {
@@ -50,6 +51,7 @@ h5, .h5 {
     color: $darkgrey;
     @include media-breakpoint-up(md) {
         font-size: 18px;
+        margin-bottom: 25px;
     }
 }  
 
