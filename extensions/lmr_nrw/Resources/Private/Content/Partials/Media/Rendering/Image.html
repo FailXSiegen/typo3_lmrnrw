@@ -3,7 +3,8 @@
         <f:media class="image-embed-item img img-fluid" file="{file}" width="{dimensions.width}"
                  height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" />
     </f:comment>
-    <picture>
+    <f:variable name="imageStyle" value="{file.properties.image_style}" />
+    <picture class="position-relative {imageStyle}">
         <source media="(max-width: 767px) and (orientation:portrait)"
                 srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-portrait')}.webp"
                 type="image/webp"

@@ -157,7 +157,7 @@
             display: none;
         }
     }
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
         + #head {
             display: flex !important;
         }

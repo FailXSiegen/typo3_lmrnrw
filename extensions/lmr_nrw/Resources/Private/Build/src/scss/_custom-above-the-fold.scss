@@ -36,6 +36,7 @@
     }
 }
 div[class*="bg-red"],
+div[class*="bg-darkred"],
 div[class*="bg-darkgrey"] {
     * {
         color: $white !important;
@@ -48,7 +49,7 @@ div[class*="bg-darkgrey"] {
 }
 body {
     padding: 0 15px;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
         display: flex;
         flex-wrap: nowrap;
         overflow-y: auto;
@@ -60,7 +61,7 @@ body {
     svg {
         max-width: 200px;
         width: 100%;
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
             max-width: 269px;
         }
     }
@@ -84,7 +85,7 @@ a {
 .logo svg{
     max-height: 110px;
     transition: max-height .5s ease-in-out;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
         path:nth-child(-n + 2) {
             opacity: 1;
             transition: opacity .5s ease-in-out;
@@ -236,5 +237,12 @@ div[class*="bg-"] {
         &.next a {
             background-image: url('./../../../../Public/Images/pagination-arrow-right.svg?inline');
         }
+    }
+}
+
+picture {
+    display: block;
+    &.grayscale {
+        filter: grayscale(100%);
     }
 }
