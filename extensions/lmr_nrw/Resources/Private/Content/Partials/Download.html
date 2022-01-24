@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+    data-namespace-typo3-fluid="true">
+    <f:if condition="{file}">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+            <div class="bg-lightgrey-100 p-4 d-flex flex-column text-center">
+                <span class="w-25 mx-auto mb-2">
+                    <a href="{file.originalResource.publicUrl -> f:format.htmlspecialchars()}" target="_blank">
+                        <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Images/download-icon.svg'}" />
+                    </a>
+                </span>
+                <span class="mb-2">
+                    <a href="{file.originalResource.publicUrl -> f:format.htmlspecialchars()}" target="_blank">
+                        {f:if(condition:file.originalResource.title, then:file.originalResource.title, else:file.originalResource.name)}
+                    </a>
+                </span>
+                <span class="mb-2">
+                    <span class="text-uppercase">{file.originalResource.extension}</span><br />
+                    {file.originalResource.size -> f:format.bytes()}
+                </span>
+                <span>
+                    <a 
+                        href="{file.originalResource.publicUrl -> f:format.htmlspecialchars()}" 
+                        target="_blank"
+                        class="btn btn-primary px-5">
+                        Herunterladen
+                    </a>
+                </span>
+            </div>
+        </div>
+    </f:if>
+</html>

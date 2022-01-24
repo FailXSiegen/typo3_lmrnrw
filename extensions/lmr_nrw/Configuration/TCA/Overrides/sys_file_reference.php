@@ -25,9 +25,22 @@ call_user_func(
                 ],
                 'exclude' => '1',
                 'label' => 'Bild-Stil'
-            ]
+            ],
+            'showinpreview' => [
+                'exclude' => true,
+                'label' => 'Bildposition',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectSingle',
+                    'items' => [
+                        ['Gallerie neben News', 0, ''],
+                        ['Bühnen-Bild', 2, ''],
+                    ],
+                    'default' => 0,
+                ]
+            ],
         ]);
-
+        ;
         $GLOBALS['TCA']['sys_file_reference']['palettes']['imageoverlayPalette']['showitem'] = '
             title,alternative,
             --linebreak--,

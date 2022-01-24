@@ -1,0 +1,24 @@
+lib.breadcrumb = FLUIDTEMPLATE
+lib.breadcrumb {
+    templateName = Breadcrumb
+    layoutRootPaths {
+      1 = {$failx.resourcePath}Private/Page/Layouts/
+    }
+
+    partialRootPaths {
+      1 = {$failx.resourcePath}Private/Page/Partials/
+    }
+
+    templateRootPaths {
+      1 = {$failx.resourcePath}Private/Page/Templates/
+    } 
+    dataProcessing {
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+          special = rootline
+          as = breadcrumbNavigation
+      }
+      30 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+      30.menus = breadcrumbNavigation
+    }
+}

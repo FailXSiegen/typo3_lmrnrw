@@ -5,4 +5,8 @@ plugin.tx_news {
             99 = EXT:lmr_nrw/Resources/Private/Content/Partials/
 		}
 	}
+	_LOCAL_LANG.de {
+		related-files = Downloads
+	}
 }
+

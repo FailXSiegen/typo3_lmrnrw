@@ -93,13 +93,6 @@ page {
           includeSpacer = 0
           as = socialNavigation
       }
-      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-      20 {
-          special = rootline
-          as = breadcrumbNavigation
-      }
-      30 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
-      30.menus = breadcrumbNavigation
     }
     variables {
       rootPageUid = TEXT
@@ -123,7 +116,12 @@ page {
     
       contactMail = TEXT
       contactMail.value = {$failx.contactMail}
-      
+
     }
   }
 }
+
+[traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+page.10.templateName >
+page.10.templateName = News
+[end]
