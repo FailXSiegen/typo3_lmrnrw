@@ -381,8 +381,8 @@ call_user_func(
                         ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.grey','grey','EXT:lmr_nrw/Resources/Public/Icons/color-grey.png'],
                         ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkgrey','darkgrey','EXT:lmr_nrw/Resources/Public/Icons/color-darkgrey.png'],
                         ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.lightgrey','lightgrey','EXT:lmr_nrw/Resources/Public/Icons/color-lightgrey.png'],
-                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.red','darkred','EXT:lmr_nrw/Resources/Public/Icons/color-red.png'],
-                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkred','red','EXT:lmr_nrw/Resources/Public/Icons/color-darkred.png'],
+                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkred','darkred','EXT:lmr_nrw/Resources/Public/Icons/color-red.png'],
+                        ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.red','red','EXT:lmr_nrw/Resources/Public/Icons/color-darkred.png'],
                     ],
                     'fieldWizard' => [
                         'selectIcons' => [
