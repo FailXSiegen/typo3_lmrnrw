@@ -3,9 +3,16 @@
     <f:asset.css 
         identifier="circle"
         href="EXT:lmr_nrw/Resources/Public/StyleSheet/circle.css" />
+        <f:variable name="circleColor" value="{f:if(condition:pCircleColor, then: pCircleColor, else: data.circle_color)}" />
+        <f:variable name="circleOpacity" value="{f:if(condition:pCircleOpacity, then: pCircleOpacity, else: data.circle_opacity)}" />
+        <f:variable name="circlePosition" value="{f:if(condition:pCirclePosition, then: pCirclePosition, else: data.circle_position)}" />
+        <f:variable name="circleWidth" value="{f:if(condition:pCircleWidth, then: pCircleWidth, else: data.circle_width)}" />
+        <f:variable name="circleHeight" value="{f:if(condition:pCircleHeight, then: pCircleHeight, else: data.circle_height)}" />
+        <f:variable name="circleOffsetX" value="{f:if(condition:pCircleOffsetX, then: pCircleOffsetX, else: data.circle_offset_x)}" />
+        <f:variable name="circleOffsetY" value="{f:if(condition:pCircleOffsetY, then: pCircleOffsetY, else: data.circle_offset_y)}" />
     <div 
-        class="bg-circle overflow-hidden {data.circle_type} fill-{data.circle_color}-{data.circle_opacity} {data.circle_position}"
-        style="{f:if(condition: '{data.circle_width} > 0', then:'width:{data.circle_width}%;')} {f:if(condition: '{data.circle_height} > 0', then:'height:{data.circle_height}%;')} margin:{data.circle_offset_y}% {data.circle_offset_x}%;">
+        class="bg-circle overflow-hidden {data.circle_type} fill-{circleColor}-{circleOpacity} {circlePosition}"
+        style="{f:if(condition: '{circleWidth} > 0', then:'width:{circleWidth}%;')} {f:if(condition: '{circleHeight} > 0', then:'height:{circleHeight}%;')} margin: {f:if(condition: '{circleOffsetY}', then:'{circleOffsetY}%',else:'0')} {f:if(condition: '{circleOffsetX}', then:'{circleOffsetX}%',else:'0')};">
         <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Images/circle.svg'}" />
     </div>
 </html>

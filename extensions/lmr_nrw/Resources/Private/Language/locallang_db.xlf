@@ -150,6 +150,13 @@
 				<source>Box of pages displayed as tiles</source>
 			</trans-unit>
 
+			<trans-unit id="trust" xml:space="preserve">
+				<source>Trust box</source>
+			</trans-unit>
+			<trans-unit id="trust.description" xml:space="preserve">
+				<source>List of trust content with selectable circle layouts</source>
+			</trans-unit>
+
 			<trans-unit id="text_columns" xml:space="preserve">
 				<source>Shows text in columns</source>
 			</trans-unit>

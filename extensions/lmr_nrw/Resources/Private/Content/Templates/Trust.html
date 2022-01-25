@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>
+        0 = Großer Kreisel Links / Kreisel über Text
+        1 = Großer Kreisel Links / Kreisel links neben Text
+        2 = Kein großer Kreisel / Kreisel über Text
+        3 = Kein großer Kreisel / Kreisel links neben Text
+    </f:comment>
+    <f:asset.css 
+        identifier="trust"
+        href="EXT:lmr_nrw/Resources/Public/StyleSheet/trust.css" />
+    <f:asset.css 
+        identifier="circle"
+        href="EXT:lmr_nrw/Resources/Public/StyleSheet/circle.css" />
+    <div id="c{data.uid}" 
+        class="frame frame-type-{data.CType} mb-4 overflow-hidden trust-layout-{data.layout} {data.frame_class}-{data.opacity} container-fluid py-6 position-relative">
+        <f:if condition="{data.layout} == 0 || {data.layout} == 1">
+            <f:render 
+                partial="Circle" 
+                arguments="{
+                pCirclePosition: 'd-none d-lg-block position-absolute top-50 start-0 translate-middle-y',
+                pCircleColor: data.circle_color,
+                pCircleOpacity: data.circle_opacity,
+                pCircleWidth: '{f:if(condition:\'{data.layout} == 0\', then:\'42\', else: \'29\')}',
+                pCircleOffsetX: '{f:if(condition:\'{data.layout} == 0\', then:\'-10\', else: \'-5\')}',
+                pCircleOffsetY: '0'
+            }" />
+        </f:if>
+        <div class="row gy-4 {f:if(condition:'{data.layout} == 0', then:'offset-lg-4')} {f:if(condition:'{data.layout} == 1', then:'offset-lg-3')}">
+            <div class="col-12">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </div>
+            <f:for each="{bullets}" as="bullet">
+                <div class="col-12 {f:if(condition:'{data.layout} == 0 || {data.layout} == 1', then:'col-lg-6', else:'col-lg-4')} ">
+                    <div class="d-flex {f:if(condition:'{data.layout} == 0 || {data.layout} == 2', then:'flex-column text-center')}">
+                        <span class="circle fill-{data.circle_color}-{data.circle_opacity}">
+                            <f:cObject 
+                                typoscriptObjectPath="lib.inlineSvg" 
+                                data="{src: 'EXT:lmr_nrw/Resources/Public/Images/circle.svg'}" />
+                        </span>
+                        <span>{bullet}</span>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</html>

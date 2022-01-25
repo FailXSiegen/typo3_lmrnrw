@@ -366,11 +366,17 @@ call_user_func(
             'circle_color' => [
                 'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.color',
                 'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:circle.color.description',
-                'displayCond' => 'FIELD:circle_active:REQ:true',
+                'displayCond' => [
+                    'OR' => [
+                        'FIELD:circle_active:REQ:true',
+                        'FIELD:CType:=:trust',
+                    ]
+                ],
                 'config' => [
                     'renderType' => 'selectSingle',
                     'type' => 'select',
                     'items' => [
+                        ['Default',''],
                         ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.white','white','EXT:lmr_nrw/Resources/Public/Icons/color-white.png'],
                         ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.grey','grey','EXT:lmr_nrw/Resources/Public/Icons/color-grey.png'],
                         ['LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkgrey','darkgrey','EXT:lmr_nrw/Resources/Public/Icons/color-darkgrey.png'],
@@ -388,7 +394,12 @@ call_user_func(
             'circle_opacity' => [
                 'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:opacity',
                 'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:opacity.description',
-                'displayCond' => 'FIELD:circle_active:REQ:true',
+                'displayCond' => [
+                    'OR' => [
+                        'FIELD:circle_active:REQ:true',
+                        'FIELD:CType:=:trust',
+                    ]
+                ],
                 'config' => [
                     'type' => 'input',
                     'size' => 10,
@@ -614,6 +625,23 @@ call_user_func(
             ',
         ];
 
+        $GLOBALS['TCA']['tt_content']['types']['trust'] = [
+            'showitem' => '
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                    --palette--;;general,
+                    --palette--;;headers,
+                    bodytext,--linebreak--, layout, frame_class, opacity,--linebreak--, circle_color, circle_opacity,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.accessibility,
+                    --palette--;;menu_accessibility,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;hidden,
+                    --palette--;;access,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+                    rowDescription,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
+            ',
+        ];
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
             'tt_content',
             'CType',
@@ -634,6 +662,17 @@ call_user_func(
                  'content-menu-pages',
              ],
             'textmedia',
+            'after'
+        );
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+            'tt_content',
+            'CType',
+            [
+                 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:trust',
+                 'trust',
+                 'content-bullets',
+             ],
+            'tilebox',
             'after'
         );
     },

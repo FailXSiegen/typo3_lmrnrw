@@ -1,0 +1,28 @@
+@import 'variables';
+@import '../../../../Public/Vendor/bootstrap/scss/functions';
+@import '../../../../Public/Vendor/bootstrap/scss/variables';
+@import '../../../../Public/Vendor/bootstrap/scss/mixins';
+
+.trust-layout {
+    .bg-circle {
+        margin-left: -35px !important;
+    }
+    &-0,
+    &-2 {
+        span.circle {
+            margin-bottom: 1rem;
+            svg {
+                width: 52px;
+            }
+        }
+    }
+    &-1,
+    &-3 {
+        span.circle {
+            margin-right: 1rem;
+            svg {
+                width: 40px;
+            }
+        }
+    }
+}

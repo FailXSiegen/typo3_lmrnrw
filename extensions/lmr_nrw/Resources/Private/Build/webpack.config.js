@@ -121,6 +121,7 @@ module.exports = {
         'abovethefold': './src/scss/above-the-fold.scss',
         'slider':  './src/scss/slider.scss',
         'circle': './src/scss/circle.scss',
+        'trust': './src/scss/trust.scss',
         'lmrnrw': './src/scss/lmrnrw.scss',
         'rte': './src/scss/rte.scss',
     },

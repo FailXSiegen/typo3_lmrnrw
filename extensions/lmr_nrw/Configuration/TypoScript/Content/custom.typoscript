@@ -20,4 +20,16 @@ tt_content {
             }
         }
     }
+    trust =< lib.contentElement
+    trust {
+        templateName = Trust
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+            10 {
+                fieldName = bodytext
+                removeEmptyEntries = 1
+                as = bullets
+            }
+        }
+    }
 }

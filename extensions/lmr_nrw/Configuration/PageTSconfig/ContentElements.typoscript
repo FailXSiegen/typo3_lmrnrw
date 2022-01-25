@@ -3,15 +3,15 @@ mod.wizards.newContentElement.wizardItems {
    // add the content element to the tab "common"
    common {
       elements {
-		 counter {
-            iconIdentifier = mimetypes-x-content-script
-            title = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:counter
-            description = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:counter.description
-            tt_content_defValues {
-               CType = counter
-            }
+         counter {
+               iconIdentifier = mimetypes-x-content-script
+               title = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:counter
+               description = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:counter.description
+               tt_content_defValues {
+                  CType = counter
+               }
          }
-		 tilebox {
+		   tilebox {
             iconIdentifier = content-menu-pages
             title = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:tilebox
             description = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:tilebox.description
@@ -19,7 +19,15 @@ mod.wizards.newContentElement.wizardItems {
                CType = tilebox
             }
          }
+         trust {
+            iconIdentifier = content-bullets
+            title = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:trust
+            description = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:trust.description
+            tt_content_defValues {
+               CType = trust
+            }
+         }
       }
-      show := addToList(counter,tilebox)
+      show := addToList(counter,tilebox,trust)
    }
 }

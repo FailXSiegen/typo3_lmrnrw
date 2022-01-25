@@ -8,6 +8,9 @@
         @each $opacity, $x in $opacities {
             &#{$themeColour}-#{$opacity} > svg {
                 fill: rgba($i, $x);
+                .st0 {
+                    fill: rgba($i, $x);
+                }
             }	
         }
     }

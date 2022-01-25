@@ -112,6 +112,18 @@ TCEFORM {
 			addItems {
 			    4 = Keine Ummantelung
 			}
+			types {
+				trust {
+					altLabels {
+						0 = Großer Kreisel Links / Kreisel über Text
+						1 = Großer Kreisel Links / Kreisel links neben Text
+						2 = Kein großer Kreisel / Kreisel über Text
+						3 = Kein großer Kreisel / Kreisel links neben Text
+					}
+					removeItems = 4
+					label = Kreisel Layouts
+				}
+			}
 		}
 		frame_class {
             label = Background
@@ -223,6 +235,11 @@ TCEFORM {
 				text.disabled = 0
 				textpic.disabled = 0
 				textmedia.disabled = 0
+			}
+		}
+		circle_color {
+			types {
+				trust.label = Kreisel Farbe
 			}
 		}
 	}
