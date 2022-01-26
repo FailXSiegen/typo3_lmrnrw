@@ -17,6 +17,9 @@
         }
     }
     .video_trigger {
+        .video_trigger_content a {
+            text-decoration: underline;
+        }
         z-index: 9;
         &:before {
             content: '';
