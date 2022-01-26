@@ -116,7 +116,9 @@ module.exports = {
     // Path to your entry point. From this file Webpack will begin its work
     entry: {
         'bootstrap' : './../../Public/Vendor/bootstrap/dist/js/bootstrap.bundle.min.js',
+        'glightboxjs' : './../../Public/Vendor/glightbox/dist/js/glightbox.min.js',    
         'javascript': './src/javascript/index.js',
+        '2click' : './src/javascript/2click.js',
         'purecounter_vanilla': './src/javascript/purecounter_vanilla.js',
         'abovethefold': './src/scss/above-the-fold.scss',
         'slider':  './src/scss/slider.scss',
@@ -124,6 +126,8 @@ module.exports = {
         'trust': './src/scss/trust.scss',
         'lmrnrw': './src/scss/lmrnrw.scss',
         'rte': './src/scss/rte.scss',
+        '2clickcss' : './src/scss/2click.scss',
+        'glightboxcss' : './src/scss/glightbox.scss',
     },
 
     // Path and filename of your result bundle.

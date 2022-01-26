@@ -1,0 +1,17 @@
+@import '../../../../Public/Vendor/glightbox/dist/css/glightbox.min.css';
+
+.glightbox{
+    position: relative;
+    display: block;
+    &:after {
+        content:'';
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+        width: 45px;
+        height:45px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('./../../../../Public/Images/lightbox-plus.svg?inline');
+    }
+}

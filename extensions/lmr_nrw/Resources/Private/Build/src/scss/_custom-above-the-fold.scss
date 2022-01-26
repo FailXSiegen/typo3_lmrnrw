@@ -49,6 +49,10 @@ div[class*="bg-darkgrey"] {
     * {
         color: $white !important;
     } 
+    .btn-primary {
+        background-color: $lightgrey;
+        color: $darkgrey !important;
+    }
     ul.list-circle li:after {
         background-image: url('./../../../../Public/Images/bulletpoints-highlight-white.svg?inline');
     }

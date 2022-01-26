@@ -53,7 +53,9 @@
 					</f:if>
 				</n:simplePrevNext>
 			</f:if>
-			<f:render partial="Detail/MediaContainer" arguments="{media: newsItem.mediaPreviews, settings:settings}" />
+			<f:if condition="{newsItem.mediaPreviews.0}">
+				<f:render partial="Media/Type/Image" arguments="{file: newsItem.mediaPreviews.0}" />
+			</f:if>
 			<f:cObject typoscriptObjectPath="lib.breadcrumb" />
 			<div class="header">
 				<h3 itemprop="headline">{newsItem.title}</h3>
@@ -94,19 +96,33 @@
 			</f:if>
 
 			<f:if condition="{newsItem.mediaNonPreviews}">
-				<div class="row">
-					<div class="col-lg-9">
-						<div class="news-text-wrap columns-{newsItem.textColumns}" itemprop="articleBody">
-							<f:format.html>{newsItem.bodytext}</f:format.html>
+				<f:then>
+					<div class="row">
+						<div class="col-lg-9">
+							<div class="news-text-wrap columns-{newsItem.textColumns}" itemprop="articleBody">
+								<f:format.html>{newsItem.bodytext}</f:format.html>
+							</div>
+							<f:if condition="{newsItem.contentElements}">
+								<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+							</f:if>
 						</div>
-						<f:if condition="{newsItem.contentElements}">
-							<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
-						</f:if>
+						<div class="col-lg-3">
+							<f:render partial="Detail/MediaContainer" arguments="{media: newsItem.mediaNonPreviews, settings:settings}" />
+						</div>
 					</div>
-					<div class="col-lg-3">
-						<f:render partial="Detail/MediaContainer" arguments="{media: newsItem.mediaNonPreviews, settings:settings}" />
+				</f:then>
+				<f:else>
+					<div class="row">
+						<div class="col-lg-9">
+							<div class="news-text-wrap columns-{newsItem.textColumns}" itemprop="articleBody">
+								<f:format.html>{newsItem.bodytext}</f:format.html>
+							</div>
+							<f:if condition="{newsItem.contentElements}">
+								<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+							</f:if>
+						</div>
 					</div>
-				</div>
+				</f:else>
 			</f:if>
 			<f:if condition="{settings.backPid}">
 				<!-- Link Back -->
