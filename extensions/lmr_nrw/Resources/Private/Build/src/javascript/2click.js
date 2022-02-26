@@ -72,7 +72,7 @@ document.ready = function( callback ) {
   function get_source_url( data_type ) {
     switch( data_type ) {
       case "youtube":
-        return "https://www.youtube-nocookie.com/embed/{SOURCE}?rel=0&controls=0&showinfo=0&autoplay=1&mute=1";
+        return "https://www.youtube-nocookie.com/embed/{SOURCE}?rel=0&controls=1&showinfo=0&autoplay=1&mute=1";
 
       case "google-maps":
         return "https://www.google.com/maps/embed?pb={SOURCE}";
