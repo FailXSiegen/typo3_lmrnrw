@@ -1,12 +1,13 @@
-<div class="col-12 col-lg-3">
+<div class="col-9 col-sm-6 col-lg-3">
     <f:if condition="{address.firstImage}">
         <div class="addressImage rounded-top overflow-hidden">
             <f:if condition="{address.image}">
-                <f:media file="{address.firstImage}" 
-                    width="400" 
-                    class="img-fluid p-0"
-                            alt="{address.firstImage.originalResource.alt}"
-                            title="{address.fullName}"/>
+                <f:media 
+                    file="{address.firstImage}" 
+                    width="600m" 
+                    class="img-fluid p-0 w-100"
+                    alt="{address.firstImage.originalResource.alt}"
+                    title="{address.fullName}"/>
              </f:if>
         </div>
     </f:if>
