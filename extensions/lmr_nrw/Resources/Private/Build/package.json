@@ -2,7 +2,8 @@
   "dependencies": {
     "bootstrap": "^5",
     "bootstrap-icons": "^1.7.2",
-    "locomotive-scroll": "^4.1.2"
+    "locomotive-scroll": "^4.1.2",
+    "glightbox": "^3.1.0"
   },
   "scripts": {
     "build": "yarn install --production=true && webpack --config webpack.config.js",
