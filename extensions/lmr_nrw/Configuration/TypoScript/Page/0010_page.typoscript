@@ -98,6 +98,9 @@ page {
       rootPageUid = TEXT
       rootPageUid.value = {$failx.rootPid}
 
+      easyLanguagePageUid = TEXT
+      easyLanguagePageUid.value = {$failx.easyLanguagePageUid}
+      
       theme = TEXT
       theme {
         field = theme
