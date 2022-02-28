@@ -4,11 +4,13 @@
                  height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" />
     </f:comment>
     <f:variable name="imageStyle" value="{file.properties.image_style}" />
+    <f:variable name="pictureClass" value="{f:if(condition:pPictureClass, then:'{pPictureClass}', else:'position-relative {imageStyle}')}" />
+    <f:variable name="imageClass" value="{f:if(condition:pImageClass, then:'{pImageClass}', else:'image-embed-item  img img-fluid')}" />
     <f:if condition="{file.originalResource.properties.image_style}">
         <f:variable name="imageStyle" value="{file.originalResource.properties.image_style}" />
     </f:if>
     
-    <picture class="position-relative {imageStyle}">
+    <picture class="{pictureClass}">
         <source media="(max-width: 767px) and (orientation:portrait)"
                 srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-portrait')}.webp"
                 type="image/webp"
@@ -56,7 +58,7 @@
                 srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{dimensions.width}',maxWidth: '2121',cropVariant:'default')}">
         
         <f:image treatIdAsReference="1"
-                 class="image-embed-item  img img-fluid" 
+                 class="{imageClass}" 
                  width="{dimensions.width}" 
                  maxWidth="2121"
                  height="{dimensions.height}" 

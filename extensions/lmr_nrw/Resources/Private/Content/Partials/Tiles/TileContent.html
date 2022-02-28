@@ -4,7 +4,11 @@
             <span class="position-absolute bg-image top-0 start-0 w-100 h-100" style="z-index: auto;">
                 <f:render 
                     partial="Media/Rendering/Image"
-                    arguments="{file: menuitem.files.0}" />
+                    arguments="{
+                        file: menuitem.files.0,
+                        pPictureClass: 'position-absolute start-0 top-0 w-100 h-100',
+                        pImageClass: 'image-cover'
+                    }" />
             </span>
         </f:if>
         <span class="text-center">
