@@ -4,7 +4,7 @@
                  height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" />
     </f:comment>
     <f:variable name="imageStyle" value="{file.properties.image_style}" />
-    <f:variable name="pictureClass" value="{f:if(condition:pPictureClass, then:'{pPictureClass}', else:'position-relative {imageStyle}')}" />
+    <f:variable name="pictureClass" value="{f:if(condition:pPictureClass, then:'{pPictureClass} {imageStyle}', else:'position-relative {imageStyle}')}" />
     <f:variable name="imageClass" value="{f:if(condition:pImageClass, then:'{pImageClass}', else:'image-embed-item  img img-fluid')}" />
     <f:if condition="{file.originalResource.properties.image_style}">
         <f:variable name="imageStyle" value="{file.originalResource.properties.image_style}" />
