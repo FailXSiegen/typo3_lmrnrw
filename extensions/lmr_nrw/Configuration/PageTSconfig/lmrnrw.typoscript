@@ -99,9 +99,14 @@ RTE.classesAnchor {
         image >
     }
 }
-
+TCAdefaults.tt_content.uploads_type = 4
 TCEFORM {
 	tt_content {
+		uploads_type {
+			addItems {
+				4 = Download-Box
+			}
+		}
 		layout {
 			altLabels {
                 0 = ---

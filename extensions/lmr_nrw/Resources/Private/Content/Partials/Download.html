@@ -1,25 +1,30 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
     data-namespace-typo3-fluid="true">
     <f:if condition="{file}">
+        <f:variable name="fileLink" value="{f:if(condition:file.originalResource.publicUrl, then:'{file.originalResource.publicUrl}', else:'{file.publicUrl}')}" />
+        <f:variable name="fileTitle" value="{f:if(condition:file.originalResource.title, then:'{file.originalResource.title}', else:'{file.title}')}" />
+        <f:variable name="fileName" value="{f:if(condition:file.originalResource.name, then:'{file.originalResource.name}', else:'{file.name}')}" />
+        <f:variable name="fileExtension" value="{f:if(condition:file.originalResource.extension, then:'{file.originalResource.extension}', else:'{file.extension}')}" />
+        <f:variable name="fileSize" value="{f:if(condition:file.originalResource.size, then:'{file.originalResource.size}', else:'{file.size}')}" />
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
             <div class="bg-lightgrey-100 p-4 d-flex flex-column text-center rounded h-100">
                 <span class="w-25 mx-auto mb-2">
-                    <a href="{file.originalResource.publicUrl -> f:format.htmlspecialchars()}" target="_blank">
+                    <a href="{fileLink -> f:format.htmlspecialchars()}" target="_blank">
                         <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Images/download-icon.svg'}" />
                     </a>
                 </span>
                 <span class="mb-2 flex-fill">
-                    <a href="{file.originalResource.publicUrl -> f:format.htmlspecialchars()}" target="_blank">
-                        {f:if(condition:file.originalResource.title, then:file.originalResource.title, else:file.originalResource.name)}
+                    <a href="{fileLink -> f:format.htmlspecialchars()}" target="_blank">
+                        {f:if(condition:fileTitle, then: fileTitle else: fileName)}
                     </a>
                 </span>
                 <span class="mb-2">
-                    <span class="text-uppercase">{file.originalResource.extension}</span><br />
-                    {file.originalResource.size -> f:format.bytes()}
+                    <span class="text-uppercase">{fileExtension}</span><br />
+                    {fileSize -> f:format.bytes()}
                 </span>
                 <span>
                     <a 
-                        href="{file.originalResource.publicUrl -> f:format.htmlspecialchars()}" 
+                        href="{fileLink -> f:format.htmlspecialchars()}" 
                         target="_blank"
                         class="btn btn-primary px-5">
                         Herunterladen
