@@ -38,6 +38,11 @@
 					</f:else>
 				</f:if>
 			</div>
+			<f:if condition="{settings.listPid}">
+				<f:link.typolink parameter="{settings.listPid}" class="btn btn-primary mt-4">
+					News-Archiv
+				</f:link.typolink>
+			</f:if>
 		</f:then>
 		<f:else>
 			<div class="no-news-found">

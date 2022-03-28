@@ -40,7 +40,6 @@ call_user_func(
                 ]
             ],
         ]);
-        ;
         $GLOBALS['TCA']['sys_file_reference']['palettes']['imageoverlayPalette']['showitem'] = '
             title,alternative,
             --linebreak--,
