@@ -4,6 +4,7 @@ page {
   meta {
     viewport = width=device-width, initial-scale=1.0
   }
+  shortcutIcon = fileadmin/favicon.ico
   bodyTagCObject = COA
   bodyTagCObject {
         10 = COA
