@@ -22,6 +22,7 @@
 	<f:if condition="{isPaginated}">
 		<f:variable name="newsclass" value="col-12 col-xl-6 col-xxl-4" />
 		<f:variable name="topnewsclass" value="col-12 col-xl-6 col-xxl-4" />
+		<f:variable name="styleClass" value=" topnews bg-lightgrey-100 p-3" />
 	</f:if>
 
 	<div class="{f:if(condition: newsItem.istopnews, then: '{topnewsclass}', else: '{newsclass}')}">
