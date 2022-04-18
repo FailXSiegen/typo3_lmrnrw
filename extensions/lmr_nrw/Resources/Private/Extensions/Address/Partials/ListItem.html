@@ -18,12 +18,16 @@
                 <f:if condition="{address.position}">
                     <p class="position fw-light">{address.position}</p>
                 </f:if>
-                <span>
-                    <f:link.email email="{address.email}">{address.email}</f:link.email>
-                </span>
-                <span>
-                    <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
-                </span>
+                <f:if condition="{address.email}">
+                    <span>
+                        <f:link.email email="{address.email}">{address.email}</f:link.email>
+                    </span>
+                </f:if>
+                <f:if condition="{address.phone}">
+                    <span>
+                        <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
+                    </span>
+                </f:if>
                 <f:render section="address" partial="Address" arguments="{_all}"/>
                 <f:render section="social" partial="Address" arguments="{_all}"/>
             </div>
