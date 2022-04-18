@@ -2,7 +2,8 @@
     data-namespace-typo3-fluid="true">
     <f:if condition="{file}">
         <f:variable name="fileLink" value="{f:if(condition:file.originalResource.publicUrl, then:'{file.originalResource.publicUrl}', else:'{file.publicUrl}')}" />
-        <f:variable name="fileTitle" value="{f:if(condition:file.originalResource.title, then:'{file.originalResource.title}', else:'{file.title}')}" />
+        <f:variable name="fileTitle" value="{f:if(condition: file.properties.title, then:'{file.properties.title}', else: '{file.originalResource.title}')}" />
+
         <f:variable name="fileName" value="{f:if(condition:file.originalResource.name, then:'{file.originalResource.name}', else:'{file.name}')}" />
         <f:variable name="fileExtension" value="{f:if(condition:file.originalResource.extension, then:'{file.originalResource.extension}', else:'{file.extension}')}" />
         <f:variable name="fileSize" value="{f:if(condition:file.originalResource.size, then:'{file.originalResource.size}', else:'{file.size}')}" />
@@ -15,7 +16,7 @@
                 </span>
                 <span class="mb-2 flex-fill">
                     <a href="{fileLink -> f:format.htmlspecialchars()}" target="_blank">
-                        {f:if(condition:fileTitle, then: fileTitle else: fileName)}
+                        {f:if(condition: fileTitle, then: '{fileTitle}', else: '{fileName}')}
                     </a>
                 </span>
                 <span class="mb-2">
