@@ -12,7 +12,7 @@
             </span>
         </f:if>
         <span class="text-center">
-            <span class="h2 text-uppercase">{menuitem.title}</span>
+            <span class="h2 text-uppercase">{f:if(condition:menuitem.data.subtitle, then:'{menuitem.data.subtitle}', else: '{menuitem.title}')}</span>
             <f:if condition="{menuitem.data.abstract}">
                 {menuitem.data.abstract -> f:format.nl2br()}
             </f:if>

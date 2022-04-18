@@ -49,6 +49,18 @@ call_user_func(
         }
 
         $columns = [
+            'subtitle' => [
+                'exclude' => true,
+                'l10n_mode' => 'prefixLangTitle',
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.subtitle',
+                'description' => 'optionale Bezeichnung für Kachel-Boxen',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 50,
+                    'max' => 255,
+                    'eval' => 'trim'
+                ]
+            ],
             'menu_highlight' => [
                 'exclude' => 1,
                 'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:menu.highlight',
@@ -64,6 +76,7 @@ call_user_func(
                 ],
             ]
         ];
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
             'pages',
             $columns

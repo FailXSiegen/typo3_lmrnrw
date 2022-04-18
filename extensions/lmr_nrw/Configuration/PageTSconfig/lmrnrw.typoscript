@@ -101,6 +101,11 @@ RTE.classesAnchor {
 }
 TCAdefaults.tt_content.uploads_type = 4
 TCEFORM {
+	pages {
+		subtitle {
+			label = Projektbox-Bezeichnung
+		}
+	}
 	tt_content {
 		uploads_type {
 			addItems {
