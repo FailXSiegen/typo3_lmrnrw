@@ -103,7 +103,7 @@ TCAdefaults.tt_content.uploads_type = 4
 TCEFORM {
 	pages {
 		subtitle {
-			label = Projektbox-Bezeichnung
+			label = Kachelbox-Bezeichnung
 		}
 	}
 	tt_content {
