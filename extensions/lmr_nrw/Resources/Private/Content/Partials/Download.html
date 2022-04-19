@@ -7,7 +7,7 @@
         <f:variable name="fileName" value="{f:if(condition:file.originalResource.name, then:'{file.originalResource.name}', else:'{file.name}')}" />
         <f:variable name="fileExtension" value="{f:if(condition:file.originalResource.extension, then:'{file.originalResource.extension}', else:'{file.extension}')}" />
         <f:variable name="fileSize" value="{f:if(condition:file.originalResource.size, then:'{file.originalResource.size}', else:'{file.size}')}" />
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-xl-4 mb-3">
             <div class="bg-lightgrey-100 p-4 d-flex flex-column text-center rounded h-100">
                 <span class="w-25 mx-auto mb-2">
                     <a href="{fileLink -> f:format.htmlspecialchars()}" target="_blank">
