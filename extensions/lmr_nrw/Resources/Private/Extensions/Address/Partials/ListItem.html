@@ -12,25 +12,23 @@
         </div>
     </f:if>
     <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0" itemscope itemtype="http://schema.org/Person">
-    
-            <div class="addressInformation d-flex flex-column">
-                <h3 class="{f:if(condition:address.position, then:'mb-0')}">{address.fullName}</h3>
-                <f:if condition="{address.position}">
-                    <p class="position fw-light">{address.position}</p>
-                </f:if>
-                <f:if condition="{address.email}">
-                    <span>
-                        <f:link.email email="{address.email}">{address.email}</f:link.email>
-                    </span>
-                </f:if>
-                <f:if condition="{address.phone}">
-                    <span>
-                        <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
-                    </span>
-                </f:if>
-                <f:render section="address" partial="Address" arguments="{_all}"/>
-                <f:render section="social" partial="Address" arguments="{_all}"/>
-            </div>
+        <div class="addressInformation d-flex flex-column">
+            <h3 class="{f:if(condition:address.position, then:'mb-0')}">{address.fullName}</h3>
+            <f:if condition="{address.position}">
+                <p class="position fw-light">{address.position}</p>
+            </f:if>
+            <f:if condition="{address.email}">
+                <span>
+                    <f:link.email email="{address.email}">{address.email}</f:link.email>
+                </span>
+            </f:if>
+            <f:if condition="{address.phone}">
+                <span>
+                    <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
+                </span>
+            </f:if>
+            <f:render section="address" partial="Address" arguments="{_all}"/>
+            <f:render section="social" partial="Address" arguments="{_all}"/>
         </div>
     </div>
 </div>
