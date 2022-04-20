@@ -4,14 +4,34 @@
         <f:if condition="{menu}">
             <div class="menu-tile overflow-hidden">
                 <f:<f:switch expression="{menu -> f:count()}">
+                    <f:case value="3">
+                        <f:render 
+                            partial="Tiles/3Tiles.html" 
+                            arguments="{menu: menu}" />
+                    </f:case>
                     <f:case value="4">
                         <f:render 
                             partial="Tiles/4Tiles.html" 
                             arguments="{menu: menu}" />
                     </f:case>
+                    <f:case value="5">
+                        <f:render 
+                            partial="Tiles/5Tiles.html" 
+                            arguments="{menu: menu}" />
+                    </f:case>
                     <f:case value="6">
                         <f:render 
                             partial="Tiles/6Tiles.html" 
+                            arguments="{menu: menu}" />
+                    </f:case>
+                    <f:case value="7">
+                        <f:render 
+                            partial="Tiles/7Tiles.html" 
+                            arguments="{menu: menu}" />
+                    </f:case>
+                    <f:case value="8">
+                        <f:render 
+                            partial="Tiles/8Tiles.html" 
                             arguments="{menu: menu}" />
                     </f:case>
                     <f:case value="9">
@@ -21,7 +41,7 @@
                     </f:case>
                     <f:defaultCase>
                         <div class="bg-danger">
-                            Falsche Anzahl an Seiten. Es werden nur 4, 6 oder 9 Seiten ausgegeben.
+                            Falsche Anzahl an Seiten. Es werden nur von 3 bis 9 Seiten ausgegeben.
                         </div>
                     </f:defaultCase>
                 </f:switch>
