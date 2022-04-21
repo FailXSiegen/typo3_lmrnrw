@@ -9,7 +9,8 @@
     },
     "require": {
       "typo3/cms-core": "^10.4",
-      "georgringer/news": "^8.3"
+      "georgringer/news": "^8.3",
+      "friendsoftypo3/tt-address": "^5.3"
     },
     "replace": {
       "lmr_nrw": "*"
