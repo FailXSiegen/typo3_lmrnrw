@@ -18,7 +18,7 @@
         <div class="{colClass} mb-3 mb-lg-4">
             <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0 h-100" itemscope itemtype="http://schema.org/Person">
                 <div class="addressInformation d-flex flex-column h-100">
-                    <h3>{address.company}</h3>
+                    <h3>{address.company -> f:format.nl2br()}</h3>
                     <f:if condition="{address.email}">
                         <span class="mt-auto">
                             <f:link.email email="{address.email}">{address.email}</f:link.email>
