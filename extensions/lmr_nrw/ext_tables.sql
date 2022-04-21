@@ -67,3 +67,10 @@ CREATE TABLE pages (
 CREATE TABLE tx_news_domain_model_news (
     text_columns int(3) DEFAULT '1' NOT NULL
 );
+
+#
+# Table structure for table 'tt_address'
+#
+CREATE TABLE tt_address (
+    company text DEFAULT '' NOT NULL,
+);
