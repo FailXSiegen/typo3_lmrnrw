@@ -1,34 +1,80 @@
-<div class="col-9 col-sm-6 col-lg-3 mb-3 mb-lg-4">
-    <f:if condition="{address.firstImage}">
-        <div class="addressImage rounded-top overflow-hidden">
-            <f:if condition="{address.image}">
-                <f:media 
-                    file="{address.firstImage}" 
-                    width="600m" 
-                    class="img-fluid p-0 w-100"
-                    alt="{address.firstImage.originalResource.alt}"
-                    title="{address.fullName}"/>
-             </f:if>
-        </div>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:if condition="{address.company}">
+        <f:then>
+            <f:render section="organisation" arguments="{_all}" />
+        </f:then>
+        <f:else>
+            <f:render section="person" arguments="{_all}" />
+        </f:else>
     </f:if>
-    <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0 h-100" itemscope itemtype="http://schema.org/Person">
-        <div class="addressInformation d-flex flex-column h-100">
-            <h3 class="{f:if(condition:address.position, then:'mb-0')}">{address.fullName}</h3>
-            <f:if condition="{address.position}">
-                <p class="position fw-light">{address.position}</p>
-            </f:if>
-            <f:if condition="{address.email}">
-                <span class="mt-auto">
-                    <f:link.email email="{address.email}">{address.email}</f:link.email>
-                </span>
-            </f:if>
-            <f:if condition="{address.phone}">
-                <span>
-                    <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
-                </span>
-            </f:if>
-            <f:render section="address" partial="Address" arguments="{_all}"/>
-            <f:render section="social" partial="Address" arguments="{_all}"/>
+
+    <f:section name="organisation">
+        <div class="col-9 col-sm-6 col-lg-4 mb-3 mb-lg-4">
+            <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0 h-100" itemscope itemtype="http://schema.org/Person">
+                <div class="addressInformation d-flex flex-column h-100">
+                    <h3>{address.company}</h3>
+                    <f:if condition="{address.email}">
+                        <span class="mt-auto">
+                            <f:link.email email="{address.email}">{address.email}</f:link.email>
+                        </span>
+                    </f:if>
+                    <f:if condition="{address.phone}">
+                        <span>
+                            <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
+                        </span>
+                    </f:if>
+                    <f:if condition="{address.www}">
+                        <span>
+                            <f:link.typolink target="_blank" parameter="{address.www}">{address.www}</f:link.typolink>
+                        </span>
+                    </f:if>
+                    <f:render section="address" partial="Address" arguments="{_all}"/>
+                    <f:render section="social" partial="Address" arguments="{_all}"/>
+                    <span class="description">
+                        <f:format.html>{address.description}</f:format.html>
+                    </span>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </f:section>
+    
+
+    <f:section name="person">
+        <div class="col-9 col-sm-6 col-lg-3 mb-3 mb-lg-4">
+            <f:if condition="{address.firstImage}">
+                <div class="addressImage rounded-top overflow-hidden">
+                    <f:if condition="{address.image}">
+                        <f:media 
+                            file="{address.firstImage}" 
+                            width="600m" 
+                            class="img-fluid p-0 w-100"
+                            alt="{address.firstImage.originalResource.alt}"
+                            title="{address.fullName}"/>
+                    </f:if>
+                </div>
+            </f:if>
+            <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0 h-100" itemscope itemtype="http://schema.org/Person">
+                <div class="addressInformation d-flex flex-column h-100">
+                    <h3 class="{f:if(condition:address.position, then:'mb-0')}">{address.fullName}</h3>
+                    <f:if condition="{address.position}">
+                        <p class="position fw-light mb-3">{address.position}</p>
+                    </f:if>
+                    <f:if condition="{address.email}">
+                        <span class="mt-auto">
+                            <f:link.email email="{address.email}">{address.email}</f:link.email>
+                        </span>
+                    </f:if>
+                    <f:if condition="{address.phone}">
+                        <span>
+                            <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
+                        </span>
+                    </f:if>
+                    <f:render section="address" partial="Address" arguments="{_all}"/>
+                    <f:render section="social" partial="Address" arguments="{_all}"/>
+                </div>
+            </div>
+        </div>
+    </f:section>
+</html>
