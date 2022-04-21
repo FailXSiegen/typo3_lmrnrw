@@ -272,6 +272,11 @@ TCEFORM {
 			}
 		}
 	}
+	tt_address {
+		slug.disabled = 1
+		birthday.disabled = 1
+		region.disabled = 1
+	}
 }
 
 TCEFORM.sys_file_reference.crop.config.cropVariants {

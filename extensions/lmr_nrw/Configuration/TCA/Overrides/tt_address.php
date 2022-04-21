@@ -31,6 +31,11 @@ if (!defined('TYPO3_MODE')) {
 
 call_user_func(
     function ($_EXTKEY) {
+        $version9 = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_branch) >= \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger('9.3');
+
+        $generalLanguageFilePrefix = $version9 ? 'LLL:EXT:core/Resources/Private/Language/' : 'LLL:EXT:lang/Resources/Private/Language/';
+
+
         $columns = [
             'company' => [
                 'exclude' => true,
@@ -47,6 +52,34 @@ call_user_func(
             'tt_address',
             $columns
         );
+        $GLOBALS['TCA']['tt_address']['palettes']['name']['showitem'] = 'gender, --linebreak--, title, --linebreak--,
+            first_name, middle_name, last_name,--linebreak--,name,
+        ';
+        $GLOBALS['TCA']['tt_address']['palettes']['organization']['showitem'] = '
+            position, --linebreak--, company
+        ';
+        $GLOBALS['TCA']['tt_address']['types'] = [
+            '0' => [
+                'showitem' => '
+                    --palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.name;name,
+                    image, 
+                    --palette--;LLL:EXT:t_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.organization;organization,
+                    --palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.contact;contact,
+                    
+                    description,
+                --div--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_tab.address,
+                    --palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.address;address,
+                --div--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_tab.contact,
+                    --palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.social;social,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;language,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;paletteHidden,
+                    --palette--;;paletteAccess,
+                --div--;' . $generalLanguageFilePrefix . 'locallang_tca.xlf:sys_category.tabs.category, categories
+                '
+            ]
+            ];
     },
     'lmr_nrw'
 );
