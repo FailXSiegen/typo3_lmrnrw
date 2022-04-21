@@ -70,7 +70,7 @@ mod {
                     }
                 }
 			}
-			content_full_width_unwrapped {
+			contentFullWidthUnwrapped {
                 title = Inhalt volle Breite
                 config {
                     backend_layout {
