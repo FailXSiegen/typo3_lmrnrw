@@ -58,6 +58,10 @@ call_user_func(
         $GLOBALS['TCA']['tt_address']['palettes']['organization']['showitem'] = '
             position, --linebreak--, company
         ';
+        $GLOBALS['TCA']['tt_address']['palettes']['address']['showitem'] = '
+            address, --linebreak--,
+            zip, city,  region, --linebreak--,
+            country,  --linebreak--,';
         $GLOBALS['TCA']['tt_address']['types'] = [
             '0' => [
                 'showitem' => '
