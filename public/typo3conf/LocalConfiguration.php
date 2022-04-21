@@ -96,7 +96,7 @@ return [
         'tt_address' => [
             'backwardsCompatFormat' => '%1$s %3$s',
             'newPagination' => '1',
-            'readOnlyNameField' => '1',
+            'readOnlyNameField' => '0',
             'storeBackwardsCompatName' => '1',
             'telephoneValidationPatternForJs' => '/[^\\d\\+\\s\\-]/g',
             'telephoneValidationPatternForPhp' => '/[^\\d\\+\\s\\-]/',

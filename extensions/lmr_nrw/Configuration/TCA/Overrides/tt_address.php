@@ -52,6 +52,8 @@ call_user_func(
             'tt_address',
             $columns
         );
+        $GLOBALS['TCA']['tt_address']['ctrl']['label_alt'] = 'company';
+        $GLOBALS['TCA']['tt_address']['ctrl']['label_alt_force'] = 1;
         $GLOBALS['TCA']['tt_address']['palettes']['name']['showitem'] = 'gender, --linebreak--, title, --linebreak--,
             first_name, middle_name, last_name,--linebreak--,name,
         ';
