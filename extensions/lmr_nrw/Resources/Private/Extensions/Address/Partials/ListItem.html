@@ -19,7 +19,9 @@
             <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0 h-100" itemscope itemtype="http://schema.org/Person">
                 <div class="addressInformation d-flex flex-column h-100">
                     <h3>{address.company -> f:format.nl2br()}</h3>
-                    <h4 class="{f:if(condition:address.position, then:'mb-0')}">{address.fullName}</h4>
+                    <f:if condition="{address.fullName}">
+                        <h4 class="{f:if(condition:address.position, then:'mb-0')}">{address.fullName}</h4>
+                    </f:if>
                     <f:if condition="{address.position}">
                         <p class="position fw-light mb-3">{address.position}</p>
                     </f:if>
