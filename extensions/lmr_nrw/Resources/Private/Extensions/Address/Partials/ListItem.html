@@ -82,6 +82,11 @@
                             <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
                         </span>
                     </f:if>
+                    <f:if condition="{address.mobile}">
+                        <span>
+                            <f:link.external uri="tel:{address.mobile}">{address.mobile}</f:link.external>
+                        </span>
+                    </f:if>
                     <f:render section="address" partial="Address" arguments="{_all}"/>
                     <f:render section="social" partial="Address" arguments="{_all}"/>
                 </div>
