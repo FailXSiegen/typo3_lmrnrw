@@ -28,7 +28,7 @@
                     <f:render section="address" partial="Address" arguments="{_all}"/>
                     <f:if condition="{address.email}">
                         <span class="mt-auto">
-                            <f:link.email email="{address.email}">{address.email}</f:link.email>
+                            <f:link.email email="{address.email}">E-Mail</f:link.email>
                         </span>
                     </f:if>
                     <f:if condition="{address.phone}">
@@ -74,7 +74,7 @@
                     </f:if>
                     <f:if condition="{address.email}">
                         <span class="mt-auto">
-                            <f:link.email email="{address.email}">{address.email}</f:link.email>
+                            <f:link.email email="{address.email}">E-Mail</f:link.email>
                         </span>
                     </f:if>
                     <f:if condition="{address.phone}">
