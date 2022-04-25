@@ -53,12 +53,14 @@
                 class:'navbar-nav social-nav pe-3 order-1 flex-fill justify-content-center',
                 id:'submenu'
             }" />
-            <f:link.typolink 
-                parameter="{easyLanguagePageUid}" 
-                class="easy-language d-block mb-4 order-2 btn btn-primary" 
-                additionalAttributes="{'itemprop':'url'}">
-                    Leichte Sprache
-            </f:link.typolink>
+            <f:if condition="{easyLanguagePageUid}">
+                <f:link.typolink 
+                    parameter="{easyLanguagePageUid}" 
+                    class="easy-language d-block mb-4 order-2 btn btn-primary" 
+                    additionalAttributes="{'itemprop':'url'}">
+                        Leichte Sprache
+                </f:link.typolink>
+            </f:if>
         </nav>
         <div class="bottom-nav">
             <form>
