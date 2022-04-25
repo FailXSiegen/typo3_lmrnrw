@@ -11,7 +11,7 @@
     </f:if>
 
     <f:section name="organisation">
-        <f:variable name="colClass" value="col-12 col-sm-6 col-lg-4" />
+        <f:variable name="colClass" value="col-12 col-sm-6 col-xxl-4" />
         <f:if condition="{addresses -> f:count()} <= 2">
             <f:variable name="colClass" value="col-12 col-sm-6 col-lg-6" />
         </f:if>
@@ -53,7 +53,7 @@
     
 
     <f:section name="person">
-        <div class="col-12 col-sm-6 col-lg-3 mb-3 mb-lg-4">
+        <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-3 mb-lg-4">
             <f:if condition="{address.firstImage}">
                 <div class="addressImage rounded-top overflow-hidden">
                     <f:if condition="{address.image}">
