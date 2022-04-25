@@ -1,0 +1,50 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/DateMenu.html
+-->
+
+<f:section name="content">
+	<div class="news-menu-view">
+		<f:for each="{data.single}" key="year" as="months">
+			<f:variable name="yearcount" value="0" />
+			<f:for each="{months}" key="month" as="count">
+				<f:variable name="yearcount" value="{yearcount + count}" />
+			</f:for>
+			<span
+				class="d-inline-block bg-lightgrey-100 w-100 rounded ps-4 pe-4 py-2 mb-3 d-flex {f:if(condition:'{year} == {overwriteDemand.year}', then:'cl-red')}"
+				data-bs-toggle="collapse" 
+				href="#multiCollapse{year}" 
+				role="button" 
+				aria-expanded="{f:if(condition:'{year} == {overwriteDemand.year}', then:'true', else:'false')}" 
+				aria-controls="multiCollapse{year}">
+				<span class="flex-fill">{year}</span>
+				<span>{yearcount}&nbsp;<f:translate key="{f:if(condition: '{yearcount} == 1', then: 'entry', else: 'entries')}" /></span>
+			</span>
+			<div class="collapse multi-collapse {f:if(condition:'{year} == {overwriteDemand.year}', then:'show')}" id="multiCollapse{year}">
+				<ul class="list-group">
+					<f:for each="{months}" key="month" as="count">
+						<li class="item bg-grey-100 ps-4 pe-4 py-2 mb-3 rounded d-flex {f:if(condition:'{0:year, 1:month} == {0:overwriteDemand.year, 1:overwriteDemand.month}', then:'itemactive')} ">
+							<f:link.action 
+								class="fw-bold w-100 d-flex {f:if(condition:'{0:year, 1:month} == {0:overwriteDemand.year, 1:overwriteDemand.month}', then:'cl-red', else:'cl-darkgrey')}"
+								action="list" 
+								pageUid="{listPid}" 
+								arguments="{overwriteDemand:{year: year, month: month}}">
+								<span class="flex-fill">
+									<f:translate key="month.{month}" />
+								</span>
+								<span class="me-2">{count}</span>
+								<span>
+									<f:translate key="{f:if(condition: '{count} == 1', then: 'entry', else: 'entries')}" />
+								</span>
+							</f:link.action>
+						</li>
+					</f:for>
+				</ul>
+			</div>
+		</f:for>
+	</div>
+</f:section>
+</html>

@@ -5,7 +5,9 @@ deploy_rsa
 .Build
 .php_cs.cache
 build/node_modules
-vendor/
+Vendor
+vendor
+node_modules
 /public/*
 !/public/typo3conf
 /public/typo3conf/*

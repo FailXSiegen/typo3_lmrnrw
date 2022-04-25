@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+        data-namespace-typo3-fluid="true">
+    <ul class="{class}" id="{id}">
+        <f:for each="{menu}" as="menu">
+            <li class="nav-item mb-3 {f:if(condition: menu.current,then:'current')} {f:if(condition: menu.active,then:'active')}" itemprop="name">
+                <f:if condition="{menu.children}">
+                    <f:then>  
+                        <f:render 
+                            partial="Navigation/Sub"
+                            arguments="{
+                                menu: menu,
+                                class: 'nav'
+                            }" />
+                    </f:then>
+                    <f:else>
+                        <a href="{menu.link}"
+                            class="nav-link {f:if(condition: menu.data.menu_highlight,then:'highlight')} {f:if(condition: menu.active,then:'active')}"
+                            {f:if(condition:menu.target,then: 'target="{menu.target}"')}
+                            itemprop="url"
+                            title="{menu.title}">
+                            {menu.title}
+                        </a>
+                    </f:else>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</html>

@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:if condition="{breadcrumbNavigation}">
+    <div class="container-fluid pt-3 ps-0">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <f:for each="{breadcrumbNavigation}" as="item" iteration="iterator">
+                    <f:if condition="{item.current}">
+                        <f:then>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                {item.title}
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <li class="breadcrumb-item">
+                                <a 
+                                    href="{item.link}" 
+                                    title="{item.title}">
+                                    {item.title}
+                                </a>
+                            </li>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </ol>
+        </nav>
+    </div>
+</f:if>
+ </html>

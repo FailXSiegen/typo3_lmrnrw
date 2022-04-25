@@ -1,0 +1,70 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+	<f:variable name="newsclass" value="col-12 col-lg-6 col-xxl-3" />
+	<f:variable name="topnewsclass" value="col-12 col-lg-6 col-xxl-6" />
+	<f:variable name="more" value="EXT:lmr_nrw/Resources/Public/Images/more-information-circle.svg" />
+	<f:variable name="styleClass" value="bg-lightgrey-100 p-3" />
+	<f:if condition="{newsItem.istopnews}">
+		<f:variable name="styleClass" value=" topnews bg-red-100 p-3" />
+		<f:variable name="more" value="EXT:lmr_nrw/Resources/Public/Images/more-information-circle-white.svg" />
+	</f:if>
+	<f:if condition="{newsItem.istopnews} && {iterator.cycle} == 2">
+		<f:variable name="styleClass" value=" topnews bg-darkgrey-100 p-3" />
+	</f:if>
+	<f:if condition="{topnews} == 1 && {iterator.cycle} == 2">
+		<f:variable name="newsclass" value="col-12 col-xl-6 col-xxl-6" />
+	</f:if>
+	<f:if condition="{topnews} == 2">
+		<f:variable name="topnewsclass" value="col-12 col-xl-6 col-xxl-6" />
+	</f:if>
+
+	<f:if condition="{isPaginated}">
+		<f:variable name="newsclass" value="col-12 col-xl-6 col-xxl-4" />
+		<f:variable name="topnewsclass" value="col-12 col-xl-6 col-xxl-4" />
+		<f:variable name="styleClass" value=" topnews bg-lightgrey-100 p-3" />
+	</f:if>
+
+	<div class="{f:if(condition: newsItem.istopnews, then: '{topnewsclass}', else: '{newsclass}')}">
+		<div class="article h-100 d-flex flex-column articletype-{newsItem.type} rounded {styleClass}" itemscope="itemscope" itemtype="http://schema.org/Article">
+			<n:excludeDisplayedNews newsItem="{newsItem}"/>
+			<span class="news-list-date my-2">
+				<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+					<f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+				</time>
+			</span>
+			<div class="header mt-2 mb-3">
+				<h3 class="cl-darkgrey">
+					<a href="{n:link(newsItem:newsItem, settings: settings,uriOnly: 1)}" 
+						class="cl-darkgrey"
+						title="{newsItem.title}">
+						<span itemprop="headline">{newsItem.title}</span>
+					</a>
+				</h3>
+			</div>
+			<div class="teaser-text">
+				<n:removeMediaTags>
+				<f:if condition="{newsItem.teaser}">
+					<f:then>
+						<div itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.stripTags()}</div>
+					</f:then>
+					<f:else>
+						<div itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.stripTags()}</div>
+					</f:else>
+				</f:if>
+				</n:removeMediaTags>
+				
+			</div>
+			<a href="{n:link(newsItem:newsItem, settings: settings,uriOnly: 1)}" 
+				class="more pt-3 align-self-end mt-auto" 
+				title="{newsItem.title}">
+				<f:cObject
+					typoscriptObjectPath="lib.inlineSvg" 
+					data="{src: more}" />
+			</a>
+		</div>
+	</div>
+	<f:if condition="{topnews} > 1 && {iterator.cycle} == 2">
+		<div class="w-100"></div>
+	</f:if>
+</html>

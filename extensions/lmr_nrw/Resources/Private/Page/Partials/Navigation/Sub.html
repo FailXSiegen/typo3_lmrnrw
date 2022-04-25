@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+    <f:variable name="level" value="1" />
+    <f:if condition="{plevel}">
+        <f:variable name="level" value="{plevel + 1}" />
+    </f:if>
+    
+    <f:variable name="navclasses" value="my-2 py-2" />
+    <f:if condition="{level} == 1">
+        <f:variable name="navclasses" value="my-0 py-0" />
+    </f:if>
+    <a  
+        class="nav-link collapse-toggle flex-collapse d-flex align-items-center {navclasses}"
+        href="#menu{menu.data.uid}" 
+        role="button" 
+        data-parent="#mainmenu"
+        aria-expanded="{f:if(condition: '{menu.active} || {menu.current}', then:'true', else:'false')}">
+        <span>{menu.title}</span>
+        <i class="bi bi-chevron-down"></i>
+    </a>
+    <ul 
+        class="{class} d-flex level-{level} {f:if(condition: '{menu.active} || {menu.current}', then:'show')}" 
+        id="menu{menu.data.uid}">
+        <f:for each="{menu.children}" as="submenu">
+            <li class="w-100">
+                <f:if condition="{submenu.children}">
+                    <f:then>
+                        <f:render 
+                            partial="Navigation/Sub"
+                            arguments="{
+                                menu: submenu,
+                                class: 'collapse nav',
+                                plevel: level
+                            }" />
+                    </f:then>
+                    <f:else>
+                        <a href="{submenu.link}"
+                            class="nav-link my-3 {f:if(condition: submenu.data.menu_highlight,then:'highlight')} {f:if(condition: submenu.active,then:'active')}"
+                            {f:if(condition:submenu.target,then: 'target="{submenu.target}"')}
+                            itemprop="url"
+                            title="{submenu.title}">
+                            {submenu.title}
+                        </a>
+                    </f:else>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</html>

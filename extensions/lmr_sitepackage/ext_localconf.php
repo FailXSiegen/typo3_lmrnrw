@@ -25,12 +25,4 @@ call_user_func(function ($extKey, $extConf) {
     // Set our own default RTE config
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] =
         'EXT:lmr_sitepackage/Configuration/RTE/Default.yaml';
-
-    /***************
-     * Add page TSconfig
-     */
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lmr_sitepackage/Configuration/TSconfig/TSconfig.tsconfig">'
-    );
-
 }, $_EXTKEY, $_EXTCONF);

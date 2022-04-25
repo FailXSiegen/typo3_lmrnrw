@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:layout name="Default" />
+    <f:section name="Main">
+      <f:variable name="maincontent" value="{f:cObject(typoscriptObjectPath:'lib.dynamicContent',data: '{colPos:\'0\'}')}" />
+      <f:variable name="rightcontent" value="{f:cObject(typoscriptObjectPath:'lib.dynamicContent',data: '{colPos:\'4\'}')}" />
+      <div class="row">
+        <div class="col-12 col-xl-12 col-xxl-9">
+          {maincontent -> f:format.raw()}
+        </div>
+        <div class="col-12 col-xl-12 col-xxl-3">
+          {rightcontent -> f:format.raw()}
+        </div>
+      </div>
+      
+    </f:section>
+
+</html>

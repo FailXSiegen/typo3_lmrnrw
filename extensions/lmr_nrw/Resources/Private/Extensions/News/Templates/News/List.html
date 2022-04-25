@@ -1,0 +1,55 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+
+	<!--TYPO3SEARCH_end-->
+	<f:if condition="{news}">
+		<f:then>
+			<f:variable name="topnews" value="0" />
+			<f:for each="{news}" as="newsItem" iteration="iterator">
+				<f:if condition="{newsItem.istopnews}">
+					<f:variable name="topnews" value="{topnews + 1}" />
+				</f:if>
+			</f:for>
+			<div class="news-list-view" id="news-container-{contentObjectData.uid}">
+				<f:if condition="{settings.hidePagination}">
+					<f:then>
+						<div class="row gy-4 gx-4">
+							<f:for each="{news}" as="newsItem" iteration="iterator">
+								<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,topnews:topnews,isPaginated:'0'}" />
+							</f:for>
+						</div>
+					</f:then>
+					<f:else>
+						<div class="row gy-4 gx-4">
+							<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+								<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,topnews:'0',isPaginated:'1'}" />
+								</f:for>
+							</n:widget.paginate>
+						</div>
+					</f:else>
+				</f:if>
+			</div>
+			<f:if condition="{settings.listPid}">
+				<f:link.typolink parameter="{settings.listPid}" class="btn btn-primary mt-4">
+					News-Archiv
+				</f:link.typolink>
+			</f:if>
+		</f:then>
+		<f:else>
+			<div class="no-news-found">
+				<f:translate key="list_nonewsfound" />
+			</div>
+		</f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+</f:section>
+</html>

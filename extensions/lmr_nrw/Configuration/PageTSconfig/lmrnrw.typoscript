@@ -1,0 +1,366 @@
+RTE.default.preset = fxnet
+mod {
+    web_layout {
+        BackendLayouts {
+            default {
+                title = Default
+                config {
+                    backend_layout {
+                        colCount = 3
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Header
+                                        colPos = 2
+										colspan = 3
+                                    }
+                                }
+                            }
+							2 {
+                                columns {
+                                    1 {
+                                        name = Content
+                                        colPos = 0
+										colspan = 2
+                                    }
+									2 {
+										name = Right (optional)
+                                        colPos = 4
+									}
+                                }
+                            }
+                        }
+                    }
+                }
+			}
+			start {
+                title = Startseite
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 3
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Header
+                                        colPos = 2
+                                    }
+                                }
+                            }
+							2 {
+                                columns {
+                                    1 {
+                                        name = Content
+                                        colPos = 0
+                                    }
+                                }
+                            }
+							3 {
+                                columns {
+                                    1 {
+                                        name = Footer (All pages)
+                                        colPos = 3
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+			}
+			contentFullWidthUnwrapped {
+                title = Inhalt volle Breite
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 1
+                        rows {
+							1 {
+                                columns {
+                                    1 {
+                                        name = Content
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+			}
+        }
+    }
+}
+RTE.classesAnchor {
+    download {
+        titleText >
+        image >
+    }
+    externalLink {
+        titleText >
+        image >
+    }
+    externalLinkInNewWindow {
+        titleText >
+        image >
+    }
+    internalLink {
+        titleText >
+        image >
+    }
+    internalLinkInNewWindow {
+        titleText >
+        image >
+    }
+    mail {
+        titleText >
+        image >
+    }
+}
+TCAdefaults.tt_content.uploads_type = 4
+TCEFORM {
+	pages {
+		subtitle {
+			label = Kachelbox-Bezeichnung
+		}
+	}
+	tt_content {
+		uploads_type {
+			addItems {
+				4 = Download-Box
+			}
+		}
+		layout {
+			altLabels {
+                0 = ---
+				1 = Feste Breite
+				2 = Volle Breite mit Innenabstand
+                3 = Volle Breite ohne Innenabstand
+			}
+			addItems {
+			    4 = Keine Ummantelung
+			}
+			types {
+				trust {
+					altLabels {
+						0 = Großer Kreisel Links / Kreisel über Text
+						1 = Großer Kreisel Links / Kreisel links neben Text
+						2 = Kein großer Kreisel / Kreisel über Text
+						3 = Kein großer Kreisel / Kreisel links neben Text
+					}
+					removeItems = 4
+					label = Kreisel Layouts
+				}
+			}
+		}
+		frame_class {
+            label = Background
+		    removeItems = ruler-before,ruler-after,indent,indent-left,indent-right
+            altLabels {
+                default = ---
+            }
+			
+            addItems {
+				bg-red = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.red
+				bg-red.icon = EXT:lmr_nrw/Resources/Public/Icons/color-red.png
+                bg-darkred = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkred
+				bg-darkred.icon = EXT:lmr_nrw/Resources/Public/Icons/color-darkred.png
+                bg-white = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.white
+				bg-white.icon = EXT:lmr_nrw/Resources/Public/Icons/color-white.png
+                bg-grey = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.grey
+				bg-grey.icon = EXT:lmr_nrw/Resources/Public/Icons/color-grey.png
+                bg-darkgrey = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.darkgrey
+				bg-darkgrey.icon = EXT:lmr_nrw/Resources/Public/Icons/color-darkgrey.png
+                bg-lightgrey = LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:color.lightgrey
+				bg-lightgrey.icon = EXT:lmr_nrw/Resources/Public/Icons/color-lightgrey.png
+               
+            }
+			types {
+				counter {
+					altLabels {
+						default = Standard
+					}
+					label = Counter-Schriftgröße
+					removeItems = none,ruler-before,ruler-after,indent,indent-left,indent-right,bg-white,bg-grey,bg-aubergine,bg-violett,bg-darkgreen,bg-green,bg-lightgreen
+					addItems {
+						h1 = Groß
+						h2 = Mittelgroß
+						h3 = Mittel
+						h4 = Kleiner
+						h5 = Klein
+					}
+				}
+			}
+		}
+		space_before_class {
+		    removeItems = extra-small,small,medium,large,extra-large
+		    addItems {
+		        pt-0 = 0
+		        pt-1 = 1
+		        pt-2 = 2
+		        pt-3 = 3
+		        pt-4 = 4
+		        pt-5 = 5
+				pt-6 = 6
+		        pt-7 = 7
+		        pt-8 = 8
+		        pt-9 = 9
+		        pt-10 = 10
+				pt-11 = 11
+				pt-12 = 12
+				pt-13 = 13
+				pt-14 = 14
+				pt-15 = 15
+                mt-auto = auto
+            }
+        }
+		space_after_class {
+            removeItems = extra-small,small,medium,large,extra-large
+            addItems {
+                pb-0 = 0
+                pb-1 = 1
+                pb-2 = 2
+                pb-3 = 3
+                pb-4 = 4
+                pb-5 = 5
+				pb-6 = 6
+                pb-7 = 7
+                pb-8 = 8
+                pb-9 = 9
+                pb-10 = 10
+				pb-11 = 11
+				pb-12 = 12
+				pb-13 = 13
+				pb-14 = 14
+				pb-15 = 15
+                mb-auto = auto
+            }
+        }
+		subheader {
+			disabled = 0
+		}
+		header_layout {
+			altLabels {
+				0 = Default
+				1 = H1
+				2 = H2
+				3 = H3
+				4 = H4
+				5 = H5
+				100 = Verborgen
+			}
+			addItems {
+				6 = H1 class
+				7 = H2 class
+				8 = H3 class
+				9 = H4 class
+				10 = H5 class
+			}			
+		}
+		text_columns {
+			disabled = 1
+			types {
+				text.disabled = 0
+				textpic.disabled = 0
+				textmedia.disabled = 0
+			}
+		}
+		circle_color {
+			types {
+				trust.label = Kreisel Farbe
+			}
+		}
+	}
+	tt_address {
+		slug.disabled = 1
+		birthday.disabled = 1
+		region.disabled = 1
+	}
+}
+
+TCEFORM.sys_file_reference.crop.config.cropVariants {
+  	default {
+		title = Desktop >= 1400px
+		selectedRatio = NaN
+		allowedAspectRatios {
+			21_5 {
+				title = 21:5
+				value = 4.2
+			}
+			3_1 {
+				title = 3:1
+				value = 3
+			}
+			21_9 {
+				title = 21:9
+				value = 2.33333
+			}
+			16_10 {
+				title = 16:10
+				value = 1.6
+			}
+			16_9 {
+				title = 16:9
+				value = 1.77777
+			}
+			3_2 {
+				title = 3:2
+				value = 1.5
+			}
+			4_3 {
+				title = 4:3
+				value = 1.33333
+			}
+			1_1 {
+				title = 1:1
+				value = 1
+			}
+			3_4 {
+				title = 3:4
+				value = .75
+			}
+			NaN {
+				title = free
+				value = 0.0
+			}
+		}
+  	}
+	desktop-md {
+	    title = Desktop < 1400px
+	    selectedRatio = NaN
+	    allowedAspectRatios < TCEFORM.sys_file_reference.crop.config.cropVariants.default.allowedAspectRatios
+	}
+	tablet-portrait {
+		title = Tablet - Portrait
+		selectedRatio = NaN
+		allowedAspectRatios < TCEFORM.sys_file_reference.crop.config.cropVariants.default.allowedAspectRatios
+	}
+	tablet-landscape {
+		title = Tablet - Landscape
+		selectedRatio = NaN
+		allowedAspectRatios < TCEFORM.sys_file_reference.crop.config.cropVariants.default.allowedAspectRatios
+	}
+	smartphone-portrait {
+		title = Smartphone - Portrait
+		selectedRatio = NaN
+		allowedAspectRatios < TCEFORM.sys_file_reference.crop.config.cropVariants.default.allowedAspectRatios
+	}
+	smartphone-landscape {
+		title = Smartphone - Landscape
+		selectedRatio = NaN
+		allowedAspectRatios < TCEFORM.sys_file_reference.crop.config.cropVariants.default.allowedAspectRatios
+	}
+}
+TCEMAIN {
+    permissions {
+        groupid = 2
+        user = show, editcontent, edit, new, delete
+        group = show, editcontent, edit, new, delete
+        everybody = show, editcontent, edit, new
+    }
+}
+TCEMAIN.table.tt_content {
+    disablePrependAtCopy = 1
+    disableHideAtCopy = 1
+}

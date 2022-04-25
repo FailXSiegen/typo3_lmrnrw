@@ -53,13 +53,16 @@
 		"gridelementsteam/gridelements": "^10.0",
 		"georgringer/news": "^8.3",
 		"plan2net/webp": "^3.1",
+		"b13/container": "^1.3",
 		"t3/min": "^1.9",
 		"teaminmedias-pluswerk/ke_search": "^3.1",
 		"hauptweg-nebenwege/lmr-sitepackage": "@dev",
 		"hauptweg-nebenwege/lmr-contentprovider": "@dev",
+		"failx/lmr_nrw": "@dev",
 		"josefglatz/toolbar-clear-processedfiles": "^1.0",
 		"kitzberger/rte-ckeditor-automails": "^1.0",
-		"jigal/t3adminer":"^9.5"
+		"jigal/t3adminer":"^9.5",
+        "friendsoftypo3/tt-address": "^5.3"
 	},
     "require-dev": {
     },

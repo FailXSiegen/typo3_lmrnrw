@@ -1,0 +1,57 @@
+$white: #fff;
+$red: #d8232a;
+$darkred: #622226;
+$darkgrey: #363636;
+$grey: #c3c3c3;
+$lightgrey: #f2f2f2;
+
+$primary:       $red;
+$secondary:     $darkred;
+
+$opacities: (
+  100: 1,
+  80: 0.8,
+  60: 0.6,
+  40: 0.4,
+  20: 0.2
+);
+
+$themeColours: (
+    "white": $white,
+    "red": $red,
+    "darkred": $darkred,
+    "darkgrey": $darkgrey,
+    "grey": $grey,
+    "lightgrey": $lightgrey
+);
+
+$enable-cssgrid: false;
+
+$font-family-sans-serif: "Roboto", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4.5,
+  7: $spacer * 6,
+  8: $spacer * 7.5,
+  9: $spacer * 9,
+  10: $spacer * 10.5,
+  11: $spacer * 12,
+  12: $spacer * 13.5,
+  13: $spacer * 15,
+  14: $spacer * 16.5,
+  15: $spacer * 18
+);
+
+$accordion-color: inherit;
+$accordion-bg: inherit;
+$accordion-button-active-bg: inherit;
+$accordion-button-active-color: inherit;
+$accordion-button-focus-border-color: none;
+$accordion-button-focus-box-shadow: none;
+$border-radius: 0.4rem;

@@ -1,0 +1,12 @@
+plugin.tx_news {
+	settings.cssFile >
+	view {
+		partialRootPaths {
+            99 = EXT:lmr_nrw/Resources/Private/Content/Partials/
+		}
+	}
+	_LOCAL_LANG.de {
+		related-files = Downloads
+	}
+}
+

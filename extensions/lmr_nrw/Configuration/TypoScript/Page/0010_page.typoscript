@@ -1,0 +1,131 @@
+page = PAGE
+page {
+  typeNum = 0
+  meta {
+    viewport = width=device-width, initial-scale=1.0
+  }
+  shortcutIcon = fileadmin/favicon.ico
+  bodyTagCObject = COA
+  bodyTagCObject {
+        10 = COA
+        10 {
+            10 = TEXT
+            10 {
+                data = levelfield:-2,backend_layout_next_level,slide
+                override.field = backend_layout
+                split {
+                    token = pagets__
+                    1.current = 1
+                    1.wrap = |
+                }
+            }
+
+            20 = TEXT
+            20 {
+                field = uid
+                noTrimWrap = | page-||
+            }
+
+            30 = TEXT
+            30 {
+                value = rootpage
+                noTrimWrap = | ||
+                if {
+                    value = {$failx.rootPid}
+                    equals.data = page:uid
+                }
+            }
+
+            stdWrap.noTrimWrap = | class="|"|
+        }
+
+        wrap = <body|>
+    }
+
+    5 = LOAD_REGISTER
+    5 {
+        pageTemplate = TEXT
+        pageTemplate.stdWrap {
+            cObject = TEXT
+            cObject {
+                data = levelfield:-2,backend_layout_next_level,slide
+                override.field = backend_layout
+                split {
+                    token = pagets__
+                    1.current = 1
+                    1.wrap = |
+                }
+            }
+
+            ifEmpty = Default
+        }
+    }
+
+  10 = FLUIDTEMPLATE
+  10 {
+    templateName = TEXT
+    templateName.data = register:pageTemplate
+    layoutRootPaths {
+      1 = {$failx.resourcePath}Private/Page/Layouts/
+    }
+
+    partialRootPaths {
+      1 = {$failx.resourcePath}Private/Page/Partials/
+    }
+
+    templateRootPaths {
+      1 = {$failx.resourcePath}Private/Page/Templates/
+    } 
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+          special = directory
+          special.value = {$failx.mainNavigationPid}
+          levels = 4
+          includeSpacer = 0
+          as = mainNavigation
+      }
+      15 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      15 {
+          special = directory
+          special.value = {$failx.socialNavigationPid}
+          levels = 1
+          includeSpacer = 0
+          as = socialNavigation
+      }
+    }
+    variables {
+      rootPageUid = TEXT
+      rootPageUid.value = {$failx.rootPid}
+
+      easyLanguagePageUid = TEXT
+      easyLanguagePageUid.value = {$failx.easyLanguagePageUid}
+      
+      theme = TEXT
+      theme {
+        field = theme
+        override = {$failx.defaultTheme}
+        override.if.isFalse.field = theme
+      }
+
+      logoPath = TEXT
+      logoPath.value = {$failx.logoPath}
+      
+      buttonPath = TEXT
+      buttonPath.value = {$failx.buttonPath}
+      
+      buttonClosePath = TEXT
+      buttonClosePath.value = {$failx.buttonClosePath}
+    
+      contactMail = TEXT
+      contactMail.value = {$failx.contactMail}
+
+    }
+  }
+}
+
+[traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+page.10.templateName >
+page.10.templateName = News
+[end]

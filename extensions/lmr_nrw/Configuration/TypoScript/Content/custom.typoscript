@@ -1,0 +1,35 @@
+tt_content {
+    counter =< lib.contentElement
+    counter {
+        templateName = Counter
+    }
+    tilebox =< lib.contentElement
+    tilebox {
+        templateName = Tilebox
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                special = list
+                special.value.field = pages
+                dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    10 {
+                        references.fieldName = media
+                    }
+                }
+            }
+        }
+    }
+    trust =< lib.contentElement
+    trust {
+        templateName = Trust
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+            10 {
+                fieldName = bodytext
+                removeEmptyEntries = 1
+                as = bullets
+            }
+        }
+    }
+}

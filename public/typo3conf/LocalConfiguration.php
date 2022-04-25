@@ -93,6 +93,14 @@ return [
             'applyDevIpMask' => '0',
             'exportDirectory' => 'fileadmin',
         ],
+        'tt_address' => [
+            'backwardsCompatFormat' => '%1$s %3$s',
+            'newPagination' => '1',
+            'readOnlyNameField' => '0',
+            'storeBackwardsCompatName' => '1',
+            'telephoneValidationPatternForJs' => '/[^\\d\\+\\s\\-]/g',
+            'telephoneValidationPatternForPhp' => '/[^\\d\\+\\s\\-]/',
+        ],
         'webp' => [
             'convert_all' => '1',
             'converter' => 'Plan2net\\Webp\\Converter\\MagickConverter',

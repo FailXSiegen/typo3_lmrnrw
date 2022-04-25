@@ -1,0 +1,7 @@
+plugin.tx_ttaddress {
+    view {
+        templateRootPath = EXT:lmr_nrw/Resources/Private/Extensions/Address/Templates/
+        partialRootPath = EXT:lmr_nrw/Resources/Private/Extensions/Address/Partials/
+        layoutRootPath = EXT:lmr_nrw/Resources/Private/Extensions/Address/Layouts/
+    }
+}
