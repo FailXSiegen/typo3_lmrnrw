@@ -16,3 +16,16 @@ config {
     compressJs = 0
 }
 [end]
+
+config.recordLinks {   
+   tx_news {
+		forceLink = 0
+
+		typolink {
+			parameter = 229
+			additionalParams = &tx_news_pi1[news]={field:uid}&tx_news_pi1[controller]=News&tx_news_pi1[action]=detail
+			additionalParams.insertData = 1
+			useCacheHash = 1
+		}
+	}
+}

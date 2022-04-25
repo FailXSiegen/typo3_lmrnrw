@@ -1,0 +1,11 @@
+plugin.tx_linkhandler {
+	tx_news {
+		forceLink = 0
+		typolink {
+			parameter = 127
+			additionalParams = &tx_news_pi1[news]={field:uid}&tx_news_pi1[controller]=News&tx_news_pi1[action]=detail
+			additionalParams.insertData = 1
+			useCacheHash = 1
+		}
+	}
+}

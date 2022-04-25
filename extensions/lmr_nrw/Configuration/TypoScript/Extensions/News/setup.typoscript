@@ -10,3 +10,37 @@ plugin.tx_news {
 	}
 }
 
+plugin.tx_seo {
+    config {
+        xmlSitemap {
+            sitemaps {
+                news {
+                    provider = GeorgRinger\News\Seo\NewsXmlSitemapDataProvider
+                    config {
+                        excludedTypes = 1,2
+                        additionalWhere =
+
+                        sortField = datetime
+                        lastModifiedField = tstamp
+                        pid = 218
+                        recursive = 2
+                        url {
+                            pageId = 229
+                            useCategorySinglePid = 1
+                            fieldToParameterMap {
+                                uid = tx_news_pi1[news]
+                            }
+
+                            additionalGetParameters {
+                                tx_news_pi1.controller = News
+                                tx_news_pi1.action = detail
+                            }
+
+                            useCacheHash = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

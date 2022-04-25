@@ -24,6 +24,11 @@ rootPageId: 118
 routes: {  }
 websiteTitle: ''
 routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    map:
+      /: 0
+      sitemap.xml: 1533906435
   ForgotPasswordForm:
     type: Plugin
     limitToPages:
@@ -146,5 +151,9 @@ routeEnhancers:
         type: StaticRangeMapper
         start: '2004'
         end: '2030'
-
-
+settings:
+  redirects:
+    autoUpdateSlugs: true
+    autoCreateRedirects: true
+    redirectTTL: 0
+    httpStatusCode: 301
