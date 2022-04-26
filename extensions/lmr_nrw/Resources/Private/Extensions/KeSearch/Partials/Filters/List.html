@@ -1,0 +1,24 @@
+<!--
+	=====================
+	Partials/Filters/List.html
+-->
+
+<div id="list_{filter.uid}">
+	<ul class="list-group" id="options_{filter.id}">
+		<f:for each="{filter.options}" as="option">
+			<li class="list-group-item {f:if(condition: '{option.selected}', then: 'selected')}">
+				<a href="{option.link}" class="p-3 d-block w-100">
+					{option.title}
+					<f:if condition="{option.selected} == ''">
+						<f:if condition="{filter.shownumberofresults} && {option.results}"> 
+							({option.results})
+						</f:if>
+					</f:if>
+				</a>
+			</li>
+		</f:for>
+	</ul>
+	<a href="{filter.resetLink}" class="btn btn-secondary m-3">
+		<f:translate key="LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xml:reset_filter" />
+	</a>
+</div>

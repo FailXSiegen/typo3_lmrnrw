@@ -1,0 +1,17 @@
+plugin.tx_kesearch_pi1 {
+    view {
+        templateRootPaths {
+            0 = EXT:ke_search/Resources/Private/Templates/
+            1 = EXT:lmr_nrw/Resources/Private/Extensions/KeSearch/Templates/
+        }
+        partialRootPaths {
+            0 = EXT:ke_search/Resources/Private/Partials/
+            1 = EXT:lmr_nrw/Resources/Private/Extensions/KeSearch/Partials/
+        }
+        layoutRootPaths {
+            0 = EXT:ke_search/Resources/Private/Layouts/
+            1 = EXT:lmr_nrw/Resources/Private/Extensions/KeSearch/Layouts/
+        }
+    }
+    cssFile >
+}

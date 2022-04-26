@@ -63,23 +63,28 @@
             </f:if>
         </nav>
         <div class="bottom-nav">
-            <form>
-                <div class="input-group mb-3">
-                    <input 
-                        type="text" 
-                        class="form-control"
-                        placeholder="Suchbegriff eingeben"
-                        aria-label="Recipient's username"
-                        aria-describedby="button-search">
-                    <button 
-                        class="btn btn-outline-primary" 
-                        type="button" 
-                        id="button-search"
-                    >
-                        <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Images/search.svg'}" />
-                    </button>
-                </div>
-            </form>
+            <f:cObject 
+                typoscriptObjectPath="lib.dynamicContent"
+                data="{pageUid: '359'}" />
+            <f:comment>
+                <form>
+                    <div class="input-group mb-3">
+                        <input 
+                            type="text" 
+                            class="form-control"
+                            placeholder="Suchbegriff eingeben"
+                            aria-label="Recipient's username"
+                            aria-describedby="button-search">
+                        <button 
+                            class="btn btn-outline-primary" 
+                            type="button" 
+                            id="button-search"
+                        >
+                            <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:lmr_nrw/Resources/Public/Images/search.svg'}" />
+                        </button>
+                    </div>
+                </form>
+            </f:comment>
             <div class="social-links mb-3">
                 <f:link.external 
                     class="me-3"
