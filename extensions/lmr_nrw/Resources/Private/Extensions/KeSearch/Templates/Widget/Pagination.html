@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:kesearch="http://typo3.org/ns/TeaminmediasPluswerk\KeSearch\ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:spaceless>
+    <div class="page-navigation text-center w-100">
+        <nav aria-label="Aktuelles Seitennavigation">
+            <ul class="pagination justify-content-center">
+                <f:if condition="{pagination.previous}">
+                    <li class="page-item previous">
+                        <kesearch:link piVars="{page: pagination.previous}" keepPiVars="1">{f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xml:pagebrowser_prev')}</kesearch:link>
+                    </li>
+                </f:if>
+                <f:for each="{pagination.pages}" as="page">
+                    <li class="page-item {f:if(condition: '{page} == {pagination.currentPage}', then: 'current')}">
+                        <f:if condition="{page} == {pagination.currentPage}">
+                            <f:then>
+                                {page}
+                            </f:then>
+                            <f:else>
+                                <kesearch:link piVars="{page: page}" 
+                                keepPiVars="1" class="{f:if(condition: '{page} == {pagination.currentPage}', then: 'current')}">{page}
+                            </kesearch:link>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+                <f:if condition="{pagination.next}">
+                    <li class="page-item next">
+                        <kesearch:link piVars="{page: pagination.next}" keepPiVars="1">{f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xml:pagebrowser_next')}</kesearch:link>
+                    </li>
+                </f:if>
+            </ul>
+        </nav>
+</div>
+</f:spaceless>
