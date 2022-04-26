@@ -98,7 +98,8 @@ ul {
 a {
     position: relative;
     &[href*="mailto:"],
-    &[href*="tel:"] {
+    &[href*="tel:"],
+    &.world-icon {
         padding-left: 28px;  
         &:after {
             content:'';
@@ -118,6 +119,10 @@ a {
     &[href*="tel:"]:after {
         background-image: url('./../../../../Public/Images/phone-icon.svg?inline');
     }
+    &.world-icon:after {
+        background-image: url('./../../../../Public/Images/world-icon.svg?inline');
+    }
+  
 }
 .tx-ttaddress {
     a {
@@ -125,14 +130,16 @@ a {
         margin-bottom: 1rem;
         display: block;
         &[href*="mailto:"],
-        &[href*="tel:"] {
+        &[href*="tel:"],
+        &.world-icon {
             padding-left: 58px;  
             &:after {
                 width: 42px;
                 height: 42px;
             }
         }
-        &[href*="tel:"] {
+        &[href*="tel:"],
+        &.world-icon  {
             line-height: 42px;
         }
     }
