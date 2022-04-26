@@ -38,7 +38,10 @@
                     </f:if>
                     <f:if condition="{address.www}">
                         <span>
-                            <f:link.typolink target="_blank" parameter="{address.www}">
+                            <f:link.typolink 
+                            target="_blank" 
+                            title="Öffnet externe Seite {address.www}"
+                            parameter="{address.www}">
                                 {address.www  -> f:format.crop(maxCharacters: 30, append:'&nbsp;[...]')}
                             </f:link.typolink>
                         </span>
