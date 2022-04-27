@@ -111,6 +111,7 @@ a {
             height: 24px;
             background-size: contain;
             background-repeat: no-repeat;
+            background-position: center center;
         }
     }
     &[href*="mailto:"]:after  {
@@ -129,6 +130,7 @@ a {
         position: relative;
         margin-bottom: 1rem;
         display: block;
+        line-height: 42px;
         &[href*="mailto:"],
         &[href*="tel:"],
         &.world-icon {
@@ -137,10 +139,6 @@ a {
                 width: 42px;
                 height: 42px;
             }
-        }
-        &[href*="tel:"],
-        &.world-icon  {
-            line-height: 42px;
         }
     }
 }
