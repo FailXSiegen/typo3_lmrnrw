@@ -36,6 +36,11 @@
                             <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
                         </span>
                     </f:if>
+                    <f:if condition="{address.mobile}">
+                        <span>
+                            <f:link.external uri="tel:{address.mobile}">{address.mobile}</f:link.external>
+                        </span>
+                    </f:if>
                     <f:if condition="{address.www}">
                         <span>
                             <f:link.typolink 
