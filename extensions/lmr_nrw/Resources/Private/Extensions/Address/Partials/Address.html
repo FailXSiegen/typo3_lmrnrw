@@ -20,40 +20,50 @@
 </f:section>
 
 <f:section name="contact">
+    <div class="d-flex flex-column">
         <f:if condition="{address.phone}">
-            {f:translate(key:'label.telephone')}: <a href="tel:{address.cleanedPhone}">
-                <span itemprop="telephone">{address.phone}</span>
-            </a>
+            <span>
+                {f:translate(key:'label.telephone')}: <a href="tel:{address.cleanedPhone}">
+                    <span itemprop="telephone">{address.phone}</span>
+                </a>
+            </span>
         </f:if>
 
         <f:if condition="{address.mobile}">
-            {f:translate(key:'label.mobile')}: <a href="tel:{address.cleanedMobile}">
-                <span itemprop="telephone">{address.mobile}</span>
-            </a>
+            <span>
+                {f:translate(key:'label.mobile')}: <a href="tel:{address.cleanedMobile}">
+                    <span itemprop="telephone">{address.mobile}</span>
+                </a>
+            </span>
         </f:if>
 
         <f:if condition="{address.fax}">
-            {f:translate(key:'label.fax')}: <span itemprop="faxNumber">{address.fax}</span>
-        
+            <span>
+                {f:translate(key:'label.fax')}: <span itemprop="faxNumber">{address.fax}</span>
+            </span>
         </f:if>
 
         <f:if condition="{address.email}">
-            {f:translate(key:'label.email')}:
-            <span><f:link.email email="{address.email}" /></span>
-        
+            <span>
+                {f:translate(key:'label.email')}:
+                <span><f:link.email email="{address.email}" /></span>
+            </span>
         </f:if>
 
         <f:if condition="{address.www}">
-            <meta itemprop="url" content="{f:uri.typolink(parameter:address.www)}"/>
-            {f:translate(key:'label.www')}:
-            <f:link.typolink parameter="{address.www}">{address.wwwSimplified}</f:link.typolink>
+            <span>
+                <meta itemprop="url" content="{f:uri.typolink(parameter:address.www)}"/>
+                {f:translate(key:'label.www')}:
+                <f:link.typolink parameter="{address.www}">{address.wwwSimplified}</f:link.typolink>
+            </span>
         </f:if>
         <f:if condition="{address.birthday}">
-            <meta itemprop="birthDate" content="{address.birthday -> f:format.date(format:'%Y-%m-%d')}">
-      
+            <span>
+                <meta itemprop="birthDate" content="{address.birthday -> f:format.date(format:'%Y-%m-%d')}">
                 {f:translate(key:'label.birthday')}: {address.birthday -> f:format.date(format:'%d.%m.%Y')}
+            </span>
         </f:if>
-    </ul>
+    </div>
 </f:section>
 
 <f:section name="social">
