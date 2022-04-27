@@ -140,6 +140,11 @@ a {
                 height: 42px;
             }
         }
+        &.world-icon {
+            &:after {
+                background-size: 34px;
+            }
+        }
     }
 }
 .ce-column {
