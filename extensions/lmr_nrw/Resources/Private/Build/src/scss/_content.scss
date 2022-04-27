@@ -155,3 +155,6 @@ a {
     height: 100%;
     object-fit: cover;
 }
+.outer + .outer {
+    margin-top: 30px;
+}
