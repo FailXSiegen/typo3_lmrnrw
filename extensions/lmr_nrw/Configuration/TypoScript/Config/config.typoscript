@@ -5,7 +5,7 @@ config {
     concatenateJs = 1
     compressJs = 1
     moveJsFromHeaderToFooter = 1
-    inlineStyle2TempFile = 0
+    inlineStyle2TempFile = external
 }
 
 [applicationContext == 'Development']
