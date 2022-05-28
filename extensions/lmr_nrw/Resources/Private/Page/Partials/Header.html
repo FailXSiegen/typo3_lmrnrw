@@ -32,7 +32,7 @@
         <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: buttonPath}" />
     </button>
 </div>
-<header id="head"
+<header id="head" role="banner"
     class="sidebar-navigation flex-column flex-shrink-0 me-5 px-3 bg-lightgrey-100 vh-100 position-sticky top-0"
     data-rootpid="{rootPageUid}">
     <f:if condition="{logoPath}">
@@ -80,16 +80,15 @@
             </form>
         </f:comment>
         <div class="social-links mb-3 text-dark">
-            <f:link.external aria="{label:'Öffnet Facebook in einem neuen Tab'}" class="me-3"
+            <f:link.external aria="{label:'Öffnet Link in einem neuen Tab'}" class="me-3"
                 title="Landesmusikrat NRW auf Facebook" uri="https://www.facebook.com/LMRNRW" target="_blank">
                 <span class="visually-hidden">Facebook</span>
                 <f:cObject typoscriptObjectPath="lib.inlineSvg"
                     data="{src: 'EXT:lmr_nrw/Resources/Public/Images/iconmonstr-facebook-6.svg'}" />
             </f:link.external>
             <span class="visually-hidden"> | </span>
-            <f:link.external aria="{label:'Öffnet Instagram in einem neuen Tab'}"
-                title="Landesmusikrat NRW auf Instagram" uri="https://www.instagram.com/landesmusikrat_nrw/"
-                target="_blank">
+            <f:link.external aria="{label:'Öffnet Link in einem neuen Tab'}" title="Landesmusikrat NRW auf Instagram"
+                uri="https://www.instagram.com/landesmusikrat_nrw/" target="_blank">
                 <span class="visually-hidden">Instagram</span>
                 <f:cObject typoscriptObjectPath="lib.inlineSvg"
                     data="{src: 'EXT:lmr_nrw/Resources/Public/Images/iconmonstr-instagram-11.svg'}" />
