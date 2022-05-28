@@ -13,8 +13,7 @@
                 <f:else>
                     <a href="{menu.link}" aria-label="Navigiere zur Seite {menu.title}"
                         class="nav-link {f:if(condition: menu.data.menu_highlight,then:'highlight')} {f:if(condition: menu.active,then:'active')}"
-                        {f:if(condition:menu.target,then: 'target="{menu.target}"' )} itemprop="url"
-                        title="{menu.title}">
+                        {f:if(condition:menu.target,then: 'target="{menu.target}"' )} itemprop="url">
                         {menu.title}
                     </a>
                 </f:else>

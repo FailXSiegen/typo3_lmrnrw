@@ -39,8 +39,7 @@
                 <f:else>
                     <a href="{submenu.link}" aria-label="Navigiere zur Seite {submenu.title} unterhalb von {menu.title}"
                         class="nav-link my-3 {linkclass} {f:if(condition: submenu.data.menu_highlight,then:'highlight')} {f:if(condition: submenu.active,then:'active')}"
-                        {f:if(condition:submenu.target,then: 'target="{submenu.target}"' )} itemprop="url"
-                        title="{submenu.title}">
+                        {f:if(condition:submenu.target,then: 'target="{submenu.target}"' )} itemprop="url">
                         {submenu.title}
                     </a>
                 </f:else>
