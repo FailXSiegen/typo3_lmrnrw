@@ -1,22 +1,27 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"></html>
-    <div class="tile rounded {tilebg} {f:if(condition:menuitem.files, then:'tile-bg-image overflow-hidden')} d-flex align-items-center justify-content-center position-relative">
-        <f:if condition="{menuitem.files}">
-            <span class="position-absolute bg-image top-0 start-0 w-100 h-100" style="z-index: auto;">
-                <f:render 
-                    partial="Media/Rendering/Image"
-                    arguments="{
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:variable name="tileTitle" value="{f:if(condition:menuitem.data.subtitle, then:'{menuitem.data.subtitle}', else:
+'{menuitem.title}')}" />
+<div
+    class="tile rounded {tilebg} {f:if(condition:menuitem.files, then:'tile-bg-image overflow-hidden')} d-flex align-items-center justify-content-center position-relative">
+    <f:if condition="{menuitem.files}">
+        <span class="position-absolute bg-image top-0 start-0 w-100 h-100" style="z-index: auto;">
+            <f:render partial="Media/Rendering/Image" arguments="{
                         file: menuitem.files.0,
                         pPictureClass: 'position-absolute start-0 top-0 w-100 h-100',
                         pImageClass: 'image-cover'
                     }" />
-            </span>
-        </f:if>
-        <span class="text-center">
-            <span class="h2 text-uppercase">{f:if(condition:menuitem.data.subtitle, then:'{menuitem.data.subtitle}', else: '{menuitem.title}')}</span>
-            <f:if condition="{menuitem.data.abstract}">
-                {menuitem.data.abstract -> f:format.nl2br()}
-            </f:if>
         </span>
-        <a class="position-absolute w-100 h-100 top-0 start-0" href="{menuitem.link}"></a>
-    </div>
+    </f:if>
+    <span class="text-center">
+        <span class="h2 text-uppercase">{tileTitle}</span>
+        <f:if condition="{menuitem.data.abstract}">
+            {menuitem.data.abstract -> f:format.nl2br()}
+        </f:if>
+    </span>
+    <a class="position-absolute w-100 h-100 top-0 start-0 text-dark" aria-label="Navigiere zur Seite {tileTitle}"
+        href="{menuitem.link}">
+        <span class="visually-hidden">{tileTitle}</span>
+    </a>
+</div>
+
 </html>

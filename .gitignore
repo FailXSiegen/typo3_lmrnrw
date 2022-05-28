@@ -2,6 +2,7 @@
 .database
 deploy_rsa
 .idea/
+.vscode
 .Build
 .php_cs.cache
 build/node_modules

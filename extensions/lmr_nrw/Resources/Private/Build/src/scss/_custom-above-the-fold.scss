@@ -12,58 +12,85 @@
     }
 }
 
-@each $themeColour, $i in $themeColours {
+@each $themeColour,
+$i in $themeColours {
     .bg- {
-        @each $opacity, $x in $opacities {
+
+        @each $opacity,
+        $x in $opacities {
             &#{$themeColour}-#{$opacity} {
+                background-color: $i;
                 background-color: rgba($i, $x);
+
                 @if index($themeColour, 'red') {
                     svg {
-                        .st0{fill:$white;}
-                        .st1{fill:$white;}
-                    }
-                } @else {
-                    svg {
-                        .st0{fill:$red;}
-                        .st1{fill:$darkgrey;}
+                        .st0 {
+                            fill: $white;
+                        }
+
+                        .st1 {
+                            fill: $white;
+                        }
                     }
                 }
-            }	
+
+                @else {
+                    svg {
+                        .st0 {
+                            fill: $red;
+                        }
+
+                        .st1 {
+                            fill: $darkgrey;
+                        }
+                    }
+                }
+            }
         }
     }
-    .cl-#{$themeColour}{
+
+    .cl-#{$themeColour} {
         color: $i;
     }
 }
+
 .has-bgcolor {
     margin-bottom: 1.5rem;
 }
+
 .bgimage-container {
     .has-bgcolor {
         margin-bottom: 0;
-    }   
+    }
 }
+
 div[class*="bg-red"],
 div[class*="bg-darkred"],
 div[class*="bg-darkgrey"] {
     * {
-        color: $white !important;
-    } 
+        color: $white  !important;
+    }
+
     .btn-primary {
         background-color: $lightgrey;
-        color: $darkgrey !important;
+        color: $darkgrey  !important;
     }
+
     ul.list-circle li:after {
         background-image: url('./../../../../Public/Images/bulletpoints-highlight-white.svg?inline');
     }
 }
-@each $opacity, $x in $opacities {
+
+@each $opacity,
+$x in $opacities {
     .opacity-#{$opacity} {
         opacity: $x;
-    }	
+    }
 }
+
 body {
     padding: 0 15px;
+
     @include media-breakpoint-up(lg) {
         display: flex;
         flex-wrap: nowrap;
@@ -76,11 +103,13 @@ body {
     svg {
         max-width: 200px;
         width: 100%;
+
         @include media-breakpoint-up(lg) {
             max-width: 269px;
         }
     }
 }
+
 #head,
 #mobile-head {
     z-index: 999;
@@ -97,9 +126,11 @@ body {
 a {
     text-decoration: none;
 }
-.logo svg{
+
+.logo svg {
     max-height: 110px;
     transition: max-height .5s ease-in-out;
+
     @include media-breakpoint-up(lg) {
         path:nth-child(-n + 2) {
             opacity: 1;
@@ -113,16 +144,21 @@ div[class*="bg-"] {
 }
 
 .bottom-nav {
-    input, .btn {
+
+    input,
+    .btn {
         border: 0;
         background-color: $white;
         border-radius: 6px;
     }
+
     .btn {
         position: relative;
+
         svg {
             transition: fill .15s ease-in-out;
         }
+
         &:after {
             content: '';
             display: block;
@@ -134,46 +170,59 @@ div[class*="bg-"] {
             background-color: $grey;
             transition: background-color .15s ease-in-out;
         }
-        &:hover, &:active, &:focus {
+
+        &:hover,
+        &:active,
+        &:focus {
             &:after {
                 background-color: $white;
             }
+
             svg {
                 fill: $white;
             }
         }
     }
 }
+
 .toggle-mobile-nav {
     background: none;
     border: none;
+
     svg {
         width: 45px;
         height: 33px;
         fill: $red;
     }
 }
+
 .article {
     .more svg {
         width: 130px;
     }
 }
+
 @include media-breakpoint-up(lg) {
     .columns {
         &-2 {
             columns: 2;
         }
+
         &-3 {
             columns: 2;
+
             @include media-breakpoint-up(xl) {
                 columns: 3;
             }
         }
+
         &-4 {
             columns: 2;
+
             @include media-breakpoint-up(xl) {
                 columns: 3;
             }
+
             @include media-breakpoint-up(xxl) {
                 columns: 4;
             }
@@ -183,7 +232,9 @@ div[class*="bg-"] {
 
 .pagination {
     .page-item {
-        a, &.current {
+
+        a,
+        &.current {
             height: 35px;
             width: 35px;
             display: block;
@@ -193,14 +244,19 @@ div[class*="bg-"] {
             background-repeat: no-repeat;
             background-position: center center;
         }
-        &.current, a:hover {
+
+        &.current,
+        a:hover {
             background-image: url('./../../../../Public/Images/pagination-active.svg?inline');
         }
-        &.previous a, &.next a {
+
+        &.previous a,
+        &.next a {
             background-image: url('./../../../../Public/Images/pagination-arrow-left.svg?inline');
             text-indent: -9999px;
             overflow: hidden;
         }
+
         &.next a {
             background-image: url('./../../../../Public/Images/pagination-arrow-right.svg?inline');
         }
@@ -209,6 +265,7 @@ div[class*="bg-"] {
 
 picture {
     display: block;
+
     &.grayscale {
         filter: grayscale(100%);
     }

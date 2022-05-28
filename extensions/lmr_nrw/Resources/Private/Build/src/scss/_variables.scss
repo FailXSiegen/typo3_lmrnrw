@@ -1,15 +1,16 @@
 $white: #fff;
-$red: #d8232a;
+$red: #D7232A;
 $darkred: #622226;
 $darkgrey: #363636;
 $grey: #c3c3c3;
 $lightgrey: #f2f2f2;
 
-$primary:       $red;
-$secondary:     $darkred;
+$primary: $red;
+$secondary: $darkred;
 
 $opacities: (
   100: 1,
+  90: 0.9,
   80: 0.8,
   60: 0.6,
   40: 0.4,
@@ -17,12 +18,12 @@ $opacities: (
 );
 
 $themeColours: (
-    "white": $white,
-    "red": $red,
-    "darkred": $darkred,
-    "darkgrey": $darkgrey,
-    "grey": $grey,
-    "lightgrey": $lightgrey
+  "white": $white,
+  "red": $red,
+  "darkred": $darkred,
+  "darkgrey": $darkgrey,
+  "grey": $grey,
+  "lightgrey": $lightgrey
 );
 
 $enable-cssgrid: false;

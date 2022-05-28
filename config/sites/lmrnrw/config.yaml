@@ -16,7 +16,7 @@ languages:
     locale: de_DE.UTF-8
     iso-639-1: de
     navigationTitle: Deutsch
-    hreflang: de-DE
+    hreflang: de
     direction: ''
     flag: de
     languageId: '0'

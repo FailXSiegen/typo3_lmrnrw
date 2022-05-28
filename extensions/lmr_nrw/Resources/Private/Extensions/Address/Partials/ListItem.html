@@ -1,118 +1,112 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-    <f:if condition="{address.company}">
-        <f:then>
-            <f:render section="organisation" arguments="{_all}" />
-        </f:then>
-        <f:else>
-            <f:render section="person" arguments="{_all}" />
-        </f:else>
+<f:if condition="{address.company}">
+    <f:then>
+        <f:render section="organisation" arguments="{_all}" />
+    </f:then>
+    <f:else>
+        <f:render section="person" arguments="{_all}" />
+    </f:else>
+</f:if>
+
+<f:section name="organisation">
+    <f:variable name="colClass" value="col-12 col-sm-6 col-xxl-4" />
+    <f:if condition="{addresses -> f:count()} <= 2">
+        <f:variable name="colClass" value="col-12 col-sm-6 col-lg-6" />
     </f:if>
-
-    <f:section name="organisation">
-        <f:variable name="colClass" value="col-12 col-sm-6 col-xxl-4" />
-        <f:if condition="{addresses -> f:count()} <= 2">
-            <f:variable name="colClass" value="col-12 col-sm-6 col-lg-6" />
-        </f:if>
-        <div class="{colClass} mb-3 mb-lg-4">
-            <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0 h-100" itemscope itemtype="http://schema.org/Person">
-                <div class="addressInformation d-flex flex-column h-100">
-                    <h3>{address.company -> f:format.nl2br()}</h3>
-                    <f:if condition="{address.fullName}">
-                        <h4 class="{f:if(condition:address.position, then:'mb-0')}">{address.fullName}</h4>
-                    </f:if>
-                    <f:if condition="{address.position}">
-                        <p class="position fw-light mb-3">{address.position}</p>
-                    </f:if>
-                    <f:render section="address" partial="Address" arguments="{_all}"/>
-                    <f:if condition="{address.email}">
-                        <span class="mt-auto">
-                            <f:link.email email="{address.email}">E-Mail</f:link.email>
-                        </span>
-                    </f:if>
-                    <f:if condition="{address.phone}">
-                        <span>
-                            <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
-                        </span>
-                    </f:if>
-                    <f:if condition="{address.mobile}">
-                        <span>
-                            <f:link.external uri="tel:{address.mobile}">{address.mobile}</f:link.external>
-                        </span>
-                    </f:if>
-                    <f:if condition="{address.www}">
-                        <span>
-                            <f:link.typolink 
-                            target="_blank" 
-                            class="world-icon"
-                            title="Öffnet externe Seite {address.www}"
-                            parameter="{address.www}">
-                                {address.wwwSimplified  -> f:format.crop(maxCharacters: 30, append:'&nbsp;[...]')}
-                            </f:link.typolink>
-                        </span>
-                    </f:if>
-                   
-                    <f:render section="social" partial="Address" arguments="{_all}"/>
-                    <span class="description">
-                        <f:format.html>{address.description}</f:format.html>
+    <div class="{colClass} mb-3 mb-lg-4">
+        <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0 h-100" itemscope
+            itemtype="http://schema.org/Person">
+            <div class="addressInformation d-flex flex-column h-100">
+                <span class="h3">{address.company -> f:format.nl2br()}</span>
+                <f:if condition="{address.fullName}">
+                    <h4 class="{f:if(condition:address.position, then:'mb-0')}">{address.fullName}</h4>
+                </f:if>
+                <f:if condition="{address.position}">
+                    <p class="position fw-light mb-3">{address.position}</p>
+                </f:if>
+                <f:render section="address" partial="Address" arguments="{_all}" />
+                <f:if condition="{address.email}">
+                    <span class="mt-auto">
+                        <f:link.email aria="{label:'E-Mail senden an: {address.email}'}" email="{address.email}">E-Mail
+                        </f:link.email>
                     </span>
-                </div>
-            </div>
-        </div>
-    </f:section>
-    
-
-    <f:section name="person">
-        <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-3 mb-lg-4">
-            <f:if condition="{address.firstImage}">
-                <div class="addressImage rounded-top overflow-hidden">
-                    <f:if condition="{address.image}">
-                        <f:media 
-                            file="{address.firstImage}" 
-                            width="600m" 
-                            class="img-fluid p-0 w-100"
-                            alt="{address.firstImage.originalResource.alt}"
-                            title="{address.fullName}"/>
-                    </f:if>
-                </div>
-            </f:if>
-            <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0 h-100" itemscope itemtype="http://schema.org/Person">
-                <div class="addressInformation d-flex flex-column h-100">
-                    <h3 class="{f:if(condition:address.position, then:'mb-0')}">{address.fullName}</h3>
-                    <f:if condition="{address.position}">
-                        <p class="position fw-light mb-3">{address.position}</p>
-                    </f:if>
-                    <f:if condition="{address.email}">
-                        <span class="mt-auto">
-                            <f:link.email email="{address.email}">E-Mail</f:link.email>
-                        </span>
-                    </f:if>
-                    <f:if condition="{address.phone}">
-                        <span>
-                            <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
-                        </span>
-                    </f:if>
-                    <f:if condition="{address.mobile}">
-                        <span>
-                            <f:link.external uri="tel:{address.mobile}">{address.mobile}</f:link.external>
-                        </span>
-                    </f:if>
-                    <f:if condition="{address.www}">
-                        <span>
-                            <f:link.typolink 
-                            target="_blank" 
-                            class="world-icon"
-                            title="Öffnet externe Seite {address.www}"
+                </f:if>
+                <f:if condition="{address.phone}">
+                    <span>
+                        <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
+                    </span>
+                </f:if>
+                <f:if condition="{address.mobile}">
+                    <span>
+                        <f:link.external uri="tel:{address.mobile}">{address.mobile}</f:link.external>
+                    </span>
+                </f:if>
+                <f:if condition="{address.www}">
+                    <span>
+                        <f:link.typolink target="_blank" class="world-icon" title="Öffnet externe Seite {address.www}"
                             parameter="{address.www}">
-                                {address.wwwSimplified  -> f:format.crop(maxCharacters: 30, append:'&nbsp;[...]')}
-                            </f:link.typolink>
-                        </span>
-                    </f:if>
-                    <f:render section="address" partial="Address" arguments="{_all}"/>
-                    <f:render section="social" partial="Address" arguments="{_all}"/>
-                </div>
+                            {address.wwwSimplified -> f:format.crop(maxCharacters: 30, append:'&nbsp;[...]')}
+                        </f:link.typolink>
+                    </span>
+                </f:if>
+
+                <f:render section="social" partial="Address" arguments="{_all}" />
+                <span class="description">
+                    <f:format.html>{address.description}</f:format.html>
+                </span>
             </div>
         </div>
-    </f:section>
+    </div>
+</f:section>
+
+
+<f:section name="person">
+    <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-3 mb-lg-4">
+        <f:if condition="{address.firstImage}">
+            <div class="addressImage rounded-top overflow-hidden">
+                <f:if condition="{address.image}">
+                    <f:media file="{address.firstImage}" width="600m" class="img-fluid p-0 w-100"
+                        alt="{address.firstImage.originalResource.alt}" title="{address.fullName}" />
+                </f:if>
+            </div>
+        </f:if>
+        <div class="vcard bg-lightgrey-100 d-flex flex-column rounded-bottom mb-md-0 h-100" itemscope
+            itemtype="http://schema.org/Person">
+            <div class="addressInformation d-flex flex-column h-100">
+                <span class="h3 {f:if(condition:address.position, then:'mb-0')}">{address.fullName}</span>
+                <f:if condition="{address.position}">
+                    <p class="position fw-light mb-3">{address.position}</p>
+                </f:if>
+                <f:if condition="{address.email}">
+                    <span class="mt-auto">
+                        <f:link.email aria="{label:'E-Mail senden an: {address.email}'}" email="{address.email}">E-Mail
+                        </f:link.email>
+                    </span>
+                </f:if>
+                <f:if condition="{address.phone}">
+                    <span>
+                        <f:link.external uri="tel:{address.phone}">{address.phone}</f:link.external>
+                    </span>
+                </f:if>
+                <f:if condition="{address.mobile}">
+                    <span>
+                        <f:link.external uri="tel:{address.mobile}">{address.mobile}</f:link.external>
+                    </span>
+                </f:if>
+                <f:if condition="{address.www}">
+                    <span>
+                        <f:link.typolink target="_blank" class="world-icon" title="Öffnet externe Seite {address.www}"
+                            parameter="{address.www}">
+                            {address.wwwSimplified -> f:format.crop(maxCharacters: 30, append:'&nbsp;[...]')}
+                        </f:link.typolink>
+                    </span>
+                </f:if>
+                <f:render section="address" partial="Address" arguments="{_all}" />
+                <f:render section="social" partial="Address" arguments="{_all}" />
+            </div>
+        </div>
+    </div>
+</f:section>
+
 </html>
