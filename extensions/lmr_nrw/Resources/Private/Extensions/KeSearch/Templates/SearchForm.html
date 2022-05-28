@@ -37,6 +37,7 @@ Templates/SearchForm.html
 		</f:if>
 
 		<div class="input-group mb-3">
+			<label class="visually-hidden-focusable">Eingabefeld Suche</label>
 			<input type="text" class="form-control" name="tx_kesearch_pi1[sword]" value="{searchword -> f:format.raw()}"
 				placeholder="Suchbegriff eingeben" aria-label="Suche starten" aria-describedby="button-search">
 			<button aria-label="Suche starten" class="btn btn-outline-primary" type="submit" id="button-search">
