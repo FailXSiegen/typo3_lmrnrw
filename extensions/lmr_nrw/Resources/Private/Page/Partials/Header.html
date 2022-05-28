@@ -80,18 +80,23 @@
             </form>
         </f:comment>
         <div class="social-links mb-3 text-dark">
-            <f:link.external class="me-3" title="Landesmusikrat NRW auf Facebook" uri="https://www.facebook.com/LMRNRW"
-                target="_blank">
+            <f:link.external aria="{label:'Öffnet Facebook in einem neuen Tab'}" class="me-3"
+                title="Landesmusikrat NRW auf Facebook" uri="https://www.facebook.com/LMRNRW" target="_blank">
+                <span class="visually-hidden">Facebook</span>
                 <f:cObject typoscriptObjectPath="lib.inlineSvg"
                     data="{src: 'EXT:lmr_nrw/Resources/Public/Images/iconmonstr-facebook-6.svg'}" />
             </f:link.external>
-            <f:link.external title="Landesmusikrat NRW auf Instagram"
-                uri="https://www.instagram.com/landesmusikrat_nrw/" target="_blank">
+            <f:link.external aria="{label:'Öffnet Instagram in einem neuen Tab'}"
+                title="Landesmusikrat NRW auf Instagram" uri="https://www.instagram.com/landesmusikrat_nrw/"
+                target="_blank">
+                <span class="visually-hidden">Instagram</span>
                 <f:cObject typoscriptObjectPath="lib.inlineSvg"
                     data="{src: 'EXT:lmr_nrw/Resources/Public/Images/iconmonstr-instagram-11.svg'}" />
             </f:link.external>
         </div>
-        <f:link.external uri="https://www.mkw.nrw/" target="_blank" class="logo-mkw__anchor my-5 text-dark d-block">
+        <f:link.external aria="{label:'Öffnet Link in einem neuen Tab'}" uri="https://www.mkw.nrw/" target="_blank"
+            class="logo-mkw__anchor my-5 text-dark d-block">
+            <span class="visually-hidden">Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen</span>
             <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{
                     src: 'EXT:lmr_nrw/Resources/Public/Images/Logo/asidelogo_ministerium.svg'
                 }" />
