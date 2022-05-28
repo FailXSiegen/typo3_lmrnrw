@@ -40,8 +40,9 @@ Templates/SearchForm.html
 			<label class="visually-hidden-focusable" for="tx_kesearch_pi1_input">Eingabefeld Suche</label>
 			<input type="text" id="tx_kesearch_pi1_input" class="form-control" name="tx_kesearch_pi1[sword]"
 				value="{searchword -> f:format.raw()}" placeholder="Suchbegriff eingeben" aria-label="Suche starten"
-				aria-describedby="button-search">
-			<button aria-label="Suche starten" class="btn btn-outline-primary" type="submit" id="button-search">
+				tabindex="0" aria-describedby="button-search">
+			<button aria-label="Suche starten" class="btn btn-outline-primary" type="submit" tabindex="1"
+				id="button-search">
 				<span class="visually-hidden">Suche starten</span>
 				<f:cObject typoscriptObjectPath="lib.inlineSvg"
 					data="{src: 'EXT:lmr_nrw/Resources/Public/Images/search.svg'}" />
