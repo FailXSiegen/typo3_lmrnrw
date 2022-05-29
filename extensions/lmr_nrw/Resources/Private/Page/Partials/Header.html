@@ -17,7 +17,8 @@
         Zur Fuß-Navigation springen
     </a>
 </div>
-<div id="mobile-head" class="position-sticky top-0 d-flex d-lg-none bg-white py-3" aria-expanded="false">
+<div id="mobile-head" role="complementary" class="position-sticky top-0 d-flex d-lg-none bg-white py-3"
+    aria-expanded="false">
     <f:if condition="{logoPath}">
         <div itemscope itemtype="http://schema.org/Organization">
             <f:link.typolink parameter="{rootPageUid}" class="logo my-lg-5 my-2 d-block"
@@ -32,11 +33,11 @@
         <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: buttonPath}" />
     </button>
 </div>
-<header id="head" role="banner"
+<header id="head"
     class="sidebar-navigation flex-column flex-shrink-0 me-5 px-3 bg-lightgrey-100 vh-100 position-sticky top-0"
     data-rootpid="{rootPageUid}">
     <f:if condition="{logoPath}">
-        <div itemscope itemtype="http://schema.org/Organization" class="d-none d-lg-block">
+        <div itemscope itemtype="http://schema.org/Organization" class="d-none d-lg-block" role="banner">
             <f:link.typolink parameter="{rootPageUid}" class="logo text-dark my-md-5 my-2 d-block"
                 additionalAttributes="{'itemprop':'url'}">
                 <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: logoPath}" />

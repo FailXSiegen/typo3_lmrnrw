@@ -6,7 +6,7 @@
 
 <f:variable name="navclasses" value="my-2 py-2" />
 <f:if condition="{level} == 1">
-    <f:variable name="navclasses" value="my-0 py-0" />
+    <f:variable name="navclasses" value="bg-lightgrey-100 cl-darkgrey my-0 py-0" />
 </f:if>
 <f:variable name="linkclass" value="" />
 <f:if condition="{level} == 2">
@@ -21,8 +21,8 @@
 <a class="nav-link collapse-toggle flex-collapse d-flex align-items-center {navclasses}" href="#menu{menu.data.uid}"
     role="button" data-parent="#mainmenu"
     aria-expanded="{f:if(condition: '{menu.active} || {menu.current}', then:'true', else:'false')}">
-    <span>{menu.title}</span>
-    <em class="bi bi-chevron-down"></em>
+    <span class="bg-lightgrey-100 cl-darkgrey">{menu.title}</span>
+    <em class="bi bi-chevron-down bg-lightgrey-100 cl-darkgrey"></em>
 </a>
 <ul class="{class} d-flex level-{level} {f:if(condition: '{menu.active} || {menu.current}', then:'show')}"
     id="menu{menu.data.uid}">

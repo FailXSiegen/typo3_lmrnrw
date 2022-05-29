@@ -1,8 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "^5",
-    "bootstrap-icons": "^1.7.2",
-    "locomotive-scroll": "^4.1.2",
+    "bootstrap-icons": "^1.8.3",
     "glightbox": "^3.1.0"
   },
   "scripts": {
@@ -10,22 +9,22 @@
     "watch": "webpack --watch --progress"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "adjust-sourcemap-loader": "^4.0.0",
-    "autoprefixer": "^10.3.7",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^6.4.0",
-    "cssnano": "^5.0.8",
-    "mini-css-extract-plugin": "^2.4.2",
-    "node-sass": "^6.0.1",
-    "postcss-loader": "^6.2.0",
+    "autoprefixer": "10.4.5",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.10",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^7.0.1",
+    "postcss-loader": "^6.2.1",
     "resolve-url-loader": "^4.0.0",
-    "sass": "^1.43.2",
-    "sass-loader": "^12.2.0",
-    "webpack": "^5",
-    "webpack-cli": "^4",
-    "webpack-fix-style-only-entries": "^0.6.1"
+    "sass": "^1.52.1",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.72",
+    "webpack-cli": "^4.9",
+    "webpack-fix-style-only-entries": "^0.6"
   },
   "browserslist": [
     "defaults",
