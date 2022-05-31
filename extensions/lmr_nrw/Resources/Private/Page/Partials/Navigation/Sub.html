@@ -21,7 +21,7 @@
 <a class="nav-link collapse-toggle flex-collapse d-flex align-items-center {navclasses}" href="#menu{menu.data.uid}"
     role="button" data-parent="#mainmenu"
     aria-expanded="{f:if(condition: '{menu.active} || {menu.current}', then:'true', else:'false')}">
-    <span class="bg-lightgrey-100 cl-darkgrey">{menu.title}</span>
+    {menu.title}
     <em class="bi bi-chevron-down bg-lightgrey-100 cl-darkgrey"></em>
 </a>
 <ul class="{class} d-flex level-{level} {f:if(condition: '{menu.active} || {menu.current}', then:'show')}"
