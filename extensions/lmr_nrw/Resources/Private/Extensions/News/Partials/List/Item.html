@@ -25,8 +25,8 @@
 </f:if>
 
 <div class="{f:if(condition: newsItem.istopnews, then: '{topnewsclass}', else: '{newsclass}')}">
-	<div class="article h-100 d-flex flex-column articletype-{newsItem.type} rounded {styleClass}" itemscope="itemscope"
-		itemtype="http://schema.org/Article">
+	<div class="article h-100 position-relative d-flex flex-column articletype-{newsItem.type} rounded {styleClass}"
+		itemscope="itemscope" itemtype="http://schema.org/Article">
 		<n:excludeDisplayedNews newsItem="{newsItem}" />
 		<span class="news-list-date my-2">
 			<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
@@ -57,7 +57,7 @@
 			<f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: more}" />
 		</span>
 		<a href="{n:link(newsItem:newsItem, settings: settings,uriOnly: 1)}"
-			aria-label="Navigiere zur News {newsItem.title}" class="position-absolute w-100 h-100">
+			aria-label="Navigiere zur News {newsItem.title}" class="position-absolute w-100 h-100 top-0 start-0">
 			<span class="visually-hidden">{newsItem.title}</span>
 		</a>
 	</div>
