@@ -11,6 +11,8 @@ CREATE TABLE tt_content (
     parallaxoption VARCHAR(255) DEFAULT '' NOT NULL,
     animatecss VARCHAR(255) DEFAULT '' NOT NULL,
 
+    header_class VARCHAR(255) DEFAULT '' NOT NULL,
+
     space_start_class VARCHAR(255) DEFAULT '' NOT NULL,
     space_end_class VARCHAR(255) DEFAULT '' NOT NULL,
 

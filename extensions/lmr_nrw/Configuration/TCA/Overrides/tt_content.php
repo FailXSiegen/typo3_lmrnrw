@@ -105,6 +105,21 @@ call_user_func(
                     ],
                 ],
             ],
+            'header_class' => [
+                'label' => 'Überschrift Stil',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectSingle',
+                    'items' => [
+                        ['Standard', ''],
+                        ['Wie H1', 'h1'],
+                        ['Wie H2', 'h2'],
+                        ['Wie H3', 'h3'],
+                        ['Wie H4', 'h4'],
+                        ['Wie H5', 'h5']
+                    ],
+                ],
+            ],
             'opacity' => [
                 'label' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:opacity',
                 'description' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:opacity.description',
@@ -552,7 +567,18 @@ call_user_func(
             'tt_content',
             $container_columns
         );
-       
+        // \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+        //     'tt_content',
+        //     'header_class',
+        //     '',
+        //     'after:header_layout'
+        // );
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            'tt_content',
+            'headers',
+            'header_class',
+            'after:header_layout'
+        );
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             'tt_content',
             'text_columns, --linebreak--',
@@ -576,7 +602,7 @@ call_user_func(
             'opacity, --linebreak--,',
             'after:frame_class'
         );
-        ;
+        
 
         $GLOBALS['TCA']['tt_content']['palettes']['counter_config'] = [
             'label' => 'Counter config',

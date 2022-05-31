@@ -2,54 +2,29 @@
 <f:if condition="{header}">
     <f:switch expression="{layout}">
         <f:case value="1">
-            <h1 class="text-{positionClass}">
+            <h1 class="text-{positionClass} {headerClass}">
                 <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
             </h1>
         </f:case>
         <f:case value="2">
-            <h2 class="text-{positionClass}">
+            <h2 class="text-{positionClass} {headerClass}">
                 <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
             </h2>
         </f:case>
         <f:case value="3">
-            <h3 class="text-{positionClass}">
+            <h3 class="text-{positionClass} {headerClass}">
                 <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
             </h3>
         </f:case>
         <f:case value="4">
-            <h4 class="text-{positionClass}">
+            <h4 class="text-{positionClass} {headerClass}">
                 <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
             </h4>
         </f:case>
         <f:case value="5">
-            <h5 class="text-{positionClass}">
+            <h5 class="text-{positionClass} {headerClass}">
                 <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
             </h5>
-        </f:case>
-        <f:case value="6">
-            <span class="h1 d-block text-{positionClass}">
-                <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
-            </span>
-        </f:case>
-        <f:case value="7">
-            <span class="h2 d-block text-{positionClass}">
-                <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
-            </span>
-        </f:case>
-        <f:case value="8">
-            <span class="h3 d-block text-{positionClass}">
-                <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
-            </span>
-        </f:case>
-        <f:case value="9">
-            <span class="h4 d-block text-{positionClass}">
-                <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
-            </span>
-        </f:case>
-        <f:case value="10">
-            <span class="h5 d-block text-{positionClass}">
-                <f:link.typolink parameter="{link}">{header -> f:format.nl2br()}</f:link.typolink>
-            </span>
         </f:case>
         <f:case value="100">
             <f:comment> -- do not show header -- </f:comment>

@@ -249,13 +249,6 @@ TCEFORM {
 				4 = H4
 				5 = H5
 				100 = Verborgen
-			}
-			addItems {
-				6 = H1 class
-				7 = H2 class
-				8 = H3 class
-				9 = H4 class
-				10 = H5 class
 			}			
 		}
 		text_columns {
