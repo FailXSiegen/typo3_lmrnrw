@@ -75,7 +75,7 @@ page {
 
     templateRootPaths {
       1 = {$failx.resourcePath}Private/Page/Templates/
-    } 
+    }
 
     dataProcessing {
       10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
@@ -101,7 +101,7 @@ page {
 
       easyLanguagePageUid = TEXT
       easyLanguagePageUid.value = {$failx.easyLanguagePageUid}
-      
+
       theme = TEXT
       theme {
         field = theme
@@ -111,16 +111,21 @@ page {
 
       logoPath = TEXT
       logoPath.value = {$failx.logoPath}
-      
+
       buttonPath = TEXT
       buttonPath.value = {$failx.buttonPath}
-      
+
       buttonClosePath = TEXT
       buttonClosePath.value = {$failx.buttonClosePath}
-    
+
       contactMail = TEXT
       contactMail.value = {$failx.contactMail}
 
+      activateEasyLanguage = TEXT
+      activateEasyLanguage.value = {$failx.activateEasyLanguage}
+
+      easyLanguagePageButtontext = TEXT
+      easyLanguagePageButtontext.value = {$failx.easyLanguagePageButtontext}
     }
   }
 }
@@ -128,4 +133,22 @@ page {
 [traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
 page.10.templateName >
 page.10.templateName = News
+[end]
+
+
+[{$failx.easyLanguagePageUid} in tree.rootLineIds]
+page {
+  10 {
+    dataProcessing {
+        10 {
+          special.value = {$failx.easyLanguagePageUid}
+        }
+    }
+    variables {
+      rootPageUid.value = {$failx.easyLanguagePageUid}
+      easyLanguagePageUid.value = {$failx.rootPid}
+      easyLanguagePageButtontext.value = Zurück zur Hauptnavigation
+    }
+  }
+}
 [end]

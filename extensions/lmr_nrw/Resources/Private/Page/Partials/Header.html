@@ -47,7 +47,7 @@
     <nav id="nav" aria-label="Hauptnavigation" class="navbar flex-column mt-md-10 mb-auto" itemscope
         itemtype="http://schema.org/SiteNavigationElement">
         <f:render partial="Navigation/Main" arguments="{
-                menu: mainNavigation, 
+                menu: mainNavigation,
                 class:'navbar-nav order-1 flex-column flex-fill justify-content-center',
                 id:'mainmenu'
             }" />
@@ -55,14 +55,14 @@
     <nav id="subnav" aria-label="Meta-Navigation" class="d-flex flex-column my-auto pt-md-5 pt-3" itemscope
         itemtype="http://schema.org/SiteNavigationElement">
         <f:render partial="Navigation/Main" arguments="{
-                menu: socialNavigation, 
+                menu: socialNavigation,
                 class:'navbar-nav social-nav pe-3 order-1 flex-fill justify-content-center',
                 id:'submenu'
             }" />
-        <f:if condition="{easyLanguagePageUid}">
+        <f:if condition="{easyLanguagePageUid} && {activateEasyLanguage}">
             <f:link.typolink parameter="{easyLanguagePageUid}"
                 class="easy-language d-block mb-4 order-2 btn btn-primary" additionalAttributes="{'itemprop':'url'}">
-                Leichte Sprache
+                {easyLanguagePageButtontext}
             </f:link.typolink>
         </f:if>
     </nav>
