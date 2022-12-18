@@ -8,6 +8,11 @@ plugin.tx_news {
 	_LOCAL_LANG.de {
 		related-files = Downloads
 	}
+  settings.detail.media {
+    video {
+      width = 100%
+    }
+  }
 }
 
 plugin.tx_seo {

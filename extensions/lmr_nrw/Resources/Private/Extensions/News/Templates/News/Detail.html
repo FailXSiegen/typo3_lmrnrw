@@ -99,7 +99,7 @@
 			<f:if condition="{newsItem.mediaNonPreviews}">
 				<f:then>
 					<div class="row">
-						<div class="col-lg-9">
+						<div class="col-lg-8 col-xxl-9">
 							<div class="news-text-wrap columns-{newsItem.textColumns}" itemprop="articleBody">
 								<f:format.html>{newsItem.bodytext}</f:format.html>
 							</div>
@@ -108,7 +108,7 @@
 									{newsItem.contentElementIdList}</f:cObject>
 							</f:if>
 						</div>
-						<div class="col-lg-3">
+						<div class="col-lg-4 col-xxl-3">
 							<f:render partial="Detail/MediaContainer"
 								arguments="{media: newsItem.mediaNonPreviews, settings:settings}" />
 						</div>

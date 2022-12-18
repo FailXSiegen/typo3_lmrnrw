@@ -7,27 +7,27 @@
 		<f:then>
 			<f:link.typolink parameter="{mediaElement.link}" target="{n:targetLink(link:mediaElement.link)}">
 				<f:render partial="Media/Rendering/Image"
-					arguments="{file: mediaElement}" />
+					arguments="{file: mediaElement, pImageClass: 'img img-fluid image-cover'}" />
 			</f:link.typolink>
 		</f:then>
 		<f:else>
-			<f:asset.css 
+			<f:asset.css
 				identifier="glightbox"
 				href="EXT:lmr_nrw/Resources/Public/StyleSheet/glightboxcss.css" />
-			<f:asset.script 
+			<f:asset.script
 				identifier="glightbox-lib"
 				src="EXT:lmr_nrw/Resources/Public/JavaScript/glightbox.min.js" />
 			<f:asset.script identifier="glightbox-init">
 				const lightbox = GLightbox();
 			</f:asset.script>
-			<a href="{f:uri.image(image:mediaElement, width:'{settings.detail.media.image.lightbox.width}', height:'{settings.detail.media.image.lightbox.height}')}" 
-				title="{mediaElement.title}" 
-				class="glightbox" 
+			<a href="{f:uri.image(image:mediaElement, width:'{settings.detail.media.image.lightbox.width}', height:'{settings.detail.media.image.lightbox.height}')}"
+				title="{mediaElement.title}"
+				class="glightbox"
 				rel="{settings.detail.media.image.lightbox.rel}">
 				<f:render partial="Media/Rendering/Image"
-					arguments="{file: mediaElement}" />
+					arguments="{file: mediaElement, pImageClass: 'img img-fluid image-cover'}" />
 			</a>
-			
+
 		</f:else>
 	</f:if>
 </div>

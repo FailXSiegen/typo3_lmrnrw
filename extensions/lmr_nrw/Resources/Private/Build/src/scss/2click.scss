@@ -26,7 +26,7 @@
             display: block;
             background-repeat: no-repeat;
             background-size: cover;
-            background-image: url('./../../../../Public/Images/youtube-agreement.svg?inline'); 
+            background-image: url('./../../../../Public/Images/youtube-agreement.svg?inline');
             position: absolute;
             font-size: 120px;
             color: rgba( 255, 255, 255, .2 );
@@ -38,4 +38,18 @@
             left: calc( 50% - 60px );
         }
     }
+    .video_trigger_content  {
+        .btn {
+            z-index: 999;
+            position: relative;
+        }
+    }
 }
+.col-lg-3 {
+    .video_wrapper .video_trigger:before {
+        width: 60px;
+        height: 60px;
+        left: calc( 50% - 30px );
+    }
+}
+
