@@ -4,7 +4,6 @@ return [
         'debug' => false,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$akNES0QwUUtZamIzVGNSVQ$puHTYunR1481a4fDNcM6P+RdzoHMnQbPC3Op73+rW0w',
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
@@ -27,6 +26,11 @@ return [
         ],
     ],
     'EXT' => [],
+    'EXTCONF' => [
+        'helhum-typo3-console' => [
+            'initialUpgradeDone' => '11.5',
+        ],
+    ],
     'EXTENSIONS' => [
         'backend' => [
             'backendFavicon' => '',
@@ -35,19 +39,11 @@ return [
             'loginFootnote' => '',
             'loginHighlightColor' => '',
             'loginLogo' => '',
+            'loginLogoAlt' => '',
         ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
-        ],
-        'gridelements' => [
-            'additionalStylesheet' => '',
-            'disableAutomaticUnusedColumnCorrection' => '0',
-            'disableCopyFromPageButton' => '0',
-            'disableDragInWizard' => '0',
-            'fluidBasedPageModule' => '0',
-            'nestingInListModule' => '0',
-            'overlayShortcutTranslation' => '0',
         ],
         'ke_search' => [
             'allowEmptySearch' => '1',
@@ -104,14 +100,15 @@ return [
         'webp' => [
             'convert_all' => '1',
             'converter' => 'Plan2net\\Webp\\Converter\\MagickConverter',
+            'hide_webp' => '1',
             'mime_types' => 'image/jpeg,image/png',
             'parameters' => 'image/jpeg::-quality 85 -define webp:lossless=false|image/png::-quality 75 -define webp:lossless=true',
             'silent' => '0',
+            'use_system_settings' => '1',
         ],
     ],
     'FE' => [
         'debug' => false,
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
