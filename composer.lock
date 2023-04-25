@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cd3b4aa0459fc0fc83c2ccb641ebe67",
+    "content-hash": "20a58e0503310e9d39789ac8da0d8010",
     "packages": [
         {
             "name": "b13/container",
@@ -1070,6 +1070,78 @@
             "time": "2022-04-26T17:07:12+00:00"
         },
         {
+            "name": "georgringer/numbered-pagination",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/georgringer/numbered_pagination.git",
+                "reference": "ce4b4fcaf0ecd4282399b1f402a510db304d425a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/georgringer/numbered_pagination/zipball/ce4b4fcaf0ecd4282399b1f402a510db304d425a",
+                "reference": "ce4b4fcaf0ecd4282399b1f402a510db304d425a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.3",
+                "typo3/cms-core": "^9 || ^10 || ^11"
+            },
+            "replace": {
+                "typo3-ter/numbered-pagination": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "numbered_pagination"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeorgRinger\\NumberedPagination\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Georg Ringer",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Improved pagination for TYPO3",
+            "homepage": "https://github.com/georgringer/numbered_pagination",
+            "keywords": [
+                "pagination",
+                "typo3"
+            ],
+            "support": {
+                "issues": "https://github.com/georgringer/numbered_pagination/issues",
+                "source": "https://github.com/georgringer/numbered_pagination/tree/1.0.4"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/GeorgRinger/10",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.amazon.de/hz/wishlist/ls/8F573K08TSDG",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/georgringer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/georgringer",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-02-10T10:42:44+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "7.5.1",
             "source": {
@@ -1503,26 +1575,26 @@
         },
         {
             "name": "helhum/dotenv-connector",
-            "version": "v2.3.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helhum/dotenv-connector.git",
-                "reference": "8a71c74266389fe387b29faf39f4bdcc869829ee"
+                "reference": "d95a808e9ff408116800eb60cd820bd9ff4d5b46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helhum/dotenv-connector/zipball/8a71c74266389fe387b29faf39f4bdcc869829ee",
-                "reference": "8a71c74266389fe387b29faf39f4bdcc869829ee",
+                "url": "https://api.github.com/repos/helhum/dotenv-connector/zipball/d95a808e9ff408116800eb60cd820bd9ff4d5b46",
+                "reference": "d95a808e9ff408116800eb60cd820bd9ff4d5b46",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0",
-                "php": "^7.0",
-                "symfony/dotenv": "^3.3.0 || ^4.0 || ^5.0"
+                "php": ">=7.2",
+                "symfony/dotenv": "^5.1"
             },
             "require-dev": {
                 "composer/composer": "^1.0 || 2.0.*@dev",
-                "composer/semver": "^1.0 || 2.0.*@dev",
+                "composer/semver": "^1.0 || ^2.0 || 3.0.*@dev",
                 "mikey179/vfsstream": "^1.6.0",
                 "phpunit/phpunit": "^5"
             },
@@ -1530,7 +1602,7 @@
             "extra": {
                 "class": "Helhum\\DotEnvConnector\\Plugin",
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-latest": "3.x-dev"
                 }
             },
             "autoload": {
@@ -1558,7 +1630,7 @@
             ],
             "support": {
                 "issues": "https://github.com/helhum/dotenv-connector/issues",
-                "source": "https://github.com/helhum/dotenv-connector/tree/v2.3.0"
+                "source": "https://github.com/helhum/dotenv-connector/tree/v3.0.1"
             },
             "funding": [
                 {
@@ -1570,7 +1642,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-03-28T23:32:04+00:00"
+            "time": "2021-10-06T09:02:51+00:00"
         },
         {
             "name": "helhum/php-error-reporting",
@@ -2421,16 +2493,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.20.2",
+            "version": "1.20.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "90490bd8fd8530a272043c4950c180b6d0cf5f81"
+                "reference": "6c04009f6cae6eda2f040745b6b846080ef069c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/90490bd8fd8530a272043c4950c180b6d0cf5f81",
-                "reference": "90490bd8fd8530a272043c4950c180b6d0cf5f81",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/6c04009f6cae6eda2f040745b6b846080ef069c2",
+                "reference": "6c04009f6cae6eda2f040745b6b846080ef069c2",
                 "shasum": ""
             },
             "require": {
@@ -2460,9 +2532,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.20.2"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.20.3"
             },
-            "time": "2023-04-22T12:59:35+00:00"
+            "time": "2023-04-25T09:01:03+00:00"
         },
         {
             "name": "plan2net/webp",

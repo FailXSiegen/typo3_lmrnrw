@@ -54,7 +54,7 @@
 		"typo3/cms-dashboard": "^11.5",
 		"typo3/cms-scheduler": "^11.5",
 		"helhum/typo3-console": "^7.0",
-		"helhum/dotenv-connector": "^2.1",
+		"helhum/dotenv-connector": "^3",
 		"georgringer/news": "^9",
 		"plan2net/webp": "^4.0",
 		"b13/container": "^1.3",
@@ -66,7 +66,8 @@
 		"kitzberger/rte-ckeditor-automails": "^1.0",
 		"jigal/t3adminer":"^11.0",
         "friendsoftypo3/tt-address": "^5.3",
-		"in2code/powermail": "^10.7"
+		"in2code/powermail": "^10.7",
+        "georgringer/numbered-pagination": "^1.0"
 	},
     "require-dev": {
 		"deployer/deployer": "^6",
