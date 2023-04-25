@@ -28,12 +28,16 @@
 						</div>
 					</f:then>
 					<f:else>
-						<div class="row gy-4 gx-4">
-							<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
-								<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-									<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,topnews:'0',isPaginated:'1'}" />
-								</f:for>
-							</n:widget.paginate>
+                        <div class="row gy-4 gx-4">
+                            <f:if condition="{settings.list.paginate.insertAbove}">
+                                <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                            </f:if>
+                            <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,topnews:'0',isPaginated:'1'}" />
+                            </f:for>
+                            <f:if condition="{settings.list.paginate.insertBelow}">
+                                <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                            </f:if>
 						</div>
 					</f:else>
 				</f:if>

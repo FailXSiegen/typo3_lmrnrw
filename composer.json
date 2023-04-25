@@ -69,6 +69,8 @@
 		"in2code/powermail": "^10.7"
 	},
     "require-dev": {
+		"deployer/deployer": "^6",
+		"deployer/recipes": "^6"
     },
     "extra": {
         "typo3/cms": {

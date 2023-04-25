@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	xmlns:kesearch="http://typo3.org/ns/TeaminmediasPluswerk\KeSearch\ViewHelpers" data-namespace-typo3-fluid="true">
+	xmlns:kesearch="http://typo3.org/ns/Tpwd\KeSearch\ViewHelpers" data-namespace-typo3-fluid="true">
 
 <f:layout name="General" />
 <!--
@@ -11,10 +11,10 @@ Templates/SearchForm.html
 		<f:comment>
 			<!-- Replace the URL with the speaking URL -->
 		</f:comment>
-		<f:if condition="{isEmptySearch} == FALSE">
-			<f:format.raw>
-				<script>history.replaceState(null, '', '</f:format.raw><kesearch:link keepPiVars="1" uriOnly="1" /><f:format.raw>');</script>
-			</f:format.raw>
+        <f:if condition="{isEmptySearch} == FALSE ">
+			<f:if condition="{conf.searchWordParameter} == 'tx_kesearch_pi1[sword]'">
+				<f:format.raw><script>history.replaceState(null,'','</f:format.raw><kesearch:link keepPiVars="1" uriOnly="1" /><f:format.raw>');</script></f:format.raw>
+			</f:if>
 		</f:if>
 		<f:if condition="{lparam}">
 			<input type="hidden" name="L" value="{lparam}" />

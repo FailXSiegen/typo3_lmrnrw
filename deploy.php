@@ -1,36 +1,27 @@
 <?php
 namespace Deployer;
 
-require 'recipe/typo3.php';
-require 'recipe/rsync.php';
+require 'vendor/deployer/deployer/recipe/typo3.php';
+require 'vendor/deployer/recipes/recipe/rsync.php';
 
 // Hosts
 host('staging')
-    ->hostname('domain.de')
-    ->user('sshuser')
-    ->set('deploy_path', '/path');
+    ->hostname('oc-vm87.riconnect.de')
+    ->user('c1_ssh_lmr')
+    ->set('deploy_path', '/var/www/clients/client1/web1025/web');
 
-#host('prod')
-#    ->hostname('domain.de')
-#    ->user('sshuser')
-#    ->set('deploy_path', '/path');
+host('prod')
+    ->hostname('oc-vm87.riconnect.de')
+    ->user('c116_ssh')
+    ->set('deploy_path', '/var/www/clients/client116/web1001/web');
 
 // Config
 set('bin_folder', './vendor/bin/');
 set('typo3_webroot', 'public');
-set('php_path', '');
+//set('yarn_path', 'public/typo3conf/ext/fx_templates_jungerkammerchor/');
 
 add('shared_files', [
-    '.env',
-    '{{typo3_webroot}}/robots.txt'
-]);
-
-add('shared_dirs', [
-    'var'
-]);
-
-add('writable_dirs', [
-    'var'
+    '.env'
 ]);
 
 set('rsync_src', './');
@@ -44,10 +35,14 @@ set('rsync',[
         '.git*',
         '.surf',
         '.deployer',
+        '.database',
         'docker-compose.yml',
         'public/fileadmin',
         'public/uploads',
-        'README.md'
+        'README.md',
+        'deploy_rsa',
+        'deploy_rsa.enc',
+        '.travis.yml'
     ],
     'exclude-file' => false,
     'include'      => [],
@@ -62,31 +57,30 @@ set('rsync',[
 
 // Tasks
 task('build', function () {
-    run('composer -q install --no-dev');
+    run('composer -q install');
 })->local();
 
 task('typo3', function () {
-    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms install:fixfolderstructure');
-    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms install:generatepackagestates');
-    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms database:updateschema *.add,*.change');
-    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms extension:setupactive');
-    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms language:update');
-    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms cache:flush --force');
+    run('cd {{release_path}} && {{bin_folder}}typo3cms install:fixfolderstructure');
+    run('cd {{release_path}} && {{bin_folder}}typo3cms database:updateschema *.add,*.change');
+    run('cd {{release_path}} && {{bin_folder}}typo3cms language:update');
+    run('cd {{release_path}} && {{bin_folder}}typo3cms cache:flush');
 });
 
-task('yarn', function () {
-    run('./build/scripts/extensions-yarn.sh');
-})->local();
+//task('yarn', function () {
+//    run('cd {{yarn_path}} && yarn install --silent --non-interactive');
+//})->local();
 
 // task('opcache', function () {
 //     run('cd {{release_path}} && {{bin_folder}}cachetool opcache:reset');
 // });
 
 task('deploy', [
+    'deploy:unlock',
     'deploy:prepare',
     'deploy:lock',
     'build',
-    'yarn',
+//    'yarn',
     'deploy:release',
     'rsync',
     'deploy:shared',

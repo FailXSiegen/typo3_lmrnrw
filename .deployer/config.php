@@ -1,8 +1,8 @@
 <?php
 namespace Deployer;
 
-require 'recipe/typo3.php';
-require 'recipe/rsync.php';
+require '../vendor/deployer/deployer/recipe/typo3.php';
+require '../vendor/deployer/recipes/recipe/rsync.php';
 
 // Hosts
 host('staging')
