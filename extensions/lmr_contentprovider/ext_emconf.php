@@ -15,7 +15,7 @@
  *
  */
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['lmr_contentprovider'] = [
     'title' => 'lmr_contentprovider',
     'description' => '',
     'category' => 'fe',

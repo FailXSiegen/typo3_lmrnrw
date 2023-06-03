@@ -19,3 +19,4 @@ node_modules/
 /tests/Acceptance/Support/_generated
 !/public/.htpasswd
 !/public/.htaccess
+_obsolete

@@ -8,16 +8,20 @@ if (!defined('TYPO3_MODE')) {
 
 call_user_func(
     function ($_EXTKEY) {
-        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->registerContainer(
-            'bgcontainer',
-            'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgcontainer.title',
-            'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgcontainer.description',
-            'content-image',
-            [
-                [
-                    ['name' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:content', 'colPos' => 103]
-                ]
-            ]
+        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+            (
+                new \B13\Container\Tca\ContainerConfiguration(
+                    'bgcontainer',
+                    'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgcontainer.title',
+                    'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:bgcontainer.description',
+                    [
+                        [
+                            ['name' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:content', 'colPos' => 103]
+                        ]
+                    ]
+                )
+            )
+            ->setIcon('content-image')
         );
         $GLOBALS['TCA']['tt_content']['types']['slider']['showitem'] =  '
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -602,7 +606,7 @@ call_user_func(
             'opacity, --linebreak--,',
             'after:frame_class'
         );
-        
+
 
         $GLOBALS['TCA']['tt_content']['palettes']['counter_config'] = [
             'label' => 'Counter config',

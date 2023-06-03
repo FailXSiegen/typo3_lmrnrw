@@ -19,10 +19,8 @@ if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-$_EXTCONF = unserialize($_EXTCONF);
 
-call_user_func(function ($extKey, $extConf) {
-    // Set our own default RTE config
-    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] =
-        'EXT:lmr_sitepackage/Configuration/RTE/Default.yaml';
-}, $_EXTKEY, $_EXTCONF);
+// Set our own default RTE config
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] =
+    'EXT:lmr_sitepackage/Configuration/RTE/Default.yaml';
+
