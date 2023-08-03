@@ -23,7 +23,7 @@
 				<f:if condition="{conf.showResultUrl}">
 					<i>{f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xml:label_resulturl')}:</i> <f:format.raw>{resultrow.url}</f:format.raw><br />
 				</f:if>
-		
+
 				<f:if condition="{resultrow.type} == 'cal'">
 					<f:then>
 						<f:comment><!-- Special cal date rendering --></f:comment>
@@ -48,7 +48,7 @@
 				/>
 			</span>
 		</div>
-	
+
 	</div>
 </div>
 
@@ -56,7 +56,7 @@
 <f:section name="typeIconOrPreviewImage">
     <f:if condition="{iconConf} && !{filePreviewId}">
         <f:then>
-           
+
         </f:then>
         <f:else>
             <f:if condition="{filePreviewId}">

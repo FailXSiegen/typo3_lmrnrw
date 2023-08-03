@@ -1,0 +1,10 @@
+#################
+# Backend Module for powermail
+#################
+module.tx_powermail {
+	view {
+		templateRootPaths.1 = EXT:lmr_nrw/Resources/Private/Extensions/Powermail/Templates/
+		partialRootPaths.1 = EXT:lmr_nrw/Resources/Private/Extensions/Powermail/Partials/
+		layoutRootPaths.1 = EXT:lmr_nrw/Resources/Private/Extensions/Powermail/Layouts/
+	}
+}

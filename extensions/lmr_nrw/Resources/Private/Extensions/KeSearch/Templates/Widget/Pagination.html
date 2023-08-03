@@ -8,7 +8,7 @@
             <ul class="pagination justify-content-center">
                 <f:if condition="{pagination.previous}">
                     <li class="page-item previous">
-                        <kesearch:link piVars="{page: pagination.previous}" keepPiVars="1">{f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xml:pagebrowser_prev')}</kesearch:link>
+                        <kesearch:link piVars="{page: pagination.previous}" keepPiVars="1">{f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xlf:pagebrowser_prev')}</kesearch:link>
                     </li>
                 </f:if>
                 <f:for each="{pagination.pages}" as="page">
@@ -27,7 +27,7 @@
                 </f:for>
                 <f:if condition="{pagination.next}">
                     <li class="page-item next">
-                        <kesearch:link piVars="{page: pagination.next}" keepPiVars="1">{f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xml:pagebrowser_next')}</kesearch:link>
+                        <kesearch:link piVars="{page: pagination.next}" keepPiVars="1">{f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xlf:pagebrowser_next')}</kesearch:link>
                     </li>
                 </f:if>
             </ul>
