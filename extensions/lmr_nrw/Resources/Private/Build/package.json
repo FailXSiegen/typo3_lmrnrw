@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "bootstrap": "^5",
-    "bootstrap-icons": "^1.8.3",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
     "glightbox": "^3.1.0"
   },
   "scripts": {
@@ -9,20 +9,20 @@
     "watch": "webpack --watch --progress"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/preset-env": "^7.18.2",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
     "adjust-sourcemap-loader": "^4.0.0",
     "autoprefixer": "10.4.5",
     "babel-loader": "^8.2.5",
-    "css-loader": "^6.7.1",
+    "css-loader": "^6.8.1",
     "cssnano": "^5.1.10",
-    "mini-css-extract-plugin": "^2.6.0",
+    "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^7.0.1",
-    "postcss-loader": "^6.2.1",
+    "postcss-loader": "^7.2.4",
     "resolve-url-loader": "^4.0.0",
-    "sass": "^1.52.1",
+    "sass": "^1.69.0",
     "sass-loader": "^12.6.0",
-    "webpack": "^5.72",
+    "webpack": "^5.88.2",
     "webpack-cli": "^4.9",
     "webpack-fix-style-only-entries": "^0.6"
   },
