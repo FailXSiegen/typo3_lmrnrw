@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+      <f:asset.css
+        identifier="accordion"
+        href="EXT:lmr_nrw/Resources/Public/StyleSheet/accordion.css" />
+    <div id="c{data.uid}" class="{f:render(partial:'Divclasses', arguments:{data:data, classname:'accordion-container accordion'})} ">
+        <f:for each="{content}" as="child" iteration="iterator">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{data.uid}_{iterator.cycle}">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{data.uid}_{iterator.cycle}" aria-expanded="false" aria-controls="collapse{data.uid}_{iterator.cycle}">
+                    <span class="h4 mb-0">{child.header -> f:format.nl2br()}</span>
+                  </button>
+                </h2>
+                <div id="collapse{data.uid}_{iterator.cycle}" class="accordion-collapse collapse" aria-labelledby="heading{data.uid}_{iterator.cycle}" data-bs-parent="#accordion{data.uid}_{iterator.cycle}">
+                  <div class="accordion-body">
+                    {child.bodytext -> f:format.raw()}
+                  </div>
+                </div>
+              </div>
+        </f:for>
+    </div>
+</html>

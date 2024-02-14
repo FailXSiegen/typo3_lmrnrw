@@ -60,6 +60,14 @@
 			<trans-unit id="content" xml:space="preserve">
 				<source>Content</source>
 			</trans-unit>
+
+			<trans-unit id="accordion.title" xml:space="preserve">
+				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="accordion.description" xml:space="preserve">
+				<source>Hides the content, shows only the headline and opens in an accordion style.</source>
+			</trans-unit>
+
 			<trans-unit id="bgcontainer.title" xml:space="preserve">
 				<source>Container with background-image</source>
 			</trans-unit>

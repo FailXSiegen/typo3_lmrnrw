@@ -23,6 +23,21 @@ call_user_func(
             )
             ->setIcon('content-image')
         );
+        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+            (
+                new \B13\Container\Tca\ContainerConfiguration(
+                    'accordion',
+                    'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:accordion.title',
+                    'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:accordion.description',
+                    [
+                        [
+                            ['name' => 'LLL:EXT:lmr_nrw/Resources/Private/Language/locallang_db.xlf:content', 'colPos' => 103]
+                        ]
+                    ]
+                )
+            )
+            ->setIcon('content-image')
+        );
         $GLOBALS['TCA']['tt_content']['types']['slider']['showitem'] =  '
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
@@ -50,6 +65,18 @@ call_user_func(
             --palette--;;hidden,
             --palette--;;access,';
 
+        $GLOBALS['TCA']['tt_content']['types']['accordion']['showitem'] =  '
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+            --palette--;;general,
+            header; Internal title (not displayed),
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+            --palette--;;frames,
+            --palette--;;appearanceLinks,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+            --palette--;;language,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+            --palette--;;hidden,
+            --palette--;;access,';
         $GLOBALS['TCA']['tt_content']['palettes']['carousel'] = [
             'label' => 'Slider',
             'description' => 'Slider Properties',

@@ -57,7 +57,7 @@ set('rsync',[
 
 // Tasks
 task('build', function () {
-    run('composer -q install');
+    run('composer update');
 })->local();
 
 task('typo3', function () {

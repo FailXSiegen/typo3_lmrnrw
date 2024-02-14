@@ -26,7 +26,7 @@ module.exports = {
             {
                 // Apply rule for .sass, .scss or .css files
                 test: /\.scss$/,
-            
+
                 // Set loaders to transform files.
                 // Loaders are applying from right to left(!)
                 // The first loader will be applied after others
@@ -36,7 +36,7 @@ module.exports = {
                         // It gets all transformed CSS and extracts it into separate
                         // single bundled file
                         loader: MiniCssExtractPlugin.loader
-                    }, 
+                    },
                     {
                         loader: "css-loader",
                         options: {
@@ -45,12 +45,12 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'resolve-url-loader', 
-                        options: { 
-                            sourceMap: false 
+                        loader: 'resolve-url-loader',
+                        options: {
+                            sourceMap: false
                         }
                     },
-                    { 
+                    {
                         loader: 'postcss-loader',
                         options: {
                             sourceMap: true
@@ -79,7 +79,7 @@ module.exports = {
                         {
                             // Using file-loader for these files
                             loader: "file-loader",
-                
+
                             // In options we can set different things like format
                             // and directory to save
                             options: {
@@ -116,7 +116,7 @@ module.exports = {
     // Path to your entry point. From this file Webpack will begin its work
     entry: {
         'bootstrap' : './../../Public/Vendor/bootstrap/dist/js/bootstrap.bundle.min.js',
-        'glightboxjs' : './../../Public/Vendor/glightbox/dist/js/glightbox.min.js',    
+        'glightboxjs' : './../../Public/Vendor/glightbox/dist/js/glightbox.min.js',
         'javascript': './src/javascript/index.js',
         '2click' : './src/javascript/2click.js',
         'purecounter_vanilla': './src/javascript/purecounter_vanilla.js',
@@ -128,6 +128,7 @@ module.exports = {
         'rte': './src/scss/rte.scss',
         '2clickcss' : './src/scss/2click.scss',
         'glightboxcss' : './src/scss/glightbox.scss',
+        'accordion' : './src/scss/accordion.scss',
     },
 
     // Path and filename of your result bundle.
@@ -140,7 +141,7 @@ module.exports = {
 
     // Default mode for Webpack is production.
     // Depending on mode Webpack will apply different things
-    // on the final bundle. For now, we don't need production's JavaScript 
+    // on the final bundle. For now, we don't need production's JavaScript
     // minifying and other things, so let's set mode to development
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 };
