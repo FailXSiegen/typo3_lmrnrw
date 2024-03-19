@@ -7,11 +7,13 @@ require 'vendor/deployer/recipes/recipe/rsync.php';
 // Hosts
 host('staging')
     ->hostname('lmr-nrw.failx.de')
+    ->set('php_path', '/usr/bin/php8.1')
     ->user('c1_ssh_lmr')
     ->set('deploy_path', '/var/www/clients/client1/web1025/web');
 
 host('prod')
     ->hostname('lmr-nrw.de')
+    ->set('php_path', '/usr/bin/php8.1')
     ->user('c116_ssh')
     ->set('deploy_path', '/var/www/clients/client116/web1001/web');
 
@@ -39,6 +41,7 @@ set('rsync',[
         'docker-compose.yml',
         'public/fileadmin',
         'public/uploads',
+        'var/log',
         'README.md',
         'deploy_rsa',
         'deploy_rsa.enc',
@@ -61,10 +64,10 @@ task('build', function () {
 })->local();
 
 task('typo3', function () {
-    run('cd {{release_path}} && {{bin_folder}}typo3cms install:fixfolderstructure');
-    run('cd {{release_path}} && {{bin_folder}}typo3cms database:updateschema *.add,*.change');
-    run('cd {{release_path}} && {{bin_folder}}typo3cms language:update');
-    run('cd {{release_path}} && {{bin_folder}}typo3cms cache:flush');
+    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms install:fixfolderstructure');
+    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms database:updateschema *.add,*.change');
+    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms language:update');
+    run('cd {{release_path}} && {{php_path}} {{bin_folder}}typo3cms cache:flush');
 });
 
 //task('yarn', function () {

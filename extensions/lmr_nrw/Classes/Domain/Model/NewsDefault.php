@@ -1,6 +1,6 @@
 <?php
 
-namespace Failx\LMRNRW\Domain\Model;
+namespace Failx\LmrNrw\Domain\Model;
 
 /**
  * This file is part of the "news" Extension for TYPO3 CMS.

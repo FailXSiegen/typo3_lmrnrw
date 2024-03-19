@@ -46,6 +46,7 @@ return [
             'offlineMode' => '0',
         ],
         'ke_search' => [
+            'additionalWordCharacters' => '',
             'allowEmptySearch' => '1',
             'enableExplicitAnd' => '0',
             'enablePartSearch' => '1',
@@ -111,7 +112,7 @@ return [
             'converter' => 'Plan2net\\Webp\\Converter\\MagickConverter',
             'hide_webp' => '1',
             'mime_types' => 'image/jpeg,image/png',
-            'parameters' => 'image/jpeg::-quality 85 -define webp:lossless=false|image/png::-quality 75 -define webp:lossless=true',
+            'parameters' => 'image/jpeg::-quality 85 -define webp:lossless=true|image/png::-quality 85 -define webp:lossless=true',
             'silent' => '0',
             'use_system_settings' => '1',
         ],
@@ -124,10 +125,14 @@ return [
         ],
     ],
     'GFX' => [
-        'processor' => 'GraphicsMagick',
-        'processor_allowTemporaryMasksAsPng' => false,
-        'processor_colorspace' => 'RGB',
-        'processor_effects' => false,
+        'gif_compress' => false,
+        'imagefile_ext' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp',
+        'processor' => 'ImageMagick',
+        'processor_allowFrameSelection' => false,
+        'processor_allowTemporaryMasksAsPng' => 0,
+        'processor_allowUpscaling' => false,
+        'processor_colorspace' => 'sRGB',
+        'processor_effects' => true,
         'processor_enabled' => true,
         'processor_path' => '/usr/bin/',
         'processor_path_lzw' => '/usr/bin/',
@@ -148,6 +153,7 @@ return [
         'features' => [
             'unifiedPageTranslationHandling' => true,
         ],
+        'mediafile_ext' => 'gif,jpg,jpeg,bmp,png,pdf,svg,ai,mp3,wav,mp4,ogg,flac,opus,webm,youtube,vimeo,webp',
         'sitename' => '',
         'systemMaintainers' => [
             1,

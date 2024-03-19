@@ -1,5 +1,5 @@
 <?php
-namespace Failx\LMRNRW\Controller;
+namespace Failx\LmrNrw\Controller;
 
 /*
  *
@@ -23,7 +23,7 @@ class TcaController
      */
     public function getTwoColumnOptions($config)
     {
-        return \Failx\LMRNRW\Controller\TcaController::getColumnOptions($config);
+        return \Failx\LmrNrw\Controller\TcaController::getColumnOptions($config);
     }
 
     /**
@@ -32,7 +32,7 @@ class TcaController
      */
     public function getThreeColumnOptions($config)
     {
-        return  \Failx\LMRNRW\Controller\TcaController::getColumnOptions($config);
+        return  \Failx\LmrNrw\Controller\TcaController::getColumnOptions($config);
     }
 
     /**
@@ -41,7 +41,7 @@ class TcaController
      */
     public function getFourColumnOptions($config)
     {
-        return  \Failx\LMRNRW\Controller\TcaController::getColumnOptions($config);
+        return  \Failx\LmrNrw\Controller\TcaController::getColumnOptions($config);
     }
 
     /**

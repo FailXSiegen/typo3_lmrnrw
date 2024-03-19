@@ -31,7 +31,10 @@ call_user_func(
         $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['fxnet'] = 'EXT:lmr_nrw/Configuration/RTE/Default.yaml';
 
         GeneralUtility::makeInstance(Container::class)
-                ->registerImplementation(\GeorgRinger\News\Domain\Model\NewsDefault::class, \Failx\LMRNRW\Domain\Model\NewsDefault::class);
+                ->registerImplementation(
+                    \GeorgRinger\News\Domain\Model\NewsDefault::class, 
+                    \Failx\LmrNrw\Domain\Model\NewsDefault::class
+                );
     },
     'lmr_nrw'
 );

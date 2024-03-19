@@ -13,7 +13,7 @@
     ],
     "config": {
         "platform": {
-            "php": "7.4.3"
+            "php": "8.1.20"
         },
 		"allow-plugins": {
             "typo3/class-alias-loader": true,
@@ -22,7 +22,7 @@
         }
     },
     "require": {
-		"php": "^7.4",
+		"php": "^8.1",
 		"phpdocumentor/reflection-docblock": "^5.1",
 		"typo3/cms-backend": "^11.5",
 		"typo3/cms-core": "^11.5",
@@ -55,16 +55,16 @@
 		"typo3/cms-scheduler": "^11.5",
 		"helhum/typo3-console": "^7.0",
 		"helhum/dotenv-connector": "^3",
-		"georgringer/news": "^10",
-		"plan2net/webp": "^4.0",
+		"georgringer/news": "^11",
+		"plan2net/webp": "^4",
 		"b13/container": "^2",
 		"t3/min": "^2",
-		"tpwd/ke_search": "^4",
+		"tpwd/ke_search": "^5",
 		"hauptweg-nebenwege/lmr-sitepackage": "@dev",
 		"hauptweg-nebenwege/lmr-contentprovider": "@dev",
 		"failx/lmr_nrw": "@dev",
 		"kitzberger/rte-ckeditor-automails": "^1.0",
-		"jigal/t3adminer":"^11.0",
+		"jigal/t3adminer":"^12",
         "friendsoftypo3/tt-address": "^7",
 		"in2code/powermail": "^10.7",
         "georgringer/numbered-pagination": "^1.0",

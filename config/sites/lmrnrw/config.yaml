@@ -1,7 +1,7 @@
 base: 'https://www.lmr-nrw.de/'
 baseVariants:
   -
-    base: 'http://local.lmr-nrw.de/'
+    base: 'http://localhost/'
     condition: 'getenv("TYPO3_CONTEXT") == "Development"'
   -
     base: 'https://lmr-nrw.failx.de/'

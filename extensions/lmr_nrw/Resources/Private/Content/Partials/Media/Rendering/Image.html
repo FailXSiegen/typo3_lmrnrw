@@ -1,4 +1,7 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html 
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+        xmlns:fx="http://typo3.org/ns/Failx/LmrNrw/ViewHelpers"
+        data-namespace-typo3-fluid="true">
     <f:comment>
         <f:media class="image-embed-item img img-fluid" file="{file}" width="{dimensions.width}"
                  height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" />
@@ -23,52 +26,70 @@
         </f:then>
         <f:else>
             <picture class="{pictureClass}">
-                <source media="(max-width: 767px) and (orientation:portrait)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-portrait')}.webp"
-                        type="image/webp"
-                        >
-                <source media="(max-width: 767px) and (orientation:portrait)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-portrait')}">
-
-                <source media="(max-width: 767px) and (orientation:landscape)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-landscape')}.webp"
-                        type="image/webp"
-                        >
-                <source media="(max-width: 767px) and (orientation:landscape)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-landscape')}">
-
-                <source media="(max-width: 991px) and (orientation:portrait)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'991m',cropVariant:'tablet-portrait')}.webp"
-                        type="image/webp"
-                    >
-                <source media="(max-width: 991px) and (orientation:portrait)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'991m',cropVariant:'tablet-portrait')}">
-
-                <source media="(max-width: 991px) and (orientation:landscape)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'991m',cropVariant:'tablet-landscape')}.webp"
-                        type="image/webp"
-                    >
-                <source media="(max-width: 991px) and (orientation:landscape)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'991m',cropVariant:'tablet-landscape')}">
-                <source media="(min-width: 1600px)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{dimensions.width}',maxWidth: '2121',cropVariant:'default')}.webp"
-                        type="image/webp"
-                        >
-
-                <source media="(max-width: 1199px) and (min-width:992px)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'1200m',cropVariant:'desktop-md')}.webp"
-                        type="image/webp"
-                        >
-                <source media="(max-width: 1199px) and (min-width:992px)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'1200m',cropVariant:'desktop-md')}">
-
-                <source media="(min-width: 1200px)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{dimensions.width}',maxWidth: '2121',cropVariant:'default')}.webp"
-                        type="image/webp"
-                        >
-                <source media="(min-width: 1200px)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{dimensions.width}',maxWidth: '2121',cropVariant:'default')}">
-
+                <f:render section="image" arguments="{
+                        file: file,
+                        dimensions: dimensions,
+                        width: '575m',
+                        cropVariant:'smartphone-portrait',
+                        responsiveWidth:'575px',
+                        orientation:'portrait'
+                    }" />
+                <f:render section="image" arguments="{
+                        file: file,
+                        dimensions: dimensions,
+                        width: '575m',
+                        cropVariant:'smartphone-landscape',
+                        responsiveWidth:'575px',
+                        orientation:'landscape'
+                    }" />
+                <f:render section="image" arguments="{
+                        file: file,
+                        dimensions: dimensions,
+                        width: '767m',
+                        cropVariant:'smartphone-portrait',
+                        responsiveWidth:'767px',
+                        orientation:'portrait'
+                    }" />
+                <f:render section="image" arguments="{
+                        file: file,
+                        dimensions: dimensions,
+                        width: '767m',
+                        cropVariant:'smartphone-landscape',
+                        responsiveWidth:'767px',
+                        orientation:'landscape'
+                    }" />
+                <f:render section="image" arguments="{
+                        file: file,
+                        dimensions: dimensions,
+                        width: '991m',
+                        cropVariant:'tablet-portrait',
+                        responsiveWidth:'991px',
+                        orientation:'portrait'
+                    }" />
+                <f:render section="image" arguments="{
+                        file: file,
+                        dimensions: dimensions,
+                        width: '991m',
+                        cropVariant:'tablet-landscape',
+                        responsiveWidth:'991px',
+                        orientation:'landscape'
+                    }" />
+                <f:render section="image" arguments="{
+                        file: file,
+                        dimensions: dimensions,
+                        width: '1200m',
+                        cropVariant:'desktop-md',
+                        responsiveMinWidth:'992px',
+                        responsiveMaxWidth:'1199px'
+                    }" />
+                <f:render section="image" arguments="{
+                        file: file,
+                        dimensions: dimensions,
+                        width: dimensions.width,
+                        cropVariant:'default',
+                        responsiveMinWidth:'1200px',
+                        maxWidth: '2121'
+                    }" />
                 <f:image treatIdAsReference="1"
                         class="{imageClass}"
                         width="{dimensions.width}"
@@ -81,4 +102,29 @@
             </picture>
         </f:else>
     </f:if>
+
+    <f:section name="image">
+        <f:variable name="media" value="" />
+        <f:if condition="{responsiveWidth}">
+            <f:variable name="media" value="(max-width: {responsiveWidth}){f:if(condition:media,then:' and {media}')}" />
+        </f:if>
+        <f:if condition="{responsiveMaxWidth}">
+            <f:variable name="media" value="(max-width: {responsiveMaxWidth}){f:if(condition:media,then:' and {media}')}" />
+        </f:if>
+        <f:if condition="{responsiveMinWidth}">
+            <f:variable name="media" value="(min-width: {responsiveMinWidth}){f:if(condition:media,then:' and {media}')}" />
+        </f:if>
+        <f:if condition="{orientation}">
+            <f:variable name="media" value="(orientation: {orientation}){f:if(condition:media, then:' and {media}')}" />
+        </f:if>
+        <fx:exists file="{f:uri.image(src:file.uid, treatIdAsReference:1, width:'{width}', maxWidth:'{maxWidth}',cropVariant:'{cropVariant}') -> fx:substring(start:'1')}.webp">
+            <source media="{media}"
+                    srcset="{f:uri.image(src:file.uid, treatIdAsReference:1, width:'{width}', maxWidth:'{maxWidth}', cropVariant:'{cropVariant}')}.webp"
+                    type="image/webp"
+            >
+        </fx:exists>
+        <source media="{media}"
+                srcset="{f:uri.image(src:file.uid, treatIdAsReference:1, width:'{width}', maxWidth:'{maxWidth}', cropVariant:'{cropVariant}')}">
+    
+    </f:section>
 </html>

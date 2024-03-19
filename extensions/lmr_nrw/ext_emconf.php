@@ -20,7 +20,7 @@ $EM_CONF['lmr_nrw'] = [
     ],
     'autoload' => [
         'psr-4' => [
-            'Failx\\LMRNRW\\' => 'Classes',
+            'Failx\\LmrNrw\\' => 'Classes',
         ],
     ],
 ];
