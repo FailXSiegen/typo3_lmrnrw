@@ -1,8 +1,0 @@
-# cat=lmr_contentprovider/file; type=string; label=Path to template root (FE)
-plugin.tx_lmrcontentprovider.view.templateRootPath =
-
-# cat=lmr_contentprovider/file; type=string; label=Path to template partials (FE)
-plugin.tx_lmrcontentprovider.view.partialRootPath =
-
-# cat=lmr_contentprovider/file; type=string; label=Path to template layouts (FE)
-plugin.tx_lmrcontentprovider.view.layoutRootPath =

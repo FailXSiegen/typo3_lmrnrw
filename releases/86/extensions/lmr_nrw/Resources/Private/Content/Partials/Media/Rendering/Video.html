@@ -1,0 +1,61 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+    <f:if condition="{file.extension} == 'youtube'">
+        <f:then>
+            <f:asset.script
+                identifier="2clickjs"
+                src="EXT:lmr_nrw/Resources/Public/JavaScript/2click.js" />
+            <f:asset.css
+                identifier="2clickjs"
+                href="EXT:lmr_nrw/Resources/Public/StyleSheet/2clickcss.css" />
+            <f:variable name="widthSuffix" value="px" />
+            <f:if condition="{dimensions.width} == '100%'">
+                <f:variable name="widthSuffix" value="" />
+            </f:if>
+            <f:variable name="width" value="{f:if(condition:dimensions.width, then: dimensions.width, else: '400')}" />
+            <f:variable name="height" value="{f:if(condition:dimensions.height, then: dimensions.height, else: '400')}" />
+            <f:variable name="textclass" value="{f:if(condition:ptextclass, then: ptextclass, else: '')}" />
+            <div class="video_wrapper overflow-hidden"
+                style="max-width:{width}{widthSuffix};height:{height}px"
+                >
+                <div class="video_trigger h-100 w-100"
+                     data-source="{file.contents}" data-type="youtube">
+                     <div class="video_trigger_content d-flex h-100 w-100 pt-5 align-items-center bg-red-100">
+                        <span class="d-flex flex-column align-items-center">
+                            <p class="text-center {textclass} fw-bold">{file.title}</p>
+                            <p class="text-center {textclass}">Mit dem Aufruf des Videos erklärst Du Dich einverstanden,
+                                dass Deine Daten an YouTube übermittelt werden und das Du die
+                                <a href="{f:uri.typolink(parameter:'324')}" target="_blank">Datenschutzerklärung</a> gelesen hast.
+                            </p>
+                        </span>
+                        <span class="text-center">
+                            <input type="button"
+                                class="btn btn-small btn-primary btn-transparent"
+                                value="Akzeptieren" />
+                        </span>
+                     </div>
+                </div>
+                <div class="video_layer">
+                    <iframe
+                        style="width:{width}{widthSuffix};height:{height}px"
+                        src=""
+                        border="0">
+                    </iframe>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <f:media
+                class="video-embed-item"
+                file="{file}"
+                width="{dimensions.width}"
+                height="{dimensions.height}"
+                alt="{file.alternative}"
+                title="{file.title}"
+                additionalConfig="{settings.media.additionalConfig}" />
+        </f:else>
+    </f:if>
+
+
+</html>

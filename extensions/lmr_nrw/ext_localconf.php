@@ -1,4 +1,5 @@
 <?php
+defined('TYPO3') || die('Access denied.');
 /***************************************************************
  *  Copyright notice
  *
@@ -24,17 +25,11 @@
  ***************************************************************/
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\Container\Container;
 
 call_user_func(
     function ($extKey) {
         $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['fxnet'] = 'EXT:lmr_nrw/Configuration/RTE/Default.yaml';
 
-        GeneralUtility::makeInstance(Container::class)
-                ->registerImplementation(
-                    \GeorgRinger\News\Domain\Model\NewsDefault::class, 
-                    \Failx\LmrNrw\Domain\Model\NewsDefault::class
-                );
     },
     'lmr_nrw'
 );

@@ -1,6 +1,6 @@
 <?php
 
-if (!defined('TYPO3_MODE')) {
+if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
@@ -14,11 +14,11 @@ call_user_func(
                     'items' => [
                         0 => [
                             0 => 'Graustufen (Standard)',
-                            1 => \HauptwegNebenwege\LmrSitepackage\Enumeration\ImageStyleEnumeration::DEFAULT,
+                            1 => \Failx\LmrNrw\Enumeration\ImageStyleEnumeration::DEFAULT,
                         ],
                         1 => [
                             0 => 'Ohne Modifikation',
-                            1 => \HauptwegNebenwege\LmrSitepackage\Enumeration\ImageStyleEnumeration::NO_MODIFICATION,
+                            1 => \Failx\LmrNrw\Enumeration\ImageStyleEnumeration::NO_MODIFICATION,
                         ]
                     ],
                     'maxitems' => '1',

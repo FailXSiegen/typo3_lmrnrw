@@ -8,11 +8,16 @@
       }
     },
     "require": {
-      "typo3/cms-core": "^10.4 || ^11.5",
-      "georgringer/news": "^10 || ^11",
-      "friendsoftypo3/tt-address": "^7"
+      "typo3/cms-core": "^10.4 || ^11.5 || ^12.4",
+      "georgringer/news": "^10 || ^11 || ^12",
+      "friendsoftypo3/tt-address": "^7 || ^8 || ^9"
     },
     "replace": {
       "lmr_nrw": "*"
+    },
+    "extra": {
+      "typo3/cms": {
+        "extension-key": "lmr_nrw"
+      }
     }
   }

@@ -103,16 +103,17 @@
 							<div class="news-text-wrap columns-{newsItem.textColumns}" itemprop="articleBody">
 								<f:format.html>{newsItem.bodytext}</f:format.html>
 							</div>
-							<f:if condition="{newsItem.contentElements}">
-								<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">
-									{newsItem.contentElementIdList}</f:cObject>
-							</f:if>
+							
 						</div>
 						<div class="col-lg-4 col-xxl-3">
 							<f:render partial="Detail/MediaContainer"
 								arguments="{media: newsItem.mediaNonPreviews, settings:settings}" />
 						</div>
 					</div>
+					<f:if condition="{newsItem.contentElements}">
+						<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">
+							{newsItem.contentElementIdList}</f:cObject>
+					</f:if>
 				</f:then>
 				<f:else>
 					<div class="row">
@@ -120,7 +121,6 @@
 							<div class="news-text-wrap columns-{newsItem.textColumns}" itemprop="articleBody">
 								<f:format.html>{newsItem.bodytext}</f:format.html>
 							</div>
-							
 						</div>
 					</div>
 					<f:if condition="{newsItem.contentElements}">

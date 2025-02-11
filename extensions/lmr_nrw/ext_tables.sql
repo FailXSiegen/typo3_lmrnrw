@@ -75,4 +75,6 @@ CREATE TABLE tx_news_domain_model_news (
 #
 CREATE TABLE tt_address (
     company text DEFAULT '' NOT NULL,
+    instagram varchar(100) DEFAULT '' NOT NULL,
+    tiktok varchar(100) DEFAULT '' NOT NULL
 );
