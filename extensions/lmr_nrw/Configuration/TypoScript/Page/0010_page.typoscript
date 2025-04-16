@@ -85,6 +85,12 @@ page {
           levels = 4
           includeSpacer = 0
           as = mainNavigation
+          dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+               references.fieldName = media
+            }
+         }
       }
       15 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       15 {
@@ -93,6 +99,12 @@ page {
           levels = 1
           includeSpacer = 0
           as = socialNavigation
+          dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+               references.fieldName = media
+            }
+         }
       }
     }
     variables {

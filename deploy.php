@@ -89,7 +89,7 @@ set('rsync',[
 
 // Tasks
 task('build', function () {
-    run('cd {{release_path}} && COMPOSER_MEMORY_LIMIT=-1 {{php_path}} {{bin/composer}} update {{composer_options}} --ignore-platform-req=php');
+    run('cd {{release_path}} && COMPOSER_MEMORY_LIMIT=-1 {{php_path}} {{bin/composer}} update {{composer_options}}');
 });
 task('typo3', function () {
     run('cd {{release_path}} && PATH=/usr/local/bin:/usr/bin:/bin PHP_PATH={{php_path}} {{php_path}} {{bin_folder}}typo3 install:fixfolderstructure');

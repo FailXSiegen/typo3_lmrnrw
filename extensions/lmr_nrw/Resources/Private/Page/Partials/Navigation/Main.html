@@ -14,7 +14,15 @@
                     <a href="{menu.link}" aria-label="Navigiere zur Seite {menu.title}"
                         class="nav-link {f:if(condition: menu.data.menu_highlight,then:'highlight')} {f:if(condition: menu.active,then:'active')}"
                         {f:if(condition:menu.target,then: 'target="{menu.target}"' )} itemprop="url">
-                        {menu.title}
+                        <f:if condition="{menu.files}">
+                            <f:then>
+                                <f:image src="{menu.files.0.uid}" treatIdAsReference="1" alt="{menu.title}" class="img img-fluid" width="250m" />
+                            </f:then>
+                            <f:else>
+                                {menu.title}
+                            </f:else>
+                        </f:if>
+                        
                     </a>
                 </f:else>
             </f:if>
