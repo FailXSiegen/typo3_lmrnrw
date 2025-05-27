@@ -21,7 +21,14 @@
                                 <f:variable name="gridcolumns" value="4" />
                             </f:then>
                             <f:else>
-                                <f:variable name="gridcolumns" value="6" />
+                                <f:if condition="{colcount} > 1">
+                                    <f:then>
+                                        <f:variable name="gridcolumns" value="6" />
+                                    </f:then>
+                                    <f:else>
+                                        <f:variable name="gridcolumns" value="12" />
+                                    </f:else>
+                                </f:if>
                             </f:else>
                         </f:if>
                     </f:else>
