@@ -119,7 +119,7 @@ routeEnhancers:
       page:
         type: StaticRangeMapper
         start: '1'
-        end: '250'
+        end: '30'
       category-name:
         type: PersistedAliasMapper
         tableName: sys_category
@@ -145,8 +145,8 @@ routeEnhancers:
           dezember: '12'
       date-year:
         type: StaticRangeMapper
-        start: '2004'
-        end: '2030'
+        start: '2009'
+        end: '2035'
 settings:
   redirects:
     autoUpdateSlugs: true
