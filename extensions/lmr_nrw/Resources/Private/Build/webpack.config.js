@@ -61,7 +61,11 @@ module.exports = {
                         loader: "sass-loader",
                         options: {
                             implementation: require("sass"),
-                            sourceMap: true
+                            sourceMap: true,
+                            sassOptions: {
+                                silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'mixed-decls'],
+                            },
+                            api: 'modern'
                         }
                     }
                 ]
