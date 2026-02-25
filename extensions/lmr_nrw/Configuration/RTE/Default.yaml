@@ -1,60 +1,89 @@
 # EXT:lmr_nrw/Configuration/RTE/Default.yaml
+# CKEditor 5 configuration for TYPO3 13
 imports:
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-    - { resource: "EXT:rte_ckeditor_automails/Configuration/RTE/Plugin.yaml" }
 
-# Minimal configuration for the editor
 editor:
   config:
-    contentsCss: "EXT:lmr_nrw/Resources/Public/StyleSheet/rte.css?v=2"
-    stylesSet:
-      - { name: "Button Primary (Rot)", element: "a", attributes: { class: "btn btn-primary"} }
-      - { name: "Button Secondary (Grau)", element: "a", attributes: { class: "btn btn-secondary"} }
-      - { name: "Liste mit Kreiseln", element: "ul", attributes: { class: "list-circle"} }
-      - { name: "Liste mit Häkchen", element: "ul", attributes: { class: "list-check"} }
+    contentsCss:
+      - "EXT:rte_ckeditor/Resources/Public/Css/contents.css"
+      - "EXT:lmr_nrw/Resources/Public/StyleSheet/rte.css"
 
-    format_tags: "p;h2;h3;h4;h5;div;span"
-    format_span: { name : 'Span', element : 'span'}
-    toolbarGroups:
-      - { name: basicstyles, groups: [ basicstyles, cleanup ] }
-      - { name: clipboard, groups: [ clipboard, undo ] }
-      - { name: editing, groups: [ find, selection, spellchecker, editing ] }
-      - { name: links, groups: [ links ] }
-      - { name: insert, groups: [ insert ] }
-      - { name: forms, groups: [ forms ] }
-      - { name: tools, groups: [ tools ] }
-      - { name: others, groups: [ others ] }
-      - "/"
-      - { name: paragraph, groups: [ list, indent, blocks, align, bidi, paragraph ] }
-      - { name: styles, groups: [ styles ] }
-      - { name: document, groups: [ mode, document, doctools ] }
-      - { name: about, groups: [ about ] }
-      - { name: colors, groups: [ colors ] }
-    
-    justifyClasses:
-      - text-left
-      - text-center
-      - text-right
-      - text-justify
+    toolbar:
+      items:
+        - style
+        - heading
+        - '|'
+        - bold
+        - italic
+        - underline
+        - strikethrough
+        - subscript
+        - superscript
+        - softhyphen
+        - '|'
+        - bulletedList
+        - numberedList
+        - blockQuote
+        - '|'
+        - alignment
+        - '|'
+        - link
+        - '|'
+        - insertTable
+        - horizontalLine
+        - specialCharacters
+        - '|'
+        - findAndReplace
+        - removeFormat
+        - '|'
+        - undo
+        - redo
+        - '|'
+        - sourceEditing
 
-    extraPlugins:
-      - justify
-      - font
-      - find
-      - bidi
+    heading:
+      options:
+        - { model: 'paragraph', title: 'Paragraph' }
+        - { model: 'heading2', view: 'h2', title: 'Heading 2' }
+        - { model: 'heading3', view: 'h3', title: 'Heading 3' }
+        - { model: 'heading4', view: 'h4', title: 'Heading 4' }
+        - { model: 'heading5', view: 'h5', title: 'Heading 5' }
 
-    removeButtons:
-      - Scayt
-      - Outdent
-      - Indent
-      - About
-      - Font
-      - FontSize
+    style:
+      definitions:
+        - { name: "Liste mit Kreiseln", element: "ul", classes: ['list-circle'] }
+        - { name: "Liste mit Häkchen", element: "ul", classes: ['list-check'] }
 
-    removePlugins:
-      - image
+    alignment:
+      options:
+        - { name: 'left', className: 'text-left' }
+        - { name: 'center', className: 'text-center' }
+        - { name: 'right', className: 'text-right' }
+        - { name: 'justify', className: 'text-justify' }
+
+    table:
+      defaultHeadings: { rows: 1 }
+      contentToolbar:
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - tableProperties
+        - tableCellProperties
+
+buttons:
+  link:
+    properties:
+      class:
+        allowedClasses: 'btn btn-primary,btn btn-secondary'
+
+classes:
+  'btn btn-primary':
+    name: 'Button Primary (Rot)'
+  'btn btn-secondary':
+    name: 'Button Secondary (Grau)'
 
 processing:
   allowTags:

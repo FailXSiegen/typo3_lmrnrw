@@ -8,13 +8,13 @@ require 'vendor/deployer/deployer/recipe/common.php';
 // Hosts
 host('staging')
     ->set('hostname','lmr-nrw.failx.de')
-    ->set('php_path', '/usr/bin/php8.1')
+    ->set('php_path', '/usr/bin/php8.2')
     ->set('remote_user','c1_ssh_lmr')
     ->set('deploy_path', '/var/www/clients/client1/web1025/web');
 
 host('prod')
     ->set('hostname','lmr-nrw.de')
-    ->set('php_path', '/usr/bin/php8.1')
+    ->set('php_path', '/usr/bin/php8.2')
     ->set('remote_user','c116_ssh')
     ->set('deploy_path', '/var/www/clients/client116/web1001/web');
 
@@ -29,9 +29,9 @@ set('composer_options', '--verbose --prefer-dist --no-progress --no-interaction 
 set('env', [
     'PHP_CLI_SERVER_WORKERS' => 4,
     'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/games',
-    'PHP_PATH' => '/usr/bin/php8.1'
+    'PHP_PATH' => '/usr/bin/php8.2'
 ]);
-set('php_path', '/usr/bin/php8.1');
+set('php_path', '/usr/bin/php8.2');
 // Shared Directories und Files
 set('shared_dirs', [
     '{{typo3_webroot}}/fileadmin',
@@ -57,6 +57,7 @@ set('rsync_src', './');
 set('rsync',[
     'exclude'      => [
         'deploy.php',
+        '.ddev',
         '.docker*',
         '.editorconfig',
         '.env',
@@ -67,6 +68,7 @@ set('rsync',[
         '.deployer',
         '.database',
         'docker-compose.yml',
+        'docker-compose.yml.old',
         'public/fileadmin',
         'public/uploads',
         'public/_assets',
@@ -89,11 +91,11 @@ set('rsync',[
 
 // Tasks
 task('build', function () {
-    run('cd {{release_path}} && COMPOSER_MEMORY_LIMIT=-1 {{php_path}} {{bin/composer}} update {{composer_options}}');
+    run('cd {{release_path}} && COMPOSER_MEMORY_LIMIT=-1 {{php_path}} {{bin/composer}} install {{composer_options}}');
 });
 task('typo3', function () {
     run('cd {{release_path}} && PATH=/usr/local/bin:/usr/bin:/bin PHP_PATH={{php_path}} {{php_path}} {{bin_folder}}typo3 install:fixfolderstructure');
-    run('cd {{release_path}} && PATH=/usr/local/bin:/usr/bin:/bin PHP_PATH={{php_path}} {{php_path}} {{bin_folder}}typo3 database:updateschema *.add,*.change');
+    run('cd {{release_path}} && PATH=/usr/local/bin:/usr/bin:/bin PHP_PATH={{php_path}} {{php_path}} {{bin_folder}}typo3 database:updateschema');
     run('cd {{release_path}} && PATH=/usr/local/bin:/usr/bin:/bin PHP_PATH={{php_path}} {{php_path}} {{bin_folder}}typo3 language:update');
     run('cd {{release_path}} && PATH=/usr/local/bin:/usr/bin:/bin PHP_PATH={{php_path}} {{php_path}} {{bin_folder}}typo3 cache:flush');
 });

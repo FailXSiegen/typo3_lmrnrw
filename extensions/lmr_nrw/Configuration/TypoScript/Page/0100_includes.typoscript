@@ -1,11 +1,9 @@
 page{
     includeCSS {
         abovethefold = EXT:lmr_nrw/Resources/Public/StyleSheet/abovethefold.css
-        abovethefold.inline {
-            inline = 1
-            forceOnTop = 1
-            media = all
-        }
+        abovethefold.inline = 1
+        abovethefold.forceOnTop = 1
+        abovethefold.media = all
         fonts = EXT:lmr_nrw/Resources/Public/StyleSheet/fonts.css
         lmrnrw = EXT:lmr_nrw/Resources/Public/StyleSheet/lmrnrw.css
     }

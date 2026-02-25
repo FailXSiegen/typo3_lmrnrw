@@ -126,13 +126,10 @@ return [
         ],
     ],
     'GFX' => [
-        'gif_compress' => false,
         'imagefile_ext' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp',
         'processor' => 'ImageMagick',
         'processor_allowFrameSelection' => false,
-        'processor_allowTemporaryMasksAsPng' => 0,
         'processor_allowUpscaling' => false,
-        'processor_colorspace' => 'sRGB',
         'processor_effects' => true,
         'processor_enabled' => true,
         'processor_path' => '/usr/bin/',
@@ -151,7 +148,6 @@ return [
         'encryptionKey' => '0TiB05xaguqbFsim2TVkizy939PYEBhU4mOTvQY6yarQSiwXFmVbv9jHjCVQ07revhjPnqq0KEVH7JUxVsAEYTMXl2Hz13U4',
         'exceptionalErrors' => 4096,
         'features' => [
-            'security.usePasswordPolicyForFrontendUsers' => true,
             'unifiedPageTranslationHandling' => true,
         ],
         'mediafile_ext' => 'gif,jpg,jpeg,bmp,png,pdf,svg,ai,mp3,wav,mp4,ogg,flac,opus,webm,youtube,vimeo,webp',

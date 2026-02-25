@@ -10,8 +10,8 @@
 	],
 	"license": "GPL-2.0-only",
 	"require": {
-		"typo3/cms-core": "^11 || ^12",
-		"php": ">=7.2"
+		"typo3/cms-core": "^12 || ^13",
+		"php": ">=8.2"
 	},
 	"replace": {
 		"typo3-ter/toolbar-clear-processedfiles": "self.version"

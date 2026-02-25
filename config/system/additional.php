@@ -48,6 +48,7 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
         ],
         'SYS' => [
             'sitename' => $_ENV['SITENAME'],
+            'trustedHostsPattern' => $_ENV['TYPO3_TRUSTED_HOST_PATTERN'] ?? '.*',
             'displayErrors' =>  $_ENV['DISPLAY_ERRORS'],
             'enableDeprecationLog' => $_ENV['ENABLE_DEPRECATION_LOG'],
             'exceptionalErrors' => $_ENV['EXCEPTIONAL_ERRORS'],
