@@ -1,7 +1,7 @@
 // Webpack uses this to work with directories
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
 
 
 // This is the main configuration object.
@@ -60,7 +60,6 @@ module.exports = {
                         // First we transform SASS to standard CSS
                         loader: "sass-loader",
                         options: {
-                            implementation: require("sass"),
                             sourceMap: true,
                             sassOptions: {
                                 silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'mixed-decls'],
@@ -79,43 +78,26 @@ module.exports = {
             {
                 // Now we apply rule for images
                 test: /\.(png|jpe?g|gif)$/,
-                use: [
-                        {
-                            // Using file-loader for these files
-                            loader: "file-loader",
-
-                            // In options we can set different things like format
-                            // and directory to save
-                            options: {
-                                outputPath: 'images'
-                            }
-                        }
-                    ]
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name][ext]'
+                }
             },
             {
                 // Apply rule for fonts files
                 test: /\.(woff|woff2|ttf|otf|eot)$/,
-                use: [
-                    {
-                        // Using file-loader too
-                        loader: "file-loader",
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'fonts/'
-                        }
-                    }
-                ]
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][ext]'
+                }
             }
         ],
     },
     plugins: [
-        require('autoprefixer'),
-        require('cssnano'),
-        new FixStyleOnlyEntriesPlugin(),
+        new RemoveEmptyScriptsPlugin(),
         new MiniCssExtractPlugin({
             filename: 'StyleSheet/[name].css'
         })
-        // More postCSS modules here if needed
     ],
     // Path to your entry point. From this file Webpack will begin its work
     entry: {
